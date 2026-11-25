@@ -20,7 +20,7 @@ OUT = ROOT / "dist" / "social"
 FONTS = (ROOT / "site" / "assets" / "fonts").as_uri()
 LOGO = (ROOT / "site" / "assets" / "logo.svg").read_text()
 TAGS = {"darts": "#wkdarts #darts", "voetbal": "#oranje #nederlandselftal", "handbal": "#handbal #ekhandbal",
-        "f1": "#f1 #formule1", "hockey": "#hockey #proleague", "schaatsen": "#schaatsen", "veldrijden": "#veldrijden #cyclocross", "clubs": "#eredivisie #ajax #feyenoord #psv"}
+        "f1": "#f1 #formule1", "hockey": "#hockey #proleague", "schaatsen": "#schaatsen", "veldrijden": "#veldrijden #cyclocross", "clubs": "#eredivisie #ajax #feyenoord #psv", "leeuwinnen": "#oranjeleeuwinnen #leeuwinnen"}
 
 CSS = f"""
 @font-face{{font-family:B;font-weight:800;src:url({FONTS}/barlow-condensed-latin-800-normal.woff2)}}

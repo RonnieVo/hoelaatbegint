@@ -32,6 +32,7 @@ jobs:
       AI_VERIFY_MODE: ${{ vars.AI_VERIFY_MODE }}
       AI_CAPTIONS: ${{ vars.AI_CAPTIONS }}
       AI_WRITE: ${{ vars.AI_WRITE }}
+      AI_OPINION: ${{ vars.AI_OPINION }}
       AI_VERIFY_FORCE: ${{ github.event.inputs.ai_force == 'true' && '1' || '' }}
       FORCE_DEPLOY: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
       AF_FORCE: ${{ (github.event.inputs.ai_force == 'true' || github.event.inputs.af_force == 'true') && '1' || '' }}
@@ -55,6 +56,11 @@ jobs:
         if: github.event.schedule == '*/15 * * * *'
         run: |
           if [ "$(date -u +%H%M)" -ge "0600" ] && [ "$(date -u +%H%M)" -lt "0615" ]; then python pipeline/ai_write.py; fi
+
+      - name: De kijk van Ronald (dagelijks 06:00 UTC, of handmatig)
+        if: github.event.inputs.ai_force == 'true' || github.event_name == 'schedule'
+        run: |
+          if [ "${{ github.event.inputs.ai_force }}" = "true" ] || { [ "$(date -u +%H%M)" -ge "0600" ] && [ "$(date -u +%H%M)" -lt "0615" ]; }; then python pipeline/ai_opinion.py; fi
 
       - name: Pushmeldingen (30 min vooraf)
         env:

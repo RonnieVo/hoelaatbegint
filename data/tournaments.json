@@ -264,37 +264,37 @@
   "slug": "nederlands-elftal",
   "name": "Nederlands elftal",
   "h1": "Hoe laat speelt het Nederlands elftal?",
-  "title": "Hoe laat speelt Nederland? Programma Oranje 2027",
-  "description": "Oranje speelt weer in maart 2027: de Nations League-kwartfinale (thuis 25–27 maart, uit 28–30 maart). De Leeuwinnen spelen op 1 en 5 december de WK-play-off tegen Slovenië.",
-  "answer": "De <strong>Oranje Leeuwinnen</strong> spelen de WK-play-off tegen Slovenië: <strong>dinsdag 1 december</strong> in Domžale en <strong>zaterdag 5 december om 18:00</strong> in Utrecht. De mannen spelen eerst weer in de <strong>Nations League-kwartfinale van 25 tot en met 30 maart 2027</strong>. Op <strong>zondag 6 december om 18:00</strong> is de loting voor de EK-kwalificatie.",
+  "title": "Hoe laat speelt Nederland? Oranje – Portugal en programma 2027",
+  "description": "Oranje speelt de Nations League-kwartfinale tegen Portugal: zaterdag 27 maart 2027 om 20:45 thuis, op 30 maart uit. De loting voor de EK-kwalificatie is zondag 6 december om 18:00.",
+  "answer": "Het Nederlands elftal speelt weer op <strong>zaterdag 27 maart 2027 om 20:45</strong>: <strong>Nederland – Portugal</strong>, de kwartfinale van de Nations League. De return in Portugal is op <strong>dinsdag 30 maart</strong>. Eerst is op <strong>zondag 6 december om 18:00</strong> de loting voor de EK-kwalificatie.",
   "facts": [
    [
-    "Leeuwinnen",
-    "WK-play-off tegen Slovenië, 1 en 5 december 2026"
+    "Volgende wedstrijd",
+    "Nederland – Portugal, 27 maart 2027, 20:45"
    ],
    [
-    "Mannen",
-    "Nations League-kwartfinale, 25–30 maart 2027 (eerst thuis)"
+    "Return",
+    "Portugal – Nederland, 30 maart 2027"
+   ],
+   [
+    "Bij winst",
+    "Final Four in juni 2027, tegen Spanje of Frankrijk"
    ],
    [
     "Loting EK-kwalificatie",
     "zondag 6 december 2026, 18:00, Belfast"
    ],
    [
-    "Start EK-kwalificatie",
-    "september 2027"
-   ],
-   [
     "EK 2028",
     "9 juni – 9 juli 2028"
    ]
   ],
-  "intro": "Omdat Oranje de kwartfinales van de Nations League haalde, speelt het in maart nog geen EK-kwalificatie. Nederland komt in een kwalificatiegroep van vier landen en begint daaraan in september 2027.",
-  "scenario_title": "Wat als Nederland doorgaat in de Nations League?",
+  "intro": "Oranje werd tweede in de Nations League-groep achter Duitsland en loot in de kwartfinale titelverdediger Portugal. Nederland speelt eerst thuis. Door de kwartfinale begint de EK-kwalificatie voor Oranje pas in september 2027.",
+  "scenario_title": "Wat als Nederland doorgaat?",
   "scenario": [
    [
-    "Winst in de kwartfinale (maart 2027)",
-    "Final Four van de Nations League in juni 2027"
+    "Winst over twee duels tegen Portugal",
+    "Final Four van de Nations League, 9 tot en met 13 juni 2027, tegen Spanje of Frankrijk"
    ],
    [
     "Groepswinst in de EK-kwalificatie",
@@ -305,11 +305,15 @@
     "Bij de acht beste nummers twee rechtstreeks naar het EK, anders play-offs in maart 2028"
    ]
   ],
-  "scenario_note": "Zodra de loting bekend is, staan hier alle data, tijden en tegenstanders.",
+  "scenario_note": "De aanvangstijd van de return en de groep in de EK-kwalificatie verschijnen hier automatisch.",
   "faq": [
    [
     "Wanneer speelt Oranje weer?",
-    "De Leeuwinnen spelen op 1 en 5 december 2026 tegen Slovenië. De mannen spelen weer van 25 tot en met 30 maart 2027, in de kwartfinale van de Nations League."
+    "Op zaterdag 27 maart 2027 om 20:45 tegen Portugal, in de kwartfinale van de Nations League. De return is op 30 maart in Portugal."
+   ],
+   [
+    "Tegen wie speelt Nederland in de kwartfinale van de Nations League?",
+    "Tegen Portugal, de titelverdediger. Dat bepaalde de loting van 20 november 2026."
    ],
    [
     "Hoe laat is de loting voor de EK-kwalificatie?",
@@ -322,24 +326,80 @@
   ],
   "sources": [
    [
-    "KNVB-agenda (Leeuwinnen)",
-    "https://www.knvb.nl/downloads/bestand/23461/agenda-week-13"
+    "Nations League-route Nederland (VI)",
+    "https://www.vi.nl/nieuws/nations-league-route-nederland-in-halve-finale-eventueel-spanje-of-frankrijk"
    ],
    [
-    "Nations League-loting en speeldata (FCUpdate)",
-    "https://www.fcupdate.nl/voetbalnieuws/2026/11/oranje-loting-kwartfinale-nations-league"
-   ],
-   [
-    "Programma Oranje 2027 (Voetbalnieuws)",
-    "https://www.voetbalnieuws.nl/nieuws/2159736/wanneer-speelt-oranje-weer-programma-nederland-in-2027.html"
+    "Speelschema Nations League (unl-voetbal.nl)",
+    "https://www.unl-voetbal.nl/"
    ],
    [
     "Loting EK-kwalificatie (Bet-Experts)",
     "https://www.bet-experts.nl/nieuws/loting-ek-2028-kwalificatie-potindeling-oranje"
+   ]
+  ]
+ },
+ "oranje-leeuwinnen": {
+  "sport": "leeuwinnen",
+  "slug": "oranje-leeuwinnen",
+  "name": "Oranje Leeuwinnen",
+  "h1": "Hoe laat spelen de Oranje Leeuwinnen?",
+  "title": "Hoe laat spelen de Oranje Leeuwinnen? WK-play-off tegen Slovenië",
+  "description": "De Oranje Leeuwinnen spelen de WK-play-off tegen Slovenië: dinsdag 1 december in Domžale en zaterdag 5 december om 18:00 in Utrecht.",
+  "answer": "De <strong>Oranje Leeuwinnen</strong> spelen de beslissende WK-play-off tegen <strong>Slovenië</strong>: <strong>dinsdag 1 december</strong> uit in Domžale en <strong>zaterdag 5 december om 18:00</strong> thuis in Stadion Galgenwaard in Utrecht.",
+  "facts": [
+   [
+    "Tegenstander",
+    "Slovenië (WK-play-off, tweede ronde)"
    ],
    [
-    "Potindeling (Soccernews)",
-    "https://www.soccernews.nl/news/potindeling-ek-kwalificatie-bekend-maar-een-conclusie-voor-oranje-mogelijk/"
+    "Heenduel",
+    "dinsdag 1 december 2026, Domžale"
+   ],
+   [
+    "Return",
+    "zaterdag 5 december 2026, 18:00, Utrecht"
+   ],
+   [
+    "WK 2027",
+    "24 juni – 25 juli 2027, Brazilië"
+   ]
+  ],
+  "intro": "Nederland werd tweede in de WK-kwalificatiegroep achter Frankrijk en moet via de play-offs naar het WK in Brazilië. Na Hongarije is Slovenië de laatste horde.",
+  "scenario_title": "Wat als de Leeuwinnen doorgaan?",
+  "scenario": [
+   [
+    "Winst over twee duels tegen Slovenië",
+    "Plaatsing voor het WK 2027 in Brazilië (24 juni – 25 juli 2027)"
+   ]
+  ],
+  "scenario_note": "Zodra de WK-loting bekend is, staan de wedstrijden en aanvangstijden hier, in Nederlandse tijd.",
+  "faq": [
+   [
+    "Wanneer spelen de Oranje Leeuwinnen?",
+    "Op dinsdag 1 december in Slovenië en op zaterdag 5 december om 18:00 in Utrecht, in de play-off voor het WK 2027."
+   ],
+   [
+    "Waar spelen de Leeuwinnen tegen Slovenië?",
+    "Uit in Športni park Domžale, thuis in Stadion Galgenwaard in Utrecht."
+   ],
+   [
+    "Wanneer is het WK vrouwenvoetbal 2027?",
+    "Van 24 juni tot en met 25 juli 2027 in Brazilië."
+   ]
+  ],
+  "sources": [
+   [
+    "KNVB-agenda",
+    "https://www.knvb.nl/downloads/bestand/23461/agenda-week-13"
+   ],
+   [
+    "Play-off tegen Slovenië (NL Times)",
+    "https://nltimes.nl/node/92392"
+   ],
+   [
+    "Oranjevrouwen naar play-offs (NOS)",
+    "https://nos.nl/l/2617874"
    ]
   ]
  },

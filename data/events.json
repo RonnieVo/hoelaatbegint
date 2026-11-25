@@ -1062,8 +1062,8 @@
   },
   {
    "id": "oranje-v-wk-playoff-heen",
-   "sport": "voetbal",
-   "tournament": "nederlands-elftal",
+   "sport": "leeuwinnen",
+   "tournament": "oranje-leeuwinnen",
    "title": "Slovenië – Nederland (vrouwen)",
    "round": "Play-off WK 2027, heenduel",
    "city": "Domžale (Slovenië)",
@@ -1208,8 +1208,8 @@
   },
   {
    "id": "oranje-v-wk-playoff-terug",
-   "sport": "voetbal",
-   "tournament": "nederlands-elftal",
+   "sport": "leeuwinnen",
+   "tournament": "oranje-leeuwinnen",
    "title": "Nederland – Slovenië (vrouwen)",
    "start": "2026-12-05T17:00:00Z",
    "round": "Play-off WK 2027, return",
@@ -2783,31 +2783,6 @@
    "nl": true
   },
   {
-   "id": "oranje-nl-kf",
-   "sport": "voetbal",
-   "tournament": "nederlands-elftal",
-   "title": "Nations League-kwartfinale (heen en terug)",
-   "date": "2027-03-25",
-   "end_date": "2027-03-30",
-   "time_known": false,
-   "round": "Kwartfinale Nations League",
-   "note": "Nederland speelt eerst thuis (25–27 maart), de return is 28–30 maart. Tegenstander volgt.",
-   "source": "https://www.fcupdate.nl/voetbalnieuws/2026/11/oranje-loting-kwartfinale-nations-league",
-   "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
-   "nl": true,
-   "participants": [
-    "Nederland"
-   ],
-   "sources": [
-    "https://www.voetbalnieuws.nl/nieuws/2160864/nederlands-elftal-kent-tegenstander-in-kwartfinale-nations-league-vn.html",
-    "https://www.meemetoranje.nl/nederlands-elftal/nieuws/nederlands-elftal-loot-portugal-kwartfinale-nations-league/"
-   ],
-   "confirmed_by": [
-    "ai"
-   ]
-  },
-  {
    "id": "fd-558693",
    "sport": "clubs",
    "tournament": "psv",
@@ -3665,6 +3640,82 @@
    "status": "gepland",
    "checked_at": "2026-11-25T15:30:00Z",
    "nl": true
+  },
+  {
+   "id": "oranje-nl-por-1",
+   "sport": "voetbal",
+   "tournament": "nederlands-elftal",
+   "title": "Nederland – Portugal",
+   "home": "Nederland",
+   "away": "Portugal",
+   "start": "2027-03-27T19:45:00Z",
+   "round": "Nations League, kwartfinale (heen)",
+   "broadcaster": "nos",
+   "page": "nederland-portugal-2027-03-27",
+   "note": "Heenduel van de kwartfinale. De winnaar van het tweeluik speelt in juni de Final Four tegen Spanje of Frankrijk.",
+   "source": "https://www.vi.nl/nieuws/nations-league-route-nederland-in-halve-finale-eventueel-spanje-of-frankrijk",
+   "status": "gepland",
+   "nl": true,
+   "checked_at": "2026-11-25T18:40:00Z"
+  },
+  {
+   "id": "oranje-por-nl-2",
+   "sport": "voetbal",
+   "tournament": "nederlands-elftal",
+   "title": "Portugal – Nederland",
+   "home": "Portugal",
+   "away": "Nederland",
+   "date": "2027-03-30",
+   "time_known": false,
+   "round": "Nations League, kwartfinale (return)",
+   "broadcaster": "nos",
+   "time_note": "Aanvangstijd volgt",
+   "source": "https://www.unl-voetbal.nl/",
+   "status": "gepland",
+   "nl": true,
+   "checked_at": "2026-11-25T18:40:00Z"
+  },
+  {
+   "id": "ecl-2026-11-26-ajax-thun",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "title": "Ajax – FC Thun",
+   "home": "Ajax",
+   "away": "FC Thun",
+   "start": "2026-11-26T17:45:00Z",
+   "round": "Conference League, competitiefase",
+   "venue": "Johan Cruijff ArenA",
+   "city": "Amsterdam",
+   "broadcaster": "ziggo",
+   "tv_detail": "Ziggo Sport 1 en Ziggo Sport Free",
+   "page": "ajax-fc-thun-2026-11-26",
+   "source": "https://www.ajax.nl/artikelen/speelschema-conference-league-bekend-ajax-start-uit-bij-hajduk-split",
+   "status": "gepland",
+   "nl": true,
+   "checked_at": "2026-11-25T18:40:00Z"
+  },
+  {
+   "id": "ecl-2026-12-17-ajax-getafe",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "title": "Ajax – Getafe",
+   "home": "Ajax",
+   "away": "Getafe",
+   "date": "2026-12-17",
+   "time_known": false,
+   "round": "Conference League, competitiefase",
+   "broadcaster": "ziggo",
+   "time_note": "Aanvangstijd volgt",
+   "source": "https://www.ziggo.nl/entertainment/sport/voetbal/ajax-kijken/ajax-wedstrijden",
+   "status": "gepland",
+   "nl": true,
+   "checked_at": "2026-11-25T18:40:00Z"
   }
  ]
 }

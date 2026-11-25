@@ -32,6 +32,7 @@ SPORTS = {
     "darts": {"name": "Darts", "page": "wk-darts", "minutes": 240},
     "schaatsen": {"name": "Schaatsen", "page": "schaatsen", "minutes": 240},
     "voetbal": {"name": "Oranje", "page": "nederlands-elftal", "minutes": 120},
+    "leeuwinnen": {"name": "Leeuwinnen", "page": "oranje-leeuwinnen", "minutes": 120},
     "clubs": {"name": "Clubs", "page": "clubs", "minutes": 120},
     "handbal": {"name": "Handbal", "page": "ek-handbal-vrouwen", "minutes": 100},
     "f1": {"name": "Formule 1", "page": "formule-1", "minutes": 120},
@@ -41,6 +42,7 @@ SPORTS = {
 ICONS = {
     "darts": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#FF6A13" stroke="none"/></svg>',
     "voetbal": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7l4 3-1.5 4.5h-5L8 10z" fill="#FF6A13" stroke="none"/></svg>',
+    "leeuwinnen": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7l4 3-1.5 4.5h-5L8 10z" fill="#FF6A13" stroke="none"/><path d="M17 3.5l1.5 1.5M19.5 7.5h1.5" stroke="#FF6A13"/></svg>',
     "clubs": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8 12h8" stroke="#FF6A13"/></svg>',
     "handbal": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3.5 9c5 2 12 2 17 0M3.5 15c5-2 12-2 17 0" stroke="#FF6A13"/></svg>',
     "f1": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><path d="M5 21V4"/><path d="M5 4h14v9H5" /><path d="M5 4h4v3H5zM13 4h4v3h-4zM9 7h4v3H9zM5 10h4v3H5zM13 10h4v3h-4z" fill="#FF6A13" stroke="none"/></svg>',
@@ -50,6 +52,7 @@ ICONS = {
 }
 CAL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>'
 BELL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>'
+IG_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>'
 SHARE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>'
 
 
@@ -199,14 +202,15 @@ BASE_TPL = r"""<!doctype html>
 <nav class="nav" aria-label="Sporten">
 <a class="today" href="/vandaag/">Vandaag</a>
 {% for key, s in sports.items() %}<a href="/{{ s.page }}/"{% if active == s.page %} aria-current="page"{% endif %}>{{ s.name }}</a>{% endfor %}
-</nav></div></header>
+</nav>{% if cfg.instagram_url %}<a class="ig" href="{{ cfg.instagram_url }}" rel="noopener" target="_blank" aria-label="Volg ons op Instagram">{{ ig|safe }}</a>{% endif %}</div></header>
 <main id="main">
 {{ body|safe }}
 </main>
 <footer class="site-foot"><div class="wrap">
 <div class="cols">
 <div><a class="brand" href="/">{{ logo|safe }}<span>hoelaat<b>begint</b><i>.nl</i></span></a>
-<p>Elke aftrap, elke start. In Nederlandse tijd. Tijden worden elke 15 minuten automatisch gecontroleerd bij twee bronnen.</p></div>
+<p>Elke aftrap, elke start. In Nederlandse tijd. Tijden worden elke 15 minuten automatisch gecontroleerd bij twee bronnen.</p>
+{% if cfg.instagram_url %}<p><a class="ig-foot" href="{{ cfg.instagram_url }}" rel="noopener" target="_blank">{{ ig|safe }} Elke ochtend om 07:00 het sportprogramma: volg @hoelaatbegint</a></p>{% endif %}</div>
 <div><h4>Sporten</h4><ul>{% for key, s in sports.items() %}<li><a href="/{{ s.page }}/">{{ s.name }}</a></li>{% endfor %}</ul></div>
 <div><h4>Handig</h4><ul><li><a href="/vandaag/">Sport vandaag</a></li><li><a href="/agenda/">Agenda-abonnement</a></li><li><a href="/wk-darts/#nederlanders">Nederlanders op het WK darts</a></li><li><a href="/ajax/">Hoe laat speelt Ajax?</a></li><li><a href="/feyenoord/">Hoe laat speelt Feyenoord?</a></li><li><a href="/psv/">Hoe laat speelt PSV?</a></li></ul></div>
 <div><h4>Over</h4><ul><li><a href="/over/">Over ons &amp; werkwijze</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:{{ cfg.contact_email }}?subject=Correctie">Klopt er iets niet?</a></li></ul></div>
@@ -244,6 +248,10 @@ MACROS = r"""
   </div>
 </div>
 {%- endmacro %}
+{% macro opinion(e) -%}
+{% if e.opinion %}<div class="opinion"><img src="{{ cfg.owner_photo }}" alt="{{ cfg.owner }}" width="56" height="56" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'initials',textContent:'RV'}))">
+<div><div class="op-head">De kijk van {{ cfg.owner.split(' ')[0] }}</div><p>{{ e.opinion }}</p></div></div>{% endif %}
+{%- endmacro %}
 {% macro faqblock(faq) -%}
 <section id="faq"><div class="wrap"><h2>Veelgestelde vragen</h2>
 {% for q, a in faq %}<details{% if loop.first %} open{% endif %}><summary>{{ q }}</summary><p>{{ a }}</p></details>{% endfor %}
@@ -257,7 +265,7 @@ HOME = MACROS + r"""
 <p class="lede">Alle sport met Nederlanders, in Nederlandse tijd. Met zender, countdown en wat er gebeurt als ze doorgaan. Automatisch bijgewerkt, elke 15 minuten.</p>
 <span class="checked">Laatst gecontroleerd: {{ built }}</span>
 </div></section>
-<div class="wrap">{{ answer(next, "Eerstvolgende met Nederlanders") }}</div>
+<div class="wrap">{{ answer(next, "Eerstvolgende met Nederlanders") }}{{ opinion(next) }}</div>
 <section><div class="wrap"><h2>Sporten</h2>
 <div class="grid sports">
 {% for key, s in sports.items() %}<a class="card sport-card" href="/{{ s.page }}/"><div class="ico">{{ icons[key]|safe }}</div><h3>{{ s.name }}</h3><p class="next">{{ nexts[key] }}</p></a>{% endfor %}
@@ -289,7 +297,7 @@ TOURNAMENT = MACROS + r"""
 <p class="lede">{% if t.sport == "clubs" and next and t.slug != "clubs" %}{{ t.name }} speelt <strong>{{ next.day_label }} om {{ next.time }}</strong>: {{ next.title }}{% if next.tv %}, live op <strong>{{ next.tv_detail }}</strong>{% endif %}. Hieronder het hele programma, in Nederlandse tijd.{% else %}{{ t.answer|safe }}{% endif %}</p>
 <span class="checked">Laatst gecontroleerd: {{ built }}</span>
 </div></section>
-{% if next %}<div class="wrap">{{ answer(next, "Eerstvolgende") }}</div>{% endif %}
+{% if next %}<div class="wrap">{{ answer(next, "Eerstvolgende") }}{{ opinion(next) }}</div>{% endif %}
 <section><div class="wrap two">
 <div class="prose"><h2>In het kort</h2><p>{{ t.intro }}</p></div>
 <table class="facts">{% for k, v in t.facts %}<tr><th>{{ k }}</th><td>{{ v }}</td></tr>{% endfor %}</table>
@@ -338,7 +346,7 @@ MATCH = MACROS + r"""
 <p class="lede">{{ e.title }} begint <strong>{{ e.day_label }} om {{ e.time }}</strong> Nederlandse tijd{% if e.city %} in {{ e.city }}{% endif %}.{% if e.tv %} Je kijkt live op <strong>{{ e.tv_detail }}</strong>.{% endif %}</p>
 <span class="checked">Laatst gecontroleerd: {{ built }}</span>
 </div></section>
-<div class="wrap">{{ answer(e, e.round or "Wedstrijd") }}</div>
+<div class="wrap">{{ answer(e, e.round or "Wedstrijd") }}{{ opinion(e) }}</div>
 <section><div class="wrap two">
 <div class="prose"><h2>Wat je moet weten</h2><p>{{ e.ai_intro or e.note or t.intro }}</p>
 {% if e.tv %}<p><a class="btn" href="{{ tvlink }}" rel="nofollow sponsored noopener" target="_blank" data-event="zender">Kijk live op {{ e.tv }}</a></p>{% if aff %}<p class="aff">Via deze link verdienen we mogelijk een kleine vergoeding.</p>{% endif %}{% endif %}</div>
@@ -375,18 +383,26 @@ PAGE = r"""
 <section><div class="wrap prose">{{ content|safe }}</div></section>
 """
 
-OVER = """<h2>Waarom deze site</h2>
-<p>Bij elke grote wedstrijd zoeken honderdduizenden Nederlanders hetzelfde: hoe laat begint het, en waar kan ik het zien? hoelaatbegint.nl geeft dat antwoord in één oogopslag, voor elke sport met Nederlanders, altijd in Nederlandse tijd.</p>
+OVER = """<div class="about-hero"><img src="{photo}" alt="{owner}" width="120" height="120" onerror="this.style.display='none'">
+<div><p class="lead">hoelaatbegint.nl is opgezet door <b>{owner}</b>, SEO-specialist uit Woerden en sportliefhebber. Het idee is simpel: bij elke grote wedstrijd zoeken honderdduizenden Nederlanders hetzelfde. Hoe laat begint het, en waar kan ik het zien? Hier staat dat antwoord in één oogopslag.</p>
+<p><a href="{linkedin}" rel="noopener" target="_blank">LinkedIn</a> · <a href="{owner_url}" rel="noopener" target="_blank">ronaldvoorbergen.nl</a> · <a href="{instagram}" rel="noopener" target="_blank">Instagram @hoelaatbegint</a></p></div></div>
+<h2>Wat je hier vindt</h2>
+<ul><li>Aanvangstijden van alle sport met Nederlanders, altijd in Nederlandse tijd.</li>
+<li>Op welke zender of streamingdienst je het ziet.</li>
+<li>Wat er gebeurt als een Nederlander of Nederlands team doorgaat: wanneer de volgende wedstrijd dan is.</li>
+<li>Een agenda-abonnement per sport, zodat elke wedstrijd vanzelf in je agenda staat.</li>
+<li>Elke ochtend om 07:00 het sportprogramma van de dag op <a href="{instagram}" rel="noopener" target="_blank">Instagram</a>.</li></ul>
 <h2>Hoe we tijden controleren</h2>
-<p>Elke 15 minuten haalt ons systeem de speelschema's op bij sportdatabronnen en officiële organisatoren (onder meer PDC, EHF, UEFA, FIA, FIH en KNSB). Een tijd verschijnt pas als twee bronnen hem bevestigen. Spreken bronnen elkaar tegen, dan blijft de laatst bevestigde tijd staan tot het is uitgezocht. Bij elke pagina zie je wanneer we voor het laatst hebben gecontroleerd, en welke bron we gebruiken.</p>
-<h2>Wie zit erachter</h2>
-<p>hoelaatbegint.nl is opgezet door <b>{owner}</b>, SEO-specialist uit Woerden. <a href="{owner_url}">Meer over {owner_first}</a>.</p>
+<p>Elke 15 minuten haalt ons systeem de speelschema's op bij sportdatabronnen en officiële organisatoren, onder meer PDC, EHF, UEFA, KNVB, FIA, FIH en KNSB. Een nieuwe tijd verschijnt pas als een officiële bron hem bevestigt. Spreken bronnen elkaar tegen, dan blijft de laatst bevestigde tijd staan en kijken we het na. Bij elke pagina zie je wanneer we voor het laatst hebben gecontroleerd, en welke bron we gebruiken.</p>
+<p>Een voorbeeld: op 25 november 2026 stond Nederland – Tsjechië (EK handbal) bij een tv-aanbieder op donderdag 3 december. De officiële EHF-pagina zei vrijdag 4 december om 20:30. Wij tonen de officiële tijd.</p>
+<h2>Hoe we AI gebruiken</h2>
+<p>We gebruiken AI om officiële bronnen te doorzoeken en om korte voorbeschouwingen te schrijven ("De kijk van Ronald"). Die voorbeschouwingen zijn een mening in Ronalds stijl, gebaseerd op de feiten op de pagina. Tijden, data en zenders komen altijd uit gecontroleerde bronnen, nooit uit de verbeelding van een AI.</p>
 <h2>Klopt er iets niet?</h2>
-<p>Mail naar <a href="mailto:{email}">{email}</a>. Correcties verwerken we dezelfde dag.</p>
+<p>Mail naar <a href="mailto:{email}">{email}</a>. Correcties verwerken we dezelfde dag, en de pagina toont daarna de nieuwe controletijd.</p>
 <h2>Advertenties en links</h2>
-<p>Bij sommige zenders gebruiken we een partnerlink. Klik je daarop en neem je een abonnement, dan krijgen we mogelijk een kleine vergoeding. Dat heeft geen invloed op welke informatie we tonen. We maken geen reclame voor gokken.</p>
+<p>Bij sommige zenders gebruiken we een partnerlink. Neem je via zo'n link een abonnement, dan krijgen we mogelijk een kleine vergoeding. Dat heeft geen invloed op welke informatie we tonen. We maken geen reclame voor gokken en tonen geen odds.</p>
 <h2>Colofon</h2>
-<p>{owner} · KvK-nummer: {kvk} · {email}</p>"""
+<p>hoelaatbegint.nl · {owner} · KvK-nummer: {kvk} · {email}</p>"""
 
 PRIVACY = """<p>hoelaatbegint.nl verzamelt zo weinig mogelijk gegevens.</p>
 <h2>Bezoekstatistieken</h2><p>We meten bezoeken met Cloudflare Web Analytics. Dat gebeurt zonder cookies en zonder persoonsgegevens te bewaren. Daarom vragen we geen toestemming en tonen we geen cookiebanner.</p>
@@ -420,7 +436,7 @@ def main():
     logo = (ROOT / "site" / "assets" / "logo.svg").read_text().replace('role="img" aria-label="hoelaatbegint.nl"', 'aria-hidden="true"')
 
     env = Environment(loader=BaseLoader(), autoescape=True)
-    env.globals.update(months=MONTHS, cal=CAL_ICON, bell=BELL_ICON, share=SHARE_ICON, slug=slugify,
+    env.globals.update(months=MONTHS, ig=IG_ICON, cal=CAL_ICON, bell=BELL_ICON, share=SHARE_ICON, slug=slugify,
                        icons=ICONS, sports=SPORTS, built=built_label, base=BASE, cfg=CONFIG)
     base_tpl = env.from_string(BASE_TPL)
 
@@ -531,9 +547,13 @@ def main():
 
     # --- vaste pagina's
     fill = dict(owner=CONFIG["owner"], owner_first=CONFIG["owner"].split()[0], owner_url=CONFIG["owner_url"],
+                photo=CONFIG.get("owner_photo", ""), linkedin=CONFIG.get("owner_linkedin", ""), instagram=CONFIG.get("instagram_url", ""),
                 email=CONFIG["contact_email"], kvk=CONFIG.get("kvk") or "volgt")
-    write("/over/", "Over hoelaatbegint.nl en hoe we tijden controleren", "Hoe hoelaatbegint.nl aanvangstijden controleert, wie erachter zit en hoe je een fout meldt.",
-          env.from_string(PAGE).render(h1="Over ons", content=OVER.format(**fill)), priority="0.3")
+    write("/over/", "Over hoelaatbegint.nl: wie we zijn en hoe we tijden controleren", "hoelaatbegint.nl is opgezet door Ronald Voorbergen. Zo controleren we aanvangstijden, zo gebruiken we AI en zo meld je een fout.",
+          env.from_string(PAGE).render(h1="Over ons", content=OVER.format(**fill)), priority="0.5",
+          jsonld=[{"@context": "https://schema.org", "@type": "AboutPage", "url": BASE + "/over/", "mainEntity": {
+              "@type": "Person", "name": CONFIG["owner"], "url": CONFIG["owner_url"], "jobTitle": "SEO-specialist",
+              "sameAs": [x for x in (CONFIG.get("owner_linkedin"), CONFIG["owner_url"]) if x]}}])
     write("/privacy/", "Privacy | hoelaatbegint.nl", "Privacyverklaring van hoelaatbegint.nl: geen cookies, geen tracking.",
           env.from_string(PAGE).render(h1="Privacy", content=PRIVACY.format(**fill)), priority="0.2")
     nf = base_tpl.render(title="Pagina niet gevonden | hoelaatbegint.nl", description="", path="/404", og="default", logo=logo, jsonld=[],

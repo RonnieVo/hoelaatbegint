@@ -11,4 +11,5 @@ Eigenaar: Ronald Voorbergen (GitHub RonnieVo). Hij wil dat Claude alles onderhou
 - Tijden altijd in Nederlandse tijd tonen; opslaan in UTC.
 - Bij fouten: kijk eerst naar de laatste run in GitHub Actions.
 - AI-regels (pipeline/run.py): de AI mag bij bestaande evenementen alleen tijd/locatie/status bijwerken, geen titels; een bevestigde tijd verschuift alleen bij een bron op de OFFICIAL-lijst. Les van 25-11: Ziggo had handbal NL–Tsjechië op 3/12, EHF zegt 4/12 20:30 (EHF klopt).
+- Pagina's: Oranje (mannen, /nederlands-elftal/) en Leeuwinnen (/oranje-leeuwinnen/) zijn apart, op verzoek van Ronald. "De kijk van Ronald" (pipeline/ai_opinion.py) staat aan; Ronald gaf toestemming voor zijn naam en foto (site/assets/ronald.jpg).
 - Handmatig testen: Actions › "Data bijwerken en site publiceren" › Run workflow met ai_force of af_force = true.

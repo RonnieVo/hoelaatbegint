@@ -17,7 +17,7 @@ TEAMS = {  # team-id -> (sport, paginanaam / tournament). ID's controleren met G
     int(os.environ.get("AF_TEAM_PSV", "197")): ("clubs", "psv"),
 }
 if os.environ.get("AF_TEAM_NL_WOMEN"):
-    TEAMS[int(os.environ["AF_TEAM_NL_WOMEN"])] = ("voetbal", "nederlands-elftal")
+    TEAMS[int(os.environ["AF_TEAM_NL_WOMEN"])] = ("leeuwinnen", "oranje-leeuwinnen")
 
 NL_NAMES = {"Netherlands": "Nederland", "Germany": "Duitsland", "Belgium": "België", "France": "Frankrijk", "Spain": "Spanje",
             "England": "Engeland", "Italy": "Italië", "Portugal": "Portugal", "Croatia": "Kroatië", "Austria": "Oostenrijk",
