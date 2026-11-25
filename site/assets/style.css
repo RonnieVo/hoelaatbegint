@@ -24,7 +24,7 @@ img,svg{display:block;max-width:100%}
 
 /* header */
 .site-head{background:var(--night);color:var(--chalk);position:sticky;top:0;z-index:5}
-.site-head .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
+.site-head .wrap{display:flex;align-items:center;gap:20px;min-height:64px;position:relative}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 26px/1 var(--display);letter-spacing:.2px;white-space:nowrap}
 .brand svg{width:36px;height:36px}
 .brand b{font-weight:800}.brand i{font-style:normal;color:var(--orange)}
@@ -148,3 +148,22 @@ details p{margin:0 0 14px}
 .about-hero{display:flex;gap:22px;align-items:center;margin-bottom:10px}.about-hero img{border-radius:50%;object-fit:cover;flex:none}
 .lead{font-size:18px}
 @media (max-width:620px){.about-hero{flex-direction:column;align-items:flex-start}}
+
+/* menu: Meer sporten */
+.more{flex:none}
+.more summary{list-style:none;cursor:pointer;font:600 17px/1 var(--display);text-transform:uppercase;letter-spacing:.6px;padding:10px 10px;border-radius:8px;color:#cfd6e0;white-space:nowrap}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"";display:inline-block;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:0 0 3px 8px;transition:transform .15s}
+.more[open] summary::after{transform:rotate(-135deg);margin-bottom:-1px}
+.more summary:hover,.more[open] summary,.more summary[aria-current]{color:#fff;background:var(--night-2)}
+.more-panel{position:absolute;right:56px;top:calc(100% - 4px);z-index:20;background:#fff;border-radius:14px;box-shadow:0 12px 40px rgba(14,26,43,.25);padding:8px;min-width:220px;display:grid}
+.more-panel a{display:flex;align-items:center;gap:12px;color:var(--night);text-decoration:none;font:600 18px/1 var(--display);text-transform:uppercase;letter-spacing:.5px;padding:10px 12px;border-radius:10px;background:none}
+.more-panel a:hover,.more-panel a[aria-current]{background:#f1efe9;color:var(--night)}
+.more-panel .mi{width:30px;height:30px;border-radius:8px;background:var(--night);display:grid;place-items:center}
+.more-panel .mi svg{width:18px;height:18px}
+@media (max-width:760px){.more-panel{right:10px;left:auto;top:100%}}
+.more summary:focus{outline:none}.more summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+@media (max-width:760px){.site-head .brand{order:1}.site-head .ig{order:2;margin-left:auto}.site-head .nav{order:3}}
+details.more{background:none;box-shadow:none;padding:0;margin:0;border-radius:0}
+details.more summary{padding:10px 10px}
+details.more summary::after,details.more[open] summary::after{content:"";float:none;font:inherit;color:currentColor}

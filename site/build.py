@@ -28,6 +28,7 @@ BASE = CONFIG["base_url"].rstrip("/")
 DAYS = ["maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag", "zondag"]
 MONTHS = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus",
           "september", "oktober", "november", "december"]
+MAIN_NAV = ("darts", "schaatsen", "voetbal", "leeuwinnen", "clubs")  # de rest staat onder "Meer sporten"
 SPORTS = {
     "darts": {"name": "Darts", "page": "wk-darts", "minutes": 240},
     "schaatsen": {"name": "Schaatsen", "page": "schaatsen", "minutes": 240},
@@ -50,6 +51,8 @@ ICONS = {
     "schaatsen": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2" stroke-linecap="round"><path d="M6 4h5v6l6 2c1.5.5 2 1.5 2 3H6z"/><path d="M4 19h16" stroke="#FF6A13"/></svg>',
     "veldrijden": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="16" r="4"/><circle cx="18" cy="16" r="4"/><path d="M6 16l4-8h5l3 8M10 8l2 8" stroke="#FF6A13"/></svg>',
 }
+for _k, _v in SPORTS.items():
+    _v["key"] = _k
 CAL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>'
 BELL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg>'
 IG_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>'
@@ -201,7 +204,10 @@ BASE_TPL = r"""<!doctype html>
 <a class="brand" href="/" aria-label="hoelaatbegint.nl, naar de homepage">{{ logo|safe }}<span>hoelaat<b>begint</b><i>.nl</i></span></a>
 <nav class="nav" aria-label="Sporten">
 <a class="today" href="/vandaag/">Vandaag</a>
-{% for key, s in sports.items() %}<a href="/{{ s.page }}/"{% if active == s.page %} aria-current="page"{% endif %}>{{ s.name }}</a>{% endfor %}
+{% for key, s in sports.items() if key in main_nav %}<a href="/{{ s.page }}/"{% if active == s.page %} aria-current="page"{% endif %}>{{ s.name }}</a>{% endfor %}
+{% set more = [] %}{% for key, s in sports.items() if key not in main_nav %}{% set _ = more.append(s) %}{% endfor %}
+<details class="more"><summary{% for s in more if active == s.page %} aria-current="page"{% endfor %}>Meer sporten</summary>
+<div class="more-panel">{% for s in more %}<a href="/{{ s.page }}/"{% if active == s.page %} aria-current="page"{% endif %}><span class="mi">{{ icons[s.key]|safe }}</span>{{ s.name }}</a>{% endfor %}</div></details>
 </nav>{% if cfg.instagram_url %}<a class="ig" href="{{ cfg.instagram_url }}" rel="noopener" target="_blank" aria-label="Volg ons op Instagram">{{ ig|safe }}</a>{% endif %}</div></header>
 <main id="main">
 {{ body|safe }}
@@ -436,7 +442,7 @@ def main():
     logo = (ROOT / "site" / "assets" / "logo.svg").read_text().replace('role="img" aria-label="hoelaatbegint.nl"', 'aria-hidden="true"')
 
     env = Environment(loader=BaseLoader(), autoescape=True)
-    env.globals.update(months=MONTHS, ig=IG_ICON, cal=CAL_ICON, bell=BELL_ICON, share=SHARE_ICON, slug=slugify,
+    env.globals.update(main_nav=MAIN_NAV, months=MONTHS, ig=IG_ICON, cal=CAL_ICON, bell=BELL_ICON, share=SHARE_ICON, slug=slugify,
                        icons=ICONS, sports=SPORTS, built=built_label, base=BASE, cfg=CONFIG)
     base_tpl = env.from_string(BASE_TPL)
 

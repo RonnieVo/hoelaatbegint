@@ -41,6 +41,13 @@
   tick();
   setInterval(tick, 30000);
 
+  // "Meer sporten" sluiten bij klik ernaast of Escape
+  var more = document.querySelector("details.more");
+  if (more) {
+    document.addEventListener("click", function (e) { if (more.open && !more.contains(e.target)) more.open = false; });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") more.open = false; });
+  }
+
   // Delen via WhatsApp / native share
   document.querySelectorAll("[data-share]").forEach(function (b) {
     b.addEventListener("click", function (e) {
