@@ -508,26 +508,29 @@ PAGE = r"""
 <section><div class="wrap prose">{{ content|safe }}</div></section>
 """
 
-OVER = """<div class="about-hero"><img src="{photo}" alt="{owner}" width="120" height="120" onerror="this.style.display='none'">
-<div><p class="lead">hoelaatbegint.nl is opgezet door <b>{owner}</b>, SEO-specialist uit Woerden en sportliefhebber. Het idee is simpel: bij elke grote wedstrijd zoeken honderdduizenden Nederlanders hetzelfde. Hoe laat begint het, en waar kan ik het zien? Hier staat dat antwoord in één oogopslag.</p>
-<p><a href="{linkedin}" rel="noopener" target="_blank">LinkedIn</a> · <a href="{owner_url}" rel="noopener" target="_blank">ronaldvoorbergen.nl</a> · <a href="{instagram}" rel="noopener" target="_blank">Instagram @hoelaatbegint</a></p></div></div>
+OVER = """<p class="lead">Bij elke grote wedstrijd zoeken honderdduizenden Nederlanders hetzelfde: <b>hoe laat begint het, en waar kan ik het zien?</b> hoelaatbegint.nl geeft dat antwoord in één oogopslag. Voor alle sport met Nederlanders, altijd in Nederlandse tijd.</p>
+<div class="about-stats"><div><b>{n_sports}</b><span>sporten en competities</span></div><div><b>{n_events}</b><span>wedstrijden en sessies in de planning</span></div><div><b>15 min</b><span>tussen twee controles</span></div><div><b>07:00</b><span>elke ochtend het programma op Instagram</span></div></div>
 <h2>Wat je hier vindt</h2>
-<ul><li>Aanvangstijden van alle sport met Nederlanders, altijd in Nederlandse tijd.</li>
-<li>Op welke zender of streamingdienst je het ziet.</li>
-<li>Wat er gebeurt als een Nederlander of Nederlands team doorgaat: wanneer de volgende wedstrijd dan is.</li>
-<li>Een agenda-abonnement per sport, zodat elke wedstrijd vanzelf in je agenda staat.</li>
-<li>Elke ochtend om 07:00 het sportprogramma van de dag op <a href="{instagram}" rel="noopener" target="_blank">Instagram</a>.</li></ul>
-<h2>Hoe we tijden controleren</h2>
-<p>Elke 15 minuten haalt ons systeem de speelschema's op bij sportdatabronnen en officiële organisatoren, onder meer PDC, EHF, UEFA, KNVB, FIA, FIH en KNSB. Een nieuwe tijd verschijnt pas als een officiële bron hem bevestigt. Spreken bronnen elkaar tegen, dan blijft de laatst bevestigde tijd staan en kijken we het na. Bij elke pagina zie je wanneer we voor het laatst hebben gecontroleerd, en welke bron we gebruiken.</p>
+<ul><li><b>De aanvangstijd</b> van elke wedstrijd, race of sessie met Nederlanders, met een countdown.</li>
+<li><b>De zender</b>: op welk kanaal of welke streamingdienst je het ziet.</li>
+<li><b>Wat er gebeurt als ze doorgaan</b>: wanneer de volgende ronde dan is.</li>
+<li><b>Een tv-gids van vandaag</b>, per zender op een tijdlijn.</li>
+<li><b>Agenda-abonnementen</b> per sport of club, zodat elke wedstrijd vanzelf in je agenda staat.</li></ul>
+<h2>Zo werkt het</h2>
+<ol class="about-steps"><li><b>Verzamelen.</b> Elke 15 minuten halen we speelschema's op bij sportdatabronnen en officiële organisatoren.</li>
+<li><b>Controleren.</b> Een nieuwe of gewijzigde tijd verschijnt pas als een officiële bron hem bevestigt. Spreken bronnen elkaar tegen, dan blijft de laatst bevestigde tijd staan en kijken we het na.</li>
+<li><b>Publiceren.</b> Elke pagina laat zien wanneer hij voor het laatst is gecontroleerd en welke bron is gebruikt.</li></ol>
 <p>Een voorbeeld: op 25 november 2026 stond Nederland – Tsjechië (EK handbal) bij een tv-aanbieder op donderdag 3 december. De officiële EHF-pagina zei vrijdag 4 december om 20:30. Wij tonen de officiële tijd.</p>
+<h2>Welke sporten</h2>
+<p>{sport_links}</p>
 <h2>Hoe we AI gebruiken</h2>
-<p>We gebruiken AI om officiële bronnen te doorzoeken en om korte voorbeschouwingen te schrijven ("De kijk van Ronald"). Die voorbeschouwingen zijn een mening in Ronalds stijl, gebaseerd op de feiten op de pagina. Tijden, data en zenders komen altijd uit gecontroleerde bronnen, nooit uit de verbeelding van een AI.</p>
+<p>AI helpt ons officiële bronnen te doorzoeken en schrijft de korte voorbeschouwing bij wedstrijden ("De kijk van Ronald"). Tijden, data en zenders komen altijd uit gecontroleerde bronnen, nooit uit een AI.</p>
 <h2>Klopt er iets niet?</h2>
-<p>Mail naar <a href="mailto:{email}">{email}</a>. Correcties verwerken we dezelfde dag, en de pagina toont daarna de nieuwe controletijd.</p>
+<p>Mail naar <a href="mailto:{email}?subject=Correctie">{email}</a>. We passen het zo snel mogelijk aan; de pagina toont daarna de nieuwe controletijd.</p>
 <h2>Advertenties en links</h2>
-<p>Bij sommige zenders gebruiken we een partnerlink. Neem je via zo'n link een abonnement, dan krijgen we mogelijk een kleine vergoeding. Dat heeft geen invloed op welke informatie we tonen. We maken geen reclame voor gokken en tonen geen odds.</p>
-<h2>Colofon</h2>
-<p>hoelaatbegint.nl · {owner} · KvK-nummer: {kvk} · {email}</p>"""
+<p>Bij sommige zenders gebruiken we een partnerlink. Neem je via zo'n link een abonnement, dan krijgen we mogelijk een kleine vergoeding. Dat heeft geen invloed op de informatie die we tonen. We maken geen reclame voor gokken en tonen geen odds.</p>
+<h2>Wie zit erachter</h2>
+<div class="about-who"><img src="{photo}" alt="{owner}" width="64" height="64" loading="lazy" onerror="this.style.display='none'"><p>hoelaatbegint.nl is een project van <b>{owner}</b>, SEO-specialist en sportliefhebber. Volg de site op <a href="{instagram}" rel="noopener" target="_blank">Instagram @hoelaatbegint</a> of mail naar <a href="mailto:{email}">{email}</a>.</p></div>"""
 
 PRIVACY = """<p>hoelaatbegint.nl verzamelt zo weinig mogelijk gegevens.</p>
 <h2>Bezoekstatistieken</h2><p>We meten bezoeken met Cloudflare Web Analytics. Dat gebeurt zonder cookies en zonder persoonsgegevens te bewaren. Daarom vragen we geen toestemming en tonen we geen cookiebanner.</p>
@@ -760,12 +763,15 @@ def main():
     # --- vaste pagina's
     fill = dict(owner=CONFIG["owner"], owner_first=CONFIG["owner"].split()[0], owner_url=CONFIG["owner_url"],
                 photo=CONFIG.get("owner_photo", ""), linkedin=CONFIG.get("owner_linkedin", ""), instagram=CONFIG.get("instagram_url", ""),
-                email=CONFIG["contact_email"], kvk=CONFIG.get("kvk") or "volgt")
-    write("/over/", "Over hoelaatbegint.nl: wie we zijn en hoe we tijden controleren", "hoelaatbegint.nl is opgezet door Ronald Voorbergen. Zo controleren we aanvangstijden, zo gebruiken we AI en zo meld je een fout.",
-          env.from_string(PAGE).render(h1="Over ons", content=OVER.format(**fill)), priority="0.5",
+                email=CONFIG["contact_email"], n_sports=len(SPORTS), n_events=len([e for e in upcoming_all if e.get("start") or e["day"] >= today]),
+                sport_links=" · ".join(f'<a href="/{t_slug}/">{t["name"]}</a>' for t_slug, t in tournaments.items() if t_slug != "clubs"))
+    write("/over/", "Over hoelaatbegint.nl: zo controleren we elke aanvangstijd", "Wat hoelaatbegint.nl is, hoe we aanvangstijden en zenders controleren, hoe we AI gebruiken en hoe je een fout meldt.",
+          env.from_string(PAGE).render(h1="Over hoelaatbegint.nl", content=OVER.format(**fill)), priority="0.5",
           jsonld=[{"@context": "https://schema.org", "@type": "AboutPage", "url": BASE + "/over/", "mainEntity": {
-              "@type": "Person", "name": CONFIG["owner"], "url": CONFIG["owner_url"], "jobTitle": "SEO-specialist",
-              "sameAs": [x for x in (CONFIG.get("owner_linkedin"), CONFIG["owner_url"]) if x]}}])
+              "@type": "Organization", "name": "hoelaatbegint.nl", "url": BASE, "logo": BASE + "/assets/logo.svg",
+              "email": CONFIG["contact_email"], "sameAs": CONFIG.get("same_as", []),
+              "founder": {"@type": "Person", "name": CONFIG["owner"], "url": CONFIG["owner_url"], "jobTitle": "SEO-specialist",
+                          "sameAs": [x for x in (CONFIG.get("owner_linkedin"), CONFIG["owner_url"]) if x]}}}])
     write("/privacy/", "Privacy | hoelaatbegint.nl", "Privacyverklaring van hoelaatbegint.nl: geen cookies, geen tracking.",
           env.from_string(PAGE).render(h1="Privacy", content=PRIVACY.format(**fill)), priority="0.2")
     nf = base_tpl.render(title="Pagina niet gevonden | hoelaatbegint.nl", description="", path="/404", og="default", logo=logo, jsonld=[],
