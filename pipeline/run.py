@@ -135,11 +135,30 @@ def main():
         send_mail("hoelaatbegint.nl: controle nodig", "\n".join(body))
         state["mailed"] = (state["mailed"] + fresh)[-500:]
         STATE.write_text(json.dumps(state))
+    # Publiceren alleen als het nodig is (Cloudflare gratis: 500 publicaties per maand)
+    import hashlib
+    from datetime import timedelta
+    now = datetime.now(timezone.utc)
+    content = b"".join((ROOT / "data" / f).read_bytes() for f in ("events.json", "tournaments.json", "broadcasters.json"))
+    digest = hashlib.sha256(content).hexdigest()
+    state = json.loads(STATE.read_text()) if STATE.exists() else {"mailed": []}
+    soon = now + timedelta(hours=48)
+    urgent = any((e.get("start") or e.get("date") or "9999") <= soon.strftime("%Y-%m-%dT%H:%M:%SZ")
+                 for e in events if e["id"] in {c[1] for c in changes})
+    slot = now.minute < 15 and now.hour % 2 == 0          # gewone wijzigingen: hooguit elke 2 uur
+    daily = now.hour == 4 and now.minute < 15              # dagelijkse verversing (vandaag-pagina)
+    forced = bool(os.environ.get("FORCE_DEPLOY"))
+    deploy = forced or daily or (digest != state.get("deployed_hash") and (urgent or slot))
+    if deploy:
+        state["deployed_hash"] = digest
+    STATE.write_text(json.dumps(state))
+    print(f"publiceren: {'ja' if deploy else 'nee'} (urgent={urgent}, slot={slot}, dagelijks={daily})")
     # Voor de IndexNow-stap: welke pagina's zijn gewijzigd
     (ROOT / "data" / "changed.json").write_text(json.dumps([c[1] for c in changes]))
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
             f.write(f"changed={'true' if changes else 'false'}\n")
+            f.write(f"deploy={'true' if deploy else 'false'}\n")
 
 
 if __name__ == "__main__":

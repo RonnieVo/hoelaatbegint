@@ -1,1 +1,0 @@
-{"mailed": ["e:ai: JSONDecodeError(\"Expecting ',' delimiter: line 17 column 500 (char 7786)\")", "e:api-football: RuntimeError(\"API-Football weigert: {'plan': 'Free plans do not have access to the Next parameter.'}\")", "e:api-football: RuntimeError(\"API-Football weigert: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}\")"]}

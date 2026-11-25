@@ -33,6 +33,7 @@ jobs:
       AI_CAPTIONS: ${{ vars.AI_CAPTIONS }}
       AI_WRITE: ${{ vars.AI_WRITE }}
       AI_VERIFY_FORCE: ${{ github.event.inputs.ai_force == 'true' && '1' || '' }}
+      FORCE_DEPLOY: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
       AF_FORCE: ${{ (github.event.inputs.ai_force == 'true' || github.event.inputs.af_force == 'true') && '1' || '' }}
       INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
       SMTP_HOST: ${{ secrets.SMTP_HOST }}
@@ -72,7 +73,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Data bijgewerkt $(date -u +%Y-%m-%dT%H:%MZ)" && git push || true
 
       - name: Publiceren op Cloudflare Pages
-        if: env.HAS_CLOUDFLARE == 'true'
+        if: env.HAS_CLOUDFLARE == 'true' && steps.data.outputs.deploy == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -81,7 +82,7 @@ jobs:
           command: pages deploy dist --project-name=hoelaatbegint --branch=main
 
       - name: Zoekmachines seinen (IndexNow)
-        if: steps.data.outputs.changed == 'true'
+        if: steps.data.outputs.changed == 'true' && steps.data.outputs.deploy == 'true'
         run: python pipeline/indexnow.py
 
       - name: Mail bij een mislukte run
