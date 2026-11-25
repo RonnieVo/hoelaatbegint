@@ -41,10 +41,13 @@ def fetch(existing):
     key = os.environ.get("FOOTBALL_DATA_KEY")
     if not key:
         raise Skip("geen FOOTBALL_DATA_KEY")
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
     out, seen = [], set()
     for team_id, club in TEAMS.items():
         r = requests.get(f"https://api.football-data.org/v4/teams/{team_id}/matches",
-                         params={"status": "SCHEDULED,TIMED,POSTPONED", "limit": 10},
+                         params={"status": "SCHEDULED,TIMED,POSTPONED", "dateFrom": now.strftime("%Y-%m-%d"),
+                                 "dateTo": (now + timedelta(days=60)).strftime("%Y-%m-%d")},
                          headers={"X-Auth-Token": key}, timeout=20)
         if r.status_code == 429:
             break  # limiet bereikt; volgende run verder
@@ -57,9 +60,13 @@ def fetch(existing):
             comp, tv = COMP.get(m["competition"].get("code"), (m["competition"].get("name"), None))
             day = m["utcDate"][:10]
             clubs = [c for c in ("ajax", "feyenoord", "psv") if c in slug(home + " " + away)]
-            out.append(dict(id=f"fd-{m['id']}", sport="clubs", tournament=clubs[0] if clubs else club, clubs=clubs or [club],
-                            nl=True, title=f"{home} – {away}", home=home, away=away,
-                            start=m["utcDate"].replace("+00:00", "Z"), round=comp, broadcaster=tv,
-                            status=STATUS.get(m["status"], "gepland"), page=f"{slug(home)}-{slug(away)}-{day}",
-                            source="https://www.football-data.org"))
+            ev = dict(id=f"fd-{m['id']}", sport="clubs", tournament=clubs[0] if clubs else club, clubs=clubs or [club],
+                      nl=True, title=f"{home} – {away}", home=home, away=away, round=comp, broadcaster=tv,
+                      status=STATUS.get(m["status"], "gepland"), page=f"{slug(home)}-{slug(away)}-{day}",
+                      source="https://www.football-data.org")
+            if m["status"] == "SCHEDULED":  # aanvangstijd nog niet vastgesteld: alleen de datum
+                ev.update(date=day, time_known=False, time_note="Aanvangstijd volgt")
+            else:
+                ev["start"] = m["utcDate"].replace("+00:00", "Z")
+            out.append(ev)
     return out

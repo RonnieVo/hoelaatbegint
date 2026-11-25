@@ -49,7 +49,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          preCommands: npx wrangler pages project create hoelaatbegint --production-branch=main || true
           command: pages deploy dist --project-name=hoelaatbegint --branch=main
 
       - name: Plaatsen op Instagram
