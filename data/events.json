@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T17:23:09Z",
+ "generated_at": "2026-11-25T18:18:43Z",
  "events": [
   {
    "sport": "f1",
@@ -14,7 +14,7 @@
    "round": "Race 1, kwalificatie",
    "start": "2026-03-07T05:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -32,7 +32,7 @@
    "round": "Race 1 van 23",
    "start": "2026-03-08T04:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -50,7 +50,7 @@
    "round": "Race 2, sprintrace",
    "start": "2026-03-14T03:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -68,7 +68,7 @@
    "round": "Race 2, kwalificatie",
    "start": "2026-03-14T07:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -86,7 +86,7 @@
    "round": "Race 2 van 23",
    "start": "2026-03-15T07:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -104,7 +104,7 @@
    "round": "Race 3, kwalificatie",
    "start": "2026-03-28T06:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -122,7 +122,7 @@
    "round": "Race 3 van 23",
    "start": "2026-03-29T05:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -140,7 +140,7 @@
    "round": "Race 4, sprintrace",
    "start": "2026-05-02T16:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -158,7 +158,7 @@
    "round": "Race 4, kwalificatie",
    "start": "2026-05-02T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -176,7 +176,7 @@
    "round": "Race 4 van 23",
    "start": "2026-05-03T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -194,7 +194,7 @@
    "round": "Race 5, sprintrace",
    "start": "2026-05-23T16:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -212,7 +212,7 @@
    "round": "Race 5, kwalificatie",
    "start": "2026-05-23T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -230,7 +230,7 @@
    "round": "Race 5 van 23",
    "start": "2026-05-24T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -248,7 +248,7 @@
    "round": "Race 6, kwalificatie",
    "start": "2026-06-06T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -266,7 +266,7 @@
    "round": "Race 6 van 23",
    "start": "2026-06-07T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -284,7 +284,7 @@
    "round": "Race 7, kwalificatie",
    "start": "2026-06-13T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -302,7 +302,7 @@
    "round": "Race 7 van 23",
    "start": "2026-06-14T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -320,7 +320,7 @@
    "round": "Race 8, kwalificatie",
    "start": "2026-06-27T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -338,7 +338,7 @@
    "round": "Race 8 van 23",
    "start": "2026-06-28T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -356,7 +356,7 @@
    "round": "Race 9, sprintrace",
    "start": "2026-07-04T11:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -374,7 +374,7 @@
    "round": "Race 9, kwalificatie",
    "start": "2026-07-04T15:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -392,7 +392,7 @@
    "round": "Race 9 van 23",
    "start": "2026-07-05T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -410,7 +410,7 @@
    "round": "Race 10, kwalificatie",
    "start": "2026-07-18T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -428,7 +428,7 @@
    "round": "Race 10 van 23",
    "start": "2026-07-19T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -446,7 +446,7 @@
    "round": "Race 11, kwalificatie",
    "start": "2026-07-25T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -464,7 +464,7 @@
    "round": "Race 11 van 23",
    "start": "2026-07-26T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -482,7 +482,7 @@
    "round": "Race 12, sprintrace",
    "start": "2026-08-22T10:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -500,7 +500,7 @@
    "round": "Race 12, kwalificatie",
    "start": "2026-08-22T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -518,7 +518,7 @@
    "round": "Race 12 van 23",
    "start": "2026-08-23T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -536,7 +536,7 @@
    "round": "Race 13, kwalificatie",
    "start": "2026-09-05T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -554,7 +554,7 @@
    "round": "Race 13 van 23",
    "start": "2026-09-06T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -572,7 +572,7 @@
    "round": "Race 14, kwalificatie",
    "start": "2026-09-12T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -590,7 +590,7 @@
    "round": "Race 14 van 23",
    "start": "2026-09-13T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -608,7 +608,7 @@
    "round": "Race 15, kwalificatie",
    "start": "2026-09-25T12:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -626,7 +626,7 @@
    "round": "Race 15 van 23",
    "start": "2026-09-26T11:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -644,7 +644,7 @@
    "round": "Race 16, kwalificatie",
    "start": "2026-10-03T08:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -662,7 +662,7 @@
    "round": "Race 16 van 23",
    "start": "2026-10-04T07:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -680,7 +680,7 @@
    "round": "Race 17, sprintrace",
    "start": "2026-10-10T09:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -698,7 +698,7 @@
    "round": "Race 17, kwalificatie",
    "start": "2026-10-10T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -716,7 +716,7 @@
    "round": "Race 17 van 23",
    "start": "2026-10-11T12:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -734,7 +734,7 @@
    "round": "Race 18, kwalificatie",
    "start": "2026-10-24T21:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -752,7 +752,7 @@
    "round": "Race 18 van 23",
    "start": "2026-10-25T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -770,7 +770,7 @@
    "round": "Race 19, kwalificatie",
    "start": "2026-10-31T21:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -788,7 +788,7 @@
    "round": "Race 19 van 23",
    "start": "2026-11-01T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -806,7 +806,7 @@
    "round": "Race 20, kwalificatie",
    "start": "2026-11-07T18:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -824,7 +824,7 @@
    "round": "Race 20 van 23",
    "start": "2026-11-08T17:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -842,7 +842,7 @@
    "round": "Race 21, kwalificatie",
    "start": "2026-11-21T04:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -860,7 +860,7 @@
    "round": "Race 21 van 23",
    "start": "2026-11-22T04:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -942,7 +942,7 @@
    "round": "Race 22, kwalificatie",
    "start": "2026-11-28T18:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -1025,7 +1025,7 @@
    "round": "Race 22 van 23",
    "start": "2026-11-29T16:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -1172,7 +1172,7 @@
    "round": "Race 23, kwalificatie",
    "start": "2026-12-05T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -1260,7 +1260,7 @@
    "page": "gp-abu-dhabi-2026",
    "source": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:23:09Z",
+   "checked_at": "2026-11-25T18:18:43Z",
    "nl": true,
    "confirmed_by": [
     "jolpica"
@@ -2235,6 +2235,138 @@
    "nl": true
   },
   {
+   "id": "fd-558721",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "Feyenoord – SC Heerenveen",
+   "home": "Feyenoord",
+   "away": "SC Heerenveen",
+   "start": "2027-03-06T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "feyenoord-sc-heerenveen-2027-03-06",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558723",
+   "sport": "clubs",
+   "tournament": "psv",
+   "clubs": [
+    "psv"
+   ],
+   "nl": true,
+   "title": "PSV – FC Utrecht",
+   "home": "PSV",
+   "away": "FC Utrecht",
+   "start": "2027-03-06T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "psv-fc-utrecht-2027-03-06",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558724",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "nl": true,
+   "title": "ADO Den Haag – Ajax",
+   "home": "ADO Den Haag",
+   "away": "Ajax",
+   "start": "2027-03-06T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "ado-den-haag-ajax-2027-03-06",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558711",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "nl": true,
+   "title": "Ajax – PEC Zwolle",
+   "home": "Ajax",
+   "away": "PEC Zwolle",
+   "start": "2027-03-13T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "ajax-pec-zwolle-2027-03-13",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558714",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "Go Ahead Eagles – Feyenoord",
+   "home": "Go Ahead Eagles",
+   "away": "Feyenoord",
+   "start": "2027-03-13T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "go-ahead-eagles-feyenoord-2027-03-13",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558715",
+   "sport": "clubs",
+   "tournament": "psv",
+   "clubs": [
+    "psv"
+   ],
+   "nl": true,
+   "title": "Telstar – PSV",
+   "home": "Telstar",
+   "away": "PSV",
+   "start": "2027-03-13T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "telstar-psv-2027-03-13",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
    "id": "f1-2027-01",
    "sport": "f1",
    "tournament": "formule-1",
@@ -2250,6 +2382,72 @@
    "status": "gepland",
    "checked_at": "2026-11-25T15:30:00Z",
    "nl": true
+  },
+  {
+   "id": "fd-558703",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "Feyenoord – Cambuur",
+   "home": "Feyenoord",
+   "away": "Cambuur",
+   "start": "2027-03-20T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "feyenoord-cambuur-2027-03-20",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558707",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "nl": true,
+   "title": "NEC – Ajax",
+   "home": "NEC",
+   "away": "Ajax",
+   "start": "2027-03-20T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "nec-ajax-2027-03-20",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558708",
+   "sport": "clubs",
+   "tournament": "psv",
+   "clubs": [
+    "psv"
+   ],
+   "nl": true,
+   "title": "FC Groningen – PSV",
+   "home": "FC Groningen",
+   "away": "PSV",
+   "start": "2027-03-20T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "fc-groningen-psv-2027-03-20",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
   },
   {
    "id": "f1-2027-02",
@@ -2294,6 +2492,72 @@
    ]
   },
   {
+   "id": "fd-558693",
+   "sport": "clubs",
+   "tournament": "psv",
+   "clubs": [
+    "psv"
+   ],
+   "nl": true,
+   "title": "PSV – AZ",
+   "home": "PSV",
+   "away": "AZ",
+   "start": "2027-04-03T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "psv-az-2027-04-03",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558694",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "Fortuna Sittard – Feyenoord",
+   "home": "Fortuna Sittard",
+   "away": "Feyenoord",
+   "start": "2027-04-03T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "fortuna-sittard-feyenoord-2027-04-03",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558696",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "nl": true,
+   "title": "Ajax – FC Twente",
+   "home": "Ajax",
+   "away": "FC Twente",
+   "start": "2027-04-03T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "ajax-fc-twente-2027-04-03",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
    "id": "f1-2027-03",
    "sport": "f1",
    "tournament": "formule-1",
@@ -2309,6 +2573,72 @@
    "status": "gepland",
    "checked_at": "2026-11-25T15:30:00Z",
    "nl": true
+  },
+  {
+   "id": "fd-558684",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "ADO Den Haag – Feyenoord",
+   "home": "ADO Den Haag",
+   "away": "Feyenoord",
+   "start": "2027-04-10T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "ado-den-haag-feyenoord-2027-04-10",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558689",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "nl": true,
+   "title": "FC Utrecht – Ajax",
+   "home": "FC Utrecht",
+   "away": "Ajax",
+   "start": "2027-04-10T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "fc-utrecht-ajax-2027-04-10",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558691",
+   "sport": "clubs",
+   "tournament": "psv",
+   "clubs": [
+    "psv"
+   ],
+   "nl": true,
+   "title": "PEC Zwolle – PSV",
+   "home": "PEC Zwolle",
+   "away": "PSV",
+   "start": "2027-04-10T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "pec-zwolle-psv-2027-04-10",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
   },
   {
    "id": "f1-2027-04",
@@ -2345,6 +2675,117 @@
    "nl": true
   },
   {
+   "id": "fd-558682",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "Feyenoord – Sparta Rotterdam",
+   "home": "Feyenoord",
+   "away": "Sparta Rotterdam",
+   "start": "2027-04-24T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "feyenoord-sparta-rotterdam-2027-04-24",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558683",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax",
+    "psv"
+   ],
+   "nl": true,
+   "title": "PSV – Ajax",
+   "home": "PSV",
+   "away": "Ajax",
+   "start": "2027-04-24T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "psv-ajax-2027-04-24",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558666",
+   "sport": "clubs",
+   "tournament": "psv",
+   "clubs": [
+    "psv"
+   ],
+   "nl": true,
+   "title": "Go Ahead Eagles – PSV",
+   "home": "Go Ahead Eagles",
+   "away": "PSV",
+   "start": "2027-05-01T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "go-ahead-eagles-psv-2027-05-01",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558671",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "nl": true,
+   "title": "Ajax – Fortuna Sittard",
+   "home": "Ajax",
+   "away": "Fortuna Sittard",
+   "start": "2027-05-01T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "ajax-fortuna-sittard-2027-05-01",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558674",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "Feyenoord – Willem II",
+   "home": "Feyenoord",
+   "away": "Willem II",
+   "start": "2027-05-01T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "feyenoord-willem-ii-2027-05-01",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
    "id": "f1-2027-06",
    "sport": "f1",
    "tournament": "formule-1",
@@ -2362,6 +2803,138 @@
    "nl": true
   },
   {
+   "id": "fd-558657",
+   "sport": "clubs",
+   "tournament": "psv",
+   "clubs": [
+    "psv"
+   ],
+   "nl": true,
+   "title": "PSV – Excelsior",
+   "home": "PSV",
+   "away": "Excelsior",
+   "start": "2027-05-08T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "psv-excelsior-2027-05-08",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558658",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "FC Utrecht – Feyenoord",
+   "home": "FC Utrecht",
+   "away": "Feyenoord",
+   "start": "2027-05-08T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "fc-utrecht-feyenoord-2027-05-08",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558663",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "nl": true,
+   "title": "AZ – Ajax",
+   "home": "AZ",
+   "away": "Ajax",
+   "start": "2027-05-08T00:00:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "az-ajax-2027-05-08",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558650",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "FC Twente – Feyenoord",
+   "home": "FC Twente",
+   "away": "Feyenoord",
+   "start": "2027-05-16T12:30:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "fc-twente-feyenoord-2027-05-16",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558651",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "nl": true,
+   "title": "Ajax – Sparta Rotterdam",
+   "home": "Ajax",
+   "away": "Sparta Rotterdam",
+   "start": "2027-05-16T12:30:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "ajax-sparta-rotterdam-2027-05-16",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558653",
+   "sport": "clubs",
+   "tournament": "psv",
+   "clubs": [
+    "psv"
+   ],
+   "nl": true,
+   "title": "PSV – NEC",
+   "home": "PSV",
+   "away": "NEC",
+   "start": "2027-05-16T12:30:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "psv-nec-2027-05-16",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
    "id": "f1-2027-07",
    "sport": "f1",
    "tournament": "formule-1",
@@ -2377,6 +2950,72 @@
    "status": "gepland",
    "checked_at": "2026-11-25T15:30:00Z",
    "nl": true
+  },
+  {
+   "id": "fd-558640",
+   "sport": "clubs",
+   "tournament": "psv",
+   "clubs": [
+    "psv"
+   ],
+   "nl": true,
+   "title": "SC Heerenveen – PSV",
+   "home": "SC Heerenveen",
+   "away": "PSV",
+   "start": "2027-05-23T12:30:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "sc-heerenveen-psv-2027-05-23",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558642",
+   "sport": "clubs",
+   "tournament": "ajax",
+   "clubs": [
+    "ajax"
+   ],
+   "nl": true,
+   "title": "Cambuur – Ajax",
+   "home": "Cambuur",
+   "away": "Ajax",
+   "start": "2027-05-23T12:30:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "cambuur-ajax-2027-05-23",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
+  },
+  {
+   "id": "fd-558644",
+   "sport": "clubs",
+   "tournament": "feyenoord",
+   "clubs": [
+    "feyenoord"
+   ],
+   "nl": true,
+   "title": "Feyenoord – FC Groningen",
+   "home": "Feyenoord",
+   "away": "FC Groningen",
+   "start": "2027-05-23T12:30:00Z",
+   "round": "Eredivisie",
+   "broadcaster": "espn",
+   "status": "gepland",
+   "page": "feyenoord-fc-groningen-2027-05-23",
+   "source": "https://www.football-data.org",
+   "checked_at": "2026-11-25T18:18:43Z",
+   "confirmed_by": [
+    "football-data"
+   ]
   },
   {
    "id": "f1-2027-08",
