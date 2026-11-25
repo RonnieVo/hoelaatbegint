@@ -40,7 +40,7 @@ posts.append(("03-nederlanders-wk-darts", page("WK darts 2027 · voorlopig", "17
 hb = [e for e in evs if e["tournament"] == "ek-handbal-vrouwen" and e.get("home") == "Nederland"]
 posts.append(("04-ek-handbal", page("EK handbal vrouwen", "Zo laat spelen<br>de handbalsters", rows(hb, True), foot_left="Live op Ziggo Sport"),
               "De handbalsters spelen het EK in Brno:\n\n" + "\n".join(f"{e['day_label']} {e['time']} · {e['title']} ({e['tv_detail']})" for e in hb) +
-              "\n\nBij de beste twee: hoofdronde in Katowice vanaf 10 december.\n\n#handbal #ekhandbal #oranje #hoelaatbegint"))
+              "\n\nBij de beste twee: hoofdronde in Katowice, half december.\n\n#handbal #ekhandbal #oranje #hoelaatbegint"))
 
 OUT.mkdir(exist_ok=True)
 md = ["# Startposts hoelaatbegint.nl", ""]

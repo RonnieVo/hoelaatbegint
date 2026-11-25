@@ -54,6 +54,6 @@ vrijdag 4 december 20:30 · Nederland – Tsjechië (Ziggo Sport 1 en Ziggo Spor
 zondag 6 december 20:30 · Nederland – Oostenrijk (Ziggo Sport 4)
 dinsdag 8 december 20:30 · Nederland – Kroatië (Ziggo Sport (kanaal volgt))
 
-Bij de beste twee: hoofdronde in Katowice vanaf 10 december.
+Bij de beste twee: hoofdronde in Katowice, half december.
 
 #handbal #ekhandbal #oranje #hoelaatbegint
