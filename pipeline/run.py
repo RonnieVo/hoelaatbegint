@@ -55,6 +55,8 @@ def merge(existing, candidates):
             conflicts.append({"id": eid, "values": [(s, ev.get("start") or ev.get("date")) for s, ev in items]})
             continue
         new = dict(items[0][1])
+        new.setdefault("status", "gepland")
+        new.setdefault("nl", True)
         new["checked_at"] = now_iso()
         new["confirmed_by"] = sorted(srcs)
         old = by_id.get(eid)

@@ -111,7 +111,7 @@ def jsonld_event(e):
         "@context": "https://schema.org", "@type": "SportsEvent", "name": e["title"],
         "startDate": e["local"].isoformat(), "endDate": e["end_dt"].astimezone(NL).isoformat(),
         "eventStatus": {"gepland": "https://schema.org/EventScheduled", "verplaatst": "https://schema.org/EventRescheduled",
-                        "afgelast": "https://schema.org/EventCancelled"}.get(e["status"], "https://schema.org/EventScheduled"),
+                        "afgelast": "https://schema.org/EventCancelled"}.get(e.get("status", "gepland"), "https://schema.org/EventScheduled"),
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "sport": e["sport_name"],
         "location": {"@type": "Place", "name": e.get("venue") or e.get("city") or "", "address": e.get("city") or ""},
