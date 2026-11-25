@@ -257,6 +257,12 @@
     "Aanvangstijden (EHF)",
     "https://ehfec.eurohandball.com/news/en/ehf-confirms-throw-off-times-for-women-s-ehf-euro-2026/"
    ]
+  ],
+  "related": [
+   [
+    "WK handbal 2027 (mannen)",
+    "/wk-handbal-2027/"
+   ]
   ]
  },
  "nederlands-elftal": {
@@ -337,6 +343,16 @@
     "Loting EK-kwalificatie (Bet-Experts)",
     "https://www.bet-experts.nl/nieuws/loting-ek-2028-kwalificatie-potindeling-oranje"
    ]
+  ],
+  "related": [
+   [
+    "EK 2028",
+    "/ek-2028/"
+   ],
+   [
+    "Oranje Leeuwinnen",
+    "/oranje-leeuwinnen/"
+   ]
   ]
  },
  "oranje-leeuwinnen": {
@@ -400,6 +416,12 @@
    [
     "Oranjevrouwen naar play-offs (NOS)",
     "https://nos.nl/l/2617874"
+   ]
+  ],
+  "related": [
+   [
+    "Programma Oranje (mannen)",
+    "/nederlands-elftal/"
    ]
   ]
  },
@@ -855,6 +877,20 @@
     "Eredivisie 2026/27 (Cybernews)",
     "https://cybernews.com/stream-online/how-to-watch-dutch-eredivisie-2026-27"
    ]
+  ],
+  "related": [
+   [
+    "Ajax",
+    "/ajax/"
+   ],
+   [
+    "Feyenoord",
+    "/feyenoord/"
+   ],
+   [
+    "PSV",
+    "/psv/"
+   ]
   ]
  },
  "ek-2028": {
@@ -919,6 +955,12 @@
     "Wanneer speelt Oranje weer? (Voetbalnieuws)",
     "https://www.voetbalnieuws.nl/nieuws/2159736/wanneer-speelt-oranje-weer-programma-nederland-in-2027.html"
    ]
+  ],
+  "related": [
+   [
+    "Programma Oranje",
+    "/nederlands-elftal/"
+   ]
   ]
  },
  "wk-handbal-2027": {
@@ -978,6 +1020,12 @@
    [
     "WK handbal 2027 (Eventim)",
     "https://www.eventim.de/en/artist/ihf-handball-weltmeisterschaft-der-maenner/"
+   ]
+  ],
+  "related": [
+   [
+    "EK handbal vrouwen",
+    "/ek-handbal-vrouwen/"
    ]
   ]
  }

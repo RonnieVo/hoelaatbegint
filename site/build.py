@@ -54,9 +54,7 @@ NAV = [
     ("voetbal", "Oranje", [("Programma Oranje", "/nederlands-elftal/"), ("EK 2028", "/ek-2028/"),
                            ("Oranje Leeuwinnen", "/oranje-leeuwinnen/")]),
 ]
-MORE_NAV = [("veldrijden", "Veldrijden", "/veldrijden/"), ("veldrijden", "Veldrijden vandaag", "/veldrijden/vandaag/"),
-            ("handbal", "EK handbal vrouwen", "/ek-handbal-vrouwen/"), ("handbal", "WK handbal 2027", "/wk-handbal-2027/"),
-            ("leeuwinnen", "Leeuwinnen", "/oranje-leeuwinnen/"), ("hockey", "Hockey", "/hockey/")]
+MORE_NAV = [("veldrijden", "Veldrijden", "/veldrijden/"), ("handbal", "Handbal", "/ek-handbal-vrouwen/"), ("hockey", "Hockey", "/hockey/")]
 ICONS = {
     "darts": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#FF6A13" stroke="none"/></svg>',
     "voetbal": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7l4 3-1.5 4.5h-5L8 10z" fill="#FF6A13" stroke="none"/></svg>',
@@ -226,11 +224,18 @@ BASE_TPL = r"""<!doctype html>
 <a class="today" href="/vandaag/">Vandaag</a>
 {% for key, label, subs in nav %}{% set here = active_path in subs|map(attribute=1)|list %}<details class="more dd"><summary{% if here %} aria-current="page"{% endif %}>{{ label }}</summary>
 <div class="more-panel">{% for n, u in subs %}<a href="{{ u }}"{% if u == active_path %} aria-current="page"{% endif %}>{% if loop.first %}<span class="mi">{{ icons[key]|safe }}</span>{% endif %}{{ n }}</a>{% endfor %}</div></details>
-{% endfor %}<details class="more dd"><summary{% if active_path in more_nav|map(attribute=2)|list %} aria-current="page"{% endif %}>Meer</summary>
+{% endfor %}<details class="more dd plain"><summary{% if active_path in more_nav|map(attribute=2)|list %} aria-current="page"{% endif %}>Meer</summary>
 <div class="more-panel">{% for key, n, u in more_nav %}<a href="{{ u }}"{% if u == active_path %} aria-current="page"{% endif %}><span class="mi">{{ icons[key]|safe }}</span>{{ n }}</a>{% endfor %}</div></details>
 </nav>{% if cfg.instagram_url %}<a class="ig" href="{{ cfg.instagram_url }}" rel="noopener" target="_blank" aria-label="Volg ons op Instagram">{{ ig|safe }}</a>{% endif %}</div></header>
 <main id="main">
 {{ body|safe }}
+{% if author %}<section class="author-sec"><div class="wrap"><aside class="author" aria-label="Over de auteur">
+<img src="{{ cfg.owner_photo }}" alt="{{ cfg.owner }}" width="88" height="88" loading="lazy">
+<div><div class="author-k">Over de auteur</div>
+<div class="author-n"><a href="/over/">{{ cfg.owner }}</a></div>
+<p>{{ cfg.owner }} is SEO-specialist en de maker van hoelaatbegint.nl. Hij bepaalt welke bronnen we gebruiken en hoe tijden worden gecontroleerd. Aanvangstijden worden automatisch opgehaald bij de organisatoren en zenders, elke 15 minuten bijgewerkt en bij twee bronnen vergeleken.</p>
+<p class="author-l"><a href="/over/">Zo werken we</a>{% if cfg.owner_linkedin %} · <a href="{{ cfg.owner_linkedin }}" rel="noopener" target="_blank">LinkedIn</a>{% endif %} · <a href="{{ cfg.owner_url }}" rel="noopener" target="_blank">ronaldvoorbergen.nl</a> · <a href="mailto:{{ cfg.contact_email }}?subject=Correctie">Fout gezien?</a></p></div>
+</aside></div></section>{% endif %}
 </main>
 <footer class="site-foot"><div class="wrap">
 <div class="cols">
@@ -292,7 +297,7 @@ HOME = MACROS + r"""
 <section class="hero"><div class="wrap">
 <h1>Hoe laat begint het?</h1>
 <p class="lede">Alle sport met Nederlanders, in Nederlandse tijd. Met zender, countdown en wat er gebeurt als ze doorgaan. Automatisch bijgewerkt, elke 15 minuten.</p>
-<span class="checked">Laatst gecontroleerd: {{ built }}</span>
+<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 <div class="wrap">{{ answer(next, "Eerstvolgende met Nederlanders") }}{{ opinion(next) }}</div>
 <section><div class="wrap"><h2>Sporten</h2>
@@ -310,7 +315,7 @@ VANDAAG = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › Vandaag</div>
 <h1>Sport op tv vandaag</h1>
 <p class="lede">Alle sport met Nederlanders van <strong>{{ today_label }}</strong>, met aanvangstijd en zender.</p>
-<span class="checked">Laatst gecontroleerd: {{ built }}</span>
+<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 <section><div class="wrap">
 {% if today %}{{ schedule(today, True) }}{% else %}<div class="card"><h3>Vandaag geen Nederlandse topsport</h3><p class="muted">Hieronder zie je wat er de komende dagen aankomt.</p></div>{% endif %}
@@ -324,7 +329,7 @@ TOURNAMENT = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › {{ t.name }}</div>
 <h1>{{ t.h1 }}</h1>
 <p class="lede">{% if t.sport == "clubs" and next and t.slug != "clubs" %}{{ t.name }} speelt <strong>{{ next.day_label }} om {{ next.time }}</strong>: {{ next.title }}{% if next.tv %}, live op <strong>{{ next.tv_detail }}</strong>{% endif %}. Hieronder het hele programma, in Nederlandse tijd.{% else %}{{ t.answer|safe }}{% endif %}</p>
-<span class="checked">Laatst gecontroleerd: {{ built }}</span>
+<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 {% if next %}<div class="wrap">{{ answer(next, "Eerstvolgende") }}{{ opinion(next) }}</div>{% endif %}
 <section><div class="wrap two">
@@ -343,6 +348,7 @@ TOURNAMENT = MACROS + r"""
 {% if t.players %}<section id="nederlanders"><div class="wrap"><h2>{{ t.players_title }}</h2>
 <div class="players">{% for p, how in t.players %}<a href="/darts/{{ slug(p) }}/"><b>{{ p }}</b><span>{{ how }}</span></a>{% endfor %}</div>
 <p class="note">{{ t.players_note }}</p></div></section>{% endif %}
+{% if related %}<section><div class="wrap"><h2>Ook handig</h2><p>{% for n, u in related %}<a class="btn" href="{{ u }}" style="margin:0 8px 8px 0">{{ n }}</a>{% endfor %}</p></div></section>{% endif %}
 {{ faqblock(t.faq) }}
 <section><div class="wrap sources"><h2>Bronnen</h2><ul>{% for n, u in t.sources %}<li><a href="{{ u }}" rel="nofollow noopener" target="_blank">{{ n }}</a></li>{% endfor %}</ul></div></section>
 """
@@ -352,7 +358,7 @@ PLAYER = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › <a href="/wk-darts/">WK darts</a> › {{ p }}</div>
 <h1>Hoe laat speelt {{ p }}?</h1>
 <p class="lede">{% if mine %}{{ p }} speelt zijn volgende WK-wedstrijd op <strong>{{ mine[0].day_label }}{% if mine[0].time %} om {{ mine[0].time }}{% endif %}</strong>.{% else %}{{ p }} staat op de deelnemerslijst van het <strong>WK darts 2027</strong> (11 december – 3 januari, Alexandra Palace). Tegen wie en hoe laat hij zijn eerste wedstrijd speelt, wordt bepaald bij de <strong>loting op maandag 30 november</strong>; daarna staat het hier automatisch.{% endif %}</p>
-<span class="checked">Laatst gecontroleerd: {{ built }}</span>
+<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 {% if mine %}<div class="wrap">{% if mine[0].start %}{{ answer(mine[0], "Volgende wedstrijd") }}{% endif %}</div>{% endif %}
 <section><div class="wrap two">
@@ -373,7 +379,7 @@ MATCH = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › <a href="/{{ t.slug }}/">{{ t.name }}</a> › {{ e.title }}</div>
 <h1>{{ e.h1 or "Hoe laat begint " ~ e.title ~ "?" }}</h1>
 <p class="lede">{{ e.title }} begint <strong>{{ e.day_label }} om {{ e.time }}</strong> Nederlandse tijd{% if e.city %} in {{ e.city }}{% endif %}.{% if e.tv %} Je kijkt live op <strong>{{ e.tv_detail }}</strong>.{% endif %}</p>
-<span class="checked">Laatst gecontroleerd: {{ built }}</span>
+<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 <div class="wrap">{{ answer(e, e.round or "Wedstrijd") }}{{ opinion(e) }}</div>
 <section><div class="wrap two">
@@ -397,7 +403,7 @@ VIEW = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › <a href="{{ parent }}">{{ v.name }}</a> › {{ v.h1 }}</div>
 <h1>{{ v.h1 }}</h1>
 <p class="lede">{{ lede|safe }}</p>
-<span class="checked">Laatst gecontroleerd: {{ built }}</span>
+<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 {% if nx %}<div class="wrap">{{ answer(nx, label) }}{{ opinion(nx) }}</div>{% endif %}
 <section><div class="wrap">
@@ -505,13 +511,23 @@ def main():
     def write(path, title, description, body, og="default", active=None, jsonld=(), priority="0.7"):
         title = overrides.get(path, {}).get("title", title)
         description = overrides.get(path, {}).get("description", description)
-        html = base_tpl.render(title=title, description=description, path=path, active_path=path, body=body, og=og, active=active,
-                               jsonld=[json.dumps(x, ensure_ascii=False) for x in jsonld if x], logo=logo,
+        html = base_tpl.render(title=title, description=description, path=path, active_path=path, author=path not in ("/over/", "/privacy/", "/agenda/"), body=body, og=og, active=active,
+                               jsonld=[json.dumps(x, ensure_ascii=False) for x in list(jsonld) + [webpage(path, title)] if x], logo=logo,
                                version=version, year=built.year)
         out = DIST / path.strip("/") / "index.html" if path != "/" else DIST / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(html, encoding="utf-8")
         pages.append((path, priority))
+
+    def webpage(path, title):
+        if path in ("/over/", "/privacy/", "/agenda/"):
+            return None
+        return {"@context": "https://schema.org", "@type": "WebPage", "url": BASE + path, "name": title.split(" | ")[0],
+                "inLanguage": "nl-NL", "dateModified": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "author": {"@type": "Person", "name": CONFIG["owner"], "url": BASE + "/over/", "jobTitle": "SEO-specialist",
+                           "image": BASE + CONFIG.get("owner_photo", ""),
+                           "sameAs": [x for x in (CONFIG.get("owner_linkedin"), CONFIG["owner_url"]) if x]},
+                "publisher": {"@type": "Organization", "name": "hoelaatbegint.nl", "url": BASE}}
 
     org = {"@context": "https://schema.org", "@type": "Organization", "name": "hoelaatbegint.nl", "url": BASE,
            "logo": BASE + "/assets/logo.svg", "sameAs": CONFIG.get("same_as", [])}
@@ -524,6 +540,7 @@ def main():
         return {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
 
+    views = json.loads((ROOT / "data" / "pages.json").read_text(encoding="utf-8"))["views"]
     timed_nl = [e for e in upcoming if e.get("start") and e["nl"] and e["dt"] > now]
 
     # --- home
@@ -555,7 +572,9 @@ def main():
             tev = [e for e in events if e["tournament"] == slug or slug in e.get("clubs", [])]
         tup = [e for e in tev if e["upcoming"]] or tev
         nx = next((e for e in tup if e.get("start") and e["dt"] > now and e["nl"]), None)
-        body = env.from_string(TOURNAMENT).render(t=t, events=tup, next=nx)
+        related = [(x["h1"], x["path"]) for x in views if x.get("club") == slug or (not x.get("club") and t.get("sport") in x.get("sports", []) and slug != "clubs")]
+        related += [tuple(x) for x in t.get("related", [])]
+        body = env.from_string(TOURNAMENT).render(t=t, events=tup, next=nx, related=related)
         lds = [crumbs(("Home", "/"), (t["name"], f"/{slug}/")), faq_ld(t["faq"])] + [jsonld_event(e) for e in tup if e.get("start")]
         write(f"/{slug}/", f"{t['title']} | hoelaatbegint.nl", t["description"], body, og=slug,
               active=slug, jsonld=lds, priority="0.9")
@@ -587,7 +606,6 @@ def main():
               jsonld=[jsonld_event(e), crumbs(("Home", "/"), (t["name"], f"/{t['slug']}/"), (e["title"], e["url"]))], priority="0.8")
 
     # --- overzichtspagina's op zoekvolume (data/pages.json): vandaag, op tv, kalender
-    views = json.loads((ROOT / "data" / "pages.json").read_text(encoding="utf-8"))["views"]
     nav_parent = {u: subs[0][1] for _, _, subs in NAV for _, u in subs}
     for v in views:
         if v.get("club"):
