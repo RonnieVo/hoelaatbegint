@@ -51,7 +51,10 @@ def fetch(existing):
     for team_id, (sport, tournament) in TEAMS.items():
         r = requests.get(API, params={"team": team_id, "next": 10}, headers={"x-apisports-key": key}, timeout=20)
         r.raise_for_status()
-        for fx in r.json().get("response", []):
+        body = r.json()
+        if body.get("errors"):
+            raise RuntimeError(f"API-Football weigert: {body['errors']}")
+        for fx in body.get("response", []):
             f, t, lg = fx["fixture"], fx["teams"], fx["league"]
             if f["id"] in seen:  # bijv. Ajax – PSV: één evenement
                 continue

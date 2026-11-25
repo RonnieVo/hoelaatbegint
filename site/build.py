@@ -402,6 +402,12 @@ def main():
     events_raw = json.loads((ROOT / "data" / "events.json").read_text(encoding="utf-8"))["events"]
     tournaments = json.loads((ROOT / "data" / "tournaments.json").read_text(encoding="utf-8"))
     broadcasters = json.loads((ROOT / "data" / "broadcasters.json").read_text(encoding="utf-8"))
+    tournaments_known = json.loads((ROOT / "data" / "tournaments.json").read_text(encoding="utf-8"))
+    # Vangnet: onbekende sport of pagina nooit de hele build laten breken
+    events_raw = [e for e in events_raw if e.get("sport") in SPORTS]
+    for e in events_raw:
+        if e.get("tournament") not in tournaments_known:
+            e["tournament"] = SPORTS[e["sport"]]["page"] if SPORTS[e["sport"]]["page"] in tournaments_known else next(iter(tournaments_known))
     events = sorted((prep(e, broadcasters, now) for e in events_raw), key=lambda e: (e["dt"], e["id"]))
     upcoming = [e for e in events if e["upcoming"]]
     built = now.astimezone(NL)

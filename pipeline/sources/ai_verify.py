@@ -36,6 +36,10 @@ TASKS = {
     "nederlands-elftal": "Oranje (mannen en vrouwen): eerstvolgende wedstrijden, lotingen en zender. Bronnen: onsoranje.nl, uefa.com, nos.nl.",
 }
 
+ALLOWED_SPORTS = {"darts", "handbal", "hockey", "schaatsen", "veldrijden", "voetbal", "f1", "clubs"}
+TASK_SPORT = {"wk-darts": "darts", "ek-handbal-vrouwen": "handbal", "hockey": "hockey", "schaatsen": "schaatsen",
+              "veldrijden": "veldrijden", "nederlands-elftal": "voetbal"}
+
 SCHEMA = """Geef als antwoord ALLEEN één codeblok ```json ... ``` met een JSON-array, zonder uitleg of bronvermelding erbuiten.
 Gebruik in tekstwaarden geen dubbele aanhalingstekens. Elk element:
 {"id": "<stabiele id, hergebruik bestaande id als het hetzelfde evenement is>",
@@ -126,7 +130,9 @@ def fetch(existing):
         print(f"  ai {slug}: {len(answer)} evenementen")
         for e in answer:
             if valid(e):
-                e.setdefault("tournament", slug)
+                e["tournament"] = slug  # AI mag geen eigen paginanamen verzinnen
+                if e.get("sport") not in ALLOWED_SPORTS:
+                    e["sport"] = TASK_SPORT[slug]
                 e["source"] = e["sources"][0]
                 out.append(e)
     if not ran:
