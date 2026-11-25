@@ -58,7 +58,7 @@ jobs:
         run: |
           git config user.name "hoelaatbegint-bot"
           git config user.email "bot@hoelaatbegint.nl"
-          git add data/events.json data/pipeline_state.json || true
+          git add data/
           git diff --cached --quiet || git commit -m "Data bijgewerkt $(date -u +%Y-%m-%dT%H:%MZ)" && git push || true
 
       - name: Publiceren op Cloudflare Pages
