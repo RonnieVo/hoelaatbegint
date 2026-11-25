@@ -17,6 +17,7 @@ jobs:
     permissions:
       contents: write
     env:
+      HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
       API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
       THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -61,6 +62,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Data bijgewerkt $(date -u +%Y-%m-%dT%H:%MZ)" && git push || true
 
       - name: Publiceren op Cloudflare Pages
+        if: env.HAS_CLOUDFLARE == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
