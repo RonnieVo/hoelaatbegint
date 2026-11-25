@@ -714,6 +714,28 @@ def main():
     (DIST / "llms.txt").write_text("\n".join(llms) + "\n", encoding="utf-8")
     (DIST / "data").mkdir()
     shutil.copy(ROOT / "data" / "events.json", DIST / "data" / "events.json")
+    # --- Instagram: afbeeldingen + RSS-feed die Zapier elke ochtend uitleest (social/posts/ wordt door daily-post.yml gevuld)
+    from email.utils import format_datetime
+    from xml.sax.saxutils import escape as xesc
+    soc = DIST / "social"
+    for sub in ("launch", "posts"):
+        src = ROOT / "social" / sub
+        if src.exists():
+            (soc / sub).mkdir(parents=True, exist_ok=True)
+            for f in src.glob("*.jpg"):
+                shutil.copy(f, soc / sub / f.name)
+    posts = sorted((ROOT / "social" / "posts").glob("*.jpg"), reverse=True)[:10] if (ROOT / "social" / "posts").exists() else []
+    items = []
+    for f in posts:
+        cap = f.with_suffix(".txt").read_text(encoding="utf-8") if f.with_suffix(".txt").exists() else ""
+        when = datetime.fromtimestamp(int(f.with_suffix(".ts").read_text()) if f.with_suffix(".ts").exists() else f.stat().st_mtime, UTC)
+        url = f"https://hoelaatbegint.pages.dev/social/posts/{f.name}"
+        items.append(f"<item><title>{xesc(f.stem)}</title><link>{url}</link><guid isPermaLink=\"false\">{xesc(f.stem)}</guid>"
+                     f"<pubDate>{format_datetime(when)}</pubDate><description>{xesc(cap)}</description>"
+                     f"<enclosure url=\"{url}\" type=\"image/jpeg\" length=\"{f.stat().st_size}\"/></item>")
+    soc.mkdir(exist_ok=True)
+    (soc / "feed.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>hoelaatbegint Instagram</title>'
+                                  f'<link>{BASE}</link><description>Instagram-posts van hoelaatbegint.nl</description>{"".join(items)}</channel></rss>', encoding="utf-8")
     if os.environ.get("INDEXNOW_KEY"):
         (DIST / f"{os.environ['INDEXNOW_KEY']}.txt").write_text(os.environ["INDEXNOW_KEY"])
     (DIST / "_headers").write_text("/agenda/*\n  Content-Type: text/calendar; charset=utf-8\n  Cache-Control: public, max-age=900\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n", encoding="utf-8")

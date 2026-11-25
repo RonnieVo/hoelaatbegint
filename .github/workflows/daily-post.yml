@@ -12,6 +12,8 @@ on:
 jobs:
   post:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
@@ -37,13 +39,24 @@ jobs:
           echo "mode=$MODE" >> $GITHUB_OUTPUT; echo "date=$D" >> $GITHUB_OUTPUT
           if [ "$MODE" = "week" ]; then echo "name=week-$(TZ=Europe/Amsterdam date -d "$D -$((DOW-1)) days" +%F)" >> $GITHUB_OUTPUT; else echo "name=daily-$D" >> $GITHUB_OUTPUT; fi
 
-      - name: Site + afbeelding bouwen
+      - name: Afbeelding maken en bewaren in social/posts (Zapier leest social/feed.xml)
         if: steps.plan.outputs.mode != 'skip'
         run: |
           python site/build.py
           python social/render.py ${{ steps.plan.outputs.mode }} ${{ steps.plan.outputs.date }}
+          N=${{ steps.plan.outputs.name }}
+          mkdir -p social/posts
+          cp dist/social/$N.jpg social/posts/$N.jpg
+          cp dist/social/$N.txt social/posts/$N.txt
+          date +%s > social/posts/$N.ts
+          find social/posts -type f -mtime +21 -delete
+          git config user.name "hoelaatbegint-bot"; git config user.email "bot@hoelaatbegint.nl"
+          git add social/posts
+          git commit -m "Instagram-post $N" || echo "niets nieuws"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
+          python site/build.py
 
-      - name: Afbeelding online zetten (Instagram haalt hem op via een openbare URL)
+      - name: Online zetten (afbeelding + feed)
         if: steps.plan.outputs.mode != 'skip' && env.HAS_CLOUDFLARE == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
@@ -51,6 +64,6 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=hoelaatbegint --branch=main
 
-      - name: Plaatsen op Instagram
-        if: steps.plan.outputs.mode != 'skip' && env.HAS_CLOUDFLARE == 'true'
+      - name: Plaatsen via de Instagram-API (alleen als IG_ACCESS_TOKEN is ingesteld; anders doet Zapier het via de feed)
+        if: steps.plan.outputs.mode != 'skip' && env.HAS_CLOUDFLARE == 'true' && env.IG_ACCESS_TOKEN != ''
         run: sleep 30 && python social/publish_instagram.py ${{ steps.plan.outputs.name }}
