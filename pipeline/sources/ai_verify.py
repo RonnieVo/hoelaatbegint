@@ -33,7 +33,7 @@ TASKS = {
     "hockey": "FIH Pro League 2026-27, alle wedstrijden van de Nederlandse mannen en vrouwen met aanvangstijd. Bronnen: fih.hockey, knhb.nl.",
     "schaatsen": "Langebaanschaatsen 2026-27: wereldbekers, NK en EK, met starttijden per dag. Bronnen: isu.org, knsb.nl, schaatsen.nl, nos.nl.",
     "veldrijden": "UCI Wereldbeker veldrijden 2026-27: starttijden van de elitewedstrijden (mannen en vrouwen). Bronnen: uci.org, sporza.be, nos.nl.",
-    "clubs": "Ajax, Feyenoord en PSV: wedstrijden in de Europa League, Conference League, Champions League en KNVB-beker in de komende 30 dagen, met aanvangstijd en zender. Geen Eredivisie (die komt uit een andere bron). Zet in 'participants' de Nederlandse club(s). Bronnen: uefa.com, knvb.nl, ziggo.nl, espn.nl.",
+    "clubs": "ALLE Nederlandse clubs in Europa (Champions League, Europa League, Conference League: o.a. Ajax, Feyenoord, PSV, AZ, FC Twente, NEC, FC Utrecht) en Ajax/Feyenoord/PSV in de KNVB-beker: wedstrijden in de komende 30 dagen, met aanvangstijd en zender. Geen Eredivisie (die komt uit een andere bron). Zet in 'participants' de Nederlandse club(s). Bronnen: uefa.com, knvb.nl, ziggo.nl, espn.nl.",
     "nederlands-elftal": "Het Nederlands elftal (MANNEN, geen vrouwen): eerstvolgende wedstrijden, lotingen, aanvangstijden en zender. Bronnen: onsoranje.nl, knvb.nl, uefa.com, nos.nl.",
     "oranje-leeuwinnen": "De Oranje Leeuwinnen (Nederlands VROUWENelftal): eerstvolgende wedstrijden, lotingen, aanvangstijden en zender. Zet '(vrouwen)' niet in de titel; de pagina is al voor vrouwen. Bronnen: onsoranje.nl, knvb.nl, uefa.com, fifa.com, nos.nl.",
 }

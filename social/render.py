@@ -20,7 +20,7 @@ OUT = ROOT / "dist" / "social"
 FONTS = (ROOT / "site" / "assets" / "fonts").as_uri()
 LOGO = (ROOT / "site" / "assets" / "logo.svg").read_text()
 TAGS = {"darts": "#wkdarts #darts", "voetbal": "#oranje #nederlandselftal", "handbal": "#handbal #ekhandbal",
-        "f1": "#f1 #formule1", "hockey": "#hockey #proleague", "schaatsen": "#schaatsen", "veldrijden": "#veldrijden #cyclocross", "clubs": "#eredivisie #ajax #feyenoord #psv", "leeuwinnen": "#oranjeleeuwinnen #leeuwinnen"}
+        "f1": "#f1 #formule1", "hockey": "#hockey #proleague", "schaatsen": "#schaatsen", "veldrijden": "#veldrijden #cyclocross", "clubs": "#voetbal #eredivisie #europeesvoetbal", "leeuwinnen": "#oranjeleeuwinnen #leeuwinnen"}
 
 CSS = f"""
 @font-face{{font-family:B;font-weight:800;src:url({FONTS}/barlow-condensed-latin-800-normal.woff2)}}
@@ -53,7 +53,7 @@ h1{{position:absolute;left:72px;right:72px;top:226px;margin:0;font:800 112px/.92
 
 def page(kicker, title, inner, list_top=470, foot_left="Alle tijden in Nederlandse tijd"):
     css = CSS.replace("{list_top}", str(list_top))
-    return (f"<html><head><style>{css}</style></head><body><div class='ring'></div>"
+    return (f"<html><head><meta charset=\"utf-8\"><style>{css}</style></head><body><div class='ring'></div>"
             f"<div class='top'>{LOGO}<span>hoelaatbegint<i>.nl</i></span></div>"
             f"<div class='kicker'>{escape(kicker)}</div><h1>{title}</h1>{inner}"
             f"<div class='foot'><span>{escape(foot_left)}</span><span>Link in bio · <b>hoelaatbegint.nl</b></span></div></body></html>")

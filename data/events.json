@@ -4463,6 +4463,72 @@
    "status": "gepland",
    "checked_at": "2026-11-25T15:30:00Z",
    "nl": true
+  },
+  {
+   "id": "el-2026-11-26-sparta-praag-az",
+   "sport": "clubs",
+   "tournament": "clubs",
+   "clubs": [],
+   "title": "Sparta Praag – AZ",
+   "home": "Sparta Praag",
+   "away": "AZ",
+   "start": "2026-11-26T20:00:00Z",
+   "round": "Europa League, competitiefase",
+   "venue": "Epet Arena",
+   "city": "Praag",
+   "broadcaster": "ziggo",
+   "tv_detail": "Ziggo Sport 1 en Ziggo Sport Free",
+   "source": "https://www.ziggo.nl/entertainment/sport/voetbal/europa-league/sparta-praag-az-26-11-2026",
+   "sources": [
+    "https://www.ziggo.nl/entertainment/sport/voetbal/europa-league/sparta-praag-az-26-11-2026"
+   ],
+   "status": "gepland",
+   "nl": true,
+   "checked_at": "2026-11-25T21:20:00Z"
+  },
+  {
+   "id": "el-2026-11-26-nec-rennes",
+   "sport": "clubs",
+   "tournament": "clubs",
+   "clubs": [],
+   "title": "NEC – Stade Rennais",
+   "home": "NEC",
+   "away": "Stade Rennais",
+   "start": "2026-11-26T20:00:00Z",
+   "round": "Europa League, competitiefase",
+   "venue": "Goffertstadion",
+   "city": "Nijmegen",
+   "broadcaster": "ziggo",
+   "tv_detail": "Ziggo Sport 3 en Ziggo Sport Free",
+   "source": "https://www.ziggo.nl/entertainment/sport/voetbal/europa-league/nec-nijmegen-stade-rennais-26-11-2026",
+   "sources": [
+    "https://www.ziggo.nl/entertainment/sport/voetbal/europa-league/nec-nijmegen-stade-rennais-26-11-2026"
+   ],
+   "status": "gepland",
+   "nl": true,
+   "checked_at": "2026-11-25T21:20:00Z"
+  },
+  {
+   "id": "ecl-2026-11-26-freiburg-twente",
+   "sport": "clubs",
+   "tournament": "clubs",
+   "clubs": [],
+   "title": "SC Freiburg – FC Twente",
+   "home": "SC Freiburg",
+   "away": "FC Twente",
+   "start": "2026-11-26T20:00:00Z",
+   "round": "Conference League, competitiefase",
+   "venue": "Europa-Park-Stadion",
+   "city": "Freiburg",
+   "broadcaster": "ziggo",
+   "tv_detail": "Ziggo Sport 2 en Ziggo Sport Free",
+   "source": "https://www.ziggo.nl/entertainment/sport/voetbal/conference-league/sc-freiburg-fc-twente-26-11-2026",
+   "sources": [
+    "https://www.ziggo.nl/entertainment/sport/voetbal/conference-league/sc-freiburg-fc-twente-26-11-2026"
+   ],
+   "status": "gepland",
+   "nl": true,
+   "checked_at": "2026-11-25T21:20:00Z"
   }
  ]
 }

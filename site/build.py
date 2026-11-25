@@ -565,7 +565,7 @@ def main():
     # --- toernooien
     for slug, t in tournaments.items():
         if slug == "clubs":
-            tev = [e for e in events if e["sport"] == "clubs" and e.get("clubs")]
+            tev = [e for e in events if e["sport"] == "clubs" and e["nl"]]
         elif slug == "eredivisie":
             tev = [e for e in events if e["sport"] == "clubs" and "eredivisie" in (e.get("round") or "").lower()]
         else:
