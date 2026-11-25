@@ -32,6 +32,18 @@
         el.classList.add("is-past");
       }
     });
+    // tijdlijn: eerstvolgende oranje, nu-lijn
+    var tls = document.querySelectorAll(".tl");
+    tls.forEach(function (tl) {
+      var blocks = Array.prototype.slice.call(tl.querySelectorAll(".tl-b"));
+      var next = null;
+      blocks.forEach(function (b) { b.classList.remove("next"); var s = new Date(b.getAttribute("data-start")); if (s > now && (!next || s < new Date(next.getAttribute("data-start")))) next = b; });
+      if (next) next.classList.add("next");
+      if (next && !tl.dataset.scrolled && tl.scrollWidth > tl.clientWidth) { tl.scrollLeft = Math.max(0, next.offsetLeft - 40); tl.dataset.scrolled = "1"; }
+      var st = new Date(tl.getAttribute("data-tl-start")), span = +tl.getAttribute("data-tl-span"), line = tl.querySelector(".tl-now");
+      var pos = (now - st) / 60000 / span;
+      if (line && pos >= 0 && pos <= 1) { line.hidden = false; line.style.left = "calc(var(--chw) + (100% - var(--chw)) * " + pos.toFixed(4) + ")"; } else if (line) { line.hidden = true; }
+    });
     // datumblokken zonder tijd (bijv. "14 t/m 22 december") verbergen als ze voorbij zijn
     document.querySelectorAll("[data-end-date]").forEach(function (el) {
       var end = new Date(el.getAttribute("data-end-date") + "T23:59:59+01:00");

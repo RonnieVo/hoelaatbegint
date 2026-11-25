@@ -14,6 +14,7 @@ Eigenaar: Ronald Voorbergen (GitHub RonnieVo). Hij wil dat Claude alles onderhou
 - Pagina's: Oranje (mannen, /nederlands-elftal/) en Leeuwinnen (/oranje-leeuwinnen/) zijn apart, op verzoek van Ronald. "De kijk van Ronald" (pipeline/ai_opinion.py) staat aan; Ronald gaf toestemming voor zijn naam en foto (site/assets/ronald.jpg).
 - Handmatig testen: Actions › "Data bijwerken en site publiceren" › Run workflow met ai_force of af_force = true.
 - Menu en pagina's op zoekvolume (DataForSEO, 25-11-2026; ruwe cijfers in `data/keywords.json`): F1 > clubvoetbal > darts > schaatsen > Oranje > rest onder "Meer". Menu staat in `NAV`/`MORE_NAV` in `site/build.py`.
+- /vandaag/ heeft een tv-gids-tijdlijn per zender (functie timeline() in build.py; nu-lijn en oranje "eerstvolgende" via app.js). Testen op een andere dag: BUILD_NOW=2026-11-26T16:30:00+00:00 python site/build.py.
 - Overzichtspagina's (… vandaag, … op tv, F1 kalender) komen uit `data/pages.json` en vullen zich vanzelf uit events.json. Nieuwe pagina = regel toevoegen in pages.json (+ eventueel link in NAV).
 - F1-races krijgen automatisch een pagina /wedstrijd/gp-…-jaar/ zodra de starttijd bekend is. Volledig Eredivisie-programma komt uit football-data.org (niet-Nederlandse-clubwedstrijden hebben nl=false en staan alleen op /eredivisie/ en /voetbal/…).
 - Clubs: alle Nederlandse clubs in Europa tellen mee (AZ, Twente, NEC, Utrecht …), niet alleen de grote drie; AI-taak "clubs" zoekt ze op. Op /clubs/ staan alle NL-clubwedstrijden.

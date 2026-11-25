@@ -147,6 +147,28 @@ def organizer(e):
     return ORGANIZERS.get(e["sport"])
 
 
+def timeline(evs, day):
+    """Tv-gids-tijdlijn: per zender een rij met blokken op tijd (alleen tijden met zender)."""
+    evs = [e for e in evs if e.get("start") and e.get("tv") and e["day"] == day]
+    if not evs:
+        return None
+    first = min(e["local"].hour for e in evs)
+    last = max(min(24, e["local"].hour + (SPORTS[e["sport"]]["minutes"] + e["local"].minute + 59) // 60) for e in evs)
+    start_h = max(0, first - 1)
+    end_h = min(24, max(last, start_h + 6))
+    span = (end_h - start_h) * 60
+    rows = {}
+    for e in evs:
+        ch = re.split(r" en |, ", e["tv_detail"])[0]
+        m0 = (e["local"].hour - start_h) * 60 + e["local"].minute
+        dur = min(SPORTS[e["sport"]]["minutes"], span - m0)
+        rows.setdefault(ch, []).append({"e": e, "left": round(m0 / span * 100, 2), "width": round(max(dur, 30) / span * 100 - 0.4, 2)})
+    hours = [{"label": f"{h:02d}:00", "left": round((h - start_h) * 60 / span * 100, 2)} for h in range(start_h, end_h, 1 if end_h - start_h <= 8 else 2)]
+    start_iso = datetime(day.year, day.month, day.day, start_h, tzinfo=NL).isoformat()
+    return {"rows": [{"name": k, "blocks": v} for k, v in sorted(rows.items(), key=lambda kv: kv[1][0]["e"]["dt"])],
+            "hours": hours, "span": span, "start_iso": start_iso}
+
+
 def jsonld_event(e):
     if not e.get("start"):
         return None
@@ -356,6 +378,13 @@ VANDAAG = MACROS + r"""
 <div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 <section><div class="wrap">
+{% if tl %}<h2>Tv-gids van vandaag</h2>
+<div class="tl" data-tl-start="{{ tl.start_iso }}" data-tl-span="{{ tl.span }}"><div class="tl-in">
+<div class="tl-head"><div class="tl-ch">Zender</div><div class="tl-axis">{% for h in tl.hours %}<span style="left:{{ h.left }}%">{{ h.label }}</span>{% endfor %}</div></div>
+{% for ch in tl.rows %}<div class="tl-row"><div class="tl-ch">{{ ch.name }}</div><div class="tl-track">{% for b in ch.blocks %}<a class="tl-b" href="{{ b.e.url }}" data-start="{{ b.e.start }}" data-sport="{{ b.e.sport }}" style="left:{{ b.left }}%;width:{{ b.width }}%" title="{{ b.e.time }} {{ b.e.title }}"><b>{{ b.e.time }}</b> {{ b.e.title }}</a>{% endfor %}</div></div>{% endfor %}
+<div class="tl-now" hidden></div></div></div>
+<p class="note">Oranje = begint als eerstvolgende. Tik op een blok voor countdown en agenda-knop.</p>
+<h2 style="margin-top:32px">Alles van vandaag</h2>{% endif %}
 {% if today %}{{ schedule(today, True) }}{% else %}<div class="card"><h3>Vandaag geen Nederlandse topsport</h3><p class="muted">Hieronder zie je wat er de komende dagen aankomt.</p></div>{% endif %}
 <h2 style="margin-top:36px">De komende dagen</h2>
 {{ schedule(soon) }}
@@ -510,7 +539,7 @@ PRIVACY = """<p>hoelaatbegint.nl verzamelt zo weinig mogelijk gegevens.</p>
 
 # ------------------------------------------------------------------ build
 def main():
-    now = datetime.now(UTC)
+    now = datetime.fromisoformat(os.environ["BUILD_NOW"]) if os.environ.get("BUILD_NOW") else datetime.now(UTC)  # BUILD_NOW alleen om te testen
     events_raw = json.loads((ROOT / "data" / "events.json").read_text(encoding="utf-8"))["events"]
     tournaments = json.loads((ROOT / "data" / "tournaments.json").read_text(encoding="utf-8"))
     broadcasters = json.loads((ROOT / "data" / "broadcasters.json").read_text(encoding="utf-8"))
@@ -598,7 +627,7 @@ def main():
     today = built.date()
     todays = [e for e in upcoming if e["day"] <= today <= e["end_day"]]
     soon = [e for e in upcoming if e["day"] > today][:10]
-    body = env.from_string(VANDAAG).render(today=todays, soon=soon, today_label=d_label(today))
+    body = env.from_string(VANDAAG).render(today=todays, soon=soon, today_label=d_label(today), tl=timeline(todays, today))
     write("/vandaag/", f"Sport op tv vandaag ({d_label(today)}) | hoelaatbegint.nl",
           f"Welke sport is er vandaag op tv? Alle wedstrijden met Nederlanders van {d_label(today)}, met aanvangstijd en zender.",
           body, jsonld=[crumbs(("Home", "/"), ("Vandaag", "/vandaag/"))], priority="0.9")
