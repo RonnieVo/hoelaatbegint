@@ -128,24 +128,62 @@ def prep(e, broadcasters, now):
     return e
 
 
+ORGANIZERS = {"f1": ("Formula 1", "https://www.formula1.com"), "darts": ("PDC", "https://www.pdc.tv"),
+              "schaatsen": ("ISU", "https://www.isu.org"), "veldrijden": ("UCI", "https://www.uci.org"),
+              "handbal": ("EHF", "https://www.eurohandball.com"), "hockey": ("FIH", "https://www.fih.hockey"),
+              "voetbal": ("UEFA", "https://www.uefa.com"), "leeuwinnen": ("UEFA", "https://www.uefa.com")}
+
+
+def organizer(e):
+    rnd = (e.get("round") or "").lower()
+    if e["sport"] == "clubs":
+        if "league" in rnd:
+            return ("UEFA", "https://www.uefa.com")
+        if "beker" in rnd:
+            return ("KNVB", "https://www.knvb.nl")
+        return ("Eredivisie", "https://eredivisie.nl")
+    if "loting" in rnd or "kwalificatie" in rnd:
+        return ("UEFA", "https://www.uefa.com")
+    return ORGANIZERS.get(e["sport"])
+
+
 def jsonld_event(e):
     if not e.get("start"):
         return None
+    og = e.get("tournament") if (ROOT / "site" / "og" / f"{e.get('tournament')}.png").exists() else "default"
+    desc = (f"{e['title']} begint {e['day_label']} om {e['time']} Nederlandse tijd"
+            + (f" in {e['city']}" if e.get("city") else "") + (f", live op {e['tv_detail']}" if e.get("tv") else "") + ".")
+    address = {"@type": "PostalAddress", "addressLocality": e.get("city") or e.get("venue") or "Onbekend"}
     data = {
         "@context": "https://schema.org", "@type": "SportsEvent", "name": e["title"],
         "startDate": e["local"].isoformat(), "endDate": e["end_dt"].astimezone(NL).isoformat(),
         "eventStatus": {"gepland": "https://schema.org/EventScheduled", "verplaatst": "https://schema.org/EventRescheduled",
                         "afgelast": "https://schema.org/EventCancelled"}.get(e.get("status", "gepland"), "https://schema.org/EventScheduled"),
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "sport": e["sport_name"],
-        "location": {"@type": "Place", "name": e.get("venue") or e.get("city") or "", "address": e.get("city") or ""},
+        "sport": {"clubs": "Voetbal", "voetbal": "Voetbal", "leeuwinnen": "Voetbal"}.get(e["sport"], e["sport_name"]),
+        "location": {"@type": "Place", "name": e.get("venue") or e.get("city") or e["title"], "address": address},
+        "image": [f"{BASE}/assets/og/{og}.png"],
+        "description": desc,
         "url": BASE + e["url"],
+        "inLanguage": "nl-NL",
     }
+    org = organizer(e)
+    if org:
+        data["organizer"] = {"@type": "Organization", "name": org[0], "url": org[1]}
     if e.get("home") and e.get("away"):
         data["homeTeam"] = {"@type": "SportsTeam", "name": e["home"]}
         data["awayTeam"] = {"@type": "SportsTeam", "name": e["away"]}
-    if e.get("tv"):
-        data["description"] = f"{e['title']}, {e['day_label']} om {e['time']} Nederlandse tijd, live op {e['tv_detail']}."
+        data["competitor"] = [data["homeTeam"], data["awayTeam"]]
+        data["performer"] = data["competitor"]
+    elif e.get("participants"):
+        data["performer"] = [{"@type": "Person", "name": p} for p in e["participants"]]
+    if e.get("round") and e["sport"] in ("clubs", "voetbal", "leeuwinnen"):
+        data["superEvent"] = {"@type": "SportsEvent", "name": e["round"].split(",")[0]}
+    if e.get("tv"):  # tv-uitzending als BroadcastEvent (handig voor AI-zoekmachines en 'op tv'-vragen)
+        data["subEvent"] = {"@type": "BroadcastEvent", "name": f"{e['title']} live op {e['tv_detail']}", "isLiveBroadcast": True,
+                            "startDate": e["local"].isoformat(), "inLanguage": "nl",
+                            "publishedOn": {"@type": "BroadcastService", "name": e["tv_detail"], "broadcastDisplayName": e["tv"],
+                                            "areaServed": {"@type": "Country", "name": "Nederland"}}}
     return data
 
 
@@ -210,7 +248,7 @@ BASE_TPL = r"""<!doctype html>
 <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css?v={{ version }}">
-{% for ld in jsonld %}<script type="application/ld+json">{{ ld }}</script>
+{% for ld in jsonld %}<script type="application/ld+json">{{ ld|safe }}</script>
 {% endfor %}{% if cfg.cloudflare_analytics_token %}<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ cfg.cloudflare_analytics_token }}"}'></script>{% endif %}
 {% if cfg.plausible_domain %}<script defer data-domain="{{ cfg.plausible_domain }}" src="https://plausible.io/js/script.outbound-links.tagged-events.js"></script>{% endif %}
 {% if cfg.onesignal_app_id %}<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
@@ -509,10 +547,12 @@ def main():
     overrides = json.loads(overrides_file.read_text(encoding="utf-8")) if overrides_file.exists() else {}
 
     def write(path, title, description, body, og="default", active=None, jsonld=(), priority="0.7"):
+        if not (ROOT / "site" / "og" / f"{og}.png").exists():
+            og = "default"
         title = overrides.get(path, {}).get("title", title)
         description = overrides.get(path, {}).get("description", description)
         html = base_tpl.render(title=title, description=description, path=path, active_path=path, author=path not in ("/over/", "/privacy/", "/agenda/"), body=body, og=og, active=active,
-                               jsonld=[json.dumps(x, ensure_ascii=False) for x in list(jsonld) + [webpage(path, title)] if x], logo=logo,
+                               jsonld=[json.dumps(x, ensure_ascii=False).replace("</", "<\\/") for x in list(jsonld) + [webpage(path, title)] if x], logo=logo,
                                version=version, year=built.year)
         out = DIST / path.strip("/") / "index.html" if path != "/" else DIST / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -551,7 +591,8 @@ def main():
     body = env.from_string(HOME).render(next=timed_nl[0], upcoming=upcoming[:14], nexts=nexts)
     write("/", "Hoe laat begint het? Sport met Nederlanders in Nederlandse tijd | hoelaatbegint.nl",
           "Hoe laat speelt Nederland? Aanvangstijden, zender en countdown voor darts, schaatsen, Oranje, handbal, F1, veldrijden en hockey. Elke 15 minuten bijgewerkt.",
-          body, jsonld=[org], priority="1.0")
+          body, jsonld=[org, {"@context": "https://schema.org", "@type": "WebSite", "name": "hoelaatbegint.nl", "url": BASE + "/",
+                       "inLanguage": "nl-NL", "description": "Aanvangstijden van sport met Nederlanders, in Nederlandse tijd, met zender."}], priority="1.0")
 
     # --- vandaag
     today = built.date()
