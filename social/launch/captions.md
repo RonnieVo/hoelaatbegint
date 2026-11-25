@@ -52,7 +52,7 @@ De handbalsters spelen het EK in Brno:
 
 vrijdag 4 december 20:30 · Nederland – Tsjechië (Ziggo Sport 1 en Ziggo Sport 4)
 zondag 6 december 20:30 · Nederland – Oostenrijk (Ziggo Sport 4)
-dinsdag 8 december 20:30 · Nederland – Kroatië (Ziggo Sport (kanaal volgt))
+dinsdag 8 december 20:30 · Nederland – Kroatië (Ziggo Sport)
 
 Bij de beste twee: hoofdronde in Katowice, half december.
 
