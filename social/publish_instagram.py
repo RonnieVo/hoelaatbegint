@@ -50,8 +50,12 @@ def main():
         print("Geen post voor vandaag")
         return
     caption, ai = polish(cap_file.read_text(encoding="utf-8"))
+    publish(f"{BASE}/social/{name}.jpg", caption, ai)
+
+
+def publish(image_url, caption, ai=False):
     token, uid = os.environ["IG_ACCESS_TOKEN"], os.environ["IG_USER_ID"]
-    payload = {"image_url": f"{BASE}/social/{name}.jpg", "caption": caption, "access_token": token}
+    payload = {"image_url": image_url, "caption": caption, "access_token": token}
     if ai:
         payload["is_ai_generated"] = "true"  # AI-label voor de caption (Instagram-API, sinds september 2026)
     r = requests.post(f"{GRAPH}/{uid}/media", data=payload, timeout=60)
