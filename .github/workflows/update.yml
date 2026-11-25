@@ -3,7 +3,11 @@ name: Data bijwerken en site publiceren
 on:
   schedule:
     - cron: "*/15 * * * *"   # elke 15 minuten
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      ai_force:
+        description: "AI-controle nu forceren (true/false)"
+        default: "false"
   push:
     branches: [main]
 
@@ -24,6 +28,7 @@ jobs:
       AI_VERIFY_MODE: ${{ vars.AI_VERIFY_MODE }}
       AI_CAPTIONS: ${{ vars.AI_CAPTIONS }}
       AI_WRITE: ${{ vars.AI_WRITE }}
+      AI_VERIFY_FORCE: ${{ github.event.inputs.ai_force == 'true' && '1' || '' }}
       INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
       SMTP_HOST: ${{ secrets.SMTP_HOST }}
       SMTP_PORT: ${{ secrets.SMTP_PORT }}
