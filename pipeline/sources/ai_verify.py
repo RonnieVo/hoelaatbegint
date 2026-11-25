@@ -36,7 +36,8 @@ TASKS = {
     "nederlands-elftal": "Oranje (mannen en vrouwen): eerstvolgende wedstrijden, lotingen en zender. Bronnen: onsoranje.nl, uefa.com, nos.nl.",
 }
 
-SCHEMA = """Geef ALLEEN een JSON-array terug, zonder uitleg. Elk element:
+SCHEMA = """Geef als antwoord ALLEEN één codeblok ```json ... ``` met een JSON-array, zonder uitleg of bronvermelding erbuiten.
+Gebruik in tekstwaarden geen dubbele aanhalingstekens. Elk element:
 {"id": "<stabiele id, hergebruik bestaande id als het hetzelfde evenement is>",
  "sport": "darts|handbal|hockey|schaatsen|veldrijden|voetbal", "tournament": "<slug>",
  "title": "<Nederlandse titel, bijv. 'Nederland – Kroatië' of 'Michael van Gerwen – Luke Woodhouse'>",
@@ -77,8 +78,25 @@ def ask(task, known):
               "messages": [{"role": "user", "content": prompt}]})
     r.raise_for_status()
     text = "".join(b.get("text", "") for b in r.json()["content"] if b.get("type") == "text")
-    m = re.search(r"\[[\s\S]*\]", text)
-    return json.loads(m.group(0)) if m else []
+    return parse_array(text)
+
+
+def parse_array(text):
+    """Haalt de JSON-array uit het antwoord, ook als er tekst of citaties omheen staan."""
+    fenced = re.findall(r"```(?:json)?\s*([\s\S]*?)```", text)
+    candidates = fenced + [text]
+    dec = json.JSONDecoder()
+    for c in candidates:
+        for i, ch in enumerate(c):
+            if ch != "[":
+                continue
+            try:
+                val, _ = dec.raw_decode(c[i:])
+            except ValueError:
+                continue
+            if isinstance(val, list) and (not val or isinstance(val[0], dict)):
+                return val
+    raise ValueError("geen geldige JSON-array in het AI-antwoord")
 
 
 def valid(e):
@@ -100,7 +118,13 @@ def fetch(existing):
         if not due(known, now):
             continue
         ran += 1
-        for e in ask(task, known):
+        try:
+            answer = ask(task, known)
+        except Exception as ex:  # één toernooi dat faalt mag de rest niet stoppen
+            print(f"  ai {slug}: overgeslagen ({ex!r})")
+            continue
+        print(f"  ai {slug}: {len(answer)} evenementen")
+        for e in answer:
             if valid(e):
                 e.setdefault("tournament", slug)
                 e["source"] = e["sources"][0]

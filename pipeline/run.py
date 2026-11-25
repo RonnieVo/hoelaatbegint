@@ -79,7 +79,7 @@ def merge(existing, candidates):
                 merged.pop("date", None)
                 merged.pop("time_known", None)
             changes.append(("verplaatst" if old.get("start") else "tijd bekend", eid))
-        elif merged != old:
+        elif {k: v for k, v in merged.items() if k != "checked_at"} != {k: v for k, v in old.items() if k != "checked_at"}:
             changes.append(("bijgewerkt", eid))
         by_id[eid] = merged
     return list(by_id.values()), changes, conflicts
