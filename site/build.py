@@ -294,7 +294,7 @@ BASE_TPL = r"""<!doctype html>
 <div><div class="author-k">Over de auteur</div>
 <div class="author-n"><a href="/over/">{{ cfg.owner }}</a></div>
 <p>{{ cfg.owner }} is SEO-specialist en de maker van hoelaatbegint.nl. Hij bepaalt welke bronnen we gebruiken en hoe tijden worden gecontroleerd. Aanvangstijden worden automatisch opgehaald bij de organisatoren en zenders, elke 15 minuten bijgewerkt en bij twee bronnen vergeleken.</p>
-<p class="author-l"><a href="/over/">Zo werken we</a>{% if cfg.owner_linkedin %} · <a href="{{ cfg.owner_linkedin }}" rel="noopener" target="_blank">LinkedIn</a>{% endif %} · <a href="{{ cfg.owner_url }}" rel="noopener" target="_blank">ronaldvoorbergen.nl</a> · <a href="mailto:{{ cfg.contact_email }}?subject=Correctie">Fout gezien?</a></p></div>
+<p class="author-l"><a href="/over/">Zo werken we</a> · <a href="mailto:{{ cfg.contact_email }}?subject=Correctie">Fout gezien?</a></p></div>
 </aside></div></section>{% endif %}
 </main>
 <footer class="site-foot"><div class="wrap">
