@@ -41,6 +41,8 @@ h1{{position:absolute;left:72px;right:72px;top:226px;margin:0;font:800 112px/.92
 .row .n{{font:700 34px/1.15 I}} .row .m{{font:500 26px/1.3 I;color:#5E6A7A;margin-top:6px}}
 .foot{{position:absolute;left:72px;right:72px;bottom:60px;display:flex;justify-content:space-between;font:700 30px B;letter-spacing:1px;color:#9fb0c4;text-transform:uppercase}}
 .foot b{{color:#FF6A13}}
+.sub{{font:700 34px B;letter-spacing:3px;text-transform:uppercase;color:#FF6A13;margin-top:18px}}
+.row.soon{{background:#1A2A40;color:#F6F4EF}} .row.soon .m{{color:#9fb0c4}} .row.soon .t{{font-size:60px}}
 .big{{position:absolute;left:72px;right:72px;top:{{list_top}}px;font:500 36px/1.4 I;color:#dfe5ee}}
 .big b{{color:#fff}}
 .grid{{position:absolute;left:72px;right:72px;top:{{list_top}}px;display:grid;grid-template-columns:1fr 1fr;gap:14px}}
@@ -57,7 +59,7 @@ def page(kicker, title, inner, list_top=470, foot_left="Alle tijden in Nederland
             f"<div class='foot'><span>{escape(foot_left)}</span><span>Link in bio · <b>hoelaatbegint.nl</b></span></div></body></html>")
 
 
-def rows(evs, show_day=False):
+def rows(evs, show_day=False, soon=()):
     out = []
     for e in evs:
         if e["time"]:
@@ -68,7 +70,12 @@ def rows(evs, show_day=False):
             t = "<div class='t small'>tijd<br>volgt</div>"
         meta = " · ".join(x for x in [e["day_label"] if show_day else None, e.get("tv_detail"), e.get("city")] if x)
         out.append(f"<div class='row'>{t}<div><div class='n'>{escape(e['title'])}</div><div class='m'>{escape(meta)}</div></div></div>")
-    return f"<div class='list{' compact' if len(evs) > 4 else ''}'>" + "".join(out) + "</div>"
+    if soon:  # rustige dag: vul aan met wat er de komende dagen aankomt
+        out.append("<div class='sub'>Binnenkort</div>")
+        for e in soon:
+            meta = " · ".join(x for x in [e["day_label"].capitalize(), e.get("tv")] if x)
+            out.append(f"<div class='row soon'><div class='t'>{e['time']}</div><div><div class='n'>{escape(e['title'])}</div><div class='m'>{escape(meta)}</div></div></div>")
+    return f"<div class='list{' compact' if len(evs) + len(soon) > 4 else ''}'>" + "".join(out) + "</div>"
 
 
 def load():
@@ -83,10 +90,20 @@ def daily(day):
     if not evs:
         return None, None
     evs = evs[:6]
-    html = page(build.d_label(day).capitalize(), "Sport<br>vandaag", rows(evs))
+    soon = []
+    if len(evs) < 3:
+        seen = set()
+        for e in load():
+            if e["nl"] and e.get("start") and day < e["day"] <= day + timedelta(days=7) and e["title"] not in seen:
+                seen.add(e["title"]); soon.append(e)
+            if len(soon) >= 4 - len(evs):
+                break
+    html = page(build.d_label(day).capitalize(), "Sport<br>vandaag", rows(evs, soon=soon))
     lines = [f"Vandaag, {build.d_label(day)}:", ""]
     for e in evs:
         lines.append(f"{e['time'] or 'tijd volgt'} · {e['title']}" + (f" ({e['tv']})" if e.get("tv") else ""))
+    if soon:
+        lines += ["", "Binnenkort:"] + [f"{e['day_label']} {e['time']} · {e['title']}" for e in soon]
     lines += ["", "Alle tijden in Nederlandse tijd. Countdown en agenda-knop via de link in bio.", "",
               " ".join(dict.fromkeys(TAGS[e["sport"]] for e in evs)) + " #sportoptv #hoelaatbegint"]
     return html, "\n".join(lines)
