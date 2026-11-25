@@ -607,6 +607,8 @@ def main():
     for slug, t in tournaments.items():
         if slug == "clubs":
             tev = [e for e in events if e["sport"] == "clubs" and e["nl"]]
+        elif slug == "ek-2028":
+            tev = [e for e in events if e["tournament"] == slug or ("EK" in e["title"] and "2028" in e["title"])]
         elif slug == "eredivisie":
             tev = [e for e in events if e["sport"] == "clubs" and "eredivisie" in (e.get("round") or "").lower()]
         else:
