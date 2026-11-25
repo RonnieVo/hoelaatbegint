@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T17:11:02Z",
+ "generated_at": "2026-11-25T17:23:09Z",
  "events": [
   {
    "sport": "f1",
@@ -14,7 +14,7 @@
    "round": "Race 1, kwalificatie",
    "start": "2026-03-07T05:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -32,7 +32,7 @@
    "round": "Race 1 van 23",
    "start": "2026-03-08T04:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -50,7 +50,7 @@
    "round": "Race 2, sprintrace",
    "start": "2026-03-14T03:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -68,7 +68,7 @@
    "round": "Race 2, kwalificatie",
    "start": "2026-03-14T07:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -86,7 +86,7 @@
    "round": "Race 2 van 23",
    "start": "2026-03-15T07:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -104,7 +104,7 @@
    "round": "Race 3, kwalificatie",
    "start": "2026-03-28T06:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -122,7 +122,7 @@
    "round": "Race 3 van 23",
    "start": "2026-03-29T05:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -140,7 +140,7 @@
    "round": "Race 4, sprintrace",
    "start": "2026-05-02T16:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -158,7 +158,7 @@
    "round": "Race 4, kwalificatie",
    "start": "2026-05-02T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -176,7 +176,7 @@
    "round": "Race 4 van 23",
    "start": "2026-05-03T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -194,7 +194,7 @@
    "round": "Race 5, sprintrace",
    "start": "2026-05-23T16:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -212,7 +212,7 @@
    "round": "Race 5, kwalificatie",
    "start": "2026-05-23T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -230,7 +230,7 @@
    "round": "Race 5 van 23",
    "start": "2026-05-24T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -248,7 +248,7 @@
    "round": "Race 6, kwalificatie",
    "start": "2026-06-06T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -266,7 +266,7 @@
    "round": "Race 6 van 23",
    "start": "2026-06-07T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -284,7 +284,7 @@
    "round": "Race 7, kwalificatie",
    "start": "2026-06-13T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -302,7 +302,7 @@
    "round": "Race 7 van 23",
    "start": "2026-06-14T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -320,7 +320,7 @@
    "round": "Race 8, kwalificatie",
    "start": "2026-06-27T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -338,7 +338,7 @@
    "round": "Race 8 van 23",
    "start": "2026-06-28T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -356,7 +356,7 @@
    "round": "Race 9, sprintrace",
    "start": "2026-07-04T11:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -374,7 +374,7 @@
    "round": "Race 9, kwalificatie",
    "start": "2026-07-04T15:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -392,7 +392,7 @@
    "round": "Race 9 van 23",
    "start": "2026-07-05T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -410,7 +410,7 @@
    "round": "Race 10, kwalificatie",
    "start": "2026-07-18T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -428,7 +428,7 @@
    "round": "Race 10 van 23",
    "start": "2026-07-19T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -446,7 +446,7 @@
    "round": "Race 11, kwalificatie",
    "start": "2026-07-25T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -464,7 +464,7 @@
    "round": "Race 11 van 23",
    "start": "2026-07-26T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -482,7 +482,7 @@
    "round": "Race 12, sprintrace",
    "start": "2026-08-22T10:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -500,7 +500,7 @@
    "round": "Race 12, kwalificatie",
    "start": "2026-08-22T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -518,7 +518,7 @@
    "round": "Race 12 van 23",
    "start": "2026-08-23T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -536,7 +536,7 @@
    "round": "Race 13, kwalificatie",
    "start": "2026-09-05T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -554,7 +554,7 @@
    "round": "Race 13 van 23",
    "start": "2026-09-06T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -572,7 +572,7 @@
    "round": "Race 14, kwalificatie",
    "start": "2026-09-12T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -590,7 +590,7 @@
    "round": "Race 14 van 23",
    "start": "2026-09-13T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -608,7 +608,7 @@
    "round": "Race 15, kwalificatie",
    "start": "2026-09-25T12:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -626,7 +626,7 @@
    "round": "Race 15 van 23",
    "start": "2026-09-26T11:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -644,7 +644,7 @@
    "round": "Race 16, kwalificatie",
    "start": "2026-10-03T08:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -662,7 +662,7 @@
    "round": "Race 16 van 23",
    "start": "2026-10-04T07:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -680,7 +680,7 @@
    "round": "Race 17, sprintrace",
    "start": "2026-10-10T09:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -698,7 +698,7 @@
    "round": "Race 17, kwalificatie",
    "start": "2026-10-10T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -716,7 +716,7 @@
    "round": "Race 17 van 23",
    "start": "2026-10-11T12:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -734,7 +734,7 @@
    "round": "Race 18, kwalificatie",
    "start": "2026-10-24T21:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -752,7 +752,7 @@
    "round": "Race 18 van 23",
    "start": "2026-10-25T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -770,7 +770,7 @@
    "round": "Race 19, kwalificatie",
    "start": "2026-10-31T21:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -788,7 +788,7 @@
    "round": "Race 19 van 23",
    "start": "2026-11-01T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -806,7 +806,7 @@
    "round": "Race 20, kwalificatie",
    "start": "2026-11-07T18:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -824,7 +824,7 @@
    "round": "Race 20 van 23",
    "start": "2026-11-08T17:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -842,7 +842,7 @@
    "round": "Race 21, kwalificatie",
    "start": "2026-11-21T04:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -860,25 +860,54 @@
    "round": "Race 21 van 23",
    "start": "2026-11-22T04:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
+   ]
+  },
+  {
+   "id": "cx-wb-2026-11-27-vrouwen",
+   "sport": "veldrijden",
+   "tournament": "veldrijden",
+   "title": "Wereldbeker veldrijden Ostrava – elite vrouwen",
+   "start": "2026-11-27T17:15:00Z",
+   "round": "Wereldbeker 2026-27 (manche 1)",
+   "city": "Ostrava (Tsjechië)",
+   "participants": [],
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://sporza.be/nl/2026/11/24/winterprik-voor-thibau-nys-en-co-sneeuw-ligt-al-klaar-voor-wereldbekerstart-in-ostrava~1795527935958/",
+    "https://www.ziggo.nl/entertainment/sport/wielrennen/wereldbeker-veldrijden/ostrava-27-11-2026"
+   ],
+   "source": "https://sporza.be/nl/2026/11/24/winterprik-voor-thibau-nys-en-co-sneeuw-ligt-al-klaar-voor-wereldbekerstart-in-ostrava~1795527935958/",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
    ]
   },
   {
    "id": "cx-wb-2026-11-27",
    "sport": "veldrijden",
    "tournament": "veldrijden",
-   "title": "Wereldbeker veldrijden Ostrava",
-   "date": "2026-11-27",
-   "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "title": "Wereldbeker veldrijden Ostrava – elite mannen",
+   "round": "Wereldbeker 2026-27 (manche 1)",
    "city": "Ostrava (Tsjechië)",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://sporza.be/nl/2026/11/24/winterprik-voor-thibau-nys-en-co-sneeuw-ligt-al-klaar-voor-wereldbekerstart-in-ostrava~1795527935958/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "start": "2026-11-27T18:45:00Z",
+   "broadcaster": "nos",
+   "sources": [
+    "https://sporza.be/nl/2026/11/24/winterprik-voor-thibau-nys-en-co-sneeuw-ligt-al-klaar-voor-wereldbekerstart-in-ostrava~1795527935958/",
+    "https://www.ziggo.nl/entertainment/sport/wielrennen/wereldbeker-veldrijden/ostrava-27-11-2026"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ere-2026-11-28-psv-go-ahead-eagles",
@@ -913,25 +942,54 @@
    "round": "Race 22, kwalificatie",
    "start": "2026-11-28T18:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
+   ]
+  },
+  {
+   "id": "cx-wb-2026-11-29-vrouwen",
+   "sport": "veldrijden",
+   "tournament": "veldrijden",
+   "title": "Wereldbeker veldrijden Tábor – elite vrouwen",
+   "start": "2026-11-29T12:00:00Z",
+   "round": "Wereldbeker 2026-27 (manche 2)",
+   "city": "Tábor (Tsjechië)",
+   "participants": [],
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://sporza.be/nl/categorie/wielrennen/veldrijden/",
+    "https://www.ziggo.nl/entertainment/sport/wielrennen/wereldbeker-veldrijden/tabor-29-11-2026"
+   ],
+   "source": "https://sporza.be/nl/categorie/wielrennen/veldrijden/",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
    ]
   },
   {
    "id": "cx-wb-2026-11-29",
    "sport": "veldrijden",
    "tournament": "veldrijden",
-   "title": "Wereldbeker veldrijden Tábor",
-   "date": "2026-11-29",
-   "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "title": "Wereldbeker veldrijden Tábor – elite mannen",
+   "round": "Wereldbeker 2026-27 (manche 2)",
    "city": "Tábor (Tsjechië)",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://sporza.be/nl/categorie/wielrennen/veldrijden/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "start": "2026-11-29T13:30:00Z",
+   "broadcaster": "nos",
+   "sources": [
+    "https://sporza.be/nl/categorie/wielrennen/veldrijden/",
+    "https://www.ziggo.nl/entertainment/sport/wielrennen/wereldbeker-veldrijden/tabor-29-11-2026"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ere-2026-11-29-feyenoord-ajax",
@@ -967,7 +1025,7 @@
    "round": "Race 22 van 23",
    "start": "2026-11-29T16:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -976,15 +1034,75 @@
    "id": "wkd-loting",
    "sport": "darts",
    "tournament": "wk-darts",
-   "title": "Loting WK darts 2027",
+   "title": "Loting WK darts 2027 (nog niet gehouden, verwacht 30 november rond 17:30 NL-tijd, PDC heeft dit nog niet bevestigd)",
    "date": "2026-11-30",
    "time_known": false,
    "round": "Loting",
    "note": "Na de loting staan alle wedstrijden en sessies vast.",
-   "source": "https://wkwedstrijdschema.nl/darts/wk-2027-schema",
+   "source": "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "city": "Londen",
+   "venue": "Alexandra Palace",
+   "broadcaster": "viaplay",
+   "sources": [
+    "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
+    "https://www.pdc.tv/wcfaq"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "oranje-v-wk-playoff-heen",
+   "sport": "voetbal",
+   "tournament": "nederlands-elftal",
+   "title": "Slovenië – Nederland",
+   "start": "2026-12-01T16:00:00Z",
+   "round": "WK-kwalificatie play-offs (finaleronde, heen)",
+   "city": "Domžale",
+   "venue": "Športni park Domžale",
+   "participants": [
+    "Nederland"
+   ],
+   "home": "Slovenië",
+   "away": "Nederland",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.onsoranje.nl/nieuws/nederlands-elftal-vrouwen/82846/veurink-maakt-oranjeselectie-bekend-voor-cruciaal-tweeluik",
+    "https://nos.nl/artikel/2640784-oranjevrouwen-bereiden-zich-voor-op-laatste-horde-voor-wk-tweeluik-tegen-slovenie"
+   ],
+   "source": "https://www.onsoranje.nl/nieuws/nederlands-elftal-vrouwen/82846/veurink-maakt-oranjeselectie-bekend-voor-cruciaal-tweeluik",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "wb3-heerenveen-dag1",
+   "sport": "schaatsen",
+   "tournament": "schaatsen",
+   "title": "Wereldbeker 3 Heerenveen – dag 1 (5000m V, 1500m M, 1000m V)",
+   "start": "2026-12-04T17:55:00Z",
+   "round": "Wereldbeker 3",
+   "city": "Heerenveen",
+   "venue": "Thialf",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.teamnl.org/toernooien/wereldbeker-schaatsen-seizoen-20262027",
+    "https://schaatsgekkies.nl/2026/11/25/programma-schaatsen-wereldbeker-world-cup-3-heerenveen-thialf/",
+    "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/"
+   ],
+   "source": "https://www.teamnl.org/toernooien/wereldbeker-schaatsen-seizoen-20262027",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ekh-nl-tsjechie",
@@ -993,17 +1111,51 @@
    "title": "Nederland – Tsjechië",
    "home": "Nederland",
    "away": "Tsjechië",
-   "start": "2026-12-03T19:30:00Z",
+   "start": "2026-12-04T19:30:00Z",
    "round": "Poule D, speeldag 1",
-   "venue": "Brno",
+   "venue": "T-Mobile Arena",
    "city": "Brno (Tsjechië)",
    "broadcaster": "ziggo",
    "tv_detail": "Ziggo Sport 1 en Ziggo Sport 4",
    "page": "nederland-tsjechie-handbal-2026-12-03",
-   "source": "https://www.ziggo.nl/entertainment/sport/handbal/ek-handbal/kijken",
+   "source": "https://www.eurohandball.com/en/team/fvy58zk8YYNg2yyR02lWhw/Netherlands/",
+   "status": "verplaatst",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "participants": [
+    "Nederland"
+   ],
+   "sources": [
+    "https://www.eurohandball.com/en/team/fvy58zk8YYNg2yyR02lWhw/Netherlands/",
+    "https://handbal.nl/evenementen/ek-2026-teamnl-handbaldames/",
+    "https://ehfeuro.eurohandball.com/news/en/womens-ehf-euro-2026-when-and-where-are-the-games/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "wb3-heerenveen-dag2",
+   "sport": "schaatsen",
+   "tournament": "schaatsen",
+   "title": "Wereldbeker 3 Heerenveen – dag 2 (10.000m M, 1500m V, 1000m M)",
+   "start": "2026-12-05T13:15:00Z",
+   "round": "Wereldbeker 3",
+   "city": "Heerenveen",
+   "venue": "Thialf",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.teamnl.org/toernooien/wereldbeker-schaatsen-seizoen-20262027",
+    "https://schaatsgekkies.nl/2026/11/25/programma-schaatsen-wereldbeker-world-cup-3-heerenveen-thialf/",
+    "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/"
+   ],
+   "source": "https://www.teamnl.org/toernooien/wereldbeker-schaatsen-seizoen-20262027",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "sport": "f1",
@@ -1018,7 +1170,7 @@
    "round": "Race 23, kwalificatie",
    "start": "2026-12-05T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -1042,6 +1194,33 @@
    "status": "gepland",
    "checked_at": "2026-11-25T15:30:00Z",
    "nl": true
+  },
+  {
+   "id": "oranje-v-wk-playoff-terug",
+   "sport": "voetbal",
+   "tournament": "nederlands-elftal",
+   "title": "Nederland – Slovenië",
+   "start": "2026-12-05T17:00:00Z",
+   "round": "WK-kwalificatie play-offs (finaleronde, terug)",
+   "city": "Utrecht",
+   "venue": "Stadion Galgenwaard",
+   "participants": [
+    "Nederland"
+   ],
+   "home": "Nederland",
+   "away": "Slovenië",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.onsoranje.nl/nieuws/nederlands-elftal-vrouwen/82808/oranje-v-treft-duitsland-zweden-en-schotland-nations-league",
+    "https://nos.nl/artikel/2640784-oranjevrouwen-bereiden-zich-voor-op-laatste-horde-voor-wk-tweeluik-tegen-slovenie"
+   ],
+   "source": "https://www.onsoranje.nl/nieuws/nederlands-elftal-vrouwen/82808/oranje-v-treft-duitsland-zweden-en-schotland-nations-league",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ere-2026-12-05-az-psv",
@@ -1078,7 +1257,7 @@
    "page": "gp-abu-dhabi-2026",
    "source": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:11:02Z",
+   "checked_at": "2026-11-25T17:23:09Z",
    "nl": true,
    "confirmed_by": [
     "jolpica"
@@ -1105,6 +1284,29 @@
    "nl": true
   },
   {
+   "id": "wb3-heerenveen-dag3",
+   "sport": "schaatsen",
+   "tournament": "schaatsen",
+   "title": "Wereldbeker 3 Heerenveen – dag 3 (500m, massastart, mixed relay)",
+   "start": "2026-12-06T13:45:00Z",
+   "round": "Wereldbeker 3",
+   "city": "Heerenveen",
+   "venue": "Thialf",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.teamnl.org/toernooien/wereldbeker-schaatsen-seizoen-20262027",
+    "https://schaatsgekkies.nl/2026/11/25/programma-schaatsen-wereldbeker-world-cup-3-heerenveen-thialf/",
+    "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/"
+   ],
+   "source": "https://www.teamnl.org/toernooien/wereldbeker-schaatsen-seizoen-20262027",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
    "id": "oranje-loting-ek",
    "sport": "voetbal",
    "tournament": "nederlands-elftal",
@@ -1116,8 +1318,18 @@
    "note": "Nederland zit in pot 1. Door de Nations League-kwartfinales begint Oranje pas in september 2027.",
    "source": "https://www.bet-experts.nl/nieuws/loting-ek-2028-kwalificatie-potindeling-oranje",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "participants": [
+    "Nederland"
+   ],
+   "sources": [
+    "https://www.bet-experts.nl/nieuws/loting-ek-2028-kwalificatie-potindeling-oranje",
+    "https://www.fcupdate.nl/voetbalnieuws/2026/10/oranje-pot-1-ek-kwalificatie-2028-xavi-hernandez"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ekh-nl-oostenrijk",
@@ -1128,57 +1340,114 @@
    "away": "Oostenrijk",
    "start": "2026-12-06T19:30:00Z",
    "round": "Poule D, speeldag 2",
-   "venue": "Brno",
+   "venue": "T-Mobile Arena",
    "city": "Brno (Tsjechië)",
    "broadcaster": "ziggo",
    "tv_detail": "Ziggo Sport 4",
    "page": "nederland-oostenrijk-handbal-2026-12-06",
-   "source": "https://www.ziggo.nl/entertainment/sport/handbal/ek-handbal/kijken",
+   "source": "https://www.eurohandball.com/en/team/fvy58zk8YYNg2yyR02lWhw/Netherlands/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "participants": [
+    "Nederland"
+   ],
+   "sources": [
+    "https://www.eurohandball.com/en/team/fvy58zk8YYNg2yyR02lWhw/Netherlands/",
+    "https://handbal.nl/evenementen/ek-2026-teamnl-handbaldames/",
+    "https://www.ziggo.nl/entertainment/sport/handbal/ek-handbal/kijken"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ekh-nl-kroatie",
    "sport": "handbal",
    "tournament": "ek-handbal-vrouwen",
-   "title": "Nederland – Kroatië",
-   "home": "Nederland",
-   "away": "Kroatië",
+   "title": "Kroatië – Nederland",
+   "home": "Kroatië",
+   "away": "Nederland",
    "start": "2026-12-08T19:30:00Z",
    "round": "Poule D, speeldag 3",
-   "venue": "Brno",
+   "venue": "T-Mobile Arena",
    "city": "Brno (Tsjechië)",
    "broadcaster": "ziggo",
    "tv_detail": "Ziggo Sport (kanaal volgt)",
    "page": "nederland-kroatie-handbal-2026-12-08",
-   "source": "https://www.ziggo.nl/entertainment/sport/handbal/ek-handbal/kijken",
+   "source": "https://www.eurohandball.com/en/team/fvy58zk8YYNg2yyR02lWhw/Netherlands/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "participants": [
+    "Nederland"
+   ],
+   "sources": [
+    "https://www.eurohandball.com/en/team/fvy58zk8YYNg2yyR02lWhw/Netherlands/",
+    "https://handbal.nl/evenementen/ek-2026-teamnl-handbaldames/",
+    "https://www.ziggo.nl/entertainment/sport/handbal/ek-handbal/kijken"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ekh-hoofdronde",
    "sport": "handbal",
    "tournament": "ek-handbal-vrouwen",
    "title": "EK handbal: hoofdronde (als Nederland doorgaat)",
-   "date": "2026-12-10",
-   "end_date": "2026-12-15",
+   "date": "2026-12-11",
+   "end_date": "2026-12-16",
    "time_known": false,
-   "round": "Hoofdronde",
+   "round": "Hoofdronde groep II",
    "city": "Katowice (Polen)",
    "note": "De beste twee van poule D gaan door naar de hoofdronde in Katowice.",
    "broadcaster": "ziggo",
-   "source": "https://lex.dk/EM_i_h%C3%A5ndbold_for_kvinder_2026",
+   "source": "https://handbal.nl/evenementen/ek-2026-teamnl-handbaldames/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "venue": "Spodek Arena",
+   "participants": [
+    "Nederland"
+   ],
+   "sources": [
+    "https://handbal.nl/evenementen/ek-2026-teamnl-handbaldames/",
+    "https://ehfeuro.eurohandball.com/news/en/womens-ehf-euro-2026-when-and-where-are-the-games/",
+    "https://ehfec.eurohandball.com/men/2024-25/news/en/womens-ehf-euro-2026-in-katowice-schedule-teams-and-tickets/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "wb4-stavanger",
+   "sport": "schaatsen",
+   "tournament": "schaatsen",
+   "title": "Wereldbeker 4 Stavanger",
+   "date": "2026-12-11",
+   "end_date": "2026-12-13",
+   "round": "Wereldbeker 4",
+   "city": "Stavanger",
+   "venue": "Vår Energi Arena Sørmarka",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/",
+    "https://www.schaatsenoptv.com/"
+   ],
+   "source": "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "wkd-r1",
    "sport": "darts",
    "tournament": "wk-darts",
-   "title": "WK darts: ronde 1 (laatste 128)",
+   "title": "WK darts: ronde 1 (laatste 128), best of 5 sets, middagsessies 13:30 en avondsessies 20:00 NL-tijd (11 en 14 december alleen avond), wedstrijden met Nederlanders volgen na de loting",
    "date": "2026-12-11",
    "end_date": "2026-12-19",
    "time_known": false,
@@ -1186,26 +1455,65 @@
    "time_note": "Middag 13:30, avond 20:00 (11 en 14 december alleen avond)",
    "format": "Best of 5 sets",
    "broadcaster": "viaplay",
-   "source": "https://wkwedstrijdschema.nl/darts/wk-2027-schema",
+   "source": "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "city": "Londen",
+   "venue": "Alexandra Palace",
+   "sources": [
+    "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
+    "https://www.pdc.tv/wcfaq"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "wkd-opening",
    "sport": "darts",
    "tournament": "wk-darts",
-   "title": "Openingsavond WK darts",
+   "title": "Openingsavond WK darts (4 wedstrijden, alleen avondsessie, 20:00 NL-tijd)",
    "start": "2026-12-11T19:00:00Z",
    "round": "Ronde 1",
    "venue": "Alexandra Palace",
    "city": "Londen",
    "broadcaster": "viaplay",
    "note": "Alleen een avondsessie, 4 wedstrijden.",
-   "source": "https://wkwedstrijdschema.nl/darts/wk-2027-schema",
+   "source": "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "sources": [
+    "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
+    "https://www.pdc.tv/wcfaq"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "cx-wb-2026-12-13",
+   "sport": "veldrijden",
+   "tournament": "veldrijden",
+   "title": "Wereldbeker veldrijden Glasgow",
+   "date": "2026-12-13",
+   "round": "Wereldbeker 2026-27 (manche 3)",
+   "city": "Glasgow (Schotland)",
+   "venue": "Kelvingrove Park",
+   "participants": [],
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.ucicyclocrossworldcup.com/en/news/uci-cyclo-cross-world-cup-returns-to-great-britain",
+    "https://sporza.be/nl/2026/03/04/glasgow-vult-het-laatste-gaatje-op-de-wb-veldritkalender-nieuw~1772612937875/"
+   ],
+   "source": "https://www.ucicyclocrossworldcup.com/en/news/uci-cyclo-cross-world-cup-returns-to-great-britain",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ere-2026-12-13-psv-telstar",
@@ -1293,10 +1601,18 @@
    "city": "Katowice (Polen)",
    "note": "Tweede halve finale om 20:30.",
    "broadcaster": "ziggo",
-   "source": "https://ehfec.eurohandball.com/news/en/ehf-confirms-throw-off-times-for-women-s-ehf-euro-2026/",
+   "source": "https://ehfeuro.eurohandball.com/news/en/ehf-confirms-throw-off-times-for-women-s-ehf-euro-2026/",
    "nl": false,
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z"
+   "checked_at": "2026-11-25T17:23:09Z",
+   "venue": "Spodek Arena",
+   "sources": [
+    "https://ehfeuro.eurohandball.com/news/en/ehf-confirms-throw-off-times-for-women-s-ehf-euro-2026/",
+    "https://handbal.nl/evenementen/ek-2026-teamnl-handbaldames/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "cx-wb-2026-12-19",
@@ -1305,13 +1621,21 @@
    "title": "Wereldbeker veldrijden Antwerpen",
    "date": "2026-12-19",
    "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "round": "Wereldbeker 2026-27 (manche 4)",
    "city": "Antwerpen",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
+    "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "cx-wb-2026-12-20",
@@ -1320,19 +1644,27 @@
    "title": "Wereldbeker veldrijden Koksijde",
    "date": "2026-12-20",
    "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "round": "Wereldbeker 2026-27 (manche 5)",
    "city": "Koksijde",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
+    "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "wkd-r2",
    "sport": "darts",
    "tournament": "wk-darts",
-   "title": "WK darts: ronde 2 (laatste 64)",
+   "title": "WK darts: ronde 2 (laatste 64), best of 5 sets, middag- en avondsessies",
    "date": "2026-12-20",
    "end_date": "2026-12-23",
    "time_known": false,
@@ -1340,10 +1672,19 @@
    "time_note": "Middag- en avondsessies",
    "format": "Best of 5 sets",
    "broadcaster": "viaplay",
-   "source": "https://wkwedstrijdschema.nl/darts/wk-2027-schema",
+   "source": "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "city": "Londen",
+   "venue": "Alexandra Palace",
+   "sources": [
+    "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
+    "https://www.pdc.tv/wcfaq"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ere-2026-12-20-feyenoord-fc-twente",
@@ -1395,10 +1736,18 @@
    "city": "Katowice (Polen)",
    "note": "Bronzen finale om 15:15.",
    "broadcaster": "ziggo",
-   "source": "https://ehfec.eurohandball.com/news/en/ehf-confirms-throw-off-times-for-women-s-ehf-euro-2026/",
+   "source": "https://ehfeuro.eurohandball.com/news/en/ehf-confirms-throw-off-times-for-women-s-ehf-euro-2026/",
    "nl": false,
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z"
+   "checked_at": "2026-11-25T17:23:09Z",
+   "venue": "Spodek Arena",
+   "sources": [
+    "https://ehfeuro.eurohandball.com/news/en/ehf-confirms-throw-off-times-for-women-s-ehf-euro-2026/",
+    "https://ehfeuro.eurohandball.com/news/en/womens-ehf-euro-2026-in-katowice-schedule-teams-and-tickets/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ere-2026-12-20-psv-pec-zwolle",
@@ -1427,13 +1776,21 @@
    "title": "Wereldbeker veldrijden Gavere",
    "date": "2026-12-26",
    "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "round": "Wereldbeker 2026-27 (manche 6)",
    "city": "Gavere",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
+    "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "cx-wb-2026-12-27",
@@ -1442,13 +1799,21 @@
    "title": "Wereldbeker veldrijden Namen",
    "date": "2026-12-27",
    "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "round": "Wereldbeker 2026-27 (manche 7)",
    "city": "Namen",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
+    "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "nk-allround-sprint",
@@ -1459,17 +1824,27 @@
    "end_date": "2026-12-28",
    "time_known": false,
    "round": "NK",
-   "city": "Nederland (locatie volgt)",
-   "source": "https://knsb.nl/documents/1171/Wedstrijdkalender_Langebaan_versie_160626.pdf",
+   "city": "Heerenveen",
+   "source": "https://www.schaatsen.nl/langebaan/uitslagen-langebaan-2026-2027/programma-en-uitslagen-nk-allround-sprint/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "venue": "Thialf",
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.schaatsen.nl/langebaan/uitslagen-langebaan-2026-2027/programma-en-uitslagen-nk-allround-sprint/",
+    "https://thialf.nl/evenementen",
+    "https://knsb.nl/documents/1171/Wedstrijdkalender_Langebaan_versie_160626.pdf"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "wkd-r3",
    "sport": "darts",
    "tournament": "wk-darts",
-   "title": "WK darts: ronde 3 (laatste 32)",
+   "title": "WK darts: ronde 3 (laatste 32), best of 7 sets, middag- en avondsessies",
    "date": "2026-12-27",
    "end_date": "2026-12-29",
    "time_known": false,
@@ -1477,10 +1852,19 @@
    "time_note": "Middag- en avondsessies, 3 wedstrijden per sessie",
    "format": "Best of 7 sets",
    "broadcaster": "viaplay",
-   "source": "https://wkwedstrijdschema.nl/darts/wk-2027-schema",
+   "source": "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "city": "Londen",
+   "venue": "Alexandra Palace",
+   "sources": [
+    "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
+    "https://www.pdc.tv/wcfaq"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "cx-wb-2026-12-29",
@@ -1489,61 +1873,94 @@
    "title": "Wereldbeker veldrijden Besançon",
    "date": "2026-12-29",
    "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "round": "Wereldbeker 2026-27 (manche 8)",
    "city": "Besançon (Frankrijk)",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.cyclingnews.com/pro-cycling/racing/great-britain-captures-calendar-spot-for-2026-27-uci-cyclo-cross-world-cup-with-glasgow-confirmed-as-host/",
+    "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "wkd-r4",
    "sport": "darts",
    "tournament": "wk-darts",
-   "title": "WK darts: ronde 4 (laatste 16)",
+   "title": "WK darts: ronde 4 (laatste 16), best of 7 sets",
    "date": "2026-12-29",
    "end_date": "2026-12-30",
    "time_known": false,
    "round": "Ronde 4",
    "format": "Best of 7 sets",
    "broadcaster": "viaplay",
-   "source": "https://wkwedstrijdschema.nl/darts/wk-2027-schema",
+   "source": "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "city": "Londen",
+   "venue": "Alexandra Palace",
+   "sources": [
+    "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/",
+    "https://www.pdc.tv/wcfaq"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "wkd-kf",
    "sport": "darts",
    "tournament": "wk-darts",
-   "title": "WK darts: kwartfinales",
+   "title": "WK darts: kwartfinales, best of 9 sets, middagsessie 13:30 en avondsessie 20:00 NL-tijd (2 wedstrijden per sessie)",
    "date": "2027-01-01",
    "time_known": false,
    "round": "Kwartfinale",
    "time_note": "Twee sessies met elk 2 wedstrijden",
    "format": "Best of 9 sets",
    "broadcaster": "viaplay",
-   "source": "https://wkwedstrijdschema.nl/darts/wk-2027-schema",
+   "source": "https://www.pdc.tv/wcfaq",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "city": "Londen",
+   "venue": "Alexandra Palace",
+   "sources": [
+    "https://www.pdc.tv/wcfaq",
+    "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "wkd-hf",
    "sport": "darts",
    "tournament": "wk-darts",
-   "title": "WK darts: halve finales",
+   "title": "WK darts: halve finales, best of 11 sets (20:30 NL-tijd)",
    "start": "2027-01-02T19:30:00Z",
    "round": "Halve finale",
    "format": "Best of 11 sets",
    "venue": "Alexandra Palace",
    "city": "Londen",
    "broadcaster": "viaplay",
-   "source": "https://wkwedstrijdschema.nl/darts/wk-2027-schema",
+   "source": "https://www.pdc.tv/wcfaq",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "sources": [
+    "https://www.pdc.tv/wcfaq",
+    "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "cx-wb-2027-01-03",
@@ -1552,45 +1969,114 @@
    "title": "Wereldbeker veldrijden Zonhoven",
    "date": "2027-01-03",
    "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "round": "Wereldbeker 2026-27 (manche 9)",
    "city": "Zonhoven",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://www.flobikes.com/articles/16379651-how-to-watch-the-2026-2027-uci-cyclo-cross-world-cup-season",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.flobikes.com/articles/16379651-how-to-watch-the-2026-2027-uci-cyclo-cross-world-cup-season",
+    "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "wkd-finale",
    "sport": "darts",
    "tournament": "wk-darts",
-   "title": "Finale WK darts 2027",
+   "title": "Finale WK darts 2027, best of 13 sets (21:00 NL-tijd)",
    "start": "2027-01-03T20:00:00Z",
    "round": "Finale",
    "format": "Best of 13 sets",
    "venue": "Alexandra Palace",
    "city": "Londen",
    "broadcaster": "viaplay",
-   "source": "https://wkwedstrijdschema.nl/darts/wk-2027-schema",
+   "source": "https://www.pdc.tv/wcfaq",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "sources": [
+    "https://www.pdc.tv/wcfaq",
+    "https://www.alexandrapalace.com/blog/all-you-need-to-know-world-darts-championship/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "ek-allround-sprint",
    "sport": "schaatsen",
    "tournament": "schaatsen",
-   "title": "EK allround & sprint",
-   "date": "2027-01-08",
+   "title": "EK allround & sprint – dag 1 (sprint: eerste 500m en 1000m)",
    "end_date": "2027-01-10",
-   "time_known": false,
    "round": "EK",
    "venue": "Thialf",
    "city": "Heerenveen",
-   "source": "https://knsb.nl/documents/1171/Wedstrijdkalender_Langebaan_versie_160626.pdf",
+   "source": "https://www.schaatsen.nl/kalender/isu-ek-allround-sprint-2027/",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "start": "2027-01-08T17:55:00Z",
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.schaatsen.nl/kalender/isu-ek-allround-sprint-2027/",
+    "https://thialf.nl/evenementen/kalender?news_id=1228902",
+    "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "ek-allround-sprint-dag2",
+   "sport": "schaatsen",
+   "tournament": "schaatsen",
+   "title": "EK allround & sprint – dag 2 (500m, 3000m V, 5000m M, tweede sprintafstanden)",
+   "start": "2027-01-09T09:05:00Z",
+   "round": "EK",
+   "city": "Heerenveen",
+   "venue": "Thialf",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.schaatsen.nl/kalender/isu-ek-allround-sprint-2027/",
+    "https://thialf.nl/evenementen/kalender?news_id=1228902",
+    "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/"
+   ],
+   "source": "https://www.schaatsen.nl/kalender/isu-ek-allround-sprint-2027/",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "ek-allround-sprint-dag3",
+   "sport": "schaatsen",
+   "tournament": "schaatsen",
+   "title": "EK allround & sprint – dag 3 (1500m, 5000m V, 10.000m M)",
+   "start": "2027-01-10T12:45:00Z",
+   "round": "EK",
+   "city": "Heerenveen",
+   "venue": "Thialf",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.schaatsen.nl/kalender/isu-ek-allround-sprint-2027/",
+    "https://thialf.nl/evenementen/kalender?news_id=1228902",
+    "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/"
+   ],
+   "source": "https://www.schaatsen.nl/kalender/isu-ek-allround-sprint-2027/",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "cx-wb-2027-01-17",
@@ -1599,13 +2085,44 @@
    "title": "Wereldbeker veldrijden Benidorm",
    "date": "2027-01-17",
    "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "round": "Wereldbeker 2026-27 (manche 10)",
    "city": "Benidorm (Spanje)",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://www.flobikes.com/articles/16379651-how-to-watch-the-2026-2027-uci-cyclo-cross-world-cup-season",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.flobikes.com/articles/16379651-how-to-watch-the-2026-2027-uci-cyclo-cross-world-cup-season",
+    "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "nk-afstanden",
+   "sport": "schaatsen",
+   "tournament": "schaatsen",
+   "title": "NK afstanden",
+   "date": "2027-01-22",
+   "end_date": "2027-01-24",
+   "round": "NK",
+   "city": "Heerenveen",
+   "venue": "Thialf",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.schaatsen.nl/kalender/ok-nk-allround-sprint/",
+    "https://www.nlziet.nl/nl/programma/nk-schaatsen/"
+   ],
+   "source": "https://www.schaatsen.nl/kalender/ok-nk-allround-sprint/",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "cx-wb-2027-01-23",
@@ -1614,13 +2131,89 @@
    "title": "Wereldbeker veldrijden Hamme",
    "date": "2027-01-23",
    "time_known": false,
-   "round": "Wereldbeker 2026-27",
+   "round": "Wereldbeker 2026-27 (manche 11)",
    "city": "Hamme",
    "time_note": "Starttijden volgen in de week van de wedstrijd",
-   "source": "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/",
+   "source": "https://www.flobikes.com/articles/16379651-how-to-watch-the-2026-2027-uci-cyclo-cross-world-cup-season",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "broadcaster": "nos",
+   "sources": [
+    "https://www.flobikes.com/articles/16379651-how-to-watch-the-2026-2027-uci-cyclo-cross-world-cup-season",
+    "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "cx-wb-2027-01-24",
+   "sport": "veldrijden",
+   "tournament": "veldrijden",
+   "title": "Wereldbeker veldrijden Hoogerheide",
+   "date": "2027-01-24",
+   "round": "Wereldbeker 2026-27 (manche 12)",
+   "city": "Hoogerheide",
+   "participants": [],
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://www.flobikes.com/articles/16379651-how-to-watch-the-2026-2027-uci-cyclo-cross-world-cup-season",
+    "https://www.teamnl.org/toernooien/wereldbeker-veldrijden-20262027"
+   ],
+   "source": "https://www.flobikes.com/articles/16379651-how-to-watch-the-2026-2027-uci-cyclo-cross-world-cup-season",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "wb5-salt-lake-city",
+   "sport": "schaatsen",
+   "tournament": "schaatsen",
+   "title": "Wereldbeker 5 Salt Lake City",
+   "date": "2027-01-29",
+   "end_date": "2027-01-31",
+   "round": "Wereldbeker 5",
+   "city": "Salt Lake City",
+   "venue": "Utah Olympic Oval",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/",
+    "https://www.schaatsenoptv.com/"
+   ],
+   "source": "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
+  },
+  {
+   "id": "wb6-calgary",
+   "sport": "schaatsen",
+   "tournament": "schaatsen",
+   "title": "Wereldbeker 6 Calgary",
+   "date": "2027-02-05",
+   "end_date": "2027-02-07",
+   "round": "Wereldbeker 6",
+   "city": "Calgary",
+   "venue": "Olympic Oval",
+   "broadcaster": "nos",
+   "nl": true,
+   "sources": [
+    "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/",
+    "https://www.schaatsenoptv.com/"
+   ],
+   "source": "https://isu-skating.com/en/speed-skating/news/isu-speed-skating-event-calendar-202627/",
+   "status": "gepland",
+   "checked_at": "2026-11-25T17:23:09Z",
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "hockey-pl-goldcoast",
@@ -1676,16 +2269,28 @@
    "id": "oranje-nl-kf",
    "sport": "voetbal",
    "tournament": "nederlands-elftal",
-   "title": "Nations League-kwartfinale (heen en terug)",
-   "date": "2027-03-22",
+   "title": "Nederland – Portugal (Nations League-kwartfinale, heen en terug)",
+   "date": "2027-03-25",
    "end_date": "2027-03-30",
    "time_known": false,
    "round": "Kwartfinale Nations League",
    "note": "Tegenstander volgt via loting.",
-   "source": "https://www.voetbalnieuws.nl/nieuws/2159736/wanneer-speelt-oranje-weer-programma-nederland-in-2027.html",
+   "source": "https://www.voetbalnieuws.nl/nieuws/2160864/nederlands-elftal-kent-tegenstander-in-kwartfinale-nations-league-vn.html",
    "status": "gepland",
-   "checked_at": "2026-11-25T15:30:00Z",
-   "nl": true
+   "checked_at": "2026-11-25T17:23:09Z",
+   "nl": true,
+   "participants": [
+    "Nederland"
+   ],
+   "home": "Nederland",
+   "away": "Portugal",
+   "sources": [
+    "https://www.voetbalnieuws.nl/nieuws/2160864/nederlands-elftal-kent-tegenstander-in-kwartfinale-nations-league-vn.html",
+    "https://www.meemetoranje.nl/nederlands-elftal/nieuws/nederlands-elftal-loot-portugal-kwartfinale-nations-league/"
+   ],
+   "confirmed_by": [
+    "ai"
+   ]
   },
   {
    "id": "f1-2027-03",

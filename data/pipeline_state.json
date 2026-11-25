@@ -1,1 +1,1 @@
-{"mailed": ["e:ai: JSONDecodeError(\"Expecting ',' delimiter: line 17 column 500 (char 7786)\")"]}
+{"mailed": ["e:ai: JSONDecodeError(\"Expecting ',' delimiter: line 17 column 500 (char 7786)\")", "e:api-football: RuntimeError(\"API-Football weigert: {'plan': 'Free plans do not have access to the Next parameter.'}\")"]}
