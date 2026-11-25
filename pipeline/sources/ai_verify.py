@@ -33,11 +33,12 @@ TASKS = {
     "hockey": "FIH Pro League 2026-27, alle wedstrijden van de Nederlandse mannen en vrouwen met aanvangstijd. Bronnen: fih.hockey, knhb.nl.",
     "schaatsen": "Langebaanschaatsen 2026-27: wereldbekers, NK en EK, met starttijden per dag. Bronnen: isu.org, knsb.nl, schaatsen.nl, nos.nl.",
     "veldrijden": "UCI Wereldbeker veldrijden 2026-27: starttijden van de elitewedstrijden (mannen en vrouwen). Bronnen: uci.org, sporza.be, nos.nl.",
+    "clubs": "Ajax, Feyenoord en PSV: wedstrijden in de Europa League, Conference League, Champions League en KNVB-beker in de komende 30 dagen, met aanvangstijd en zender. Geen Eredivisie (die komt uit een andere bron). Zet in 'participants' de Nederlandse club(s). Bronnen: uefa.com, knvb.nl, ziggo.nl, espn.nl.",
     "nederlands-elftal": "Oranje (mannen en vrouwen): eerstvolgende wedstrijden, lotingen en zender. Bronnen: onsoranje.nl, uefa.com, nos.nl.",
 }
 
 ALLOWED_SPORTS = {"darts", "handbal", "hockey", "schaatsen", "veldrijden", "voetbal", "f1", "clubs"}
-TASK_SPORT = {"wk-darts": "darts", "ek-handbal-vrouwen": "handbal", "hockey": "hockey", "schaatsen": "schaatsen",
+TASK_SPORT = {"clubs": "clubs", "wk-darts": "darts", "ek-handbal-vrouwen": "handbal", "hockey": "hockey", "schaatsen": "schaatsen",
               "veldrijden": "veldrijden", "nederlands-elftal": "voetbal"}
 
 SCHEMA = """Geef als antwoord ALLEEN één codeblok ```json ... ``` met een JSON-array, zonder uitleg of bronvermelding erbuiten.

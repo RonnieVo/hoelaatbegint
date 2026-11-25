@@ -57,6 +57,8 @@ def fetch(existing):
         r.raise_for_status()
         body = r.json()
         if body.get("errors"):
+            if "plan" in body["errors"]:
+                raise Skip("gratis plan geeft geen actuele seizoenen; football-data.org wordt gebruikt")
             raise RuntimeError(f"API-Football weigert: {body['errors']}")
         for fx in body.get("response", []):
             f, t, lg = fx["fixture"], fx["teams"], fx["league"]

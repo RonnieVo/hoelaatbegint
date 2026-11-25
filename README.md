@@ -28,7 +28,8 @@ Het pakket staat standaard op de zuinigste stand die nog volledig automatisch is
 | Bezoekersstatistieken | Cloudflare Web Analytics (cookieloos), plus Search Console | €0 |
 | AI-controle | 1 keer per dag per actief toernooi, extra op wedstrijddagen, max. 4 zoekopdrachten per controle | ~€15–25 per maand |
 | AI-captions en AI-inleidingen | Uit (sjabloonteksten) | €0 |
-| API-Football | Gratis laag (100 verzoeken per dag); clubs en Oranje worden elke 2 uur opgehaald, ongeveer 50 verzoeken per dag | €0 |
+| football-data.org | Gratis laag: Eredivisie en Champions League voor Ajax, Feyenoord en PSV | €0 |
+| API-Football | Optioneel; de gratis laag geeft geen actuele seizoenen (Pro-plan $19/maand) | €0 |
 | TheSportsDB | Geen sleutel invullen (optioneel) | €0 |
 | Instagram, OneSignal, mail | Gratis lagen | €0 |
 | Domein | Eenmalig | ~€10 per jaar |
@@ -49,6 +50,7 @@ Later opschalen: zet de variabelen (Settings › Variables) `AI_VERIFY_MODE=inte
 | --- | --- | --- |
 | `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` | Cloudflare-dashboard | Publiceren |
 | `ANTHROPIC_API_KEY` | console.anthropic.com | AI-controle, captions, inleidingen, titels |
+| `FOOTBALL_DATA_KEY` | football-data.org › Register (gratis) | Ajax, Feyenoord, PSV (Eredivisie en Champions League) |
 | `API_FOOTBALL_KEY` | api-football.com (gratis laag volstaat) | Ajax, Feyenoord, PSV en Oranje. Team-ID's (194, 209, 197, 1118) eenmalig controleren via `/teams?search=` |
 | `THESPORTSDB_KEY` | thesportsdb.com (Patreon-sleutel aanbevolen) | Tweede bron darts |
 | `INDEXNOW_KEY` | zelf verzinnen: 32 willekeurige letters/cijfers | Snelle indexering Bing |

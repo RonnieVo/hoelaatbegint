@@ -408,6 +408,10 @@ def main():
     for e in events_raw:
         if e.get("tournament") not in tournaments_known:
             e["tournament"] = SPORTS[e["sport"]]["page"] if SPORTS[e["sport"]]["page"] in tournaments_known else next(iter(tournaments_known))
+    for e in events_raw:  # clubwedstrijden uit de AI-controle aan de juiste clubpagina koppelen
+        if e["sport"] == "clubs" and not e.get("clubs"):
+            txt = slugify(e["title"] + " " + " ".join(e.get("participants", [])))
+            e["clubs"] = [c for c in ("ajax", "feyenoord", "psv") if c in txt]
     events = sorted((prep(e, broadcasters, now) for e in events_raw), key=lambda e: (e["dt"], e["id"]))
     upcoming = [e for e in events if e["upcoming"]]
     built = now.astimezone(NL)

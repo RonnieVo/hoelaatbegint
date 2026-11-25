@@ -26,6 +26,7 @@ jobs:
     env:
       HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
       API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+      FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
       THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       AI_VERIFY_MODE: ${{ vars.AI_VERIFY_MODE }}

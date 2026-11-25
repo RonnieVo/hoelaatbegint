@@ -15,13 +15,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from sources import f1, football, thesportsdb, ai_verify  # noqa: E402
+from sources import f1, football, football_data, thesportsdb, ai_verify  # noqa: E402
 from notify import send_mail  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 EVENTS = ROOT / "data" / "events.json"
 STATE = ROOT / "data" / "pipeline_state.json"
-TRUSTED_APIS = {"jolpica", "api-football"}  # één bron is genoeg voor deze officiële data-API's
+TRUSTED_APIS = {"jolpica", "api-football", "football-data"}  # één bron is genoeg voor deze officiële data-API's
 OFFICIAL = ("eurohandball.com", "ihf.info", "pdc.tv", "uefa.com", "fifa.com", "onsoranje.nl", "knvb.nl", "eredivisie.nl",
             "fih.hockey", "knhb.nl", "knsb.nl", "isu.org", "schaatsen.nl", "uci.org", "formula1.com", "fia.com",
             "nos.nl", "ziggo.nl", "viaplay.nl", "espn.nl")
@@ -101,7 +101,7 @@ def main():
     data = json.loads(EVENTS.read_text(encoding="utf-8"))
     existing = data["events"]
     candidates, errors = [], []
-    for name, mod in [("jolpica", f1), ("api-football", football), ("thesportsdb", thesportsdb), ("ai", ai_verify)]:
+    for name, mod in [("jolpica", f1), ("football-data", football_data), ("api-football", football), ("thesportsdb", thesportsdb), ("ai", ai_verify)]:
         try:
             got = mod.fetch(existing)
             candidates += [(name, e) for e in got]
