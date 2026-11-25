@@ -888,34 +888,6 @@
    "checked_at": "2026-11-25T18:40:00Z"
   },
   {
-   "id": "voetbal-conference-league-2026-11-26-ajax-thun",
-   "sport": "voetbal",
-   "tournament": "clubs",
-   "title": "Ajax – FC Thun",
-   "start": "2026-11-26T17:45:00Z",
-   "round": "Competitiefase, speelronde 4",
-   "city": "Amsterdam",
-   "venue": "Johan Cruijff ArenA",
-   "participants": [
-    "Ajax"
-   ],
-   "home": "Ajax",
-   "away": "FC Thun",
-   "broadcaster": "ziggo",
-   "nl": true,
-   "sources": [
-    "https://www.uefa.com/uefaconferenceleague/",
-    "https://www.ziggo.nl/entertainment/sport/voetbal"
-   ],
-   "source": "https://www.uefa.com/uefaconferenceleague/",
-   "status": "gepland",
-   "checked_at": "2026-11-25T18:47:12Z",
-   "confirmed_by": [
-    "ai"
-   ],
-   "opinion": "Ajax in de Johan Cruijff ArenA is voor mij altijd een reden om de sjaal te zoeken, ook al is FC Thun niet de naam waar ik als eerste van sta te springen. Maar in speelronde 4 van de competitiefase kan een underdog best lastig worden, en dat vind ik juist lekker."
-  },
-  {
    "id": "cx-wb-2026-11-27-vrouwen",
    "sport": "veldrijden",
    "tournament": "veldrijden",
@@ -1864,42 +1836,13 @@
    "title": "Ajax – Getafe",
    "home": "Ajax",
    "away": "Getafe",
-   "date": "2026-12-17",
-   "time_known": false,
    "round": "Conference League, competitiefase",
    "broadcaster": "ziggo",
-   "time_note": "Aanvangstijd volgt",
    "source": "https://www.ziggo.nl/entertainment/sport/voetbal/ajax-kijken/ajax-wedstrijden",
    "status": "gepland",
    "nl": true,
-   "checked_at": "2026-11-25T18:40:00Z"
-  },
-  {
-   "id": "voetbal-conference-league-2026-12-17-ajax-getafe",
-   "sport": "voetbal",
-   "tournament": "clubs",
-   "title": "Ajax – Getafe",
-   "start": "2026-12-17T20:00:00Z",
-   "round": "Competitiefase, speelronde 6",
-   "city": "Amsterdam",
-   "venue": "Johan Cruijff ArenA",
-   "participants": [
-    "Ajax"
-   ],
-   "home": "Ajax",
-   "away": "Getafe",
-   "broadcaster": "ziggo",
-   "nl": true,
-   "sources": [
-    "https://www.uefa.com/uefaconferenceleague/",
-    "https://www.ziggo.nl/entertainment/sport/voetbal"
-   ],
-   "source": "https://www.uefa.com/uefaconferenceleague/",
-   "status": "gepland",
-   "checked_at": "2026-11-25T18:47:12Z",
-   "confirmed_by": [
-    "ai"
-   ]
+   "checked_at": "2026-11-25T18:40:00Z",
+   "start": "2026-12-17T20:00:00Z"
   },
   {
    "id": "ekh-hf",

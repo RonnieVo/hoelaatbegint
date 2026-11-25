@@ -10,7 +10,9 @@ Elke bron is optioneel: zonder API-sleutel wordt die bron overgeslagen.
 """
 import json
 import os
+import re
 import sys
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -28,6 +30,21 @@ OFFICIAL = ("eurohandball.com", "ihf.info", "pdc.tv", "uefa.com", "fifa.com", "o
 AI_FIELDS = {"start", "date", "end_date", "time_known", "time_note", "venue", "city", "status", "result", "sources", "source", "participants"}
 
 
+def _slug(x):
+    x = unicodedata.normalize("NFKD", x or "").encode("ascii", "ignore").decode().lower()
+    x = re.sub(r"\b(fc|sc|afc|cf|bv|vrouwen|v)\b", " ", x)
+    return re.sub(r"[^a-z0-9]+", "", x)
+
+
+def match_key(e):
+    """Zelfde wedstrijd herkennen ongeacht de bron: dag + beide ploegen."""
+    day = (e.get("start") or e.get("date") or "")[:10]
+    if " – " not in e.get("title", "") or not day:
+        return None
+    a, b = e["title"].split(" – ", 1)
+    return (day, _slug(a), _slug(b))
+
+
 def official(ev):
     return any(any(d in (u or "") for d in OFFICIAL) for u in ev.get("sources", [ev.get("source")]))
 
@@ -41,14 +58,18 @@ def merge(existing, candidates):
     by_id = {e["id"]: e for e in existing}
     # Hetzelfde evenement uit een andere bron (andere id) herkennen: zelfde starttijd + zelfde club/toernooi
     same = {(e.get("start"), c): e["id"] for e in existing if e.get("start") for c in (e.get("clubs") or [e.get("tournament")])}
+    by_match = {match_key(e): e["id"] for e in existing if match_key(e)}
     remapped = []
     for src, ev in candidates:
-        if ev["id"] not in by_id and ev.get("start"):
-            for c in ev.get("clubs") or [ev.get("tournament")]:
-                if (ev["start"], c) in same:
-                    ev = {**ev, "id": same[(ev["start"], c)]}
-                    ev.pop("page", None)  # bestaande URL behouden
-                    break
+        if ev["id"] not in by_id:
+            target = None
+            if ev.get("start"):
+                for c in ev.get("clubs") or [ev.get("tournament")]:
+                    target = target or same.get((ev["start"], c))
+            target = target or by_match.get(match_key(ev))
+            if target:
+                ev = {**ev, "id": target}
+                ev.pop("page", None)  # bestaande URL behouden
         remapped.append((src, ev))
     candidates = remapped
     grouped = {}
@@ -76,7 +97,7 @@ def merge(existing, candidates):
         if srcs == {"ai"}:  # AI mag bij bestaande evenementen alleen tijden en praktische gegevens bijwerken
             new = {k: v for k, v in new.items() if k in AI_FIELDS or k in ("id", "checked_at", "confirmed_by")}
         moved = (old.get("start") or old.get("date")) != (new.get("start") or new.get("date"))
-        if moved and srcs == {"ai"} and old.get("start") and not official(items[0][1]):
+        if moved and srcs == {"ai"} and not official(items[0][1]):
             confirmed = False  # een bevestigde tijd verschuift alleen op gezag van een officiële bron
         if moved and not confirmed:
             conflicts.append({"id": eid, "values": [("huidig", old.get("start") or old.get("date"))] +

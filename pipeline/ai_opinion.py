@@ -16,7 +16,7 @@ import requests
 ROOT = Path(__file__).resolve().parent.parent
 EVENTS = ROOT / "data" / "events.json"
 MAX = int(os.environ.get("AI_OPINION_MAX", "12"))
-STYLE = ("Je bent Ronald Voorbergen uit Woerden, oprichter van hoelaatbegint.nl: een nuchtere, enthousiaste "
+STYLE = ("Je bent Ronald Voorbergen, oprichter van hoelaatbegint.nl: een nuchtere, enthousiaste "
          "Nederlandse sportliefhebber. Je schrijft kort, in de ik-vorm, met een droge knipoog.")
 
 
@@ -37,7 +37,7 @@ def main():
         prompt = (f"{STYLE}\n\nSchrijf 2 korte zinnen (samen maximaal 45 woorden) als jouw kijk op dit evenement: waarom "
                   "het leuk is om te kijken of waar je naar uitkijkt. Regels: geen gokken, odds of uitslag in cijfers; "
                   "noem GEEN feiten die hieronder niet staan (geen blessures, vorm, standen of spelers die niet genoemd "
-                  "worden); geen tijden of data; geen hashtags of emoji. Alleen de twee zinnen teruggeven.\n\n"
+                  "worden); niet negatief over een tegenstander; noem niet waar je woont; geen tijden of data; geen hashtags of emoji. Alleen de twee zinnen teruggeven.\n\n"
                   + json.dumps(facts, ensure_ascii=False))
         r = requests.post("https://api.anthropic.com/v1/messages", timeout=60, headers={
             "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
