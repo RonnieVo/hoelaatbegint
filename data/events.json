@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T17:08:47Z",
+ "generated_at": "2026-11-25T17:11:02Z",
  "events": [
   {
    "sport": "f1",
@@ -14,7 +14,7 @@
    "round": "Race 1, kwalificatie",
    "start": "2026-03-07T05:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -32,7 +32,7 @@
    "round": "Race 1 van 23",
    "start": "2026-03-08T04:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -50,7 +50,7 @@
    "round": "Race 2, sprintrace",
    "start": "2026-03-14T03:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -68,7 +68,7 @@
    "round": "Race 2, kwalificatie",
    "start": "2026-03-14T07:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -86,7 +86,7 @@
    "round": "Race 2 van 23",
    "start": "2026-03-15T07:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -104,7 +104,7 @@
    "round": "Race 3, kwalificatie",
    "start": "2026-03-28T06:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -122,7 +122,7 @@
    "round": "Race 3 van 23",
    "start": "2026-03-29T05:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -140,7 +140,7 @@
    "round": "Race 4, sprintrace",
    "start": "2026-05-02T16:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -158,7 +158,7 @@
    "round": "Race 4, kwalificatie",
    "start": "2026-05-02T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -176,7 +176,7 @@
    "round": "Race 4 van 23",
    "start": "2026-05-03T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -194,7 +194,7 @@
    "round": "Race 5, sprintrace",
    "start": "2026-05-23T16:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -212,7 +212,7 @@
    "round": "Race 5, kwalificatie",
    "start": "2026-05-23T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -230,7 +230,7 @@
    "round": "Race 5 van 23",
    "start": "2026-05-24T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -248,7 +248,7 @@
    "round": "Race 6, kwalificatie",
    "start": "2026-06-06T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -266,7 +266,7 @@
    "round": "Race 6 van 23",
    "start": "2026-06-07T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -284,7 +284,7 @@
    "round": "Race 7, kwalificatie",
    "start": "2026-06-13T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -302,7 +302,7 @@
    "round": "Race 7 van 23",
    "start": "2026-06-14T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -320,7 +320,7 @@
    "round": "Race 8, kwalificatie",
    "start": "2026-06-27T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -338,7 +338,7 @@
    "round": "Race 8 van 23",
    "start": "2026-06-28T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -356,7 +356,7 @@
    "round": "Race 9, sprintrace",
    "start": "2026-07-04T11:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -374,7 +374,7 @@
    "round": "Race 9, kwalificatie",
    "start": "2026-07-04T15:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -392,7 +392,7 @@
    "round": "Race 9 van 23",
    "start": "2026-07-05T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -410,7 +410,7 @@
    "round": "Race 10, kwalificatie",
    "start": "2026-07-18T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -428,7 +428,7 @@
    "round": "Race 10 van 23",
    "start": "2026-07-19T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -446,7 +446,7 @@
    "round": "Race 11, kwalificatie",
    "start": "2026-07-25T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -464,7 +464,7 @@
    "round": "Race 11 van 23",
    "start": "2026-07-26T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -482,7 +482,7 @@
    "round": "Race 12, sprintrace",
    "start": "2026-08-22T10:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -500,7 +500,7 @@
    "round": "Race 12, kwalificatie",
    "start": "2026-08-22T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -518,7 +518,7 @@
    "round": "Race 12 van 23",
    "start": "2026-08-23T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -536,7 +536,7 @@
    "round": "Race 13, kwalificatie",
    "start": "2026-09-05T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -554,7 +554,7 @@
    "round": "Race 13 van 23",
    "start": "2026-09-06T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -572,7 +572,7 @@
    "round": "Race 14, kwalificatie",
    "start": "2026-09-12T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -590,7 +590,7 @@
    "round": "Race 14 van 23",
    "start": "2026-09-13T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -608,7 +608,7 @@
    "round": "Race 15, kwalificatie",
    "start": "2026-09-25T12:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -626,7 +626,7 @@
    "round": "Race 15 van 23",
    "start": "2026-09-26T11:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -644,7 +644,7 @@
    "round": "Race 16, kwalificatie",
    "start": "2026-10-03T08:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -662,7 +662,7 @@
    "round": "Race 16 van 23",
    "start": "2026-10-04T07:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -680,7 +680,7 @@
    "round": "Race 17, sprintrace",
    "start": "2026-10-10T09:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -698,7 +698,7 @@
    "round": "Race 17, kwalificatie",
    "start": "2026-10-10T13:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -716,7 +716,7 @@
    "round": "Race 17 van 23",
    "start": "2026-10-11T12:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -734,7 +734,7 @@
    "round": "Race 18, kwalificatie",
    "start": "2026-10-24T21:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -752,7 +752,7 @@
    "round": "Race 18 van 23",
    "start": "2026-10-25T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -770,7 +770,7 @@
    "round": "Race 19, kwalificatie",
    "start": "2026-10-31T21:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -788,7 +788,7 @@
    "round": "Race 19 van 23",
    "start": "2026-11-01T20:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -806,7 +806,7 @@
    "round": "Race 20, kwalificatie",
    "start": "2026-11-07T18:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -824,7 +824,7 @@
    "round": "Race 20 van 23",
    "start": "2026-11-08T17:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -842,7 +842,7 @@
    "round": "Race 21, kwalificatie",
    "start": "2026-11-21T04:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -860,7 +860,7 @@
    "round": "Race 21 van 23",
    "start": "2026-11-22T04:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -913,7 +913,7 @@
    "round": "Race 22, kwalificatie",
    "start": "2026-11-28T18:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -967,7 +967,7 @@
    "round": "Race 22 van 23",
    "start": "2026-11-29T16:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -1018,7 +1018,7 @@
    "round": "Race 23, kwalificatie",
    "start": "2026-12-05T14:00:00Z",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "confirmed_by": [
     "jolpica"
    ]
@@ -1078,7 +1078,7 @@
    "page": "gp-abu-dhabi-2026",
    "source": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix",
    "status": "gepland",
-   "checked_at": "2026-11-25T17:08:47Z",
+   "checked_at": "2026-11-25T17:11:02Z",
    "nl": true,
    "confirmed_by": [
     "jolpica"
