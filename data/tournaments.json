@@ -1,0 +1,740 @@
+{
+ "wk-darts": {
+  "sport": "darts",
+  "slug": "wk-darts",
+  "name": "WK darts 2027",
+  "h1": "Hoe laat begint het WK darts 2027?",
+  "title": "WK darts 2027 schema: tijden, Nederlanders en zender",
+  "description": "Het WK darts 2027 begint vrijdag 11 december 2026 om 20:00 en de finale is zondag 3 januari om 21:00. Alle rondes, sessietijden en de 17 Nederlanders.",
+  "answer": "Het WK darts 2027 begint op <strong>vrijdag 11 december 2026 om 20:00</strong> Nederlandse tijd in Alexandra Palace in Londen. De finale is op <strong>zondag 3 januari 2027 om 21:00</strong>. Je kijkt alles live op Viaplay.",
+  "facts": [
+   [
+    "Wanneer",
+    "11 december 2026 t/m 3 januari 2027"
+   ],
+   [
+    "Waar",
+    "Alexandra Palace (Great Hall), Londen"
+   ],
+   [
+    "Deelnemers",
+    "128 spelers, waarvan 17 Nederlanders (voorlopig)"
+   ],
+   [
+    "Prijzengeld",
+    "£5.000.000, winnaar £1.000.000"
+   ],
+   [
+    "Titelverdediger",
+    "Luke Littler"
+   ],
+   [
+    "Op tv",
+    "Viaplay"
+   ],
+   [
+    "Loting",
+    "30 november 2026"
+   ]
+  ],
+  "intro": "Het WK darts is het grootste dartstoernooi van het jaar. Voor het eerst wordt er gespeeld in de Great Hall van Alexandra Palace. Er zijn bijna elke dag twee sessies: 's middags vanaf 13:30 en 's avonds vanaf 20:00 (Nederlandse tijd). Rond Kerst en op oudejaarsdag ligt het toernooi stil.",
+  "scenario_title": "Wanneer speelt een Nederlander als hij doorgaat?",
+  "scenario": [
+   [
+    "Wint in ronde 1 (11–19 december)",
+    "Speelt ronde 2 tussen zondag 20 en woensdag 23 december"
+   ],
+   [
+    "Wint in ronde 2",
+    "Speelt ronde 3 tussen zondag 27 en dinsdag 29 december (na de kerstpauze)"
+   ],
+   [
+    "Wint in ronde 3",
+    "Speelt ronde 4 op dinsdag 29 of woensdag 30 december"
+   ],
+   [
+    "Wint in ronde 4",
+    "Speelt de kwartfinale op vrijdag 1 januari"
+   ],
+   [
+    "Wint de kwartfinale",
+    "Speelt de halve finale op zaterdag 2 januari vanaf 20:30"
+   ],
+   [
+    "Wint de halve finale",
+    "Speelt de finale op zondag 3 januari om 21:00"
+   ]
+  ],
+  "scenario_note": "Na de loting op 30 november rekenen we dit per speler uit, met de exacte sessie.",
+  "players_title": "Deze Nederlanders spelen het WK darts 2027",
+  "players_note": "Voorlopige lijst. Plaatsen via de Order of Merit en ProTour zijn pas definitief na de Players Championship Finals van 29 november.",
+  "players": [
+   [
+    "Gian van Veen",
+    "PDC Order of Merit"
+   ],
+   [
+    "Michael van Gerwen",
+    "PDC Order of Merit"
+   ],
+   [
+    "Wessel Nijman",
+    "PDC Order of Merit"
+   ],
+   [
+    "Danny Noppert",
+    "PDC Order of Merit"
+   ],
+   [
+    "Kevin Doets",
+    "PDC Order of Merit"
+   ],
+   [
+    "Dirk van Duijvenbode",
+    "PDC Order of Merit"
+   ],
+   [
+    "Jermaine Wattimena",
+    "PDC Order of Merit"
+   ],
+   [
+    "Niels Zonneveld",
+    "PDC Order of Merit"
+   ],
+   [
+    "Maik Kuivenhoven",
+    "ProTour Order of Merit"
+   ],
+   [
+    "Richard Veenstra",
+    "ProTour Order of Merit"
+   ],
+   [
+    "Christian Kist",
+    "ProTour Order of Merit"
+   ],
+   [
+    "Jimmy van Schie",
+    "ProTour Order of Merit"
+   ],
+   [
+    "Raymond van Barneveld",
+    "ProTour Order of Merit"
+   ],
+   [
+    "Alexander Merkx",
+    "ProTour Order of Merit"
+   ],
+   [
+    "Jurjen van der Velde",
+    "ProTour Order of Merit"
+   ],
+   [
+    "Jamai van den Herik",
+    "PDC Development Tour"
+   ],
+   [
+    "Stef Kosters",
+    "Kwalificatie Nederland & België"
+   ]
+  ],
+  "faq": [
+   [
+    "Hoe laat begint het WK darts vandaag?",
+    "De middagsessie begint om 13:30 en de avondsessie om 20:00 Nederlandse tijd. Op 11 en 14 december is er alleen een avondsessie."
+   ],
+   [
+    "Wanneer is de finale van het WK darts 2027?",
+    "De finale is op zondag 3 januari 2027 om 21:00 Nederlandse tijd, in Alexandra Palace in Londen."
+   ],
+   [
+    "Waar kan ik het WK darts kijken?",
+    "In Nederland zendt Viaplay het hele toernooi live uit."
+   ],
+   [
+    "Hoeveel Nederlanders doen mee aan het WK darts?",
+    "Op dit moment staan er 17 Nederlanders op de voorlopige deelnemerslijst. De lijst is definitief na 29 november."
+   ],
+   [
+    "Wordt er met Kerst gedart?",
+    "Nee. Op 24, 25 en 26 december en op oudejaarsdag (31 december) is er geen darts."
+   ]
+  ],
+  "sources": [
+   [
+    "Rondeschema (wkwedstrijdschema.nl)",
+    "https://wkwedstrijdschema.nl/darts/wk-2027-schema"
+   ],
+   [
+    "Deelnemers en prijzengeld (Dartsking)",
+    "https://dartsking.nl/pdc/wk-darts/"
+   ],
+   [
+    "Toernooi-informatie (Squawka)",
+    "https://www.squawka.com/nl/wk-darts/"
+   ]
+  ]
+ },
+ "ek-handbal-vrouwen": {
+  "sport": "handbal",
+  "slug": "ek-handbal-vrouwen",
+  "name": "EK handbal vrouwen 2026",
+  "h1": "Hoe laat speelt Nederland op het EK handbal?",
+  "title": "EK handbal vrouwen 2026: hoe laat speelt Nederland?",
+  "description": "De Nederlandse handbalsters spelen op 3, 6 en 8 december steeds om 20:30 in Brno, tegen Tsjechië, Oostenrijk en Kroatië. Live op Ziggo Sport.",
+  "answer": "De handbalsters spelen hun poulewedstrijden op <strong>3, 6 en 8 december 2026, steeds om 20:30</strong> Nederlandse tijd in Brno. Alle wedstrijden zijn live op Ziggo Sport.",
+  "facts": [
+   [
+    "Wanneer",
+    "3 t/m 20 december 2026"
+   ],
+   [
+    "Gastlanden",
+    "Polen, Roemenië, Slowakije, Tsjechië en Turkije"
+   ],
+   [
+    "Nederland in",
+    "Poule D, Brno (Tsjechië)"
+   ],
+   [
+    "Tegenstanders",
+    "Tsjechië, Oostenrijk, Kroatië"
+   ],
+   [
+    "Op tv",
+    "Ziggo Sport"
+   ],
+   [
+    "Finale",
+    "zondag 20 december, 18:00, Katowice"
+   ]
+  ],
+  "intro": "Het EK handbal voor vrouwen wordt voor het eerst in vijf landen gespeeld. Nederland speelt de poulefase in Brno. De beste twee van de poule gaan door naar de hoofdronde in Katowice (Polen).",
+  "scenario_title": "Wanneer speelt Nederland als ze doorgaan?",
+  "scenario": [
+   [
+    "Bij de beste twee van poule D",
+    "Hoofdronde van donderdag 10 t/m dinsdag 15 december in Katowice"
+   ],
+   [
+    "Bij de beste twee van de hoofdrondegroep",
+    "Halve finale op vrijdag 18 december om 17:45 of 20:30"
+   ],
+   [
+    "Winst in de halve finale",
+    "Finale op zondag 20 december om 18:00"
+   ],
+   [
+    "Verlies in de halve finale",
+    "Bronzen finale op zondag 20 december om 15:15"
+   ]
+  ],
+  "scenario_note": "Zodra de poule klaar is, zetten we hier de exacte data en tegenstanders.",
+  "faq": [
+   [
+    "Hoe laat speelt Nederland vanavond handbal?",
+    "Alle poulewedstrijden van Nederland beginnen om 20:30 Nederlandse tijd."
+   ],
+   [
+    "Waar kan ik het EK handbal kijken?",
+    "Ziggo Sport zendt de wedstrijden van Oranje live uit. Nederland–Tsjechië is ook op Ziggo Sport 1 (kanaal 14) te zien."
+   ],
+   [
+    "Waar speelt Nederland op het EK handbal?",
+    "De poulewedstrijden zijn in Brno in Tsjechië. Bij doorgaan speelt Nederland de hoofdronde in Katowice."
+   ]
+  ],
+  "sources": [
+   [
+    "Wedstrijden en zenders (Ziggo)",
+    "https://www.ziggo.nl/entertainment/sport/handbal/ek-handbal/kijken"
+   ],
+   [
+    "Aanvangstijden (EHF)",
+    "https://ehfec.eurohandball.com/news/en/ehf-confirms-throw-off-times-for-women-s-ehf-euro-2026/"
+   ]
+  ]
+ },
+ "nederlands-elftal": {
+  "sport": "voetbal",
+  "slug": "nederlands-elftal",
+  "name": "Nederlands elftal",
+  "h1": "Hoe laat speelt het Nederlands elftal?",
+  "title": "Hoe laat speelt Nederland? Programma Oranje 2027",
+  "description": "Oranje speelt pas weer in maart 2027: de Nations League-kwartfinales (22–30 maart). De loting voor de EK-kwalificatie is zondag 6 december om 18:00.",
+  "answer": "Het Nederlands elftal speelt weer in de interlandperiode van <strong>22 tot en met 30 maart 2027</strong>: de kwartfinale van de Nations League. Eerst is op <strong>zondag 6 december om 18:00</strong> de loting voor de EK-kwalificatie.",
+  "facts": [
+   [
+    "Volgende wedstrijden",
+    "Nations League-kwartfinale, 22–30 maart 2027"
+   ],
+   [
+    "Loting EK-kwalificatie",
+    "zondag 6 december 2026, 18:00, Belfast"
+   ],
+   [
+    "Pot",
+    "Nederland zit in pot 1"
+   ],
+   [
+    "Start EK-kwalificatie",
+    "september 2027 (groep van vier)"
+   ],
+   [
+    "EK 2028",
+    "9 juni – 9 juli 2028, Engeland, Schotland, Wales en Ierland"
+   ]
+  ],
+  "intro": "Omdat Oranje de kwartfinales van de Nations League haalde, speelt het in maart nog geen EK-kwalificatie. Nederland komt in een kwalificatiegroep van vier landen en begint daaraan in september 2027.",
+  "scenario_title": "Wat als Nederland doorgaat in de Nations League?",
+  "scenario": [
+   [
+    "Winst in de kwartfinale (maart 2027)",
+    "Final Four van de Nations League in juni 2027"
+   ],
+   [
+    "Groepswinst in de EK-kwalificatie",
+    "Rechtstreeks naar het EK 2028"
+   ],
+   [
+    "Tweede in de groep",
+    "Bij de acht beste nummers twee rechtstreeks naar het EK, anders play-offs in maart 2028"
+   ]
+  ],
+  "scenario_note": "Zodra de loting bekend is, staan hier alle data, tijden en tegenstanders.",
+  "faq": [
+   [
+    "Wanneer speelt Oranje weer?",
+    "In de interlandperiode van 22 tot en met 30 maart 2027, in de kwartfinale van de Nations League."
+   ],
+   [
+    "Hoe laat is de loting voor de EK-kwalificatie?",
+    "Zondag 6 december 2026 om 18:00 Nederlandse tijd in Belfast."
+   ],
+   [
+    "Wanneer is het EK 2028?",
+    "Van 9 juni tot en met 9 juli 2028 in Engeland, Schotland, Wales en Ierland."
+   ]
+  ],
+  "sources": [
+   [
+    "Programma Oranje 2027 (Voetbalnieuws)",
+    "https://www.voetbalnieuws.nl/nieuws/2159736/wanneer-speelt-oranje-weer-programma-nederland-in-2027.html"
+   ],
+   [
+    "Loting EK-kwalificatie (Bet-Experts)",
+    "https://www.bet-experts.nl/nieuws/loting-ek-2028-kwalificatie-potindeling-oranje"
+   ],
+   [
+    "Potindeling (Soccernews)",
+    "https://www.soccernews.nl/news/potindeling-ek-kwalificatie-bekend-maar-een-conclusie-voor-oranje-mogelijk/"
+   ]
+  ]
+ },
+ "formule-1": {
+  "sport": "f1",
+  "slug": "formule-1",
+  "name": "Formule 1",
+  "h1": "Hoe laat begint de Formule 1?",
+  "title": "Hoe laat begint de Formule 1? Tijden en kalender 2027",
+  "description": "De GP van Abu Dhabi begint zondag 6 december om 14:00 (Viaplay). Het seizoen 2027 start op 14 maart in Bahrein. Alle 24 races met sprints.",
+  "answer": "De laatste race van 2026, de <strong>GP van Abu Dhabi</strong>, begint <strong>zondag 6 december om 14:00</strong> Nederlandse tijd op Viaplay. Het seizoen 2027 start op <strong>zondag 14 maart in Bahrein</strong>.",
+  "facts": [
+   [
+    "Slotrace 2026",
+    "Abu Dhabi, zondag 6 december, 14:00"
+   ],
+   [
+    "Start 2027",
+    "14 maart, Bahrein"
+   ],
+   [
+    "Races in 2027",
+    "24, waarvan 10 met een sprint"
+   ],
+   [
+    "Nieuw in 2027",
+    "Portugal (Portimão) en Turkije (Istanbul)"
+   ],
+   [
+    "Op tv",
+    "Viaplay"
+   ]
+  ],
+  "intro": "De Formule 1 opent 2027 in het Midden-Oosten en eindigt op 12 december in Abu Dhabi. Monaco krijgt voor het eerst een sprintrace. De exacte starttijden per weekend volgen zodra de FIA het tijdschema publiceert; wij zetten ze er automatisch bij.",
+  "faq": [
+   [
+    "Hoe laat begint de race in Abu Dhabi?",
+    "Zondag 6 december 2026 om 14:00 Nederlandse tijd."
+   ],
+   [
+    "Wanneer begint het Formule 1-seizoen 2027?",
+    "Op zondag 14 maart 2027 met de GP van Bahrein."
+   ],
+   [
+    "Hoeveel sprintraces zijn er in 2027?",
+    "Tien: Bahrein, Australië, Japan, Canada, Monaco, Groot-Brittannië, Italië, Brazilië, Qatar en Abu Dhabi."
+   ]
+  ],
+  "sources": [
+   [
+    "GP Abu Dhabi 2026 (Ziggo)",
+    "https://www.ziggo.nl/entertainment/sport/formule-1/f1-grand-prix-abu-dhabi"
+   ],
+   [
+    "F1-kalender 2027 (Sporza)",
+    "https://sporza.be/nl/2026/09/16/met-een-sprintrace-in-monaco-en-spa-op-25-juli-dit-is-de-f1-kalender-voor-2027~1789550978381/"
+   ]
+  ]
+ },
+ "schaatsen": {
+  "sport": "schaatsen",
+  "slug": "schaatsen",
+  "name": "Schaatsen",
+  "h1": "Hoe laat begint het schaatsen?",
+  "title": "Schaatsen op tv: NK en EK allround & sprint 2026-27",
+  "description": "Het NK allround & sprint is op 27 en 28 december, het EK allround & sprint van 8 tot en met 10 januari 2027 in Thialf, Heerenveen.",
+  "answer": "Het <strong>NK allround &amp; sprint</strong> is op <strong>27 en 28 december 2026</strong>. Het <strong>EK allround &amp; sprint</strong> volgt van <strong>8 tot en met 10 januari 2027</strong> in Thialf in Heerenveen.",
+  "facts": [
+   [
+    "NK allround & sprint",
+    "27–28 december 2026"
+   ],
+   [
+    "EK allround & sprint",
+    "8–10 januari 2027, Thialf Heerenveen"
+   ],
+   [
+    "Wereldbeker",
+    "zes toernooien van november tot februari"
+   ]
+  ],
+  "intro": "Na de Olympische winter van 2026 begint een nieuw seizoen. De starttijden per afstand komen meestal pas een paar dagen vooraf vast te staan; zodra ze bekend zijn, staan ze hier.",
+  "faq": [
+   [
+    "Wanneer is het EK schaatsen 2027?",
+    "Het EK allround & sprint is van 8 tot en met 10 januari 2027 in Thialf, Heerenveen."
+   ],
+   [
+    "Wanneer is het NK allround?",
+    "Het NK allround & sprint is op 27 en 28 december 2026."
+   ]
+  ],
+  "sources": [
+   [
+    "KNSB wedstrijdkalender langebaan",
+    "https://knsb.nl/documents/1171/Wedstrijdkalender_Langebaan_versie_160626.pdf"
+   ]
+  ]
+ },
+ "veldrijden": {
+  "sport": "veldrijden",
+  "slug": "veldrijden",
+  "name": "Veldrijden",
+  "h1": "Hoe laat begint het veldrijden?",
+  "title": "Veldrijden op tv: Wereldbeker 2026-27 kalender en tijden",
+  "description": "De Wereldbeker veldrijden 2026-27: Ostrava, Tábor, Antwerpen, Koksijde, Gavere, Namen, Besançon, Zonhoven, Benidorm en Hamme. Data en starttijden.",
+  "answer": "De Wereldbeker veldrijden start op <strong>vrijdag 27 november in Ostrava</strong>. Rond de feestdagen volgen Antwerpen (19/12), Koksijde (20/12), Gavere (26/12), Namen (27/12) en Besançon (29/12).",
+  "facts": [
+   [
+    "Start",
+    "27 november 2026, Ostrava"
+   ],
+   [
+    "Kerstperiode",
+    "Gavere, Namen en Besançon"
+   ],
+   [
+    "Slot (januari)",
+    "Zonhoven, Benidorm en Hamme"
+   ]
+  ],
+  "intro": "De kerstperiode is het hoogtepunt van het veldritseizoen. Starttijden worden meestal in de week van de wedstrijd bekend; de site vult ze automatisch aan.",
+  "faq": [
+   [
+    "Wanneer is de Wereldbeker veldrijden in Benidorm?",
+    "Op zondag 17 januari 2027."
+   ],
+   [
+    "Hoeveel Wereldbekers zijn er rond Kerst?",
+    "Vijf tussen 19 en 29 december: Antwerpen, Koksijde, Gavere, Namen en Besançon."
+   ]
+  ],
+  "sources": [
+   [
+    "Wereldbekerkalender 2026-27 (Sporza)",
+    "https://sporza.be/nl/2026/01/30/met-tsjechische-opener-bij-kunstlicht-op-oude-mijnsite-ontdek-de-wereldbeker-kalender-veldrijden-van-volgend-seizoen~1769798773077/"
+   ]
+  ]
+ },
+ "hockey": {
+  "sport": "hockey",
+  "slug": "hockey",
+  "name": "Hockey",
+  "h1": "Hoe laat speelt Nederland hockey?",
+  "title": "Hockey Pro League 2026-27: wanneer speelt Nederland?",
+  "description": "Nederland speelt de Pro League in Valencia (14–22 december), op de Gold Coast (13–21 februari) en thuis (15–27 juni 2027).",
+  "answer": "Nederland begint de Pro League 2026-27 in <strong>Valencia van 14 tot en met 22 december</strong>, tegen Spanje, België en Duitsland. Daarna volgen de Gold Coast (februari) en de thuiswedstrijden in juni.",
+  "facts": [
+   [
+    "Valencia",
+    "14–22 december 2026"
+   ],
+   [
+    "Gold Coast",
+    "13–21 februari 2027"
+   ],
+   [
+    "Thuis in Nederland",
+    "15–27 juni 2027"
+   ]
+  ],
+  "intro": "De FIH Pro League is de competitie van de beste hockeylanden ter wereld. De exacte aanvangstijden per wedstrijd publiceert de FIH een paar weken vooraf.",
+  "faq": [
+   [
+    "Wanneer speelt Nederland weer hockey?",
+    "Van 14 tot en met 22 december 2026 in Valencia, in de Pro League."
+   ]
+  ],
+  "sources": [
+   [
+    "Pro League 2026-27 data en locaties (Hockey Australia)",
+    "https://www.hockey.org.au/news/kookaburras-and-hockeyroos-discover-2026-27-fih-pro-league-venues-and-dates"
+   ]
+  ]
+ },
+ "ajax": {
+  "sport": "clubs",
+  "slug": "ajax",
+  "name": "Ajax",
+  "h1": "Hoe laat speelt Ajax?",
+  "title": "Hoe laat speelt Ajax? Programma, tijden en zender",
+  "description": "Wanneer en hoe laat speelt Ajax? Alle wedstrijden in de Eredivisie, de beker en Europa, met aanvangstijd, zender en countdown. Automatisch bijgewerkt.",
+  "answer": "Hieronder staat de eerstvolgende wedstrijd van <strong>Ajax</strong>, met aanvangstijd in Nederlandse tijd en de zender. Eredivisiewedstrijden zijn live op <strong>ESPN</strong>, Europese wedstrijden op <strong>Ziggo Sport</strong>.",
+  "facts": [
+   [
+    "Club",
+    "Ajax"
+   ],
+   [
+    "Stad",
+    "Amsterdam"
+   ],
+   [
+    "Eredivisie op tv",
+    "ESPN (ESPN 1 t/m 4)"
+   ],
+   [
+    "Europees voetbal op tv",
+    "Ziggo Sport"
+   ],
+   [
+    "Bijgewerkt",
+    "Elke 2 uur, automatisch"
+   ]
+  ],
+  "intro": "Het programma van Ajax wordt automatisch opgehaald, inclusief verplaatste wedstrijden en nieuwe Europese of bekerduels. Zodra de KNVB of UEFA een aanvangstijd vastlegt, staat die hier.",
+  "faq": [
+   [
+    "Hoe laat speelt Ajax vandaag?",
+    "De aanvangstijd van de eerstvolgende wedstrijd van Ajax staat bovenaan deze pagina, in Nederlandse tijd."
+   ],
+   [
+    "Op welke zender is Ajax te zien?",
+    "Eredivisiewedstrijden zijn live op ESPN. Europese wedstrijden van Nederlandse clubs zendt Ziggo Sport uit; die zijn gratis te zien via Ziggo Sport Free."
+   ],
+   [
+    "Kan ik het programma van Ajax in mijn agenda zetten?",
+    "Ja. Abonneer je op de agenda van Ajax op deze pagina; nieuwe en verplaatste wedstrijden komen er automatisch in."
+   ]
+  ],
+  "sources": [
+   [
+    "Eredivisie-programma en zenders (Ziggo)",
+    "https://www.ziggo.nl/entertainment/sport/voetbal/eredivisie/programma"
+   ],
+   [
+    "Live voetbal op tv: zenders (VI)",
+    "https://www.vi.nl/nieuws/overzicht-van-al-het-live-voetbal-op-tv-kijk-hier-naar-competities-en-interlands"
+   ]
+  ]
+ },
+ "feyenoord": {
+  "sport": "clubs",
+  "slug": "feyenoord",
+  "name": "Feyenoord",
+  "h1": "Hoe laat speelt Feyenoord?",
+  "title": "Hoe laat speelt Feyenoord? Programma, tijden en zender",
+  "description": "Wanneer en hoe laat speelt Feyenoord? Alle wedstrijden in de Eredivisie, de beker en Europa, met aanvangstijd, zender en countdown. Automatisch bijgewerkt.",
+  "answer": "Hieronder staat de eerstvolgende wedstrijd van <strong>Feyenoord</strong>, met aanvangstijd in Nederlandse tijd en de zender. Eredivisiewedstrijden zijn live op <strong>ESPN</strong>, Europese wedstrijden op <strong>Ziggo Sport</strong>.",
+  "facts": [
+   [
+    "Club",
+    "Feyenoord"
+   ],
+   [
+    "Stad",
+    "Rotterdam"
+   ],
+   [
+    "Eredivisie op tv",
+    "ESPN (ESPN 1 t/m 4)"
+   ],
+   [
+    "Europees voetbal op tv",
+    "Ziggo Sport"
+   ],
+   [
+    "Bijgewerkt",
+    "Elke 2 uur, automatisch"
+   ]
+  ],
+  "intro": "Het programma van Feyenoord wordt automatisch opgehaald, inclusief verplaatste wedstrijden en nieuwe Europese of bekerduels. Zodra de KNVB of UEFA een aanvangstijd vastlegt, staat die hier.",
+  "faq": [
+   [
+    "Hoe laat speelt Feyenoord vandaag?",
+    "De aanvangstijd van de eerstvolgende wedstrijd van Feyenoord staat bovenaan deze pagina, in Nederlandse tijd."
+   ],
+   [
+    "Op welke zender is Feyenoord te zien?",
+    "Eredivisiewedstrijden zijn live op ESPN. Europese wedstrijden van Nederlandse clubs zendt Ziggo Sport uit; die zijn gratis te zien via Ziggo Sport Free."
+   ],
+   [
+    "Kan ik het programma van Feyenoord in mijn agenda zetten?",
+    "Ja. Abonneer je op de agenda van Feyenoord op deze pagina; nieuwe en verplaatste wedstrijden komen er automatisch in."
+   ]
+  ],
+  "sources": [
+   [
+    "Eredivisie-programma en zenders (Ziggo)",
+    "https://www.ziggo.nl/entertainment/sport/voetbal/eredivisie/programma"
+   ],
+   [
+    "Live voetbal op tv: zenders (VI)",
+    "https://www.vi.nl/nieuws/overzicht-van-al-het-live-voetbal-op-tv-kijk-hier-naar-competities-en-interlands"
+   ]
+  ]
+ },
+ "psv": {
+  "sport": "clubs",
+  "slug": "psv",
+  "name": "PSV",
+  "h1": "Hoe laat speelt PSV?",
+  "title": "Hoe laat speelt PSV? Programma, tijden en zender",
+  "description": "Wanneer en hoe laat speelt PSV? Alle wedstrijden in de Eredivisie, de beker en Europa, met aanvangstijd, zender en countdown. Automatisch bijgewerkt.",
+  "answer": "Hieronder staat de eerstvolgende wedstrijd van <strong>PSV</strong>, met aanvangstijd in Nederlandse tijd en de zender. Eredivisiewedstrijden zijn live op <strong>ESPN</strong>, Europese wedstrijden op <strong>Ziggo Sport</strong>.",
+  "facts": [
+   [
+    "Club",
+    "PSV"
+   ],
+   [
+    "Stad",
+    "Eindhoven"
+   ],
+   [
+    "Eredivisie op tv",
+    "ESPN (ESPN 1 t/m 4)"
+   ],
+   [
+    "Europees voetbal op tv",
+    "Ziggo Sport"
+   ],
+   [
+    "Bijgewerkt",
+    "Elke 2 uur, automatisch"
+   ]
+  ],
+  "intro": "Het programma van PSV wordt automatisch opgehaald, inclusief verplaatste wedstrijden en nieuwe Europese of bekerduels. Zodra de KNVB of UEFA een aanvangstijd vastlegt, staat die hier.",
+  "faq": [
+   [
+    "Hoe laat speelt PSV vandaag?",
+    "De aanvangstijd van de eerstvolgende wedstrijd van PSV staat bovenaan deze pagina, in Nederlandse tijd."
+   ],
+   [
+    "Op welke zender is PSV te zien?",
+    "Eredivisiewedstrijden zijn live op ESPN. Europese wedstrijden van Nederlandse clubs zendt Ziggo Sport uit; die zijn gratis te zien via Ziggo Sport Free."
+   ],
+   [
+    "Kan ik het programma van PSV in mijn agenda zetten?",
+    "Ja. Abonneer je op de agenda van PSV op deze pagina; nieuwe en verplaatste wedstrijden komen er automatisch in."
+   ]
+  ],
+  "sources": [
+   [
+    "Eredivisie-programma en zenders (Ziggo)",
+    "https://www.ziggo.nl/entertainment/sport/voetbal/eredivisie/programma"
+   ],
+   [
+    "Live voetbal op tv: zenders (VI)",
+    "https://www.vi.nl/nieuws/overzicht-van-al-het-live-voetbal-op-tv-kijk-hier-naar-competities-en-interlands"
+   ]
+  ]
+ },
+ "clubs": {
+  "sport": "clubs",
+  "slug": "clubs",
+  "name": "Ajax, Feyenoord en PSV",
+  "h1": "Hoe laat spelen Ajax, Feyenoord en PSV?",
+  "title": "Hoe laat spelen Ajax, Feyenoord en PSV? Programma en zenders",
+  "description": "Alle wedstrijden van Ajax, Feyenoord en PSV met aanvangstijd, zender en countdown: Eredivisie, beker en Europa. Automatisch bijgewerkt.",
+  "answer": "Alle wedstrijden van <strong>Ajax, Feyenoord en PSV</strong> op één plek, in Nederlandse tijd. Eredivisie op <strong>ESPN</strong>, Europees voetbal op <strong>Ziggo Sport</strong>.",
+  "facts": [
+   [
+    "Clubs",
+    "Ajax, Feyenoord, PSV"
+   ],
+   [
+    "Eredivisie op tv",
+    "ESPN"
+   ],
+   [
+    "Europees voetbal op tv",
+    "Ziggo Sport"
+   ],
+   [
+    "Bijgewerkt",
+    "Elke 2 uur, automatisch"
+   ]
+  ],
+  "intro": "Het programma van Ajax, Feyenoord en PSV wordt automatisch opgehaald, inclusief verplaatste wedstrijden en nieuwe Europese of bekerduels. Zodra de KNVB of UEFA een aanvangstijd vastlegt, staat die hier.",
+  "faq": [
+   [
+    "Hoe laat speelt Ajax, Feyenoord en PSV vandaag?",
+    "De aanvangstijd van de eerstvolgende wedstrijd van Ajax, Feyenoord en PSV staat bovenaan deze pagina, in Nederlandse tijd."
+   ],
+   [
+    "Op welke zender is Ajax, Feyenoord en PSV te zien?",
+    "Eredivisiewedstrijden zijn live op ESPN. Europese wedstrijden van Nederlandse clubs zendt Ziggo Sport uit; die zijn gratis te zien via Ziggo Sport Free."
+   ],
+   [
+    "Kan ik het programma van Ajax, Feyenoord en PSV in mijn agenda zetten?",
+    "Ja. Abonneer je op de agenda van Ajax, Feyenoord en PSV op deze pagina; nieuwe en verplaatste wedstrijden komen er automatisch in."
+   ]
+  ],
+  "sources": [
+   [
+    "Eredivisie-programma en zenders (Ziggo)",
+    "https://www.ziggo.nl/entertainment/sport/voetbal/eredivisie/programma"
+   ],
+   [
+    "Live voetbal op tv: zenders (VI)",
+    "https://www.vi.nl/nieuws/overzicht-van-al-het-live-voetbal-op-tv-kijk-hier-naar-competities-en-interlands"
+   ]
+  ],
+  "clubs": [
+   [
+    "Ajax",
+    "ajax"
+   ],
+   [
+    "Feyenoord",
+    "feyenoord"
+   ],
+   [
+    "PSV",
+    "psv"
+   ]
+  ]
+ }
+}

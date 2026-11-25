@@ -1,0 +1,27 @@
+{
+ "_uitleg": "Zendertabel: per zender de naam, link en (optioneel) affiliatelink. De AI-controle (pipeline/ai_verify.py) checkt elk seizoen of de rechten nog kloppen en mailt bij twijfel.",
+ "viaplay": {
+  "name": "Viaplay",
+  "url": "https://viaplay.nl",
+  "affiliate_url": "",
+  "paid": true
+ },
+ "ziggo": {
+  "name": "Ziggo Sport",
+  "url": "https://www.ziggo.nl/sport",
+  "affiliate_url": "",
+  "paid": true
+ },
+ "nos": {
+  "name": "NOS",
+  "url": "https://nos.nl/sport",
+  "affiliate_url": "",
+  "paid": false
+ },
+ "espn": {
+  "name": "ESPN",
+  "url": "https://www.espn.nl",
+  "affiliate_url": "",
+  "paid": true
+ }
+}

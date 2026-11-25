@@ -1,0 +1,5 @@
+dist/
+__pycache__/
+*.pyc
+data/changed.json
+.DS_Store

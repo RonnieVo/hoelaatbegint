@@ -1,0 +1,55 @@
+name: Instagram dagprogramma (07:00) en weekoverzicht (maandag 08:00)
+
+on:
+  schedule:
+    # 05:00 en 06:00 UTC: het script post alleen als het in Nederland 07:00 is (zomer- én wintertijd)
+    - cron: "0 5,6 * * *"
+    - cron: "0 6,7 * * 1"    # maandag: weekoverzicht om 08:00 NL-tijd
+  workflow_dispatch:
+    inputs:
+      mode: { description: "daily of week", default: "daily" }
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    env:
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      AI_VERIFY_MODE: ${{ vars.AI_VERIFY_MODE }}
+      AI_CAPTIONS: ${{ vars.AI_CAPTIONS }}
+      AI_WRITE: ${{ vars.AI_WRITE }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r requirements.txt && python -m playwright install --with-deps chromium
+
+      - name: Bepalen wat er gepost moet worden
+        id: plan
+        run: |
+          H=$(TZ=Europe/Amsterdam date +%H); D=$(TZ=Europe/Amsterdam date +%F); DOW=$(TZ=Europe/Amsterdam date +%u)
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            if [ "$H" = "07" ]; then MODE=daily; elif [ "$H" = "08" ] && [ "$DOW" = "1" ]; then MODE=week; else MODE=skip; fi
+          fi
+          echo "mode=$MODE" >> $GITHUB_OUTPUT; echo "date=$D" >> $GITHUB_OUTPUT
+          if [ "$MODE" = "week" ]; then echo "name=week-$(TZ=Europe/Amsterdam date -d "$D -$((DOW-1)) days" +%F)" >> $GITHUB_OUTPUT; else echo "name=daily-$D" >> $GITHUB_OUTPUT; fi
+
+      - name: Site + afbeelding bouwen
+        if: steps.plan.outputs.mode != 'skip'
+        run: |
+          python site/build.py
+          python social/render.py ${{ steps.plan.outputs.mode }} ${{ steps.plan.outputs.date }}
+
+      - name: Afbeelding online zetten (Instagram haalt hem op via een openbare URL)
+        if: steps.plan.outputs.mode != 'skip'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=hoelaatbegint --branch=main
+
+      - name: Plaatsen op Instagram
+        if: steps.plan.outputs.mode != 'skip'
+        run: sleep 30 && python social/publish_instagram.py ${{ steps.plan.outputs.name }}

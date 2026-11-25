@@ -1,0 +1,77 @@
+name: Data bijwerken en site publiceren
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # elke 15 minuten
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+concurrency:
+  group: site
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+      THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      AI_VERIFY_MODE: ${{ vars.AI_VERIFY_MODE }}
+      AI_CAPTIONS: ${{ vars.AI_CAPTIONS }}
+      AI_WRITE: ${{ vars.AI_WRITE }}
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      SMTP_HOST: ${{ secrets.SMTP_HOST }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      MAIL_TO: ${{ secrets.MAIL_TO }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r requirements.txt
+
+      - name: Data ophalen en controleren
+        id: data
+        run: python pipeline/run.py
+
+      - name: AI-inleidingen (één keer per dag, 06:00 UTC)
+        if: github.event.schedule == '*/15 * * * *'
+        run: |
+          if [ "$(date -u +%H%M)" -ge "0600" ] && [ "$(date -u +%H%M)" -lt "0615" ]; then python pipeline/ai_write.py; fi
+
+      - name: Pushmeldingen (30 min vooraf)
+        env:
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+        run: python pipeline/push.py
+
+      - name: Site bouwen
+        run: python site/build.py
+
+      - name: Wijzigingen in de data bewaren
+        run: |
+          git config user.name "hoelaatbegint-bot"
+          git config user.email "bot@hoelaatbegint.nl"
+          git add data/events.json data/pipeline_state.json || true
+          git diff --cached --quiet || git commit -m "Data bijgewerkt $(date -u +%Y-%m-%dT%H:%MZ)" && git push || true
+
+      - name: Publiceren op Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=hoelaatbegint --branch=main
+
+      - name: Zoekmachines seinen (IndexNow)
+        if: steps.data.outputs.changed == 'true'
+        run: python pipeline/indexnow.py
+
+      - name: Mail bij een mislukte run
+        if: failure()
+        run: |
+          python -c "import sys; sys.path.insert(0,'pipeline'); from notify import send_mail; send_mail('hoelaatbegint.nl - update mislukt', 'De automatische update is mislukt. Bekijk de log in GitHub Actions.')"
