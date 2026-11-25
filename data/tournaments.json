@@ -181,8 +181,8 @@
   "name": "EK handbal vrouwen 2026",
   "h1": "Hoe laat speelt Nederland op het EK handbal?",
   "title": "EK handbal vrouwen 2026: hoe laat speelt Nederland?",
-  "description": "De Nederlandse handbalsters spelen op 3, 6 en 8 december steeds om 20:30 in Brno, tegen Tsjechië, Oostenrijk en Kroatië. Live op Ziggo Sport.",
-  "answer": "De handbalsters spelen hun poulewedstrijden op <strong>3, 6 en 8 december 2026, steeds om 20:30</strong> Nederlandse tijd in Brno. Alle wedstrijden zijn live op Ziggo Sport.",
+  "description": "De Nederlandse handbalsters spelen op 4, 6 en 8 december steeds om 20:30 in Brno, tegen Tsjechië, Oostenrijk en Kroatië. Live op Ziggo Sport.",
+  "answer": "De handbalsters spelen hun poulewedstrijden op <strong>4, 6 en 8 december 2026, steeds om 20:30</strong> Nederlandse tijd in Brno. Alle wedstrijden zijn live op Ziggo Sport.",
   "facts": [
    [
     "Wanneer",
@@ -246,6 +246,10 @@
   ],
   "sources": [
    [
+    "Wedstrijdpagina Nederland – Tsjechië (EHF)",
+    "https://history.eurohandball.com/ech/women/2026/match/1/020/Netherlands+-+Czechia"
+   ],
+   [
     "Wedstrijden en zenders (Ziggo)",
     "https://www.ziggo.nl/entertainment/sport/handbal/ek-handbal/kijken"
    ],
@@ -261,28 +265,28 @@
   "name": "Nederlands elftal",
   "h1": "Hoe laat speelt het Nederlands elftal?",
   "title": "Hoe laat speelt Nederland? Programma Oranje 2027",
-  "description": "Oranje speelt pas weer in maart 2027: de Nations League-kwartfinales (22–30 maart). De loting voor de EK-kwalificatie is zondag 6 december om 18:00.",
-  "answer": "Het Nederlands elftal speelt weer in de interlandperiode van <strong>22 tot en met 30 maart 2027</strong>: de kwartfinale van de Nations League. Eerst is op <strong>zondag 6 december om 18:00</strong> de loting voor de EK-kwalificatie.",
+  "description": "Oranje speelt weer in maart 2027: de Nations League-kwartfinale (thuis 25–27 maart, uit 28–30 maart). De Leeuwinnen spelen op 1 en 5 december de WK-play-off tegen Slovenië.",
+  "answer": "De <strong>Oranje Leeuwinnen</strong> spelen de WK-play-off tegen Slovenië: <strong>dinsdag 1 december</strong> in Domžale en <strong>zaterdag 5 december om 18:00</strong> in Utrecht. De mannen spelen eerst weer in de <strong>Nations League-kwartfinale van 25 tot en met 30 maart 2027</strong>. Op <strong>zondag 6 december om 18:00</strong> is de loting voor de EK-kwalificatie.",
   "facts": [
    [
-    "Volgende wedstrijden",
-    "Nations League-kwartfinale, 22–30 maart 2027"
+    "Leeuwinnen",
+    "WK-play-off tegen Slovenië, 1 en 5 december 2026"
+   ],
+   [
+    "Mannen",
+    "Nations League-kwartfinale, 25–30 maart 2027 (eerst thuis)"
    ],
    [
     "Loting EK-kwalificatie",
     "zondag 6 december 2026, 18:00, Belfast"
    ],
    [
-    "Pot",
-    "Nederland zit in pot 1"
-   ],
-   [
     "Start EK-kwalificatie",
-    "september 2027 (groep van vier)"
+    "september 2027"
    ],
    [
     "EK 2028",
-    "9 juni – 9 juli 2028, Engeland, Schotland, Wales en Ierland"
+    "9 juni – 9 juli 2028"
    ]
   ],
   "intro": "Omdat Oranje de kwartfinales van de Nations League haalde, speelt het in maart nog geen EK-kwalificatie. Nederland komt in een kwalificatiegroep van vier landen en begint daaraan in september 2027.",
@@ -305,7 +309,7 @@
   "faq": [
    [
     "Wanneer speelt Oranje weer?",
-    "In de interlandperiode van 22 tot en met 30 maart 2027, in de kwartfinale van de Nations League."
+    "De Leeuwinnen spelen op 1 en 5 december 2026 tegen Slovenië. De mannen spelen weer van 25 tot en met 30 maart 2027, in de kwartfinale van de Nations League."
    ],
    [
     "Hoe laat is de loting voor de EK-kwalificatie?",
@@ -317,6 +321,14 @@
    ]
   ],
   "sources": [
+   [
+    "KNVB-agenda (Leeuwinnen)",
+    "https://www.knvb.nl/downloads/bestand/23461/agenda-week-13"
+   ],
+   [
+    "Nations League-loting en speeldata (FCUpdate)",
+    "https://www.fcupdate.nl/voetbalnieuws/2026/11/oranje-loting-kwartfinale-nations-league"
+   ],
    [
     "Programma Oranje 2027 (Voetbalnieuws)",
     "https://www.voetbalnieuws.nl/nieuws/2159736/wanneer-speelt-oranje-weer-programma-nederland-in-2027.html"

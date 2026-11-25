@@ -44,7 +44,7 @@ SCHEMA = """Geef als antwoord ALLEEN één codeblok ```json ... ``` met een JSON
 Gebruik in tekstwaarden geen dubbele aanhalingstekens. Elk element:
 {"id": "<stabiele id, hergebruik bestaande id als het hetzelfde evenement is>",
  "sport": "darts|handbal|hockey|schaatsen|veldrijden|voetbal", "tournament": "<slug>",
- "title": "<Nederlandse titel, bijv. 'Nederland – Kroatië' of 'Michael van Gerwen – Luke Woodhouse'>",
+ "title": "<korte Nederlandse titel zonder uitleg tussen haakjes, bijv. 'Nederland – Kroatië' of 'Michael van Gerwen – Luke Woodhouse'; bij vrouwenteams: 'Nederland – Slovenië (vrouwen)'>",
  "start": "<ISO-8601 in UTC met Z, alleen als de tijd officieel bevestigd is>",
  "date": "<YYYY-MM-DD als de tijd nog niet bekend is>", "end_date": "<optioneel>",
  "round": "...", "city": "...", "venue": "...", "participants": ["<Nederlandse deelnemers>"],
@@ -130,6 +130,7 @@ def fetch(existing):
         print(f"  ai {slug}: {len(answer)} evenementen")
         for e in answer:
             if valid(e):
+                e["title"] = re.sub(r"\s*\([^)]*\)\s*$", lambda m: m.group(0) if "vrouwen" in m.group(0) else "", e["title"]).strip()
                 e["tournament"] = slug  # AI mag geen eigen paginanamen verzinnen
                 if e.get("sport") not in ALLOWED_SPORTS:
                     e["sport"] = TASK_SPORT[slug]

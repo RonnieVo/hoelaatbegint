@@ -78,7 +78,7 @@ ev(id="wkd-finale", sport="darts", tournament=T, title="Finale WK darts 2027",
 # ---------------- HANDBAL: EK vrouwen 2026 ----------------
 T = "ek-handbal-vrouwen"
 for i, (d, opp, tv, slugopp) in enumerate([
-    ("2026-12-03 20:30", "Tsjechië", "Ziggo Sport 1 en Ziggo Sport 4", "tsjechie"),
+    ("2026-12-04 20:30", "Tsjechië", "Ziggo Sport 1 en Ziggo Sport 4", "tsjechie"),
     ("2026-12-06 20:30", "Oostenrijk", "Ziggo Sport 4", "oostenrijk"),
     ("2026-12-08 20:30", "Kroatië", "Ziggo Sport (kanaal volgt)", "kroatie")]):
     ev(id=f"ekh-nl-{slugopp}", sport="handbal", tournament=T, title=f"Nederland – {opp}",
@@ -103,7 +103,7 @@ ev(id="oranje-loting-ek", sport="voetbal", tournament=T, title="Loting EK 2028-k
    note="Nederland zit in pot 1. Door de Nations League-kwartfinales begint Oranje pas in september 2027.",
    source=SRC["loting"])
 ev(id="oranje-nl-kf", sport="voetbal", tournament=T, title="Nations League-kwartfinale (heen en terug)",
-   date="2027-03-22", end_date="2027-03-30", time_known=False, round="Kwartfinale Nations League",
+   date="2027-03-25", end_date="2027-03-30", time_known=False, round="Kwartfinale Nations League",
    note="Tegenstander volgt via loting.", source=SRC["oranje"])
 
 # ---------------- FORMULE 1 ----------------

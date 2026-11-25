@@ -22,6 +22,14 @@ ROOT = Path(__file__).resolve().parent.parent
 EVENTS = ROOT / "data" / "events.json"
 STATE = ROOT / "data" / "pipeline_state.json"
 TRUSTED_APIS = {"jolpica", "api-football"}  # één bron is genoeg voor deze officiële data-API's
+OFFICIAL = ("eurohandball.com", "ihf.info", "pdc.tv", "uefa.com", "fifa.com", "onsoranje.nl", "knvb.nl", "eredivisie.nl",
+            "fih.hockey", "knhb.nl", "knsb.nl", "isu.org", "schaatsen.nl", "uci.org", "formula1.com", "fia.com",
+            "nos.nl", "ziggo.nl", "viaplay.nl", "espn.nl")
+AI_FIELDS = {"start", "date", "end_date", "time_known", "time_note", "venue", "city", "status", "result", "sources", "source", "participants"}
+
+
+def official(ev):
+    return any(any(d in (u or "") for d in OFFICIAL) for u in ev.get("sources", [ev.get("source")]))
 
 
 def now_iso():
@@ -65,7 +73,11 @@ def merge(existing, candidates):
                 by_id[eid] = new
                 changes.append(("nieuw", eid))
             continue
+        if srcs == {"ai"}:  # AI mag bij bestaande evenementen alleen tijden en praktische gegevens bijwerken
+            new = {k: v for k, v in new.items() if k in AI_FIELDS or k in ("id", "checked_at", "confirmed_by")}
         moved = (old.get("start") or old.get("date")) != (new.get("start") or new.get("date"))
+        if moved and srcs == {"ai"} and old.get("start") and not official(items[0][1]):
+            confirmed = False  # een bevestigde tijd verschuift alleen op gezag van een officiële bron
         if moved and not confirmed:
             conflicts.append({"id": eid, "values": [("huidig", old.get("start") or old.get("date"))] +
                               [(s, ev.get("start") or ev.get("date")) for s, ev in items]})

@@ -49,7 +49,11 @@ def fetch(existing):
         raise Skip("alleen elke 2 uur (gratis laag: 100 verzoeken per dag)")
     out, seen = [], set()
     for team_id, (sport, tournament) in TEAMS.items():
-        r = requests.get(API, params={"team": team_id, "next": 10}, headers={"x-apisports-key": key}, timeout=20)
+        from datetime import timedelta
+        season = now.year if (sport == "voetbal" or now.month >= 7) else now.year - 1
+        params = {"team": team_id, "season": season, "from": now.strftime("%Y-%m-%d"),
+                  "to": (now + timedelta(days=45)).strftime("%Y-%m-%d"), "timezone": "UTC"}
+        r = requests.get(API, params=params, headers={"x-apisports-key": key}, timeout=20)
         r.raise_for_status()
         body = r.json()
         if body.get("errors"):
