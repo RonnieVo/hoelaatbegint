@@ -255,8 +255,11 @@ MACROS = r"""
 </div>
 {%- endmacro %}
 {% macro opinion(e) -%}
-{% if e.opinion %}<div class="opinion"><img src="{{ cfg.owner_photo }}" alt="{{ cfg.owner }}" width="56" height="56" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'initials',textContent:'RV'}))">
-<div><div class="op-head">De kijk van {{ cfg.owner.split(' ')[0] }}</div><p>{{ e.opinion }}</p></div></div>{% endif %}
+{% if e.opinion %}<aside class="kijk" aria-label="De kijk van {{ cfg.owner }}">
+<img class="kijk-foto" src="{{ cfg.owner_photo }}" alt="{{ cfg.owner }}" width="76" height="76" loading="lazy">
+<div class="kijk-body"><div class="kijk-naam"><span>De kijk van</span> <a href="/over/">{{ cfg.owner }}</a></div>
+<blockquote>{{ e.opinion }}</blockquote></div>
+</aside>{% endif %}
 {%- endmacro %}
 {% macro faqblock(faq) -%}
 <section id="faq"><div class="wrap"><h2>Veelgestelde vragen</h2>
