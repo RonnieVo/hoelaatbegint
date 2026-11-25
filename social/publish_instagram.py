@@ -17,7 +17,8 @@ from pathlib import Path
 import requests
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = json.loads((ROOT / "site" / "config.json").read_text())["base_url"].rstrip("/")
+# Afbeeldingen via pages.dev: werkt ook voordat het eigen domein actief is (en daarna gewoon door)
+BASE = os.environ.get("IMAGE_BASE", "https://hoelaatbegint.pages.dev")
 GRAPH = f"https://graph.facebook.com/{os.environ.get('GRAPH_VERSION', 'v24.0')}"
 
 
