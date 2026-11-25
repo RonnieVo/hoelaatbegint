@@ -69,4 +69,26 @@ def fetch(existing):
             else:
                 ev["start"] = m["utcDate"].replace("+00:00", "Z")
             out.append(ev)
+    # Volledig Eredivisie-programma (alle clubs) voor de pagina /eredivisie/
+    r = requests.get("https://api.football-data.org/v4/competitions/DED/matches",
+                     params={"dateFrom": now.strftime("%Y-%m-%d"), "dateTo": (now + timedelta(days=45)).strftime("%Y-%m-%d")},
+                     headers={"X-Auth-Token": key}, timeout=20)
+    if r.status_code == 200:
+        for m in r.json().get("matches", []):
+            if m["id"] in seen:
+                continue
+            seen.add(m["id"])
+            home, away = name(m["homeTeam"]), name(m["awayTeam"])
+            day = m["utcDate"][:10]
+            clubs = [c for c in ("ajax", "feyenoord", "psv") if c in slug(home + " " + away)]
+            ev = dict(id=f"fd-{m['id']}", sport="clubs", tournament=clubs[0] if clubs else "eredivisie", clubs=clubs,
+                      nl=bool(clubs), title=f"{home} – {away}", home=home, away=away, round="Eredivisie",
+                      broadcaster="espn", status=STATUS.get(m["status"], "gepland"), source="https://www.football-data.org")
+            if clubs:
+                ev["page"] = f"{slug(home)}-{slug(away)}-{day}"
+            if m["status"] == "SCHEDULED":
+                ev.update(date=day, time_known=False, time_note="Aanvangstijd volgt")
+            else:
+                ev["start"] = m["utcDate"].replace("+00:00", "Z")
+            out.append(ev)
     return out

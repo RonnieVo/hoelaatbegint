@@ -3896,6 +3896,41 @@
    "status": "gepland",
    "checked_at": "2026-11-25T15:30:00Z",
    "nl": true
+  },
+  {
+   "id": "ek2028-loting-kwalificatie",
+   "sport": "voetbal",
+   "tournament": "ek-2028",
+   "title": "Loting EK-kwalificatie 2028",
+   "start": "2026-12-06T17:00:00Z",
+   "round": "Loting kwalificatie",
+   "venue": "International Convention Centre",
+   "city": "Belfast",
+   "nl": true,
+   "status": "gepland",
+   "page": "loting-ek-2028-kwalificatie",
+   "h1": "Hoe laat is de loting voor de EK-kwalificatie?",
+   "note": "Oranje zit in pot 1. Bij de loting worden alle UEFA-landen (behalve Rusland) verdeeld over twaalf groepen van vier of vijf landen.",
+   "sources": [
+    "https://www.uefa.com/euro2028/news/02ab-220f53285777-d06eb4905ec1-1000--uefa-euro-2028-qualifying-draw/"
+   ],
+   "source": "https://www.uefa.com/euro2028/news/02ab-220f53285777-d06eb4905ec1-1000--uefa-euro-2028-qualifying-draw/"
+  },
+  {
+   "id": "wk-handbal-2027-mannen",
+   "sport": "handbal",
+   "tournament": "wk-handbal-2027",
+   "title": "WK handbal mannen 2027",
+   "date": "2027-01-13",
+   "end_date": "2027-01-31",
+   "round": "Eindtoernooi",
+   "city": "Duitsland",
+   "nl": false,
+   "status": "gepland",
+   "sources": [
+    "https://handball2027.com/de/node/118"
+   ],
+   "source": "https://handball2027.com/de/node/118"
   }
  ]
 }

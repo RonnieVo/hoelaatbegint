@@ -1,0 +1,850 @@
+{
+ "bron": "DataForSEO Google Ads, NL, opgehaald 2026-11-25",
+ "groepen": {
+  "Formule 1": [
+   "f1 tijden",
+   "f1 kalender",
+   "formule 1 kalender",
+   "formule 1 tijden",
+   "formule 1 vandaag",
+   "f1 vandaag",
+   "f1 kwalificatie",
+   "gp abu dhabi",
+   "gp qatar",
+   "hoe laat begint de formule 1",
+   "formule 1 op tv"
+  ],
+  "Voetbal (clubs + Eredivisie)": [
+   "ajax programma",
+   "feyenoord programma",
+   "psv programma",
+   "eredivisie programma",
+   "ajax vandaag",
+   "feyenoord vandaag",
+   "psv vandaag",
+   "ajax speelschema",
+   "feyenoord speelschema",
+   "psv speelschema",
+   "eredivisie speelschema",
+   "voetbal op tv",
+   "hoe laat speelt ajax",
+   "hoe laat speelt feyenoord",
+   "hoe laat speelt psv"
+  ],
+  "Darts": [
+   "darts vandaag",
+   "wk darts",
+   "wk darts schema",
+   "darts schema",
+   "premier league darts",
+   "darts op tv",
+   "hoe laat begint darts",
+   "wk darts finale"
+  ],
+  "Schaatsen": [
+   "schaatsen vandaag",
+   "schaatsen op tv",
+   "schaatsen tv",
+   "schaatsen programma",
+   "schaatsen op tv vandaag",
+   "wk schaatsen",
+   "wereldbeker schaatsen",
+   "hoe laat begint het schaatsen",
+   "nk schaatsen"
+  ],
+  "Oranje (mannen)": [
+   "nederlands elftal programma",
+   "ek 2028",
+   "hoe laat speelt nederland",
+   "wanneer speelt oranje",
+   "nederland portugal",
+   "ek kwalificatie"
+  ],
+  "Veldrijden": [
+   "veldrijden vandaag",
+   "veldrijden",
+   "veldrijden op tv",
+   "wk veldrijden",
+   "wereldbeker veldrijden",
+   "veldrijden programma"
+  ],
+  "Handbal": [
+   "wk handbal",
+   "handbal op tv",
+   "ek handbal",
+   "handbal vandaag",
+   "ek handbal vrouwen"
+  ],
+  "Leeuwinnen": [
+   "oranje leeuwinnen",
+   "oranje vrouwen",
+   "leeuwinnen",
+   "wk vrouwen 2027"
+  ],
+  "Hockey": [
+   "pro league hockey",
+   "hockey vandaag",
+   "fih pro league",
+   "hockey op tv"
+  ],
+  "Algemeen": [
+   "sport op tv vandaag",
+   "sport vandaag",
+   "espn programma",
+   "ziggo sport programma",
+   "sport op tv"
+  ]
+ },
+ "volumes": {
+  "wk darts schema": {
+   "gem": 33100,
+   "piek": 301000,
+   "cpc": null
+  },
+  "wk darts": {
+   "gem": 60500,
+   "piek": 450000,
+   "cpc": 1.09
+  },
+  "darts op tv": {
+   "gem": 1600,
+   "piek": 6600,
+   "cpc": 2.93
+  },
+  "darts vandaag": {
+   "gem": 74000,
+   "piek": 246000,
+   "cpc": 1.56
+  },
+  "hoe laat begint darts": {
+   "gem": 720,
+   "piek": 6600,
+   "cpc": 8.02
+  },
+  "premier league darts": {
+   "gem": 14800,
+   "piek": 49500,
+   "cpc": 1.01
+  },
+  "wk darts 2027": {
+   "gem": 590,
+   "piek": 2900,
+   "cpc": 0.99
+  },
+  "darts uitslagen": {
+   "gem": 33100,
+   "piek": 90500,
+   "cpc": 1.55
+  },
+  "wk darts finale": {
+   "gem": 5400,
+   "piek": 60500,
+   "cpc": 0.74
+  },
+  "van gerwen": {
+   "gem": 18100,
+   "piek": 90500,
+   "cpc": 0.72
+  },
+  "gian van veen": {
+   "gem": 40500,
+   "piek": 246000,
+   "cpc": 0.91
+  },
+  "luke littler": {
+   "gem": 40500,
+   "piek": 165000,
+   "cpc": 1.3
+  },
+  "darts tv": {
+   "gem": 210,
+   "piek": 880,
+   "cpc": 0.97
+  },
+  "darts schema": {
+   "gem": 27100,
+   "piek": 201000,
+   "cpc": 1.86
+  },
+  "grand slam of darts": {
+   "gem": 3600,
+   "piek": 40500,
+   "cpc": 1.67
+  },
+  "world matchplay darts": {
+   "gem": 1300,
+   "piek": 14800,
+   "cpc": null
+  },
+  "uk open darts": {
+   "gem": 720,
+   "piek": 8100,
+   "cpc": null
+  },
+  "dutch darts masters": {
+   "gem": 170,
+   "piek": 590,
+   "cpc": 0.46
+  },
+  "schaatsen op tv": {
+   "gem": 27100,
+   "piek": 90500,
+   "cpc": 1.36
+  },
+  "schaatsen vandaag": {
+   "gem": 60500,
+   "piek": 550000,
+   "cpc": 2.07
+  },
+  "hoe laat begint het schaatsen": {
+   "gem": 1900,
+   "piek": 14800,
+   "cpc": null
+  },
+  "schaatsen tv": {
+   "gem": 27100,
+   "piek": 90500,
+   "cpc": 1.36
+  },
+  "wereldbeker schaatsen": {
+   "gem": 4400,
+   "piek": 18100,
+   "cpc": 1.98
+  },
+  "ek schaatsen": {
+   "gem": 1000,
+   "piek": 12100,
+   "cpc": null
+  },
+  "nk schaatsen": {
+   "gem": 2900,
+   "piek": 12100,
+   "cpc": 1.82
+  },
+  "schaatsen uitslagen": {
+   "gem": 3600,
+   "piek": 12100,
+   "cpc": 3.39
+  },
+  "wk schaatsen": {
+   "gem": 6600,
+   "piek": 60500,
+   "cpc": 2.13
+  },
+  "schaatsen programma": {
+   "gem": 14800,
+   "piek": 90500,
+   "cpc": 1.26
+  },
+  "nk afstanden": {
+   "gem": 390,
+   "piek": 3600,
+   "cpc": 2.46
+  },
+  "ek allround": {
+   "gem": 30,
+   "piek": 90,
+   "cpc": null
+  },
+  "schaatsen heerenveen": {
+   "gem": 2900,
+   "piek": 22200,
+   "cpc": 2.05
+  },
+  "jutta leerdam": {
+   "gem": 673000,
+   "piek": 2740000,
+   "cpc": null
+  },
+  "femke kok": {
+   "gem": 165000,
+   "piek": 1000000,
+   "cpc": null
+  },
+  "shorttrack": {
+   "gem": 27100,
+   "piek": 201000,
+   "cpc": 2.73
+  },
+  "formule 1": {
+   "gem": 673000,
+   "piek": 1500000,
+   "cpc": 1.08
+  },
+  "f1": {
+   "gem": 823000,
+   "piek": 2240000,
+   "cpc": 1
+  },
+  "hoe laat begint de formule 1": {
+   "gem": 2400,
+   "piek": 5400,
+   "cpc": 0.07
+  },
+  "formule 1 kalender": {
+   "gem": 60500,
+   "piek": 135000,
+   "cpc": 0.29
+  },
+  "f1 kalender": {
+   "gem": 165000,
+   "piek": 368000,
+   "cpc": 0.5
+  },
+  "formule 1 tijden": {
+   "gem": 60500,
+   "piek": 165000,
+   "cpc": 0.02
+  },
+  "f1 tijden": {
+   "gem": 246000,
+   "piek": 673000,
+   "cpc": 1.54
+  },
+  "formule 1 vandaag": {
+   "gem": 49500,
+   "piek": 110000,
+   "cpc": 1.66
+  },
+  "f1 vandaag": {
+   "gem": 40500,
+   "piek": 110000,
+   "cpc": 1.6
+  },
+  "formule 1 op tv": {
+   "gem": 1600,
+   "piek": 4400,
+   "cpc": 1.54
+  },
+  "max verstappen": {
+   "gem": 823000,
+   "piek": 1500000,
+   "cpc": 0.34
+  },
+  "gp abu dhabi": {
+   "gem": 5400,
+   "piek": 49500,
+   "cpc": 0.22
+  },
+  "gp qatar": {
+   "gem": 3600,
+   "piek": 40500,
+   "cpc": 1.44
+  },
+  "f1 kwalificatie": {
+   "gem": 22200,
+   "piek": 40500,
+   "cpc": 2.24
+  },
+  "formule 1 kalender 2027": {
+   "gem": 480,
+   "piek": 1900,
+   "cpc": 0.31
+  },
+  "f1 stand": {
+   "gem": 135000,
+   "piek": 550000,
+   "cpc": null
+  },
+  "nederlands elftal": {
+   "gem": 450000,
+   "piek": 1830000,
+   "cpc": 0.33
+  },
+  "oranje": {
+   "gem": 60500,
+   "piek": 246000,
+   "cpc": 0.36
+  },
+  "hoe laat speelt nederland": {
+   "gem": 8100,
+   "piek": 90500,
+   "cpc": 0.33
+  },
+  "nederland portugal": {
+   "gem": 880,
+   "piek": 5400,
+   "cpc": null
+  },
+  "nations league": {
+   "gem": 135000,
+   "piek": 673000,
+   "cpc": 0.53
+  },
+  "ek kwalificatie": {
+   "gem": 1300,
+   "piek": 4400,
+   "cpc": null
+  },
+  "ek 2028": {
+   "gem": 22200,
+   "piek": 90500,
+   "cpc": 0.02
+  },
+  "oranje vandaag": {
+   "gem": 170,
+   "piek": 720,
+   "cpc": null
+  },
+  "nederlands elftal programma": {
+   "gem": 14800,
+   "piek": 60500,
+   "cpc": 0.22
+  },
+  "wanneer speelt oranje": {
+   "gem": 1300,
+   "piek": 9900,
+   "cpc": 0.56
+  },
+  "nederland voetbal": {
+   "gem": 40500,
+   "piek": 165000,
+   "cpc": 0.37
+  },
+  "interland": {
+   "gem": 1600,
+   "piek": 4400,
+   "cpc": null
+  },
+  "ek loting": {
+   "gem": 50,
+   "piek": 320,
+   "cpc": null
+  },
+  "oranje leeuwinnen": {
+   "gem": 9900,
+   "piek": 22200,
+   "cpc": null
+  },
+  "oranje vrouwen": {
+   "gem": 1900,
+   "piek": 6600,
+   "cpc": null
+  },
+  "nederlands vrouwenelftal": {
+   "gem": 320,
+   "piek": 880,
+   "cpc": null
+  },
+  "wk vrouwen 2027": {
+   "gem": 390,
+   "piek": 1300,
+   "cpc": null
+  },
+  "leeuwinnen": {
+   "gem": 1600,
+   "piek": 3600,
+   "cpc": null
+  },
+  "oranje vrouwen slovenie": {
+   "gem": 0,
+   "piek": 0,
+   "cpc": null
+  },
+  "vrouwenvoetbal": {
+   "gem": 3600,
+   "piek": 9900,
+   "cpc": 0.02
+  },
+  "wk vrouwenvoetbal": {
+   "gem": 260,
+   "piek": 590,
+   "cpc": null
+  },
+  "ajax": {
+   "gem": 2240000,
+   "piek": 4090000,
+   "cpc": 0.5
+  },
+  "feyenoord": {
+   "gem": 2240000,
+   "piek": 2740000,
+   "cpc": 0.53
+  },
+  "psv": {
+   "gem": 1500000,
+   "piek": 2240000,
+   "cpc": 0.36
+  },
+  "hoe laat speelt ajax": {
+   "gem": 3600,
+   "piek": 8100,
+   "cpc": 0.02
+  },
+  "hoe laat speelt feyenoord": {
+   "gem": 2900,
+   "piek": 5400,
+   "cpc": 0.15
+  },
+  "hoe laat speelt psv": {
+   "gem": 1000,
+   "piek": 1900,
+   "cpc": 0.02
+  },
+  "ajax programma": {
+   "gem": 49500,
+   "piek": 74000,
+   "cpc": 0.04
+  },
+  "feyenoord programma": {
+   "gem": 33100,
+   "piek": 74000,
+   "cpc": 0.05
+  },
+  "psv programma": {
+   "gem": 4400,
+   "piek": 6600,
+   "cpc": 0.05
+  },
+  "eredivisie programma": {
+   "gem": 40500,
+   "piek": 74000,
+   "cpc": 0.48
+  },
+  "eredivisie": {
+   "gem": 1830000,
+   "piek": 2740000,
+   "cpc": 0.98
+  },
+  "champions league": {
+   "gem": 823000,
+   "piek": 1500000,
+   "cpc": 0.95
+  },
+  "conference league": {
+   "gem": 74000,
+   "piek": 165000,
+   "cpc": 0.37
+  },
+  "europa league": {
+   "gem": 135000,
+   "piek": 301000,
+   "cpc": 1.49
+  },
+  "knvb beker": {
+   "gem": 110000,
+   "piek": 301000,
+   "cpc": 0.12
+  },
+  "de klassieker": {
+   "gem": 5400,
+   "piek": 49500,
+   "cpc": null
+  },
+  "voetbal op tv": {
+   "gem": 40500,
+   "piek": 49500,
+   "cpc": 3.15
+  },
+  "voetbal vandaag op tv": {
+   "gem": 0,
+   "piek": 0,
+   "cpc": null
+  },
+  "eredivisie op tv": {
+   "gem": 110,
+   "piek": 320,
+   "cpc": 1.55
+  },
+  "champions league op tv": {
+   "gem": 390,
+   "piek": 1300,
+   "cpc": null
+  },
+  "ajax vandaag": {
+   "gem": 40500,
+   "piek": 74000,
+   "cpc": 0.09
+  },
+  "feyenoord vandaag": {
+   "gem": 40500,
+   "piek": 90500,
+   "cpc": 0.2
+  },
+  "psv vandaag": {
+   "gem": 27100,
+   "piek": 60500,
+   "cpc": 0.09
+  },
+  "nederland slovenie vrouwen": {
+   "gem": 10,
+   "piek": 110,
+   "cpc": null
+  },
+  "eredivisie speelschema": {
+   "gem": 3600,
+   "piek": 5400,
+   "cpc": 1.24
+  },
+  "ajax speelschema": {
+   "gem": 12100,
+   "piek": 18100,
+   "cpc": 0.09
+  },
+  "feyenoord speelschema": {
+   "gem": 8100,
+   "piek": 12100,
+   "cpc": 0.04
+  },
+  "psv speelschema": {
+   "gem": 3600,
+   "piek": 5400,
+   "cpc": 0.04
+  },
+  "nations league kwartfinale": {
+   "gem": 20,
+   "piek": 140,
+   "cpc": null
+  },
+  "ek handbal": {
+   "gem": 480,
+   "piek": 2900,
+   "cpc": null
+  },
+  "ek handbal vrouwen": {
+   "gem": 170,
+   "piek": 1000,
+   "cpc": null
+  },
+  "handbal": {
+   "gem": 14800,
+   "piek": 90500,
+   "cpc": 0.7
+  },
+  "handbal op tv": {
+   "gem": 590,
+   "piek": 4400,
+   "cpc": null
+  },
+  "ek handbal 2026": {
+   "gem": 110,
+   "piek": 720,
+   "cpc": null
+  },
+  "wk handbal": {
+   "gem": 22200,
+   "piek": 201000,
+   "cpc": null
+  },
+  "handbal vrouwen": {
+   "gem": 590,
+   "piek": 4400,
+   "cpc": null
+  },
+  "nederland handbal": {
+   "gem": 480,
+   "piek": 4400,
+   "cpc": 0.8
+  },
+  "veldrijden": {
+   "gem": 9900,
+   "piek": 33100,
+   "cpc": 0.41
+  },
+  "veldrijden op tv": {
+   "gem": 2400,
+   "piek": 9900,
+   "cpc": 10.81
+  },
+  "veldrijden vandaag": {
+   "gem": 14800,
+   "piek": 74000,
+   "cpc": null
+  },
+  "wereldbeker veldrijden": {
+   "gem": 1000,
+   "piek": 6600,
+   "cpc": null
+  },
+  "veldrijden uitslagen": {
+   "gem": 320,
+   "piek": 1000,
+   "cpc": null
+  },
+  "mathieu van der poel": {
+   "gem": 135000,
+   "piek": 368000,
+   "cpc": 0.65
+  },
+  "veldrit": {
+   "gem": 9900,
+   "piek": 33100,
+   "cpc": 0.41
+  },
+  "wk veldrijden": {
+   "gem": 2900,
+   "piek": 14800,
+   "cpc": null
+  },
+  "superprestige": {
+   "gem": 90,
+   "piek": 320,
+   "cpc": null
+  },
+  "x2o trofee": {
+   "gem": 50,
+   "piek": 210,
+   "cpc": null
+  },
+  "puck pieterse": {
+   "gem": 9900,
+   "piek": 33100,
+   "cpc": null
+  },
+  "fem van empel": {
+   "gem": 9900,
+   "piek": 27100,
+   "cpc": null
+  },
+  "hockey": {
+   "gem": 27100,
+   "piek": 90500,
+   "cpc": 0.72
+  },
+  "pro league hockey": {
+   "gem": 3600,
+   "piek": 33100,
+   "cpc": null
+  },
+  "hockey op tv": {
+   "gem": 390,
+   "piek": 2400,
+   "cpc": 1.16
+  },
+  "oranje hockey": {
+   "gem": 210,
+   "piek": 1300,
+   "cpc": null
+  },
+  "hockey dames": {
+   "gem": 1900,
+   "piek": 18100,
+   "cpc": null
+  },
+  "hockey heren": {
+   "gem": 720,
+   "piek": 6600,
+   "cpc": 3.15
+  },
+  "fih pro league": {
+   "gem": 1000,
+   "piek": 6600,
+   "cpc": null
+  },
+  "hoofdklasse hockey": {
+   "gem": 1000,
+   "piek": 3600,
+   "cpc": 0.07
+  },
+  "sport op tv": {
+   "gem": 880,
+   "piek": 1300,
+   "cpc": 1.05
+  },
+  "sport op tv vandaag": {
+   "gem": 4400,
+   "piek": 8100,
+   "cpc": 0.45
+  },
+  "sport op tv morgen": {
+   "gem": 30,
+   "piek": 70,
+   "cpc": null
+  },
+  "sport vandaag": {
+   "gem": 1900,
+   "piek": 2400,
+   "cpc": null
+  },
+  "sport op tv vanavond": {
+   "gem": 210,
+   "piek": 480,
+   "cpc": 0.03
+  },
+  "wat is er op tv vanavond sport": {
+   "gem": 0,
+   "piek": 0,
+   "cpc": null
+  },
+  "tv gids sport": {
+   "gem": 90,
+   "piek": 170,
+   "cpc": null
+  },
+  "sport dit weekend": {
+   "gem": 170,
+   "piek": 320,
+   "cpc": null
+  },
+  "voetbal op tv vanavond": {
+   "gem": 0,
+   "piek": 0,
+   "cpc": null
+  },
+  "sport op tv vandaag ziggo": {
+   "gem": 0,
+   "piek": 0,
+   "cpc": null
+  },
+  "ziggo sport programma": {
+   "gem": 880,
+   "piek": 1300,
+   "cpc": null
+  },
+  "espn programma": {
+   "gem": 1600,
+   "piek": 2900,
+   "cpc": null
+  },
+  "viaplay programma": {
+   "gem": 720,
+   "piek": 1600,
+   "cpc": null
+  },
+  "nos sport programma": {
+   "gem": 20,
+   "piek": 110,
+   "cpc": null
+  },
+  "sport op tv dit weekend": {
+   "gem": 50,
+   "piek": 90,
+   "cpc": null
+  },
+  "voetbal vandaag": {
+   "gem": 450000,
+   "piek": 1000000,
+   "cpc": 0.05
+  },
+  "voetbal op tv vandaag": {
+   "gem": 0,
+   "piek": 0,
+   "cpc": null
+  },
+  "veldrijden programma": {
+   "gem": 480,
+   "piek": 2900,
+   "cpc": null
+  },
+  "handbal vandaag": {
+   "gem": 170,
+   "piek": 1300,
+   "cpc": null
+  },
+  "hockey vandaag": {
+   "gem": 1600,
+   "piek": 14800,
+   "cpc": null
+  },
+  "wielrennen op tv": {
+   "gem": 8100,
+   "piek": 22200,
+   "cpc": 1.38
+  },
+  "schaatsen op tv vandaag": {
+   "gem": 12100,
+   "piek": 40500,
+   "cpc": 1.35
+  }
+ }
+}

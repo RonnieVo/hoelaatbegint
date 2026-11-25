@@ -808,5 +808,177 @@
     "psv"
    ]
   ]
+ },
+ "eredivisie": {
+  "sport": "clubs",
+  "slug": "eredivisie",
+  "name": "Eredivisie",
+  "h1": "Eredivisie programma",
+  "title": "Eredivisie programma: alle wedstrijden met aftrap en zender",
+  "description": "Het Eredivisie-programma van de komende weken: alle wedstrijden met aftrap in Nederlandse tijd en zender (ESPN). Automatisch bijgewerkt.",
+  "answer": "Alle wedstrijden van de <strong>Eredivisie</strong> in de komende weken, met aftrap in Nederlandse tijd. Elke wedstrijd is live te zien op <strong>ESPN</strong> (ESPN 1 t/m 4).",
+  "facts": [
+   [
+    "Seizoen",
+    "2026/27"
+   ],
+   [
+    "Op tv",
+    "ESPN (alle 306 wedstrijden)"
+   ],
+   [
+    "Laatste speelronde",
+    "23 mei 2027"
+   ],
+   [
+    "Bijgewerkt",
+    "Automatisch, meerdere keren per dag"
+   ]
+  ],
+  "intro": "Het programma wordt automatisch opgehaald. Wedstrijden waarvan de KNVB de aanvangstijd nog niet heeft vastgelegd, staan op 'tijd volgt' en krijgen hun tijd zodra die bekend is.",
+  "faq": [
+   [
+    "Op welke zender is de Eredivisie?",
+    "Alle Eredivisiewedstrijden zijn live te zien op ESPN (ESPN 1 tot en met 4)."
+   ],
+   [
+    "Wanneer is de laatste speelronde van de Eredivisie?",
+    "De laatste speelronde van het seizoen 2026/27 is op 23 mei 2027."
+   ]
+  ],
+  "sources": [
+   [
+    "Eredivisie-programma en zenders (Ziggo)",
+    "https://www.ziggo.nl/entertainment/sport/voetbal/eredivisie/programma"
+   ],
+   [
+    "Eredivisie 2026/27 (Cybernews)",
+    "https://cybernews.com/stream-online/how-to-watch-dutch-eredivisie-2026-27"
+   ]
+  ]
+ },
+ "ek-2028": {
+  "sport": "voetbal",
+  "slug": "ek-2028",
+  "name": "EK 2028",
+  "h1": "EK 2028: wanneer en waar?",
+  "title": "EK 2028: data, gastlanden, loting en de route van Oranje",
+  "description": "Het EK 2028 is van 9 juni tot en met 9 juli 2028 in Engeland, Schotland, Wales en Ierland. De loting voor de kwalificatie is zondag 6 december 2026 om 18:00.",
+  "answer": "Het <strong>EK 2028</strong> wordt gespeeld van <strong>9 juni tot en met 9 juli 2028</strong> in Engeland, Schotland, Wales en Ierland. De loting voor de kwalificatie is op <strong>zondag 6 december 2026 om 18:00</strong> in Belfast.",
+  "facts": [
+   [
+    "Wanneer",
+    "9 juni – 9 juli 2028"
+   ],
+   [
+    "Gastlanden",
+    "Engeland, Schotland, Wales en Ierland"
+   ],
+   [
+    "Loting kwalificatie",
+    "zondag 6 december 2026, 18:00, Belfast"
+   ],
+   [
+    "Kwalificatie",
+    "maart t/m november 2027"
+   ],
+   [
+    "Play-offs",
+    "maart 2028"
+   ],
+   [
+    "Oranje",
+    "pot 1; begint in september 2027 (groep van vier)"
+   ]
+  ],
+  "intro": "Alle UEFA-landen worden verdeeld over twaalf groepen van vier of vijf landen. De groepswinnaars en de acht beste nummers twee plaatsen zich rechtstreeks. Omdat Oranje in maart 2027 de Nations League-kwartfinale tegen Portugal speelt, komt Nederland in een groep van vier en begint het in september 2027.",
+  "faq": [
+   [
+    "Wanneer is het EK 2028?",
+    "Van 9 juni tot en met 9 juli 2028."
+   ],
+   [
+    "Waar wordt het EK 2028 gespeeld?",
+    "In Engeland, Schotland, Wales en Ierland."
+   ],
+   [
+    "Wanneer is de loting voor de EK-kwalificatie?",
+    "Zondag 6 december 2026 om 18:00 Nederlandse tijd, in Belfast."
+   ]
+  ],
+  "sources": [
+   [
+    "EK 2028-kwalificatie (oranjeschema.nl)",
+    "https://oranjeschema.nl/ek-2028/kwalificatie-nederland"
+   ],
+   [
+    "Loting EK-kwalificatie (Bet-Experts)",
+    "https://www.bet-experts.nl/nieuws/loting-ek-2028-kwalificatie-potindeling-oranje"
+   ],
+   [
+    "Wanneer speelt Oranje weer? (Voetbalnieuws)",
+    "https://www.voetbalnieuws.nl/nieuws/2159736/wanneer-speelt-oranje-weer-programma-nederland-in-2027.html"
+   ]
+  ]
+ },
+ "wk-handbal-2027": {
+  "sport": "handbal",
+  "slug": "wk-handbal-2027",
+  "name": "WK handbal 2027",
+  "h1": "WK handbal 2027: wanneer en waar?",
+  "title": "WK handbal 2027 (mannen): data, speelsteden en finale",
+  "description": "Het WK handbal voor mannen is van 13 tot en met 31 januari 2027 in Duitsland. De finale is op 31 januari in de Lanxess Arena in Keulen.",
+  "answer": "Het <strong>WK handbal 2027</strong> voor mannen is van <strong>13 tot en met 31 januari 2027</strong> in Duitsland. De finale is op <strong>zondag 31 januari</strong> in de Lanxess Arena in Keulen. Nederland doet niet mee.",
+  "facts": [
+   [
+    "Wanneer",
+    "13 – 31 januari 2027"
+   ],
+   [
+    "Gastland",
+    "Duitsland"
+   ],
+   [
+    "Speelsteden",
+    "München, Stuttgart, Magdeburg, Kiel, Hannover en Keulen"
+   ],
+   [
+    "Finale",
+    "31 januari 2027, Lanxess Arena, Keulen"
+   ],
+   [
+    "Deelnemers",
+    "32 landen"
+   ],
+   [
+    "Nederland",
+    "niet geplaatst"
+   ]
+  ],
+  "intro": "Duitsland organiseert het WK voor de achtste keer. De voorronde wordt gespeeld in München, Stuttgart, Magdeburg en Kiel; de hoofdronde in Keulen en Hannover. Keulen is ook het decor van de kwartfinales, halve finales en finale.",
+  "faq": [
+   [
+    "Wanneer is het WK handbal 2027?",
+    "Van 13 tot en met 31 januari 2027 in Duitsland."
+   ],
+   [
+    "Doet Nederland mee aan het WK handbal 2027?",
+    "Nee, de Nederlandse mannen staan niet bij de 32 deelnemers."
+   ],
+   [
+    "Waar is de finale van het WK handbal 2027?",
+    "Op 31 januari 2027 in de Lanxess Arena in Keulen."
+   ]
+  ],
+  "sources": [
+   [
+    "Loting WK 2027 (IHF)",
+    "https://www.ihf.info/competitions/men/308/30th-ihf-mens-handball-world-championship-/263667/news/282223"
+   ],
+   [
+    "WK handbal 2027 (Eventim)",
+    "https://www.eventim.de/en/artist/ihf-handball-weltmeisterschaft-der-maenner/"
+   ]
+  ]
  }
 }

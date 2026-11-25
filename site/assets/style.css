@@ -169,3 +169,12 @@ details p{margin:0 0 14px}
 details.more{background:none;box-shadow:none;padding:0;margin:0;border-radius:0}
 details.more summary{padding:10px 10px}
 details.more summary::after,details.more[open] summary::after{content:"";float:none;font:inherit;color:currentColor}
+
+/* uitklapmenu's per sport (volgorde op zoekvolume) */
+@media (min-width:761px){.nav{overflow:visible}.dd{position:relative}.dd .more-panel{left:0;right:auto;top:calc(100% + 6px)}.dd:last-child .more-panel{left:auto;right:0}}
+@media (max-width:760px){.dd .more-panel{left:10px;right:10px;top:100%}}
+.dd .more-panel{min-width:240px}
+.dd .more-panel a{font-size:17px;padding:9px 12px}
+.dd .more-panel a:not(:first-child){padding-left:54px}
+.dd .more-panel a:first-child{border-bottom:1px solid #ece9e2;border-radius:10px 10px 0 0;margin-bottom:4px}
+.dd .more-panel a:last-child:first-child{border:0}

@@ -28,18 +28,35 @@ BASE = CONFIG["base_url"].rstrip("/")
 DAYS = ["maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag", "zondag"]
 MONTHS = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus",
           "september", "oktober", "november", "december"]
-MAIN_NAV = ("darts", "schaatsen", "voetbal", "leeuwinnen", "clubs")  # de rest staat onder "Meer sporten"
+# Volgorde op zoekvolume (DataForSEO, NL, nov 2026; zie data/keywords.json):
+# F1 657k > clubvoetbal 311k > darts 217k > schaatsen 157k > Oranje 49k > veldrijden 31k > handbal 24k > Leeuwinnen 14k > hockey 7k
 SPORTS = {
+    "f1": {"name": "Formule 1", "page": "formule-1", "minutes": 120},
+    "clubs": {"name": "Clubs", "page": "clubs", "minutes": 120},
     "darts": {"name": "Darts", "page": "wk-darts", "minutes": 240},
     "schaatsen": {"name": "Schaatsen", "page": "schaatsen", "minutes": 240},
     "voetbal": {"name": "Oranje", "page": "nederlands-elftal", "minutes": 120},
-    "leeuwinnen": {"name": "Leeuwinnen", "page": "oranje-leeuwinnen", "minutes": 120},
-    "clubs": {"name": "Clubs", "page": "clubs", "minutes": 120},
-    "handbal": {"name": "Handbal", "page": "ek-handbal-vrouwen", "minutes": 100},
-    "f1": {"name": "Formule 1", "page": "formule-1", "minutes": 120},
     "veldrijden": {"name": "Veldrijden", "page": "veldrijden", "minutes": 75},
+    "handbal": {"name": "Handbal", "page": "ek-handbal-vrouwen", "minutes": 100},
+    "leeuwinnen": {"name": "Leeuwinnen", "page": "oranje-leeuwinnen", "minutes": 120},
     "hockey": {"name": "Hockey", "page": "hockey", "minutes": 90},
 }
+# Hoofdmenu: per sport een uitklapmenu met de subpagina's waar zoekvolume op zit. De rest onder "Meer sporten".
+NAV = [
+    ("f1", "Formule 1", [("Alle F1-tijden", "/formule-1/"), ("Formule 1 vandaag", "/formule-1/vandaag/"),
+                         ("F1 kalender 2027", "/formule-1/kalender/"), ("Formule 1 op tv", "/formule-1/op-tv/")]),
+    ("clubs", "Voetbal", [("Voetbal vandaag", "/voetbal/vandaag/"), ("Voetbal op tv", "/voetbal/op-tv/"),
+                          ("Eredivisie programma", "/eredivisie/"), ("Ajax", "/ajax/"), ("Feyenoord", "/feyenoord/"), ("PSV", "/psv/")]),
+    ("darts", "Darts", [("WK darts schema", "/wk-darts/"), ("Darts vandaag", "/darts/vandaag/"),
+                        ("Darts op tv", "/darts/op-tv/"), ("Nederlanders op het WK", "/wk-darts/#nederlanders")]),
+    ("schaatsen", "Schaatsen", [("Schaatsprogramma", "/schaatsen/"), ("Schaatsen vandaag", "/schaatsen/vandaag/"),
+                                ("Schaatsen op tv", "/schaatsen/op-tv/")]),
+    ("voetbal", "Oranje", [("Programma Oranje", "/nederlands-elftal/"), ("EK 2028", "/ek-2028/"),
+                           ("Oranje Leeuwinnen", "/oranje-leeuwinnen/")]),
+]
+MORE_NAV = [("veldrijden", "Veldrijden", "/veldrijden/"), ("veldrijden", "Veldrijden vandaag", "/veldrijden/vandaag/"),
+            ("handbal", "EK handbal vrouwen", "/ek-handbal-vrouwen/"), ("handbal", "WK handbal 2027", "/wk-handbal-2027/"),
+            ("leeuwinnen", "Leeuwinnen", "/oranje-leeuwinnen/"), ("hockey", "Hockey", "/hockey/")]
 ICONS = {
     "darts": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#FF6A13" stroke="none"/></svg>',
     "voetbal": '<svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EF" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7l4 3-1.5 4.5h-5L8 10z" fill="#FF6A13" stroke="none"/></svg>',
@@ -101,6 +118,9 @@ def prep(e, broadcasters, now):
     # Automatische wedstrijdpagina voor elke Nederlandse wedstrijd met een vaste tijd en tegenstander
     if not e.get("page") and e.get("start") and e.get("nl") and (e.get("away") or e.get("participants")) and " – " in e["title"]:
         e["page"] = f"{slugify(e['title'])}-{e['day'].isoformat()}"
+    if not e.get("page") and e["sport"] == "f1" and e.get("start") and e["title"].startswith("GP") and ":" not in e["title"]:
+        e["page"] = f"{slugify(e['title'])}-{e['day'].year}"
+        e.setdefault("h1", f"Hoe laat begint de {e['title']} {e['day'].year}?")
     e["tv"] = broadcasters.get(e.get("broadcaster", ""), {}).get("name")
     e["tv_detail"] = e.get("tv_detail") or e["tv"]
     e["url"] = f"/wedstrijd/{e['page']}/" if e.get("page") else f"/{SPORTS[e['sport']]['page']}/"
@@ -204,10 +224,10 @@ BASE_TPL = r"""<!doctype html>
 <a class="brand" href="/" aria-label="hoelaatbegint.nl, naar de homepage">{{ logo|safe }}<span>hoelaat<b>begint</b><i>.nl</i></span></a>
 <nav class="nav" aria-label="Sporten">
 <a class="today" href="/vandaag/">Vandaag</a>
-{% for key, s in sports.items() if key in main_nav %}<a href="/{{ s.page }}/"{% if active == s.page %} aria-current="page"{% endif %}>{{ s.name }}</a>{% endfor %}
-{% set more = [] %}{% for key, s in sports.items() if key not in main_nav %}{% set _ = more.append(s) %}{% endfor %}
-<details class="more"><summary{% for s in more if active == s.page %} aria-current="page"{% endfor %}>Meer sporten</summary>
-<div class="more-panel">{% for s in more %}<a href="/{{ s.page }}/"{% if active == s.page %} aria-current="page"{% endif %}><span class="mi">{{ icons[s.key]|safe }}</span>{{ s.name }}</a>{% endfor %}</div></details>
+{% for key, label, subs in nav %}{% set here = active_path in subs|map(attribute=1)|list %}<details class="more dd"><summary{% if here %} aria-current="page"{% endif %}>{{ label }}</summary>
+<div class="more-panel">{% for n, u in subs %}<a href="{{ u }}"{% if u == active_path %} aria-current="page"{% endif %}>{% if loop.first %}<span class="mi">{{ icons[key]|safe }}</span>{% endif %}{{ n }}</a>{% endfor %}</div></details>
+{% endfor %}<details class="more dd"><summary{% if active_path in more_nav|map(attribute=2)|list %} aria-current="page"{% endif %}>Meer</summary>
+<div class="more-panel">{% for key, n, u in more_nav %}<a href="{{ u }}"{% if u == active_path %} aria-current="page"{% endif %}><span class="mi">{{ icons[key]|safe }}</span>{{ n }}</a>{% endfor %}</div></details>
 </nav>{% if cfg.instagram_url %}<a class="ig" href="{{ cfg.instagram_url }}" rel="noopener" target="_blank" aria-label="Volg ons op Instagram">{{ ig|safe }}</a>{% endif %}</div></header>
 <main id="main">
 {{ body|safe }}
@@ -218,7 +238,7 @@ BASE_TPL = r"""<!doctype html>
 <p>Elke aftrap, elke start. In Nederlandse tijd. Tijden worden elke 15 minuten automatisch gecontroleerd bij twee bronnen.</p>
 {% if cfg.instagram_url %}<p><a class="ig-foot" href="{{ cfg.instagram_url }}" rel="noopener" target="_blank">{{ ig|safe }} Elke ochtend om 07:00 het sportprogramma: volg @hoelaatbegint</a></p>{% endif %}</div>
 <div><h4>Sporten</h4><ul>{% for key, s in sports.items() %}<li><a href="/{{ s.page }}/">{{ s.name }}</a></li>{% endfor %}</ul></div>
-<div><h4>Handig</h4><ul><li><a href="/vandaag/">Sport vandaag</a></li><li><a href="/agenda/">Agenda-abonnement</a></li><li><a href="/wk-darts/#nederlanders">Nederlanders op het WK darts</a></li><li><a href="/ajax/">Hoe laat speelt Ajax?</a></li><li><a href="/feyenoord/">Hoe laat speelt Feyenoord?</a></li><li><a href="/psv/">Hoe laat speelt PSV?</a></li></ul></div>
+<div><h4>Handig</h4><ul><li><a href="/vandaag/">Sport op tv vandaag</a></li><li><a href="/formule-1/kalender/">F1 kalender 2027</a></li><li><a href="/voetbal/op-tv/">Voetbal op tv</a></li><li><a href="/eredivisie/">Eredivisie programma</a></li><li><a href="/agenda/">Agenda-abonnement</a></li><li><a href="/wk-darts/#nederlanders">Nederlanders op het WK darts</a></li><li><a href="/ajax/">Hoe laat speelt Ajax?</a></li><li><a href="/feyenoord/">Hoe laat speelt Feyenoord?</a></li><li><a href="/psv/">Hoe laat speelt PSV?</a></li></ul></div>
 <div><h4>Over</h4><ul><li><a href="/over/">Over ons &amp; werkwijze</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:{{ cfg.contact_email }}?subject=Correctie">Klopt er iets niet?</a></li></ul></div>
 </div>
 <div class="legal"><span>© {{ year }} hoelaatbegint.nl · Tijden onder voorbehoud van wijzigingen door organisatoren en zenders.</span><span>Bijgewerkt: {{ built }}</span></div>
@@ -372,6 +392,29 @@ MATCH = MACROS + r"""
 <section><div class="wrap"><h2>Meer van {{ t.name }}</h2>{{ schedule(more) }}</div></section>
 """
 
+VIEW = MACROS + r"""
+<section class="hero"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> › <a href="{{ parent }}">{{ v.name }}</a> › {{ v.h1 }}</div>
+<h1>{{ v.h1 }}</h1>
+<p class="lede">{{ lede|safe }}</p>
+<span class="checked">Laatst gecontroleerd: {{ built }}</span>
+</div></section>
+{% if nx %}<div class="wrap">{{ answer(nx, label) }}{{ opinion(nx) }}</div>{% endif %}
+<section><div class="wrap">
+{% if v.mode == "kalender" %}<div class="prose"><p>{{ v.intro }}</p></div>
+<h2>Alle races</h2><p class="note">Tijden in Nederlandse tijd. Staat er 'tijd volgt', dan is de starttijd nog niet bekendgemaakt.</p>{{ schedule(list, True) }}
+{% elif v.mode == "vandaag" %}<h2>{{ today_label|capitalize }}</h2>
+{% if list %}{{ schedule(list, True) }}{% else %}<div class="card"><h3>Vandaag geen {{ v.name }}</h3><p class="muted">Hieronder zie je wat er de komende dagen aankomt.</p></div>{% endif %}
+<h2 style="margin-top:36px">De komende dagen</h2>{% if soon %}{{ schedule(soon) }}{% else %}<p class="muted">Nog niets gepland.</p>{% endif %}
+{% else %}<h2>De komende uitzendingen</h2><p class="note">Alle tijden in Nederlandse tijd.</p>
+{% if list %}{{ schedule(list) }}{% else %}<div class="card"><h3>Nog geen uitzendingen gepland</h3><p class="muted">Zodra er tijden bekend zijn, staan ze hier.</p></div>{% endif %}
+{% if channels %}<h2 style="margin-top:36px">Op welke zender?</h2><table class="facts">{% for n, what in channels %}<tr><th>{{ n }}</th><td>{{ what }}</td></tr>{% endfor %}</table>{% endif %}
+{% endif %}
+<p style="margin-top:20px">{% for n, u in related %}<a class="btn" href="{{ u }}" style="margin:0 8px 8px 0">{{ n }}</a>{% endfor %}</p>
+</div></section>
+{{ faqblock(faq) }}
+"""
+
 AGENDA = MACROS + r"""
 <section class="hero"><div class="wrap">
 <div class="crumbs"><a href="/">Home</a> › Agenda</div>
@@ -438,14 +481,15 @@ def main():
             txt = slugify(e["title"] + " " + " ".join(e.get("participants", [])))
             e["clubs"] = [c for c in ("ajax", "feyenoord", "psv") if c in txt]
     events = sorted((prep(e, broadcasters, now) for e in events_raw), key=lambda e: (e["dt"], e["id"]))
-    upcoming = [e for e in events if e["upcoming"]]
+    upcoming_all = [e for e in events if e["upcoming"]]
+    upcoming = [e for e in upcoming_all if e["nl"]]  # home/vandaag: alleen sport met Nederlanders
     built = now.astimezone(NL)
     built_label = f"{d_label(built.date())}, {built.strftime('%H:%M')}"
     version = built.strftime("%Y%m%d%H%M")
     logo = (ROOT / "site" / "assets" / "logo.svg").read_text().replace('role="img" aria-label="hoelaatbegint.nl"', 'aria-hidden="true"')
 
     env = Environment(loader=BaseLoader(), autoescape=True)
-    env.globals.update(main_nav=MAIN_NAV, months=MONTHS, ig=IG_ICON, cal=CAL_ICON, bell=BELL_ICON, share=SHARE_ICON, slug=slugify,
+    env.globals.update(nav=NAV, more_nav=MORE_NAV, months=MONTHS, ig=IG_ICON, cal=CAL_ICON, bell=BELL_ICON, share=SHARE_ICON, slug=slugify,
                        icons=ICONS, sports=SPORTS, built=built_label, base=BASE, cfg=CONFIG)
     base_tpl = env.from_string(BASE_TPL)
 
@@ -461,7 +505,7 @@ def main():
     def write(path, title, description, body, og="default", active=None, jsonld=(), priority="0.7"):
         title = overrides.get(path, {}).get("title", title)
         description = overrides.get(path, {}).get("description", description)
-        html = base_tpl.render(title=title, description=description, path=path, body=body, og=og, active=active,
+        html = base_tpl.render(title=title, description=description, path=path, active_path=path, body=body, og=og, active=active,
                                jsonld=[json.dumps(x, ensure_ascii=False) for x in jsonld if x], logo=logo,
                                version=version, year=built.year)
         out = DIST / path.strip("/") / "index.html" if path != "/" else DIST / "index.html"
@@ -504,7 +548,9 @@ def main():
     # --- toernooien
     for slug, t in tournaments.items():
         if slug == "clubs":
-            tev = [e for e in events if e["sport"] == "clubs"]
+            tev = [e for e in events if e["sport"] == "clubs" and e.get("clubs")]
+        elif slug == "eredivisie":
+            tev = [e for e in events if e["sport"] == "clubs" and "eredivisie" in (e.get("round") or "").lower()]
         else:
             tev = [e for e in events if e["tournament"] == slug or slug in e.get("clubs", [])]
         tup = [e for e in tev if e["upcoming"]] or tev
@@ -540,6 +586,73 @@ def main():
               body, og=e["tournament"], active=e["tournament"],
               jsonld=[jsonld_event(e), crumbs(("Home", "/"), (t["name"], f"/{t['slug']}/"), (e["title"], e["url"]))], priority="0.8")
 
+    # --- overzichtspagina's op zoekvolume (data/pages.json): vandaag, op tv, kalender
+    views = json.loads((ROOT / "data" / "pages.json").read_text(encoding="utf-8"))["views"]
+    nav_parent = {u: subs[0][1] for _, _, subs in NAV for _, u in subs}
+    for v in views:
+        if v.get("club"):
+            pool = [e for e in events if v["club"] in e.get("clubs", [])]
+            parent = f"/{v['club']}/"
+        else:
+            pool = [e for e in events if e["sport"] in v["sports"]]
+            parent = nav_parent.get(v["path"], f"/{SPORTS[v['sports'][0]]['page']}/")
+        fut = [e for e in pool if e["upcoming"]]
+        if v["mode"] == "kalender":
+            lst = [e for e in pool if e["day"].year >= today.year + (1 if today.month == 12 and today.day > 7 else 0)
+                   and (e.get("round") or "").startswith("Race") and "," not in (e.get("round") or "")] or fut
+            lst = [e for e in lst if e["day"].year == 2027] or lst
+        elif v["mode"] == "vandaag":
+            lst = [e for e in fut if e["day"] <= today <= e["end_day"]]
+        else:
+            lst = [e for e in fut if e.get("start") and e.get("tv")][:40]
+        soon = [e for e in fut if e["day"] > today][:12]
+        nx = next((e for e in fut if e.get("start") and e["dt"] > now), None)
+        tvs = sorted({e["tv"] for e in fut if e.get("tv")})
+        name_l = v["name"] if v["name"] in ("Formule 1", "Ajax", "Feyenoord", "PSV") else v["name"].lower()
+        if v["mode"] == "vandaag":
+            todays_t = [e for e in lst if e.get("start")]
+            if todays_t:
+                f = todays_t[0]
+                lede = (f"Ja, er {'is' if len(lst) == 1 else 'zijn'} vandaag <strong>{len(lst)}</strong> "
+                        f"{'wedstrijd' if len(lst) == 1 else 'wedstrijden/sessies'}. Als eerste: <strong>{f['title']}</strong> om "
+                        f"<strong>{f['time']}</strong>{', live op <strong>' + f['tv_detail'] + '</strong>' if f.get('tv') else ''}.")
+            elif lst:
+                lede = f"Ja, vandaag staat <strong>{lst[0]['title']}</strong> op het programma. De exacte tijd volgt zodra die bekend is."
+            elif nx:
+                lede = (f"Nee, vandaag ({d_label(today)}) is er geen {name_l}. De eerstvolgende: <strong>{nx['title']}</strong>, "
+                        f"<strong>{nx['day_label']} om {nx['time']}</strong>{', op ' + nx['tv_detail'] if nx.get('tv') else ''}.")
+            else:
+                lede = f"Nee, vandaag ({d_label(today)}) is er geen {name_l}."
+            label = "Eerstvolgende"
+        elif v["mode"] == "optv":
+            lede = (f"{name_l} zie je in Nederland op <strong>{' en '.join(tvs)}</strong>. " if tvs else "") + (
+                f"De eerstvolgende uitzending: <strong>{nx['title']}</strong>, {nx['day_label']} om <strong>{nx['time']}</strong>." if nx else "")
+            label = "Eerstvolgende uitzending"
+        else:
+            lede = v.get("intro", "")
+            label = "Eerstvolgende sessie"
+        channels = []
+        for key in sorted({e.get("broadcaster") for e in fut if e.get("tv")}):
+            what = sorted({e.get("round") or e["sport_name"] for e in fut if e.get("broadcaster") == key})
+            channels.append((broadcasters[key]["name"], ", ".join(what[:4])))
+        if v["mode"] == "vandaag":
+            faq = [[f"Is er vandaag {name_l}?", re.sub(r"<[^>]+>", "", lede)],
+                   [f"Hoe laat begint {name_l} de volgende keer?", f"{nx['title']} begint {nx['day_label']} om {nx['time']} Nederlandse tijd." if nx else "Dat is nog niet bekend."]]
+        elif v["mode"] == "optv":
+            faq = [[f"Op welke zender is {name_l} te zien?", f"In Nederland op {' en '.join(tvs)}." if tvs else "Dat staat bij elke wedstrijd zodra het bekend is."],
+                   [f"Hoe laat is {name_l} op tv?", f"De eerstvolgende uitzending is {nx['title']}, {nx['day_label']} om {nx['time']}." if nx else "Zodra de tijden bekend zijn, staan ze hier."]]
+        else:
+            faq = [["Wanneer begint het F1-seizoen 2027?", "Op zondag 14 maart 2027 met de GP van Bahrein."],
+                   ["Hoeveel races telt de F1-kalender 2027?", "24 Grands Prix, waarvan 10 met een sprintrace."],
+                   ["Wanneer is de laatste race van 2027?", "Op 12 december 2027 in Abu Dhabi."]]
+        related = [(x["h1"], x["path"]) for x in views if x["path"] != v["path"] and x["path"].split("/")[1] == v["path"].split("/")[1]]
+        related.append((f"Alles over {name_l}", parent))
+        body = env.from_string(VIEW).render(v=v, list=lst, soon=soon, nx=nx, lede=lede, label=label, channels=channels,
+                                            faq=faq, related=related, parent=parent, today_label=d_label(today))
+        lds = [crumbs(("Home", "/"), (name_l, parent), (v["h1"], v["path"])), faq_ld(faq)] + [jsonld_event(e) for e in lst[:20] if e.get("start")]
+        title = v["title"] + (f" ({d_label(today)})" if v["mode"] == "vandaag" else "")
+        write(v["path"], f"{title} | hoelaatbegint.nl", v["description"], body, active=parent.strip("/"), jsonld=lds, priority="0.9")
+
     # --- agenda's
     nl_events = [e for e in events if e["nl"]]
     (DIST / "agenda" / "alles.ics").write_text(ics(nl_events, "Sport met Nederlanders · hoelaatbegint.nl"), encoding="utf-8")
@@ -566,7 +679,7 @@ def main():
     write("/privacy/", "Privacy | hoelaatbegint.nl", "Privacyverklaring van hoelaatbegint.nl: geen cookies, geen tracking.",
           env.from_string(PAGE).render(h1="Privacy", content=PRIVACY.format(**fill)), priority="0.2")
     nf = base_tpl.render(title="Pagina niet gevonden | hoelaatbegint.nl", description="", path="/404", og="default", logo=logo, jsonld=[],
-                         version=version, year=built.year, active=None,
+                         version=version, year=built.year, active=None, active_path="",
                          body='<section class="hero"><div class="wrap"><h1>Deze pagina begint nooit</h1><p class="lede">Hij bestaat niet (meer). Kijk bij <a href="/vandaag/">sport vandaag</a>.</p></div></section>')
     (DIST / "404.html").write_text(nf, encoding="utf-8")
 
