@@ -1,0 +1,287 @@
+{
+ "fetched_at": "2026-11-26T07:07:31+00:00",
+ "source": "https://api.jolpi.ca/ergast/f1/current/",
+ "season": 2026,
+ "round": 21,
+ "drivers": [
+  {
+   "pos": 1,
+   "points": 402.0,
+   "wins": 9,
+   "name": "Andrea Kimi Antonelli",
+   "nationality": "Italian",
+   "team": "Mercedes"
+  },
+  {
+   "pos": 2,
+   "points": 304.0,
+   "wins": 4,
+   "name": "Max Verstappen",
+   "nationality": "Dutch",
+   "team": "Red Bull"
+  },
+  {
+   "pos": 3,
+   "points": 267.0,
+   "wins": 1,
+   "name": "Lewis Hamilton",
+   "nationality": "British",
+   "team": "Ferrari"
+  },
+  {
+   "pos": 4,
+   "points": 264.0,
+   "wins": 3,
+   "name": "George Russell",
+   "nationality": "British",
+   "team": "Mercedes"
+  },
+  {
+   "pos": 5,
+   "points": 264.0,
+   "wins": 3,
+   "name": "Lando Norris",
+   "nationality": "British",
+   "team": "McLaren"
+  },
+  {
+   "pos": 6,
+   "points": 250.0,
+   "wins": 1,
+   "name": "Charles Leclerc",
+   "nationality": "Monegasque",
+   "team": "Ferrari"
+  },
+  {
+   "pos": 7,
+   "points": 167.0,
+   "wins": 0,
+   "name": "Oscar Piastri",
+   "nationality": "Australian",
+   "team": "McLaren"
+  },
+  {
+   "pos": 8,
+   "points": 122.0,
+   "wins": 0,
+   "name": "Isack Hadjar",
+   "nationality": "French",
+   "team": "Red Bull"
+  },
+  {
+   "pos": 9,
+   "points": 89.0,
+   "wins": 0,
+   "name": "Liam Lawson",
+   "nationality": "New Zealander",
+   "team": "RB F1 Team, Red Bull"
+  },
+  {
+   "pos": 10,
+   "points": 52.0,
+   "wins": 0,
+   "name": "Pierre Gasly",
+   "nationality": "French",
+   "team": "Alpine F1 Team"
+  },
+  {
+   "pos": 11,
+   "points": 38.0,
+   "wins": 0,
+   "name": "Arvid Lindblad",
+   "nationality": "British",
+   "team": "RB F1 Team"
+  },
+  {
+   "pos": 12,
+   "points": 35.0,
+   "wins": 0,
+   "name": "Franco Colapinto",
+   "nationality": "Argentine",
+   "team": "Alpine F1 Team"
+  },
+  {
+   "pos": 13,
+   "points": 23.0,
+   "wins": 0,
+   "name": "Oliver Bearman",
+   "nationality": "British",
+   "team": "Haas F1 Team"
+  },
+  {
+   "pos": 14,
+   "points": 14.0,
+   "wins": 0,
+   "name": "Gabriel Bortoleto",
+   "nationality": "Brazilian",
+   "team": "Audi"
+  },
+  {
+   "pos": 15,
+   "points": 14.0,
+   "wins": 0,
+   "name": "Nico Hülkenberg",
+   "nationality": "German",
+   "team": "Audi"
+  },
+  {
+   "pos": 16,
+   "points": 11.0,
+   "wins": 0,
+   "name": "Carlos Sainz",
+   "nationality": "Spanish",
+   "team": "Williams"
+  },
+  {
+   "pos": 17,
+   "points": 7.0,
+   "wins": 0,
+   "name": "Esteban Ocon",
+   "nationality": "French",
+   "team": "Haas F1 Team"
+  },
+  {
+   "pos": 18,
+   "points": 7.0,
+   "wins": 0,
+   "name": "Fernando Alonso",
+   "nationality": "Spanish",
+   "team": "Aston Martin"
+  },
+  {
+   "pos": 19,
+   "points": 5.0,
+   "wins": 0,
+   "name": "Alexander Albon",
+   "nationality": "Thai",
+   "team": "Williams"
+  },
+  {
+   "pos": 20,
+   "points": 1.0,
+   "wins": 0,
+   "name": "Yuki Tsunoda",
+   "nationality": "Japanese",
+   "team": "RB F1 Team"
+  },
+  {
+   "pos": 21,
+   "points": 1.0,
+   "wins": 0,
+   "name": "Ryo Hirakawa",
+   "nationality": "Japanese",
+   "team": "Haas F1 Team"
+  },
+  {
+   "pos": 22,
+   "points": 0.0,
+   "wins": 0,
+   "name": "Lance Stroll",
+   "nationality": "Canadian",
+   "team": "Aston Martin"
+  },
+  {
+   "pos": 23,
+   "points": 0.0,
+   "wins": 0,
+   "name": "Valtteri Bottas",
+   "nationality": "Finnish",
+   "team": "Cadillac F1 Team"
+  },
+  {
+   "pos": 24,
+   "points": 0.0,
+   "wins": 0,
+   "name": "Sergio Pérez",
+   "nationality": "Mexican",
+   "team": "Cadillac F1 Team"
+  },
+  {
+   "pos": 25,
+   "points": 0.0,
+   "wins": 0,
+   "name": "Rafael Camara",
+   "nationality": "Brazilian",
+   "team": "Haas F1 Team"
+  }
+ ],
+ "constructors": [
+  {
+   "pos": 1,
+   "points": 666.0,
+   "wins": 12,
+   "name": "Mercedes",
+   "nationality": "German"
+  },
+  {
+   "pos": 2,
+   "points": 517.0,
+   "wins": 2,
+   "name": "Ferrari",
+   "nationality": "Italian"
+  },
+  {
+   "pos": 3,
+   "points": 440.0,
+   "wins": 4,
+   "name": "Red Bull",
+   "nationality": "Austrian"
+  },
+  {
+   "pos": 4,
+   "points": 431.0,
+   "wins": 3,
+   "name": "McLaren",
+   "nationality": "British"
+  },
+  {
+   "pos": 5,
+   "points": 114.0,
+   "wins": 0,
+   "name": "RB F1 Team",
+   "nationality": "Italian"
+  },
+  {
+   "pos": 6,
+   "points": 87.0,
+   "wins": 0,
+   "name": "Alpine F1 Team",
+   "nationality": "French"
+  },
+  {
+   "pos": 7,
+   "points": 31.0,
+   "wins": 0,
+   "name": "Haas F1 Team",
+   "nationality": "American"
+  },
+  {
+   "pos": 8,
+   "points": 28.0,
+   "wins": 0,
+   "name": "Audi",
+   "nationality": "German"
+  },
+  {
+   "pos": 9,
+   "points": 16.0,
+   "wins": 0,
+   "name": "Williams",
+   "nationality": "British"
+  },
+  {
+   "pos": 10,
+   "points": 7.0,
+   "wins": 0,
+   "name": "Aston Martin",
+   "nationality": "British"
+  },
+  {
+   "pos": 11,
+   "points": 0.0,
+   "wins": 0,
+   "name": "Cadillac F1 Team",
+   "nationality": "American"
+  }
+ ]
+}
