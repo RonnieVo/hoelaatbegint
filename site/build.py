@@ -919,7 +919,9 @@ def main():
                                   f'<link>{BASE}</link><description>Instagram-posts van hoelaatbegint.nl</description>{"".join(items)}</channel></rss>', encoding="utf-8")
     if os.environ.get("INDEXNOW_KEY"):
         (DIST / f"{os.environ['INDEXNOW_KEY']}.txt").write_text(os.environ["INDEXNOW_KEY"])
-    (DIST / "_headers").write_text("/agenda/*\n  Content-Type: text/calendar; charset=utf-8\n  Cache-Control: public, max-age=900\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n", encoding="utf-8")
+    (DIST / "_headers").write_text("/agenda/*\n  Content-Type: text/calendar; charset=utf-8\n  Cache-Control: public, max-age=900\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n"
+        "https://hoelaatbegint.pages.dev/*\n  X-Robots-Tag: noindex\nhttps://:hash.hoelaatbegint.pages.dev/*\n  X-Robots-Tag: noindex\n"
+        "https://www.hoelaatbegint.nl/*\n  X-Robots-Tag: noindex\n", encoding="utf-8")
     print(f"{len(pages)} pagina's gebouwd in {DIST}")
 
     if "--og" in sys.argv:
