@@ -5,6 +5,9 @@ on:
     - cron: "*/15 * * * *"   # elke 15 minuten
   workflow_dispatch:
     inputs:
+      indexnow_all:
+        description: "Alle pagina's uit de sitemap aanmelden bij IndexNow (true/false)"
+        default: "false"
       ai_force:
         description: "AI-controle nu forceren (true/false)"
         default: "false"
@@ -87,8 +90,10 @@ jobs:
           command: pages deploy dist --project-name=hoelaatbegint --branch=main
 
       - name: Zoekmachines seinen (IndexNow)
-        if: steps.data.outputs.changed == 'true' && steps.data.outputs.deploy == 'true'
+        if: (steps.data.outputs.changed == 'true' || inputs.indexnow_all == 'true') && steps.data.outputs.deploy == 'true'
         run: python pipeline/indexnow.py
+        env:
+          INDEXNOW_ALL: ${{ inputs.indexnow_all }}
 
       - name: Mail bij een mislukte run
         if: failure()

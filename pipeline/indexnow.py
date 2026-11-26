@@ -4,6 +4,7 @@ Sleutel: INDEXNOW_KEY (een willekeurige reeks van 32 tekens). build.py zet het s
 """
 import json
 import os
+import re
 from pathlib import Path
 
 import requests
@@ -30,6 +31,8 @@ def main():
             urls.append(f"{BASE}/wedstrijd/{e['page']}/")
         if e.get("tournament") in tournaments:
             urls.append(f"{BASE}/{e['tournament']}/")
+    if os.environ.get("INDEXNOW_ALL") == "true":
+        urls += re.findall(r"<loc>(.*?)</loc>", sitemap)
     urls = [u for u in dict.fromkeys(urls) if f"<loc>{u}</loc>" in sitemap]
     r = requests.post("https://api.indexnow.org/indexnow", timeout=20, json={
         "host": BASE.split("://")[1], "key": key, "keyLocation": f"{BASE}/{key}.txt", "urlList": urls})
