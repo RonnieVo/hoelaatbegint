@@ -53,18 +53,29 @@ def now_iso():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+NL_CLUBS = ("ajax", "feyenoord", "psv", "az", "twente", "nec", "utrecht", "go-ahead", "heerenveen", "sparta")
+
+
+def clubs_in(e):
+    """Nederlandse clubs in een wedstrijdtitel (een club speelt nooit twee keer per dag)."""
+    t = unicodedata.normalize("NFKD", e.get("title", "")).encode("ascii", "ignore").decode().lower()
+    words = set(re.findall(r"[a-z0-9]+", t))
+    found = [c for c in NL_CLUBS if c in words or ("-" in c and c.replace("-", " ") in t)]
+    return found or (e.get("clubs") or [e.get("tournament")])
+
+
 def merge(existing, candidates):
     """candidates: lijst van (bron, event). Geeft (events, changes, conflicts)."""
     by_id = {e["id"]: e for e in existing}
     # Hetzelfde evenement uit een andere bron (andere id) herkennen: zelfde starttijd + zelfde club/toernooi
-    same = {(e.get("start"), c): e["id"] for e in existing if e.get("start") for c in (e.get("clubs") or [e.get("tournament")])}
+    same = {(e.get("start"), c): e["id"] for e in existing if e.get("start") for c in clubs_in(e)}
     by_match = {match_key(e): e["id"] for e in existing if match_key(e)}
     remapped = []
     for src, ev in candidates:
         if ev["id"] not in by_id:
             target = None
             if ev.get("start"):
-                for c in ev.get("clubs") or [ev.get("tournament")]:
+                for c in clubs_in(ev):
                     target = target or same.get((ev["start"], c))
             target = target or by_match.get(match_key(ev))
             if target:

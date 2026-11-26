@@ -2,7 +2,9 @@
 
 Levert per Grand Prix: de race, en (indien bekend) kwalificatie en sprint met exacte tijden.
 """
-from datetime import datetime, timezone
+import json
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 import requests
 
@@ -24,7 +26,44 @@ def _iso(d, t):
     return datetime.fromisoformat(f"{d}T{t.replace('Z', '+00:00')}").astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+STANDINGS = "https://api.jolpi.ca/ergast/f1/current/{kind}Standings.json?limit=100"
+STANDINGS_FILE = Path(__file__).resolve().parents[2] / "data" / "f1_standings.json"
+
+
+def standings():
+    """WK-stand coureurs en constructeurs naar data/f1_standings.json (hoogstens elke 3 uur opnieuw)."""
+    try:
+        old = json.loads(STANDINGS_FILE.read_text()) if STANDINGS_FILE.exists() else {}
+        if old.get("fetched_at") and datetime.now(timezone.utc) - datetime.fromisoformat(old["fetched_at"]) < timedelta(hours=3):
+            return
+        out = {"fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "source": "https://api.jolpi.ca/ergast/f1/current/"}
+        for kind in ("driver", "constructor"):
+            r = requests.get(STANDINGS.format(kind=kind), timeout=20)
+            r.raise_for_status()
+            lst = r.json()["MRData"]["StandingsTable"]["StandingsLists"]
+            if not lst:
+                return
+            st = lst[0]
+            out["season"], out["round"] = int(st["season"]), int(st["round"])
+            rows = []
+            for x in st[f"{'Driver' if kind == 'driver' else 'Constructor'}Standings"]:
+                row = {"pos": int(x.get("position") or x.get("positionText") or 0), "points": float(x["points"]), "wins": int(x["wins"])}
+                if kind == "driver":
+                    d = x["Driver"]
+                    row.update(name=f"{d['givenName']} {d['familyName']}", nationality=d.get("nationality", ""),
+                               team=", ".join(c["name"] for c in x.get("Constructors", [])))
+                else:
+                    row.update(name=x["Constructor"]["name"], nationality=x["Constructor"].get("nationality", ""))
+                rows.append(row)
+            out[f"{kind}s"] = rows
+        if out.get("drivers") and out.get("constructors"):
+            STANDINGS_FILE.write_text(json.dumps(out, ensure_ascii=False, indent=1))
+    except Exception as exc:  # de stand mag het ophalen van het programma nooit blokkeren
+        print(f"F1-stand overgeslagen: {exc}")
+
+
 def fetch(existing):
+    standings()
     year = datetime.now(timezone.utc).year
     out = []
     for season in (year, year + 1):

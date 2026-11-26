@@ -17,7 +17,7 @@ TEAMS = {  # football-data.org team-id -> club-slug
     int(os.environ.get("FD_TEAM_PSV", "674")): "psv",
     int(os.environ.get("FD_TEAM_FEYENOORD", "675")): "feyenoord",
 }
-NAMES = {"AFC Ajax": "Ajax", "Ajax": "Ajax", "PSV": "PSV", "PSV Eindhoven": "PSV", "Feyenoord": "Feyenoord",
+NAMES = {"Atleti": "Atlético Madrid", "Club Atlético de Madrid": "Atlético Madrid", "AFC Ajax": "Ajax", "Ajax": "Ajax", "PSV": "PSV", "PSV Eindhoven": "PSV", "Feyenoord": "Feyenoord",
          "Feyenoord Rotterdam": "Feyenoord", "AZ": "AZ", "FC Utrecht": "FC Utrecht", "Utrecht": "FC Utrecht",
          "FC Twente": "FC Twente", "Twente": "FC Twente", "Go Ahead Eagles": "Go Ahead Eagles", "Willem II": "Willem II",
          "FC Groningen": "FC Groningen", "Groningen": "FC Groningen", "PEC Zwolle": "PEC Zwolle", "Telstar": "Telstar",

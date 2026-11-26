@@ -5,6 +5,7 @@ Gebruik:  python site/build.py            -> bouwt naar dist/
 
 Wordt elke 15 minuten automatisch gedraaid door .github/workflows/update.yml.
 """
+import hashlib
 import json
 import os
 import re
@@ -44,7 +45,7 @@ SPORTS = {
 # Hoofdmenu: per sport een uitklapmenu met de subpagina's waar zoekvolume op zit. De rest onder "Meer sporten".
 NAV = [
     ("f1", "Formule 1", [("Alle F1-tijden", "/formule-1/"), ("Formule 1 vandaag", "/formule-1/vandaag/"),
-                         ("F1 kalender 2027", "/formule-1/kalender/"), ("Formule 1 op tv", "/formule-1/op-tv/")]),
+                         ("F1 kalender 2027", "/formule-1/kalender/"), ("F1 stand", "/formule-1/stand/"), ("Formule 1 op tv", "/formule-1/op-tv/")]),
     ("clubs", "Voetbal", [("Voetbal vandaag", "/voetbal/vandaag/"), ("Voetbal op tv", "/voetbal/op-tv/"),
                           ("Eredivisie programma", "/eredivisie/"), ("Ajax", "/ajax/"), ("Feyenoord", "/feyenoord/"), ("PSV", "/psv/")]),
     ("darts", "Darts", [("WK darts schema", "/wk-darts/"), ("Darts vandaag", "/darts/vandaag/"),
@@ -145,6 +146,34 @@ def organizer(e):
     if "loting" in rnd or "kwalificatie" in rnd:
         return ("UEFA", "https://www.uefa.com")
     return ORGANIZERS.get(e["sport"])
+
+
+TOP_CLUBS = {"ajax", "feyenoord", "psv", "az", "fc twente", "twente"}
+WEEKDAYS_SHORT = ["ma", "di", "wo", "do", "vr", "za", "zo"]
+MONTHS_SHORT = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
+
+
+def short_day(d):
+    return f"{WEEKDAYS_SHORT[d.weekday()]} {d.day} {MONTHS_SHORT[d.month - 1]}"
+
+
+def indexable(e):
+    """Alleen wedstrijden waar echt op gezocht wordt krijgen een indexeerbare pagina (rest: noindex, wel bruikbaar)."""
+    if "index" in e:
+        return bool(e["index"])
+    rnd = (e.get("round") or "").lower()
+    if e["sport"] in ("voetbal", "leeuwinnen", "handbal"):
+        return True  # Oranje, Leeuwinnen, handbalsters, lotingen
+    if e["sport"] == "f1":
+        return ":" not in e["title"]  # de race zelf, niet elke sessie
+    if e["sport"] == "clubs":
+        if "champions league" in rnd or "finale" in rnd:
+            return True
+        teams = {(e.get("home") or "").lower(), (e.get("away") or "").lower()}
+        if not e.get("home"):
+            teams = {x.strip().lower() for x in e["title"].split("–")}
+        return len(teams & TOP_CLUBS) == 2  # topduels zoals de Klassieker
+    return "finale" in rnd
 
 
 def timeline(evs, day):
@@ -261,7 +290,7 @@ BASE_TPL = r"""<!doctype html>
 <title>{{ title }}</title>
 <meta name="description" content="{{ description }}">
 <link rel="canonical" href="{{ base }}{{ path }}">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="robots" content="{{ 'index' if index else 'noindex' }},follow,max-image-preview:large">
 <meta property="og:type" content="website"><meta property="og:locale" content="nl_NL">
 <meta property="og:site_name" content="hoelaatbegint.nl"><meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description }}"><meta property="og:url" content="{{ base }}{{ path }}">
@@ -303,7 +332,7 @@ BASE_TPL = r"""<!doctype html>
 <p>Elke aftrap, elke start. In Nederlandse tijd. Tijden worden elke 15 minuten automatisch gecontroleerd bij twee bronnen.</p>
 {% if cfg.instagram_url %}<p><a class="ig-foot" href="{{ cfg.instagram_url }}" rel="noopener" target="_blank">{{ ig|safe }} Elke ochtend om 07:00 het sportprogramma: volg @hoelaatbegint</a></p>{% endif %}</div>
 <div><h4>Sporten</h4><ul>{% for key, s in sports.items() %}<li><a href="/{{ s.page }}/">{{ s.name }}</a></li>{% endfor %}</ul></div>
-<div><h4>Handig</h4><ul><li><a href="/vandaag/">Sport op tv vandaag</a></li><li><a href="/formule-1/kalender/">F1 kalender 2027</a></li><li><a href="/voetbal/op-tv/">Voetbal op tv</a></li><li><a href="/eredivisie/">Eredivisie programma</a></li><li><a href="/agenda/">Agenda-abonnement</a></li><li><a href="/wk-darts/#nederlanders">Nederlanders op het WK darts</a></li><li><a href="/ajax/">Hoe laat speelt Ajax?</a></li><li><a href="/feyenoord/">Hoe laat speelt Feyenoord?</a></li><li><a href="/psv/">Hoe laat speelt PSV?</a></li></ul></div>
+<div><h4>Handig</h4><ul><li><a href="/vandaag/">Sport op tv vandaag</a></li><li><a href="/formule-1/kalender/">F1 kalender 2027</a></li><li><a href="/formule-1/stand/">F1 stand</a></li><li><a href="/voetbal/op-tv/">Voetbal op tv</a></li><li><a href="/eredivisie/">Eredivisie programma</a></li><li><a href="/agenda/">Agenda-abonnement</a></li><li><a href="/wk-darts/#nederlanders">Nederlanders op het WK darts</a></li><li><a href="/ajax/">Hoe laat speelt Ajax?</a></li><li><a href="/feyenoord/">Hoe laat speelt Feyenoord?</a></li><li><a href="/psv/">Hoe laat speelt PSV?</a></li></ul></div>
 <div><h4>Over</h4><ul><li><a href="/over/">Over ons &amp; werkwijze</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:{{ cfg.contact_email }}?subject=Correctie">Klopt er iets niet?</a></li></ul></div>
 </div>
 <div class="legal"><span>© {{ year }} hoelaatbegint.nl · Tijden onder voorbehoud van wijzigingen door organisatoren en zenders.</span><span>Bijgewerkt: {{ built }}</span></div>
@@ -488,6 +517,29 @@ VIEW = MACROS + r"""
 {{ faqblock(faq) }}
 """
 
+STAND = MACROS + r"""
+<section class="hero"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> › <a href="/formule-1/">Formule 1</a> › F1 stand</div>
+<h1>F1 stand {{ st.season }}</h1>
+<p class="lede">{{ lede|safe }}</p>
+<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Stand na race {{ st.round }} · bijgewerkt {{ fetched }}</span></div>
+</div></section>
+{% if nx %}<div class="wrap">{{ answer(nx, "Volgende sessie") }}</div>{% endif %}
+<section><div class="wrap">
+<h2>Coureurs</h2>
+<div class="table-wrap"><table class="stand"><thead><tr><th scope="col">#</th><th scope="col">Coureur</th><th scope="col">Team</th><th scope="col" class="num">Zeges</th><th scope="col" class="num">Punten</th></tr></thead><tbody>
+{% for r in st.drivers %}<tr{% if r.nationality == "Dutch" %} class="nl"{% endif %}><td>{{ r.pos }}</td><td>{{ r.name }}</td><td>{{ r.team }}</td><td class="num">{{ r.wins }}</td><td class="num"><b>{{ (r.points|int) if r.points == r.points|int else (r.points|string).replace(".", ",") }}</b></td></tr>{% endfor %}
+</tbody></table></div>
+<h2 style="margin-top:36px">Constructeurs</h2>
+<div class="table-wrap"><table class="stand"><thead><tr><th scope="col">#</th><th scope="col">Team</th><th scope="col" class="num">Zeges</th><th scope="col" class="num">Punten</th></tr></thead><tbody>
+{% for r in st.constructors %}<tr><td>{{ r.pos }}</td><td>{{ r.name }}</td><td class="num">{{ r.wins }}</td><td class="num"><b>{{ (r.points|int) if r.points == r.points|int else (r.points|string).replace(".", ",") }}</b></td></tr>{% endfor %}
+</tbody></table></div>
+<p class="note">Bron: <a href="https://www.formula1.com/en/results" rel="noopener" target="_blank">Formula 1</a> via de open Jolpica-database. Automatisch bijgewerkt na elke sessie.</p>
+<p style="margin-top:20px"><a class="btn" href="/formule-1/" style="margin:0 8px 8px 0">Alle F1-tijden</a><a class="btn" href="/formule-1/kalender/" style="margin:0 8px 8px 0">F1 kalender 2027</a><a class="btn" href="/formule-1/vandaag/" style="margin:0 8px 8px 0">Formule 1 vandaag</a></p>
+</div></section>
+{{ faqblock(faq) }}
+"""
+
 AGENDA = MACROS + r"""
 <section class="hero"><div class="wrap">
 <div class="crumbs"><a href="/">Home</a> › Agenda</div>
@@ -578,24 +630,35 @@ def main():
     overrides_file = ROOT / "data" / "title_overrides.json"
     overrides = json.loads(overrides_file.read_text(encoding="utf-8")) if overrides_file.exists() else {}
 
-    def write(path, title, description, body, og="default", active=None, jsonld=(), priority="0.7"):
+    lastmod_file = ROOT / "data" / "lastmod.json"
+    lastmods = json.loads(lastmod_file.read_text(encoding="utf-8")) if lastmod_file.exists() else {}
+    stamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    def write(path, title, description, body, og="default", active=None, jsonld=(), priority="0.7", index=True):
         if not (ROOT / "site" / "og" / f"{og}.png").exists():
             og = "default"
         title = overrides.get(path, {}).get("title", title)
         description = overrides.get(path, {}).get("description", description)
+        if len(title) > 60 and title.endswith(" | hoelaatbegint.nl"):
+            title = title[: -len(" | hoelaatbegint.nl")]  # merknaam weg als de titel anders wordt afgekapt
+        # lastmod alleen bij echte inhoudswijziging (tijdstempels tellen niet mee)
+        digest = hashlib.sha1((title + description + body.replace(built_label, "")).encode()).hexdigest()[:16]
+        prev = lastmods.get(path)
+        if not prev or prev[0] != digest:
+            lastmods[path] = [digest, stamp]
         html = base_tpl.render(title=title, description=description, path=path, active_path=path, author=path not in ("/over/", "/privacy/", "/agenda/"), body=body, og=og, active=active,
                                jsonld=[json.dumps(x, ensure_ascii=False).replace("</", "<\\/") for x in list(jsonld) + [webpage(path, title)] if x], logo=logo,
-                               version=version, year=built.year)
+                               version=version, year=built.year, index=index)
         out = DIST / path.strip("/") / "index.html" if path != "/" else DIST / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(html, encoding="utf-8")
-        pages.append((path, priority))
+        pages.append((path, priority, index))
 
     def webpage(path, title):
         if path in ("/over/", "/privacy/", "/agenda/"):
             return None
         return {"@context": "https://schema.org", "@type": "WebPage", "url": BASE + path, "name": title.split(" | ")[0],
-                "inLanguage": "nl-NL", "dateModified": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "inLanguage": "nl-NL", "dateModified": lastmods.get(path, [None, stamp])[1],
                 "author": {"@type": "Person", "name": CONFIG["owner"], "url": BASE + "/over/", "jobTitle": "SEO-specialist",
                            "image": BASE + CONFIG.get("owner_photo", ""),
                            "sameAs": [x for x in (CONFIG.get("owner_linkedin"), CONFIG["owner_url"]) if x]},
@@ -667,18 +730,50 @@ def main():
                   body, og=slug, active=slug,
                   jsonld=[crumbs(("Home", "/"), ("WK darts", "/wk-darts/"), (p, f"/darts/{slugify(p)}/")), faq_ld(faq)], priority="0.6")
 
-    # --- wedstrijdpagina's
+    # --- wedstrijdpagina's (kleine duels: noindex; 3 dagen na afloop: 301 naar de sport-/clubpagina)
+    redirects = []
     for e in events:
         if not (e.get("page") and e.get("start")):
             continue
         t = tournaments[e["tournament"]]
+        if e["end_dt"] < now - timedelta(days=3):
+            if e["end_dt"] > now - timedelta(days=400):
+                redirects.append(f"{e['url']} /{t['slug']}/ 301")
+            continue
         more = [x for x in events if x["tournament"] == e["tournament"] and x["id"] != e["id"] and x["upcoming"]][:6]
         b = broadcasters.get(e.get("broadcaster", ""), {})
         body = env.from_string(MATCH).render(e=e, t=t, more=more, tvlink=b.get("affiliate_url") or b.get("url", "#"), aff=bool(b.get("affiliate_url")))
-        write(e["url"], f"{e.get('h1') or 'Hoe laat begint ' + e['title'] + '?'} {e['day_label'].capitalize()}, {e['time']} | hoelaatbegint.nl",
+        write(e["url"], f"{e.get('h1') or 'Hoe laat begint ' + e['title'] + '?'} {short_day(e['day'])}, {e['time']} | hoelaatbegint.nl",
               f"{e['title']} begint {e['day_label']} om {e['time']} Nederlandse tijd{', live op ' + e['tv_detail'] if e.get('tv') else ''}. Met countdown en agenda-knop.",
               body, og=e["tournament"], active=e["tournament"],
-              jsonld=[jsonld_event(e), crumbs(("Home", "/"), (t["name"], f"/{t['slug']}/"), (e["title"], e["url"]))], priority="0.8")
+              jsonld=[jsonld_event(e), crumbs(("Home", "/"), (t["name"], f"/{t['slug']}/"), (e["title"], e["url"]))], priority="0.8",
+              index=indexable(e))
+    (DIST / "_redirects").write_text("\n".join(redirects) + "\n", encoding="utf-8")
+
+    # --- F1-stand (data/f1_standings.json, gevuld door pipeline/sources/f1.py)
+    sf = ROOT / "data" / "f1_standings.json"
+    if sf.exists():
+        st = json.loads(sf.read_text(encoding="utf-8"))
+        dr = st["drivers"]
+        lead, second = dr[0], dr[1]
+        fmt = lambda p: str(int(p)) if p == int(p) else str(p).replace('.', ',')
+        lede = (f"Na race {st['round']} leidt <strong>{lead['name']}</strong> ({lead['team']}) met <strong>{fmt(lead['points'])} punten</strong>, "
+                f"{fmt(lead['points'] - second['points'])} punten voor {second['name']}.")
+        nl = [r for r in dr if r.get("nationality") == "Dutch"]
+        for r in nl:
+            lede += f" {r['name']} staat <strong>{r['pos']}e</strong> met {fmt(r['points'])} punten."
+        f1fut = [e for e in events if e["sport"] == "f1" and e["upcoming"] and e.get("start")]
+        nx = next((e for e in f1fut if e["dt"] > now), None)
+        faq = [[f"Wie staat er bovenaan in de F1 stand {st['season']}?", f"{lead['name']} met {fmt(lead['points'])} punten, na race {st['round']}."]]
+        faq += [[f"Hoeveel punten heeft {r['name']}?", f"{r['name']} staat {r['pos']}e met {fmt(r['points'])} punten en {r['wins']} overwinning(en)."] for r in nl]
+        faq += [["Welk team leidt bij de constructeurs?", f"{st['constructors'][0]['name']} met {fmt(st['constructors'][0]['points'])} punten."]]
+        fetched = datetime.fromisoformat(st["fetched_at"]).astimezone(NL)
+        body = env.from_string(STAND).render(st=st, lede=lede, nx=nx, faq=faq, fetched=f"{d_label(fetched.date())}, {fetched.strftime('%H:%M')}")
+        write("/formule-1/stand/", f"F1 stand {st['season']}: WK-stand coureurs en constructeurs",
+              f"De actuele F1 stand {st['season']} na race {st['round']}: {lead['name']} leidt met {fmt(lead['points'])} punten. "
+              "Alle coureurs en constructeurs, met zeges en punten.",
+              body, og="formule-1", active="formule-1", priority="0.9",
+              jsonld=[crumbs(("Home", "/"), ("Formule 1", "/formule-1/"), ("F1 stand", "/formule-1/stand/")), faq_ld(faq)])
 
     # --- overzichtspagina's op zoekvolume (data/pages.json): vandaag, op tv, kalender
     nav_parent = {u: subs[0][1] for _, _, subs in NAV for _, u in subs}
@@ -743,7 +838,7 @@ def main():
         body = env.from_string(VIEW).render(v=v, list=lst, soon=soon, nx=nx, lede=lede, label=label, channels=channels,
                                             faq=faq, related=related, parent=parent, today_label=d_label(today))
         lds = [crumbs(("Home", "/"), (name_l, parent), (v["h1"], v["path"])), faq_ld(faq)] + [jsonld_event(e) for e in lst[:20] if e.get("start")]
-        title = v["title"] + (f" ({d_label(today)})" if v["mode"] == "vandaag" else "")
+        title = v["title"] + (f" ({short_day(today)})" if v["mode"] == "vandaag" else "")
         write(v["path"], f"{title} | hoelaatbegint.nl", v["description"], body, active=parent.strip("/"), jsonld=lds, priority="0.9")
 
     # --- agenda's
@@ -780,11 +875,19 @@ def main():
     (DIST / "404.html").write_text(nf, encoding="utf-8")
 
     # --- sitemap, robots, llms.txt, data-export
-    lastmod = now.strftime("%Y-%m-%d")
-    sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    sm += [f"<url><loc>{BASE}{p}</loc><lastmod>{lastmod}</lastmod><priority>{pr}</priority></url>" for p, pr in pages]
-    sm.append("</urlset>")
-    (DIST / "sitemap.xml").write_text("\n".join(sm), encoding="utf-8")
+    lastmod_file.write_text(json.dumps({p: v for p, v in lastmods.items() if any(p == x[0] for x in pages)}, indent=0), encoding="utf-8")
+    groups = {"paginas": [p for p in pages if p[2] and not p[0].startswith("/wedstrijd/")],
+              "wedstrijden": [p for p in pages if p[2] and p[0].startswith("/wedstrijd/")]}
+    index_xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for name, items in groups.items():
+        sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+        sm += [f"<url><loc>{BASE}{p}</loc><lastmod>{lastmods[p][1]}</lastmod></url>" for p, _, _ in items]
+        sm.append("</urlset>")
+        (DIST / f"sitemap-{name}.xml").write_text("\n".join(sm), encoding="utf-8")
+        newest = max((lastmods[p][1] for p, _, _ in items), default=stamp)
+        index_xml.append(f"<sitemap><loc>{BASE}/sitemap-{name}.xml</loc><lastmod>{newest}</lastmod></sitemap>")
+    index_xml.append("</sitemapindex>")
+    (DIST / "sitemap.xml").write_text("\n".join(index_xml), encoding="utf-8")
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n", encoding="utf-8")
     llms = ["# hoelaatbegint.nl", "", "> Aanvangstijden van sport met Nederlanders, in Nederlandse tijd (Europe/Amsterdam), met zender en scenario's. Elke 15 minuten bijgewerkt en bij twee bronnen gecontroleerd.", "", "## Sporten"]
     llms += [f"- [{t['name']}]({BASE}/{s}/): {t['description']}" for s, t in tournaments.items()]

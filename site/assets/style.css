@@ -221,3 +221,11 @@ details.more summary::after,details.more[open] summary::after{content:"";float:n
 @media (max-width:760px){.about-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .about-steps{padding-left:22px}.about-steps li{margin-bottom:10px}
 .about-who{display:flex;gap:16px;align-items:center}.about-who img{border-radius:50%;border:3px solid var(--orange);flex:none;object-fit:cover}.about-who p{margin:0}
+
+/* F1-stand */
+.table-wrap{overflow-x:auto;border:1.5px solid #E3E0D8;border-radius:14px;background:#fff;margin-top:12px}
+.stand{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+.stand th{text-align:left;font:700 14px/1 var(--display);letter-spacing:1px;text-transform:uppercase;color:#5E6A7A;background:var(--chalk);padding:12px 14px}
+.stand td{padding:11px 14px;border-top:1px solid #EEEBE4}
+.stand .num{text-align:right}
+.stand tr.nl td{background:#FFF1E8}.stand tr.nl td:first-child{box-shadow:inset 4px 0 0 var(--orange)}

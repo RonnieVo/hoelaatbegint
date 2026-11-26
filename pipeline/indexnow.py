@@ -18,7 +18,7 @@ def main():
         print("IndexNow overgeslagen (geen sleutel)")
         return
     urls = [f"{BASE}/", f"{BASE}/vandaag/"]
-    sitemap = (ROOT / "dist" / "sitemap.xml").read_text()
+    sitemap = "".join(f.read_text() for f in (ROOT / "dist").glob("sitemap-*.xml"))  # alleen indexeerbare pagina's
     changed = json.loads((ROOT / "data" / "changed.json").read_text()) if (ROOT / "data" / "changed.json").exists() else []
     events = {e["id"]: e for e in json.loads((ROOT / "data" / "events.json").read_text())["events"]}
     tournaments = json.loads((ROOT / "data" / "tournaments.json").read_text())
@@ -30,7 +30,7 @@ def main():
             urls.append(f"{BASE}/wedstrijd/{e['page']}/")
         if e.get("tournament") in tournaments:
             urls.append(f"{BASE}/{e['tournament']}/")
-    urls = [u for u in dict.fromkeys(urls) if u.replace(BASE, "") in sitemap or u.endswith("/")]
+    urls = [u for u in dict.fromkeys(urls) if f"<loc>{u}</loc>" in sitemap]
     r = requests.post("https://api.indexnow.org/indexnow", timeout=20, json={
         "host": BASE.split("://")[1], "key": key, "keyLocation": f"{BASE}/{key}.txt", "urlList": urls})
     print(f"IndexNow: {len(urls)} url's, status {r.status_code}")

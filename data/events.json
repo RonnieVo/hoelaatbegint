@@ -1815,10 +1815,10 @@
     "psv"
    ],
    "nl": true,
-   "title": "PSV – Atleti",
+   "title": "PSV – Atlético Madrid",
    "home": "PSV",
-   "away": "Atleti",
-   "round": "Champions League",
+   "away": "Atlético Madrid",
+   "round": "Champions League, competitiefase",
    "broadcaster": "ziggo",
    "status": "gepland",
    "page": "psv-atleti-2026-12-09",
@@ -1827,33 +1827,13 @@
    "checked_at": "2026-11-26T00:15:09Z",
    "confirmed_by": [
     "football-data"
-   ]
-  },
-  {
-   "id": "voetbal-champions-league-2026-12-09-psv-atletico-madrid",
-   "sport": "voetbal",
-   "tournament": "clubs",
-   "title": "PSV – Atlético Madrid",
-   "start": "2026-12-09T20:00:00Z",
-   "round": "Competitiefase, speelronde 6",
-   "city": "Eindhoven",
-   "venue": "Philips Stadion",
-   "participants": [
-    "PSV"
    ],
-   "home": "PSV",
-   "away": "Atlético Madrid",
-   "broadcaster": "ziggo",
-   "nl": true,
+   "venue": "Philips Stadion",
+   "city": "Eindhoven",
    "sources": [
+    "https://www.football-data.org",
     "https://www.ziggo.nl/entertainment/sport/voetbal/champions-league/programma",
     "https://www.uefa.com/uefachampionsleague/"
-   ],
-   "source": "https://www.ziggo.nl/entertainment/sport/voetbal/champions-league/programma",
-   "status": "gepland",
-   "checked_at": "2026-11-25T18:47:12Z",
-   "confirmed_by": [
-    "ai"
    ]
   },
   {

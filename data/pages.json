@@ -1,66 +1,186 @@
 {
  "_uitleg": "Automatische overzichtspagina's, gekozen op zoekvolume (zie data/keywords.json). mode: vandaag | optv | kalender. Filter op sport(s) of club. Wordt bij elke build opnieuw gevuld uit events.json.",
  "views": [
-  {"path": "/formule-1/vandaag/", "sports": ["f1"], "mode": "vandaag", "kw": "formule 1 vandaag", "name": "Formule 1",
-   "title": "Formule 1 vandaag: hoe laat begint de F1? Tijden en zender",
+  {
+   "path": "/formule-1/vandaag/",
+   "sports": [
+    "f1"
+   ],
+   "mode": "vandaag",
+   "kw": "formule 1 vandaag",
+   "name": "Formule 1",
+   "title": "Formule 1 vandaag: hoe laat en op welke zender?",
    "h1": "Formule 1 vandaag",
-   "description": "Is er vandaag Formule 1? Alle sessies van vandaag met starttijd in Nederlandse tijd en zender. Geen F1 vandaag? Dan zie je meteen het eerstvolgende raceweekend."},
-  {"path": "/formule-1/kalender/", "sports": ["f1"], "mode": "kalender", "kw": "f1 kalender", "name": "Formule 1",
+   "description": "Is er vandaag Formule 1? Alle sessies van vandaag met starttijd in Nederlandse tijd en zender. Geen F1 vandaag? Dan zie je meteen het eerstvolgende raceweekend."
+  },
+  {
+   "path": "/formule-1/kalender/",
+   "sports": [
+    "f1"
+   ],
+   "mode": "kalender",
+   "kw": "f1 kalender",
+   "name": "Formule 1",
    "title": "F1 kalender 2027: alle races, data en sprintraces",
    "h1": "F1 kalender 2027",
    "description": "De Formule 1-kalender 2027 met alle 24 Grands Prix, data, circuits en sprintraces. Starttijden in Nederlandse tijd zodra de FIA ze publiceert.",
-   "intro": "Het seizoen 2027 telt 24 Grands Prix, waarvan 10 met een sprintrace. Het begint op 14 maart in Bahrein en eindigt op 12 december in Abu Dhabi. Nieuw zijn Portugal (Portimão) en Turkije (Istanbul)."},
-  {"path": "/formule-1/op-tv/", "sports": ["f1"], "mode": "optv", "kw": "formule 1 op tv", "name": "Formule 1",
+   "intro": "Het seizoen 2027 telt 24 Grands Prix, waarvan 10 met een sprintrace. Het begint op 14 maart in Bahrein en eindigt op 12 december in Abu Dhabi. Nieuw zijn Portugal (Portimão) en Turkije (Istanbul)."
+  },
+  {
+   "path": "/formule-1/op-tv/",
+   "sports": [
+    "f1"
+   ],
+   "mode": "optv",
+   "kw": "formule 1 op tv",
+   "name": "Formule 1",
    "title": "Formule 1 op tv: waar en hoe laat kijk je de F1?",
    "h1": "Formule 1 op tv",
-   "description": "Waar kijk je de Formule 1 in Nederland? Alle komende sessies met starttijd en zender (Viaplay), in Nederlandse tijd."},
-  {"path": "/voetbal/vandaag/", "sports": ["clubs", "voetbal", "leeuwinnen"], "mode": "vandaag", "minor": true, "kw": "voetbal vandaag", "name": "Voetbal",
-   "title": "Voetbal vandaag op tv: alle wedstrijden, aftrap en zender",
+   "description": "Waar kijk je de Formule 1 in Nederland? Alle komende sessies met starttijd en zender (Viaplay), in Nederlandse tijd."
+  },
+  {
+   "path": "/voetbal/vandaag/",
+   "sports": [
+    "clubs",
+    "voetbal",
+    "leeuwinnen"
+   ],
+   "mode": "vandaag",
+   "minor": true,
+   "kw": "voetbal vandaag",
+   "name": "Voetbal",
+   "title": "Voetbal vandaag op tv: aftrap en zenders",
    "h1": "Voetbal vandaag",
-   "description": "Welk voetbal is er vandaag op tv? Eredivisie, Ajax, Feyenoord, PSV, Oranje en de Leeuwinnen: aftrap in Nederlandse tijd en de zender."},
-  {"path": "/voetbal/op-tv/", "sports": ["clubs", "voetbal", "leeuwinnen"], "mode": "optv", "minor": true, "kw": "voetbal op tv", "name": "Voetbal",
+   "description": "Welk voetbal is er vandaag op tv? Eredivisie, Ajax, Feyenoord, PSV, Oranje en de Leeuwinnen: aftrap in Nederlandse tijd en de zender."
+  },
+  {
+   "path": "/voetbal/op-tv/",
+   "sports": [
+    "clubs",
+    "voetbal",
+    "leeuwinnen"
+   ],
+   "mode": "optv",
+   "minor": true,
+   "kw": "voetbal op tv",
+   "name": "Voetbal",
    "title": "Voetbal op tv: het programma van deze week met zenders",
    "h1": "Voetbal op tv",
-   "description": "Voetbal op tv de komende dagen: Eredivisie op ESPN, Europees voetbal op Ziggo Sport, Oranje op NOS. Met aftraptijden in Nederlandse tijd."},
-  {"path": "/ajax/vandaag/", "club": "ajax", "mode": "vandaag", "kw": "ajax vandaag", "name": "Ajax",
-   "title": "Speelt Ajax vandaag? Aftrap, tegenstander en zender",
+   "description": "Voetbal op tv de komende dagen: Eredivisie op ESPN, Europees voetbal op Ziggo Sport, Oranje op NOS. Met aftraptijden in Nederlandse tijd."
+  },
+  {
+   "path": "/ajax/vandaag/",
+   "club": "ajax",
+   "mode": "vandaag",
+   "kw": "ajax vandaag",
+   "name": "Ajax",
+   "title": "Speelt Ajax vandaag? Aftrap en zender",
    "h1": "Speelt Ajax vandaag?",
-   "description": "Speelt Ajax vandaag? Het antwoord, met aftrap, tegenstander en zender. Zo niet: de eerstvolgende wedstrijd van Ajax."},
-  {"path": "/feyenoord/vandaag/", "club": "feyenoord", "mode": "vandaag", "kw": "feyenoord vandaag", "name": "Feyenoord",
-   "title": "Speelt Feyenoord vandaag? Aftrap, tegenstander en zender",
+   "description": "Speelt Ajax vandaag? Het antwoord, met aftrap, tegenstander en zender. Zo niet: de eerstvolgende wedstrijd van Ajax."
+  },
+  {
+   "path": "/feyenoord/vandaag/",
+   "club": "feyenoord",
+   "mode": "vandaag",
+   "kw": "feyenoord vandaag",
+   "name": "Feyenoord",
+   "title": "Speelt Feyenoord vandaag? Aftrap en zender",
    "h1": "Speelt Feyenoord vandaag?",
-   "description": "Speelt Feyenoord vandaag? Het antwoord, met aftrap, tegenstander en zender. Zo niet: de eerstvolgende wedstrijd van Feyenoord."},
-  {"path": "/psv/vandaag/", "club": "psv", "mode": "vandaag", "kw": "psv vandaag", "name": "PSV",
-   "title": "Speelt PSV vandaag? Aftrap, tegenstander en zender",
+   "description": "Speelt Feyenoord vandaag? Het antwoord, met aftrap, tegenstander en zender. Zo niet: de eerstvolgende wedstrijd van Feyenoord."
+  },
+  {
+   "path": "/psv/vandaag/",
+   "club": "psv",
+   "mode": "vandaag",
+   "kw": "psv vandaag",
+   "name": "PSV",
+   "title": "Speelt PSV vandaag? Aftrap en zender",
    "h1": "Speelt PSV vandaag?",
-   "description": "Speelt PSV vandaag? Het antwoord, met aftrap, tegenstander en zender. Zo niet: de eerstvolgende wedstrijd van PSV."},
-  {"path": "/darts/vandaag/", "sports": ["darts"], "mode": "vandaag", "kw": "darts vandaag", "name": "Darts",
-   "title": "Darts vandaag: wie speelt er en hoe laat? Sessies en zender",
+   "description": "Speelt PSV vandaag? Het antwoord, met aftrap, tegenstander en zender. Zo niet: de eerstvolgende wedstrijd van PSV."
+  },
+  {
+   "path": "/darts/vandaag/",
+   "sports": [
+    "darts"
+   ],
+   "mode": "vandaag",
+   "kw": "darts vandaag",
+   "name": "Darts",
+   "title": "Darts vandaag: wie speelt er en hoe laat?",
    "h1": "Darts vandaag",
-   "description": "Is er vandaag darts? De sessies van vandaag met aanvangstijd, de Nederlanders die spelen en de zender. Tijdens het WK elke dag bijgewerkt."},
-  {"path": "/darts/op-tv/", "sports": ["darts"], "mode": "optv", "kw": "darts op tv", "name": "Darts",
+   "description": "Is er vandaag darts? De sessies van vandaag met aanvangstijd, de Nederlanders die spelen en de zender. Tijdens het WK elke dag bijgewerkt."
+  },
+  {
+   "path": "/darts/op-tv/",
+   "sports": [
+    "darts"
+   ],
+   "mode": "optv",
+   "kw": "darts op tv",
+   "name": "Darts",
    "title": "Darts op tv: alle uitzendingen van het WK darts",
    "h1": "Darts op tv",
-   "description": "Waar en hoe laat kijk je darts op tv? Alle komende sessies van het WK darts met aanvangstijd en zender (Viaplay)."},
-  {"path": "/schaatsen/vandaag/", "sports": ["schaatsen"], "mode": "vandaag", "kw": "schaatsen vandaag", "name": "Schaatsen",
-   "title": "Schaatsen vandaag op tv: hoe laat begint het schaatsen?",
+   "description": "Waar en hoe laat kijk je darts op tv? Alle komende sessies van het WK darts met aanvangstijd en zender (Viaplay)."
+  },
+  {
+   "path": "/schaatsen/vandaag/",
+   "sports": [
+    "schaatsen"
+   ],
+   "mode": "vandaag",
+   "kw": "schaatsen vandaag",
+   "name": "Schaatsen",
+   "title": "Schaatsen vandaag op tv: hoe laat?",
    "h1": "Schaatsen vandaag",
-   "description": "Is er vandaag schaatsen op tv? Wereldbeker, NK en EK met starttijden in Nederlandse tijd en de zender."},
-  {"path": "/schaatsen/op-tv/", "sports": ["schaatsen"], "mode": "optv", "kw": "schaatsen op tv", "name": "Schaatsen",
+   "description": "Is er vandaag schaatsen op tv? Wereldbeker, NK en EK met starttijden in Nederlandse tijd en de zender."
+  },
+  {
+   "path": "/schaatsen/op-tv/",
+   "sports": [
+    "schaatsen"
+   ],
+   "mode": "optv",
+   "kw": "schaatsen op tv",
+   "name": "Schaatsen",
    "title": "Schaatsen op tv: alle uitzendingen en starttijden",
    "h1": "Schaatsen op tv",
-   "description": "Schaatsen op tv de komende weken: wereldbekers, NK allround en EK in Heerenveen, met starttijden in Nederlandse tijd."},
-  {"path": "/veldrijden/vandaag/", "sports": ["veldrijden"], "mode": "vandaag", "kw": "veldrijden vandaag", "name": "Veldrijden",
-   "title": "Veldrijden vandaag: hoe laat starten de vrouwen en mannen?",
+   "description": "Schaatsen op tv de komende weken: wereldbekers, NK allround en EK in Heerenveen, met starttijden in Nederlandse tijd."
+  },
+  {
+   "path": "/veldrijden/vandaag/",
+   "sports": [
+    "veldrijden"
+   ],
+   "mode": "vandaag",
+   "kw": "veldrijden vandaag",
+   "name": "Veldrijden",
+   "title": "Veldrijden vandaag: hoe laat is de start?",
    "h1": "Veldrijden vandaag",
-   "description": "Is er vandaag veldrijden? De wereldbekermanche van vandaag met starttijden van de elitevrouwen en -mannen."},
-  {"path": "/veldrijden/op-tv/", "sports": ["veldrijden"], "mode": "optv", "kw": "veldrijden op tv", "name": "Veldrijden",
+   "description": "Is er vandaag veldrijden? De wereldbekermanche van vandaag met starttijden van de elitevrouwen en -mannen."
+  },
+  {
+   "path": "/veldrijden/op-tv/",
+   "sports": [
+    "veldrijden"
+   ],
+   "mode": "optv",
+   "kw": "veldrijden op tv",
+   "name": "Veldrijden",
    "title": "Veldrijden op tv: wereldbeker en kerstperiode met starttijden",
    "h1": "Veldrijden op tv",
-   "description": "Veldrijden op tv: alle komende wereldbekermanches met starttijden in Nederlandse tijd, ook rond Kerst."},
-  {"path": "/hockey/vandaag/", "sports": ["hockey"], "mode": "vandaag", "kw": "hockey vandaag", "name": "Hockey",
-   "title": "Hockey vandaag: speelt Nederland? Aanvang en zender",
+   "description": "Veldrijden op tv: alle komende wereldbekermanches met starttijden in Nederlandse tijd, ook rond Kerst."
+  },
+  {
+   "path": "/hockey/vandaag/",
+   "sports": [
+    "hockey"
+   ],
+   "mode": "vandaag",
+   "kw": "hockey vandaag",
+   "name": "Hockey",
+   "title": "Hockey vandaag: speelt Nederland?",
    "h1": "Hockey vandaag",
-   "description": "Speelt Oranje vandaag hockey? Pro League-wedstrijden met aanvangstijd in Nederlandse tijd."}
+   "description": "Speelt Oranje vandaag hockey? Pro League-wedstrijden met aanvangstijd in Nederlandse tijd."
+  }
  ]
 }
