@@ -298,6 +298,8 @@ BASE_TPL = r"""<!doctype html>
 <meta name="theme-color" content="#0E1A2B">
 <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css?v={{ version }}">
 {% for ld in jsonld %}<script type="application/ld+json">{{ ld|safe }}</script>
 {% endfor %}{% if cfg.cloudflare_analytics_token %}<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ cfg.cloudflare_analytics_token }}"}'></script>{% endif %}
@@ -331,9 +333,9 @@ BASE_TPL = r"""<!doctype html>
 <div><a class="brand" href="/">{{ logo|safe }}<span>hoelaat<b>begint</b><i>.nl</i></span></a>
 <p>Elke aftrap, elke start. In Nederlandse tijd. Tijden worden elke 15 minuten automatisch gecontroleerd bij twee bronnen.</p>
 {% if cfg.instagram_url %}<p><a class="ig-foot" href="{{ cfg.instagram_url }}" rel="noopener" target="_blank">{{ ig|safe }} Elke ochtend om 07:00 het sportprogramma: volg @hoelaatbegint</a></p>{% endif %}</div>
-<div><h4>Sporten</h4><ul>{% for key, s in sports.items() %}<li><a href="/{{ s.page }}/">{{ s.name }}</a></li>{% endfor %}</ul></div>
-<div><h4>Handig</h4><ul><li><a href="/vandaag/">Sport op tv vandaag</a></li><li><a href="/formule-1/kalender/">F1 kalender 2027</a></li><li><a href="/formule-1/stand/">F1 stand</a></li><li><a href="/voetbal/op-tv/">Voetbal op tv</a></li><li><a href="/eredivisie/">Eredivisie programma</a></li><li><a href="/agenda/">Agenda-abonnement</a></li><li><a href="/wk-darts/#nederlanders">Nederlanders op het WK darts</a></li><li><a href="/ajax/">Hoe laat speelt Ajax?</a></li><li><a href="/feyenoord/">Hoe laat speelt Feyenoord?</a></li><li><a href="/psv/">Hoe laat speelt PSV?</a></li></ul></div>
-<div><h4>Over</h4><ul><li><a href="/over/">Over ons &amp; werkwijze</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:{{ cfg.contact_email }}?subject=Correctie">Klopt er iets niet?</a></li></ul></div>
+<div><p class="foot-h">Sporten</p><ul>{% for key, s in sports.items() %}<li><a href="/{{ s.page }}/">{{ s.name }}</a></li>{% endfor %}</ul></div>
+<div><p class="foot-h">Handig</p><ul><li><a href="/vandaag/">Sport op tv vandaag</a></li><li><a href="/formule-1/kalender/">F1 kalender 2027</a></li><li><a href="/formule-1/stand/">F1 stand</a></li><li><a href="/voetbal/op-tv/">Voetbal op tv</a></li><li><a href="/eredivisie/">Eredivisie programma</a></li><li><a href="/agenda/">Agenda-abonnement</a></li><li><a href="/wk-darts/#nederlanders">Nederlanders op het WK darts</a></li><li><a href="/ajax/">Hoe laat speelt Ajax?</a></li><li><a href="/feyenoord/">Hoe laat speelt Feyenoord?</a></li><li><a href="/psv/">Hoe laat speelt PSV?</a></li></ul></div>
+<div><p class="foot-h">Over</p><ul><li><a href="/over/">Over ons &amp; werkwijze</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:{{ cfg.contact_email }}?subject=Correctie">Klopt er iets niet?</a></li></ul></div>
 </div>
 <div class="legal"><span>© {{ year }} hoelaatbegint.nl · Tijden onder voorbehoud van wijzigingen door organisatoren en zenders.</span><span>Bijgewerkt: {{ built }}</span></div>
 </div></footer>
@@ -386,7 +388,7 @@ HOME = MACROS + r"""
 <section class="hero"><div class="wrap">
 <h1>Hoe laat begint het?</h1>
 <p class="lede">Alle sport met Nederlanders, in Nederlandse tijd. Met zender, countdown en wat er gebeurt als ze doorgaan. Automatisch bijgewerkt, elke 15 minuten.</p>
-<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
+<div class="byline"><img src="/assets/ronald-64.jpg" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 <div class="wrap">{{ answer(next, "Eerstvolgende met Nederlanders") }}{{ opinion(next) }}</div>
 <section><div class="wrap"><h2>Sporten</h2>
@@ -404,7 +406,7 @@ VANDAAG = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › Vandaag</div>
 <h1>Sport op tv vandaag</h1>
 <p class="lede">Alle sport met Nederlanders van <strong>{{ today_label }}</strong>, met aanvangstijd en zender.</p>
-<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
+<div class="byline"><img src="/assets/ronald-64.jpg" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 <section><div class="wrap">
 {% if tl %}<h2>Tv-gids van vandaag</h2>
@@ -425,7 +427,7 @@ TOURNAMENT = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › {{ t.name }}</div>
 <h1>{{ t.h1 }}</h1>
 <p class="lede">{% if t.sport == "clubs" and next and t.slug != "clubs" %}{{ t.name }} speelt <strong>{{ next.day_label }} om {{ next.time }}</strong>: {{ next.title }}{% if next.tv %}, live op <strong>{{ next.tv_detail }}</strong>{% endif %}. Hieronder het hele programma, in Nederlandse tijd.{% else %}{{ t.answer|safe }}{% endif %}</p>
-<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
+<div class="byline"><img src="/assets/ronald-64.jpg" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 {% if next %}<div class="wrap">{{ answer(next, "Eerstvolgende") }}{{ opinion(next) }}</div>{% endif %}
 <section><div class="wrap two">
@@ -454,7 +456,7 @@ PLAYER = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › <a href="/wk-darts/">WK darts</a> › {{ p }}</div>
 <h1>Hoe laat speelt {{ p }}?</h1>
 <p class="lede">{% if mine %}{{ p }} speelt zijn volgende WK-wedstrijd op <strong>{{ mine[0].day_label }}{% if mine[0].time %} om {{ mine[0].time }}{% endif %}</strong>.{% else %}{{ p }} staat op de deelnemerslijst van het <strong>WK darts 2027</strong> (11 december – 3 januari, Alexandra Palace). Tegen wie en hoe laat hij zijn eerste wedstrijd speelt, wordt bepaald bij de <strong>loting op maandag 30 november</strong>; daarna staat het hier automatisch.{% endif %}</p>
-<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
+<div class="byline"><img src="/assets/ronald-64.jpg" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 {% if mine %}<div class="wrap">{% if mine[0].start %}{{ answer(mine[0], "Volgende wedstrijd") }}{% endif %}</div>{% endif %}
 <section><div class="wrap two">
@@ -475,7 +477,7 @@ MATCH = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › <a href="/{{ t.slug }}/">{{ t.name }}</a> › {{ e.title }}</div>
 <h1>{{ e.h1 or "Hoe laat begint " ~ e.title ~ "?" }}</h1>
 <p class="lede">{{ e.title }} begint <strong>{{ e.day_label }} om {{ e.time }}</strong> Nederlandse tijd{% if e.city %} in {{ e.city }}{% endif %}.{% if e.tv %} Je kijkt live op <strong>{{ e.tv_detail }}</strong>.{% endif %}</p>
-<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
+<div class="byline"><img src="/assets/ronald-64.jpg" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 <div class="wrap">{{ answer(e, e.round or "Wedstrijd") }}{{ opinion(e) }}</div>
 <section><div class="wrap two">
@@ -499,7 +501,7 @@ VIEW = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › <a href="{{ parent }}">{{ v.name }}</a> › {{ v.h1 }}</div>
 <h1>{{ v.h1 }}</h1>
 <p class="lede">{{ lede|safe }}</p>
-<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
+<div class="byline"><img src="/assets/ronald-64.jpg" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
 </div></section>
 {% if nx %}<div class="wrap">{{ answer(nx, label) }}{{ opinion(nx) }}</div>{% endif %}
 <section><div class="wrap">
@@ -522,7 +524,7 @@ STAND = MACROS + r"""
 <div class="crumbs"><a href="/">Home</a> › <a href="/formule-1/">Formule 1</a> › F1 stand</div>
 <h1>F1 stand {{ st.season }}</h1>
 <p class="lede">{{ lede|safe }}</p>
-<div class="byline"><img src="{{ cfg.owner_photo }}" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Stand na race {{ st.round }} · bijgewerkt {{ fetched }}</span></div>
+<div class="byline"><img src="/assets/ronald-64.jpg" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Stand na race {{ st.round }} · bijgewerkt {{ fetched }}</span></div>
 </div></section>
 {% if nx %}<div class="wrap">{{ answer(nx, "Volgende sessie") }}</div>{% endif %}
 <section><div class="wrap">
