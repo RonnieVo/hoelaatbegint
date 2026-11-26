@@ -120,6 +120,8 @@ def prep(e, broadcasters, now):
     if not e.get("page") and e["sport"] == "f1" and e.get("start") and e["title"].startswith("GP") and ":" not in e["title"]:
         e["page"] = f"{slugify(e['title'])}-{e['day'].year}"
         e.setdefault("h1", f"Hoe laat begint de {e['title']} {e['day'].year}?")
+    if not e.get("h1") and e["sport"] == "clubs" and {_t.strip() for _t in e["title"].split("–")} == {"Feyenoord", "Ajax"}:
+        e["h1"] = f"Hoe laat begint de Klassieker {e['title']}?"
     e["tv"] = broadcasters.get(e.get("broadcaster", ""), {}).get("name")
     e["tv_detail"] = e.get("tv_detail") or e["tv"]
     e["url"] = f"/wedstrijd/{e['page']}/" if e.get("page") else f"/{SPORTS[e['sport']]['page']}/"
