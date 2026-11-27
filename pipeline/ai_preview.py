@@ -74,7 +74,7 @@ def main():
     now = datetime.now(timezone.utc)
     lo, hi = now.strftime("%Y-%m-%dT%H:%M:%SZ"), (now + timedelta(days=3)).strftime("%Y-%m-%dT%H:%M:%SZ")
     todo = [e for e in data["events"] if e.get("nl") and e.get("start") and "preview" not in e and lo < e["start"] <= hi
-            and ":" not in e["title"].split("–")[-1]]  # geen losse F1-sessies (kwalificatie e.d.)
+            and not (e["sport"] == "f1" and ":" in e["title"])]  # geen losse F1-sessies (kwalificatie e.d.)
     seen, done = set(), 0
     for e in sorted(todo, key=lambda x: x["start"]):
         group = key(e)
