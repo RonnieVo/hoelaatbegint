@@ -25,6 +25,7 @@ FOCUS = {
     "darts": "wie er in deze sessie spelen, met nadruk op de Nederlanders, en wat er op het spel staat",
     "f1": "de stand in het WK, het circuit (lengte, kenmerken) en hoe Max Verstappen en zijn team ervoor staan",
 }
+BAD_SRC = re.compile(r"gambl|casino|bet|odds|bookie|bookmaker|toto\.|unibet|wetten|wedden", re.I)
 DEFAULT_FOCUS = "de vorm en de stand van beide ploegen, eerdere onderlinge duels en wat er op het spel staat"
 
 
@@ -35,7 +36,7 @@ def ask(key, e):
         f"Datum vandaag: {datetime.now(timezone.utc):%Y-%m-%d}. Schrijf voor hoelaatbegint.nl een korte, feitelijke "
         f"voorbeschouwing (2 tot 3 zinnen, samen maximaal 70 woorden, Nederlands) op dit evenement:\n"
         f"{json.dumps(facts, ensure_ascii=False)}\n\nBehandel: {focus}.\n"
-        "Zoek dit op het web op (betrouwbare sportmedia of de organisator). Regels: schrijf in de derde persoon, "
+        "Zoek dit op het web op (betrouwbare sportmedia of de organisator; NOOIT gok-, odds- of casinosites als bron). Regels: schrijf in de derde persoon, "
         "NOOIT in de ik- of wij-vorm; geen meningen, sfeerbeelden of verzonnen details; alleen feiten die in je bronnen "
         "staan; geen odds, gokken of uitslagvoorspellingen; geen aanvangstijden (die staan al op de pagina); "
         "niet negatief over sporters. Kun je het niet met bronnen onderbouwen, geef dan een lege tekst.\n"
@@ -54,7 +55,8 @@ def ask(key, e):
 
 def ok(out):
     t = (out.get("text") or "").strip()
-    srcs = [s for s in out.get("sources", []) if isinstance(s, str) and s.startswith("http")]
+    srcs = [s for s in out.get("sources", []) if isinstance(s, str) and s.startswith("http") and not BAD_SRC.search(s.split("/")[2])]
+    out["sources"] = srcs  # nooit naar gok- of odds-sites linken (Ksa)
     return t and srcs and 40 < len(t) < 600 and not BANNED.search(t) and not re.search(r"\b\d{1,2}[:.]\d{2}\b", t)
 
 
