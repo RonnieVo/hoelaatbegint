@@ -57,7 +57,7 @@ jobs:
           git config user.name "hoelaatbegint-bot"; git config user.email "bot@hoelaatbegint.nl"
           git add social/posts
           git commit -m "Instagram-post $N" || echo "niets nieuws"
-          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
+          for i in 1 2 3; do git pull --rebase --autostash -q origin main && git push -q origin HEAD:main && break; sleep 5; done
           python site/build.py
 
       - name: Online zetten (afbeelding + feed)
