@@ -58,7 +58,7 @@ def ok(out):
     return t and srcs and 40 < len(t) < 600 and not BANNED.search(t) and not re.search(r"\b\d{1,2}[:.]\d{2}\b", t)
 
 
-def key(e):
+def group_key(e):
     """Eén tekst per wedstrijd; bij veldrijden/schaatsen/darts één per dag en plaats (vrouwen + mannen, sessies)."""
     if e["sport"] in ("veldrijden", "schaatsen", "darts") and e.get("city"):
         return (e["sport"], e["start"][:10], e["city"])
@@ -77,7 +77,7 @@ def main():
             and not (e["sport"] == "f1" and ":" in e["title"])]  # geen losse F1-sessies (kwalificatie e.d.)
     seen, done = set(), 0
     for e in sorted(todo, key=lambda x: x["start"]):
-        group = key(e)
+        group = group_key(e)
         if done >= MAX or group in seen:
             continue
         seen.add(group)
@@ -90,7 +90,7 @@ def main():
             e["preview"] = ""  # niet opnieuw proberen
             continue
         for x in data["events"]:
-            if x.get("start") and key(x) == group and "preview" not in x:
+            if x.get("start") and group_key(x) == group and "preview" not in x:
                 x["preview"], x["preview_sources"] = out["text"].strip(), out["sources"][:3]
         done += 1
     EVENTS.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
