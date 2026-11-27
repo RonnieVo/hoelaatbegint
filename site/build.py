@@ -184,7 +184,8 @@ def eredivisie_rounds(events):
     for e in events:
         if e["sport"] == "clubs" and e.get("matchday") and "eredivisie" in (e.get("round") or "").lower():
             rounds.setdefault(int(e["matchday"]), {})[(e["day"], e["title"])] = e
-    return {n: sorted(v.values(), key=lambda x: (x["day"], x.get("start") or "9")) for n, v in sorted(rounds.items())}
+    # alleen rondes waarvan het programma (vrijwel) compleet binnen is; verder vooruit levert de bron alleen de grote clubs
+    return {n: sorted(v.values(), key=lambda x: (x["day"], x.get("start") or "9")) for n, v in sorted(rounds.items()) if len(v) >= 7}
 
 
 def round_live(evs, now):
