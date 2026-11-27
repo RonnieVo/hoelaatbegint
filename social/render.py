@@ -43,6 +43,11 @@ h1{{position:absolute;left:72px;right:72px;top:226px;margin:0;font:800 112px/.92
 .foot b{{color:#FF6A13}}
 .sub{{font:700 34px B;letter-spacing:3px;text-transform:uppercase;color:#FF6A13;margin-top:18px}}
 .row.soon{{background:#1A2A40;color:#F6F4EF}} .row.soon .m{{color:#9fb0c4}} .row.soon .t{{font-size:60px}}
+.ronde{{position:absolute;left:72px;right:72px;top:{{list_top}}px;bottom:140px;display:flex;flex-direction:column;justify-content:safe center;gap:8px}}
+.rd{{font:700 30px B;letter-spacing:2.5px;text-transform:uppercase;color:#FF6A13;margin-top:10px}}
+.rm{{display:grid;grid-template-columns:120px 1fr auto;gap:18px;align-items:center;background:#F6F4EF;color:#0E1A2B;border-radius:14px;padding:9px 22px}}
+.rm b{{font:800 46px/1 B;color:#C2410C}} .rm span{{font:700 29px/1.15 I}} .rm i{{font:500 22px I;font-style:normal;color:#5E6A7A}}
+.rm.hl{{background:#FF6A13}} .rm.hl b{{color:#0E1A2B}} .rm.hl i{{color:#0E1A2B}}
 .big{{position:absolute;left:72px;right:72px;top:{{list_top}}px;font:500 36px/1.4 I;color:#dfe5ee}}
 .big b{{color:#fff}}
 .grid{{position:absolute;left:72px;right:72px;top:{{list_top}}px;display:grid;grid-template-columns:1fr 1fr;gap:14px}}
@@ -120,6 +125,36 @@ def week(monday):
     return html, cap
 
 
+def ronde(day):
+    """Eredivisie-speelronde: alleen op de dag van de eerste wedstrijd van een ronde. Geeft (naam, html, caption)."""
+    rounds = build.eredivisie_rounds(load())
+    for n, evs in rounds.items():
+        if evs[0]["day"] != day:
+            continue
+        rows_html, cur = [], None
+        for e in evs:
+            if e["day_label"] != cur:
+                cur = e["day_label"]
+                rows_html.append(f"<div class='rd'>{escape(cur)}</div>")
+            ch = e.get("tv_detail") or "ESPN"
+            rows_html.append(f"<div class='rm{' hl' if e.get('clubs') and len(e['clubs']) >= 2 else ''}'><b>{e['time'] or '–'}</b>"
+                             f"<span>{escape(e['title'])}</span><i>{escape(ch)}</i></div>")
+        span = build.range_label(evs[0]["day"], evs[-1]["day"]) if evs[0]["day"] != evs[-1]["day"] else build.d_label(day)
+        html = page(f"Eredivisie · {span}", f"Speelronde {n}", f"<div class='ronde'>{''.join(rows_html)}</div>", list_top=350,
+                    foot_left="Alles live op ESPN")
+        lines = [f"Eredivisie speelronde {n} ({span}):", ""]
+        cur = None
+        for e in evs:
+            if e["day_label"] != cur:
+                cur = e["day_label"]
+                lines += ["", cur.capitalize()] if len(lines) > 2 else [cur.capitalize()]
+            lines.append(f"{e['time'] or 'tijd volgt'} · {e['title']}")
+        lines += ["", "Alle wedstrijden live op ESPN. Alle tijden in Nederlandse tijd; per wedstrijd een countdown via de link in bio.", "",
+                  "#eredivisie #voetbal #espn #speelronde" + str(n) + " #hoelaatbegint"]
+        return f"eredivisie-speelronde-{n}", html, "\n".join(lines)
+    return None, None, None
+
+
 def shoot(html, path):
     from playwright.sync_api import sync_playwright
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -138,6 +173,18 @@ def shoot(html, path):
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "daily"
     day = date.fromisoformat(sys.argv[2]) if len(sys.argv) > 2 else datetime.now(NL).date()
+    if mode == "ronde":  # schrijft direct naar social/posts (alleen als de ronde vandaag begint en nog niet gepost is)
+        name, html, cap = ronde(day)
+        posts = ROOT / "social" / "posts"
+        if not name or (posts / f"{name}.jpg").exists():
+            print("Geen nieuwe Eredivisie-speelronde vandaag.")
+            return
+        posts.mkdir(parents=True, exist_ok=True)
+        shoot(html, posts / f"{name}.jpg")
+        (posts / f"{name}.txt").write_text(cap, encoding="utf-8")
+        (posts / f"{name}.ts").write_text(str(int(datetime.now().timestamp()) + 5))
+        print(f"Gemaakt: {name}")
+        return
     if mode == "week":
         day = day - timedelta(days=day.weekday())
         html, cap = week(day)

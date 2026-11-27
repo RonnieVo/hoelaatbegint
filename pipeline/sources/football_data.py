@@ -61,7 +61,7 @@ def fetch(existing):
             day = m["utcDate"][:10]
             clubs = [c for c in ("ajax", "feyenoord", "psv") if c in slug(home + " " + away)]
             ev = dict(id=f"fd-{m['id']}", sport="clubs", tournament=clubs[0] if clubs else club, clubs=clubs or [club],
-                      nl=True, title=f"{home} – {away}", home=home, away=away, round=comp, broadcaster=tv,
+                      nl=True, title=f"{home} – {away}", home=home, away=away, round=comp, broadcaster=tv, matchday=m.get("matchday"),
                       status=STATUS.get(m["status"], "gepland"), page=f"{slug(home)}-{slug(away)}-{day}",
                       source="https://www.football-data.org")
             if m["status"] == "SCHEDULED":  # aanvangstijd nog niet vastgesteld: alleen de datum
@@ -82,7 +82,7 @@ def fetch(existing):
             day = m["utcDate"][:10]
             clubs = [c for c in ("ajax", "feyenoord", "psv") if c in slug(home + " " + away)]
             ev = dict(id=f"fd-{m['id']}", sport="clubs", tournament=clubs[0] if clubs else "eredivisie", clubs=clubs,
-                      nl=bool(clubs), title=f"{home} – {away}", home=home, away=away, round="Eredivisie",
+                      nl=bool(clubs), title=f"{home} – {away}", home=home, away=away, round="Eredivisie", matchday=m.get("matchday"),
                       broadcaster="espn", status=STATUS.get(m["status"], "gepland"), source="https://www.football-data.org")
             if clubs:
                 ev["page"] = f"{slug(home)}-{slug(away)}-{day}"

@@ -8,7 +8,7 @@ on:
     - cron: "0 6,7 * * 1"    # maandag: weekoverzicht om 08:00 NL-tijd
   workflow_dispatch:
     inputs:
-      mode: { description: "daily of week", default: "daily" }
+      mode: { description: "daily, week of ronde (Eredivisie-speelronde)", default: "daily" }
 
 jobs:
   post:
@@ -47,16 +47,20 @@ jobs:
         if: steps.plan.outputs.mode != 'skip'
         run: |
           python site/build.py
-          python social/render.py ${{ steps.plan.outputs.mode }} ${{ steps.plan.outputs.date }}
-          N=${{ steps.plan.outputs.name }}
           mkdir -p social/posts
-          cp dist/social/$N.jpg social/posts/$N.jpg
-          cp dist/social/$N.txt social/posts/$N.txt
-          date +%s > social/posts/$N.ts
+          if [ "${{ steps.plan.outputs.mode }}" != "ronde" ]; then
+            python social/render.py ${{ steps.plan.outputs.mode }} ${{ steps.plan.outputs.date }}
+            N=${{ steps.plan.outputs.name }}
+            cp dist/social/$N.jpg social/posts/$N.jpg
+            cp dist/social/$N.txt social/posts/$N.txt
+            date +%s > social/posts/$N.ts
+          fi
+          # Eredivisie: extra post op de dag dat een speelronde begint (maakt niets als dat vandaag niet zo is)
+          if [ "${{ steps.plan.outputs.mode }}" != "week" ]; then python social/render.py ronde ${{ steps.plan.outputs.date }} || true; fi
           find social/posts -type f -mtime +21 -delete
           git config user.name "hoelaatbegint-bot"; git config user.email "bot@hoelaatbegint.nl"
           git add social/posts
-          git commit -m "Instagram-post $N" || echo "niets nieuws"
+          git commit -m "Instagram-post ${{ steps.plan.outputs.name }}" || echo "niets nieuws"
           for i in 1 2 3; do git pull --rebase --autostash -q origin main && git push -q origin HEAD:main && break; sleep 5; done
           python site/build.py
 

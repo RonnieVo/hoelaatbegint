@@ -178,6 +178,21 @@ def indexable(e):
     return "finale" in rnd
 
 
+def eredivisie_rounds(events):
+    """Eredivisie per speelronde: {matchday: [events]} (ontdubbeld op dag + titel, gesorteerd op aftrap)."""
+    rounds = {}
+    for e in events:
+        if e["sport"] == "clubs" and e.get("matchday") and "eredivisie" in (e.get("round") or "").lower():
+            rounds.setdefault(int(e["matchday"]), {})[(e["day"], e["title"])] = e
+    return {n: sorted(v.values(), key=lambda x: (x["day"], x.get("start") or "9")) for n, v in sorted(rounds.items())}
+
+
+def round_live(evs, now):
+    """Een speelronde blijft online tot 3 dagen na de laatste wedstrijd."""
+    ends = [e["end_dt"] if e.get("start") else datetime(e["day"].year, e["day"].month, e["day"].day, 23, tzinfo=NL) for e in evs]
+    return max(ends) > now - timedelta(days=3)
+
+
 def timeline(evs, day):
     """Tv-gids-tijdlijn: per zender een rij met blokken op tijd (alleen tijden met zender)."""
     evs = [e for e in evs if e.get("start") and e.get("tv") and e["day"] == day]
@@ -549,6 +564,21 @@ STAND = MACROS + r"""
 {{ faqblock(faq) }}
 """
 
+RONDE = MACROS + r"""
+<section class="hero"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> › <a href="/eredivisie/">Eredivisie</a> › Speelronde {{ n }}</div>
+<h1>Eredivisie speelronde {{ n }}</h1>
+<p class="lede">{{ lede|safe }}</p>
+<div class="byline"><img src="/assets/ronald-64.jpg" alt="" width="28" height="28"><span>Door <a href="/over/">{{ cfg.owner }}</a></span><span class="checked">Laatst gecontroleerd: {{ built }}</span></div>
+</div></section>
+<section><div class="wrap">
+<h2>Programma</h2>{{ schedule(evs) }}
+<p class="note">Alle wedstrijden zijn live te zien op ESPN. Staat er 'tijd volgt', dan heeft de KNVB de aanvangstijd nog niet vastgelegd.</p>
+<p style="margin-top:20px">{% if prev %}<a class="btn" href="/eredivisie/speelronde-{{ prev }}/" style="margin:0 8px 8px 0">‹ Speelronde {{ prev }}</a>{% endif %}<a class="btn" href="/eredivisie/" style="margin:0 8px 8px 0">Hele Eredivisie-programma</a>{% if nxt %}<a class="btn" href="/eredivisie/speelronde-{{ nxt }}/" style="margin:0 8px 8px 0">Speelronde {{ nxt }} ›</a>{% endif %}</p>
+</div></section>
+{{ faqblock(faq) }}
+"""
+
 AGENDA = MACROS + r"""
 <section class="hero"><div class="wrap">
 <div class="crumbs"><a href="/">Home</a> › Agenda</div>
@@ -708,6 +738,7 @@ def main():
           body, jsonld=[crumbs(("Home", "/"), ("Vandaag", "/vandaag/"))], priority="0.9")
 
     # --- toernooien
+    ronde_links = [n for n, evs in eredivisie_rounds(events).items() if round_live(evs, now)][:3]
     for slug, t in tournaments.items():
         if slug == "clubs":
             tev = [e for e in events if e["sport"] == "clubs" and e["nl"]]
@@ -721,6 +752,8 @@ def main():
         nx = next((e for e in tup if e.get("start") and e["dt"] > now and e["nl"]), None)
         related = [(x["h1"], x["path"]) for x in views if x.get("club") == slug or (not x.get("club") and t.get("sport") in x.get("sports", []) and slug != "clubs")]
         related += [tuple(x) for x in t.get("related", [])]
+        if slug == "eredivisie":
+            related = [(f"Speelronde {n}", f"/eredivisie/speelronde-{n}/") for n in ronde_links] + related
         body = env.from_string(TOURNAMENT).render(t=t, events=tup, next=nx, related=related)
         lds = [crumbs(("Home", "/"), (t["name"], f"/{slug}/")), faq_ld(t["faq"])] + [jsonld_event(e) for e in tup if e.get("start")]
         write(f"/{slug}/", f"{t['title']} | hoelaatbegint.nl", t["description"], body, og=slug,
@@ -757,6 +790,38 @@ def main():
               body, og=e["tournament"], active=e["tournament"],
               jsonld=[jsonld_event(e), crumbs(("Home", "/"), (t["name"], f"/{t['slug']}/"), (e["title"], e["url"]))], priority="0.8",
               index=indexable(e))
+
+    # --- Eredivisie per speelronde: /eredivisie/speelronde-N/ (lopende + komende rondes; oud: 301 naar /eredivisie/)
+    rounds = eredivisie_rounds(events)
+    live_rounds = [n for n, evs in rounds.items() if round_live(evs, now)]
+    for n, evs in rounds.items():
+        path = f"/eredivisie/speelronde-{n}/"
+        if n not in live_rounds:
+            redirects.append(f"{path} /eredivisie/ 301")
+            continue
+        days = []
+        for e in evs:
+            if not days or days[-1][0] != e["day_label"]:
+                days.append((e["day_label"], []))
+            days[-1][1].append(e)
+        first, last = evs[0]["day"], evs[-1]["day"]
+        span = range_label(first, last) if first != last else d_label(first)
+        timed = [e for e in evs if e.get("start")]
+        top = next((e for e in evs if e.get("h1") and "Klassieker" in e["h1"]), None) or next((e for e in evs if e.get("clubs") and len(e["clubs"]) >= 2), None)
+        lede = (f"Speelronde {n} van de Eredivisie wordt gespeeld van <strong>{span}</strong>: {len(evs)} wedstrijden, allemaal live op <strong>ESPN</strong>."
+                + (f" De opener is <strong>{timed[0]['title']}</strong>, {timed[0]['day_label']} om {timed[0]['time']}." if timed else "")
+                + (f" Topper: <strong>{top['title']}</strong> ({top['day_label']}{', ' + top['time'] if top.get('start') else ''})." if top else ""))
+        faq = [[f"Wanneer is Eredivisie speelronde {n}?", f"Van {span}."],
+               [f"Op welke zender is speelronde {n} te zien?", "Alle Eredivisiewedstrijden zijn live te zien op ESPN (ESPN 1 tot en met 4)."]]
+        if timed:
+            faq.append([f"Hoe laat begint de eerste wedstrijd van speelronde {n}?", f"{timed[0]['title']} begint {timed[0]['day_label']} om {timed[0]['time']}."])
+        idx = live_rounds.index(n)
+        body = env.from_string(RONDE).render(n=n, evs=evs, lede=lede, faq=faq,
+                                             prev=live_rounds[idx - 1] if idx > 0 else None, nxt=live_rounds[idx + 1] if idx + 1 < len(live_rounds) else None)
+        write(path, f"Eredivisie speelronde {n}: programma, aftrap en zender",
+              f"Eredivisie speelronde {n} ({span}): alle {len(evs)} wedstrijden met aftrap in Nederlandse tijd en zender (ESPN).",
+              body, og="eredivisie", active="eredivisie", priority="0.8",
+              jsonld=[crumbs(("Home", "/"), ("Eredivisie", "/eredivisie/"), (f"Speelronde {n}", path)), faq_ld(faq)] + [jsonld_event(e) for e in timed])
     (DIST / "_redirects").write_text("\n".join(redirects) + "\n", encoding="utf-8")
 
     # --- F1-stand (data/f1_standings.json, gevuld door pipeline/sources/f1.py)
