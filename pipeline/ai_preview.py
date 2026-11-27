@@ -58,6 +58,13 @@ def ok(out):
     return t and srcs and 40 < len(t) < 600 and not BANNED.search(t) and not re.search(r"\b\d{1,2}[:.]\d{2}\b", t)
 
 
+def key(e):
+    """Eén tekst per wedstrijd; bij veldrijden/schaatsen/darts één per dag en plaats (vrouwen + mannen, sessies)."""
+    if e["sport"] in ("veldrijden", "schaatsen", "darts") and e.get("city"):
+        return (e["sport"], e["start"][:10], e["city"])
+    return (e["id"],)
+
+
 def main():
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key or os.environ.get("AI_PREVIEW") == "0":
@@ -70,7 +77,7 @@ def main():
             and ":" not in e["title"].split("–")[-1]]  # geen losse F1-sessies (kwalificatie e.d.)
     seen, done = set(), 0
     for e in sorted(todo, key=lambda x: x["start"]):
-        group = (e["sport"], e["start"][:10], e.get("city"))  # één tekst per wedstrijddag/locatie (bv. vrouwen + mannen)
+        group = key(e)
         if done >= MAX or group in seen:
             continue
         seen.add(group)
@@ -83,7 +90,7 @@ def main():
             e["preview"] = ""  # niet opnieuw proberen
             continue
         for x in data["events"]:
-            if (x["sport"], (x.get("start") or "")[:10], x.get("city")) == group and "preview" not in x:
+            if x.get("start") and key(x) == group and "preview" not in x:
                 x["preview"], x["preview_sources"] = out["text"].strip(), out["sources"][:3]
         done += 1
     EVENTS.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
