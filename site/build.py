@@ -922,7 +922,7 @@ def main():
     (soc / "feed.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>hoelaatbegint Instagram</title>'
                                   f'<link>{BASE}</link><description>Instagram-posts van hoelaatbegint.nl</description>{"".join(items)}</channel></rss>', encoding="utf-8")
     if os.environ.get("INDEXNOW_KEY"):
-        (DIST / f"{os.environ['INDEXNOW_KEY']}.txt").write_text(os.environ["INDEXNOW_KEY"])
+        (DIST / f"{os.environ['INDEXNOW_KEY'].strip()}.txt").write_text(os.environ["INDEXNOW_KEY"].strip())
     (DIST / "_headers").write_text("/agenda/*\n  Content-Type: text/calendar; charset=utf-8\n  Cache-Control: public, max-age=900\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n"
         "https://hoelaatbegint.pages.dev/*\n  X-Robots-Tag: noindex\nhttps://:hash.hoelaatbegint.pages.dev/*\n  X-Robots-Tag: noindex\n"
         "https://www.hoelaatbegint.nl/*\n  X-Robots-Tag: noindex\n", encoding="utf-8")

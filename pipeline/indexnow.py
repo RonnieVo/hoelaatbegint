@@ -14,7 +14,7 @@ BASE = json.loads((ROOT / "site" / "config.json").read_text())["base_url"].rstri
 
 
 def main():
-    key = os.environ.get("INDEXNOW_KEY")
+    key = (os.environ.get("INDEXNOW_KEY") or "").strip()
     if not key:
         print("IndexNow overgeslagen (geen sleutel)")
         return
@@ -36,7 +36,14 @@ def main():
     urls = [u for u in dict.fromkeys(urls) if f"<loc>{u}</loc>" in sitemap]
     r = requests.post("https://api.indexnow.org/indexnow", timeout=20, json={
         "host": BASE.split("://")[1], "key": key, "keyLocation": f"{BASE}/{key}.txt", "urlList": urls})
-    print(f"IndexNow: {len(urls)} url's, status {r.status_code}")
+    print(f"IndexNow: {len(urls)} url's, status {r.status_code} {r.text[:200]}")
+    if r.status_code >= 400:  # diagnose zonder de sleutel te tonen
+        try:
+            k = requests.get(f"{BASE}/{key}.txt", timeout=15, headers={"User-Agent": "Mozilla/5.0 (compatible; bingbot/2.0)"})
+            print(f"Sleutelbestand: status {k.status_code}, type {k.headers.get('content-type')}, klopt: {k.text.strip() == key}, "
+                  f"lengte sleutel {len(key)}, alleen geldige tekens: {bool(re.fullmatch(r'[A-Za-z0-9-]{8,128}', key))}")
+        except Exception as exc:
+            print(f"Sleutelbestand niet op te halen: {exc}")
 
 
 if __name__ == "__main__":
