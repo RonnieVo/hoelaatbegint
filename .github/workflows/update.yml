@@ -63,7 +63,7 @@ jobs:
       - name: Voorbeschouwingen met bronnen (06:00 en 15:00 UTC, of handmatig)
         if: github.event.inputs.ai_force == 'true' || github.event_name == 'schedule'
         run: |
-          if [ "${{ github.event.inputs.ai_force }}" = "true" ] || { [ "$(date -u +%M)" -lt "15" ] && { [ "$(date -u +%H)" = "06" ] || [ "$(date -u +%H)" = "15" ]; }; }; then python pipeline/ai_preview.py; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "$(date -u +%M)" -lt "15" ] && { [ "$(date -u +%H)" = "06" ] || [ "$(date -u +%H)" = "15" ]; }; }; then python pipeline/ai_preview.py; fi
 
       - name: Pushmeldingen (30 min vooraf)
         env:

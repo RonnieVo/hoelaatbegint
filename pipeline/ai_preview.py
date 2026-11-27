@@ -8,7 +8,6 @@ Uitzetten: variabele AI_PREVIEW=0.
 import json
 import os
 import re
-import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -17,8 +16,7 @@ import requests
 ROOT = Path(__file__).resolve().parent.parent
 EVENTS = ROOT / "data" / "events.json"
 MAX = int(os.environ.get("AI_PREVIEW_MAX", "6"))
-sys.path.insert(0, str(ROOT / "pipeline" / "sources"))
-from ai_verify import MODEL  # noqa: E402
+MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
 
 BANNED = re.compile(r"\b(ik|mij|mijn|me|wij|we|ons|onze)\b|odds|wedden|gokken|bookmaker|koffie|bank|hijg", re.I)
 FOCUS = {
