@@ -61,7 +61,7 @@ jobs:
           if [ "$(date -u +%H%M)" -ge "0600" ] && [ "$(date -u +%H%M)" -lt "0615" ]; then python pipeline/ai_write.py; fi
 
       - name: Voorbeschouwingen met bronnen (06:00 en 15:00 UTC, of handmatig)
-        if: github.event.inputs.ai_force == 'true' || github.event_name == 'schedule'
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "$(date -u +%M)" -lt "15" ] && { [ "$(date -u +%H)" = "06" ] || [ "$(date -u +%H)" = "15" ]; }; }; then python pipeline/ai_preview.py; fi
 
