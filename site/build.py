@@ -227,6 +227,8 @@ def jsonld_event(e):
     org = organizer(e)
     if org:
         data["organizer"] = {"@type": "Organization", "name": org[0], "url": org[1]}
+    if not e.get("home") and " – " in e["title"] and e["sport"] in ("clubs", "voetbal", "leeuwinnen", "handbal", "hockey"):
+        e = {**e, "home": e["title"].split(" – ")[0].strip(), "away": e["title"].split(" – ")[1].split(":")[0].strip()}
     if e.get("home") and e.get("away"):
         data["homeTeam"] = {"@type": "SportsTeam", "name": e["home"]}
         data["awayTeam"] = {"@type": "SportsTeam", "name": e["away"]}
