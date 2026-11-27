@@ -188,7 +188,32 @@ def toernooien(day):
         lines = [f"{name_t}: het programma{' van het weekend' if block[-1]['day'] != day else ''}.", ""]
         lines += [f"{e['day_label']} {e['time']} · {label(e)}" + (f" ({e['tv']})" if e.get("tv") else "") for e in block]
         lines += ["", "Alle tijden in Nederlandse tijd. Countdown en agenda-knop via de link in bio.", "", TAGS.get(block[0]["sport"], "") + " #hoelaatbegint"]
-        out.append((f"toernooi-{slug}-{day.isoformat()}", html, "\n".join(lines)))
+        out.append((f"toernooi-{slug}-{day.isoformat()}", html, "\n".join(lines), block[0]["sport"], block[0]["dt"]))
+    return out
+
+
+# Extra posts (toernooi + Eredivisie-speelronde): max 2 per dag, gespreid over de dag.
+# Zapier pakt een post pas op als het geplande tijdstip (.ts) voorbij is (zie site/build.py, feed.xml).
+PRIO = ["f1", "darts", "schaatsen", "eredivisie", "handbal"]  # bij meer dan 2 kandidaten wint de eerste
+SLOTS = [(12, 0), (17, 0)]  # Nederlandse tijd; dagpost blijft 07:00
+MAX_EXTRA = 2
+
+
+def extra(day):
+    """Geeft [(naam, html, caption, gepland_utc_timestamp)] voor de extra posts van vandaag."""
+    cand = [(PRIO.index(s) if s in PRIO else 9, dt, n, h, c) for n, h, c, s, dt in toernooien(day)]
+    n, h, c = ronde(day)
+    if n:
+        first = build.eredivisie_rounds(load())[int(n.rsplit("-", 1)[1])][0]["dt"]
+        cand.append((PRIO.index("eredivisie"), first, n, h, c))
+    posts = ROOT / "social" / "posts"
+    cand = [x for x in sorted(cand, key=lambda x: (x[0], x[1])) if not (posts / f"{x[2]}.jpg").exists()][:MAX_EXTRA]
+    cand.sort(key=lambda x: x[1])  # wat het eerst begint, komt het eerst
+    out = []
+    for (hh, mm), (_p, first, name, html, cap) in zip(SLOTS, cand):
+        slot = datetime(day.year, day.month, day.day, hh, mm, tzinfo=NL)
+        slot = max(min(slot, first - timedelta(minutes=90)), datetime(day.year, day.month, day.day, 7, 30, tzinfo=NL))
+        out.append((name, html, cap, int(slot.timestamp())))
     return out
 
 
@@ -224,7 +249,7 @@ def main():
         return
     if mode == "toernooien":  # extra posts, direct naar social/posts
         posts = ROOT / "social" / "posts"
-        for i, (name, html, cap) in enumerate(toernooien(day)):
+        for i, (name, html, cap, _s, _dt) in enumerate(toernooien(day)):
             if (posts / f"{name}.jpg").exists():
                 continue
             posts.mkdir(parents=True, exist_ok=True)
@@ -232,6 +257,15 @@ def main():
             (posts / f"{name}.txt").write_text(cap, encoding="utf-8")
             (posts / f"{name}.ts").write_text(str(int(datetime.now().timestamp()) + 10 + i))
             print(f"Gemaakt: {name}")
+        return
+    if mode == "extra":  # toernooien + speelronde, max 2, ingepland op 12:00/17:00 NL
+        posts = ROOT / "social" / "posts"
+        posts.mkdir(parents=True, exist_ok=True)
+        for name, html, cap, ts in extra(day):
+            shoot(html, posts / f"{name}.jpg")
+            (posts / f"{name}.txt").write_text(cap, encoding="utf-8")
+            (posts / f"{name}.ts").write_text(str(ts))
+            print(f"Gemaakt: {name} (gepland {datetime.fromtimestamp(ts, NL):%H:%M})")
         return
     if mode == "week":
         day = day - timedelta(days=day.weekday())

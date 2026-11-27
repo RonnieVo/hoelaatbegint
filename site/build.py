@@ -980,11 +980,17 @@ def main():
             (soc / sub).mkdir(parents=True, exist_ok=True)
             for f in src.glob("*.jpg"):
                 shutil.copy(f, soc / sub / f.name)
-    posts = sorted((ROOT / "social" / "posts").glob("*.jpg"), reverse=True)[:10] if (ROOT / "social" / "posts").exists() else []
+    def _when(f):
+        ts = f.with_suffix(".ts")
+        return int(ts.read_text()) if ts.exists() else int(f.stat().st_mtime)
+    now_ts = int(datetime.now(UTC).timestamp())
+    # Alleen posts waarvan het geplande tijdstip voorbij is: zo spreidt Zapier ze over de dag (update.yml bouwt elke 15 min)
+    posts = sorted((f for f in (ROOT / "social" / "posts").glob("*.jpg") if _when(f) <= now_ts), key=_when, reverse=True)[:10] \
+        if (ROOT / "social" / "posts").exists() else []
     items = []
     for f in posts:
         cap = f.with_suffix(".txt").read_text(encoding="utf-8") if f.with_suffix(".txt").exists() else ""
-        when = datetime.fromtimestamp(int(f.with_suffix(".ts").read_text()) if f.with_suffix(".ts").exists() else f.stat().st_mtime, UTC)
+        when = datetime.fromtimestamp(_when(f), UTC)
         url = f"https://hoelaatbegint.pages.dev/social/posts/{f.name}"
         items.append(f"<item><title>{xesc(f.stem)}</title><link>{url}</link><guid isPermaLink=\"false\">{xesc(f.stem)}</guid>"
                      f"<pubDate>{format_datetime(when)}</pubDate><description>{xesc(cap)}</description>"

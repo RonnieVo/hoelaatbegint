@@ -55,10 +55,9 @@ jobs:
             cp dist/social/$N.txt social/posts/$N.txt
             date +%s > social/posts/$N.ts
           fi
-          # Eredivisie: extra post op de dag dat een speelronde begint (maakt niets als dat vandaag niet zo is)
-          if [ "${{ steps.plan.outputs.mode }}" != "week" ]; then python social/render.py ronde ${{ steps.plan.outputs.date }} || true; fi
-          # Extra post per toernooi op de eerste dag (F1-weekend, darts-major, schaatsweekend, handbaltoernooi)
-          if [ "${{ steps.plan.outputs.mode }}" = "daily" ]; then python social/render.py toernooien ${{ steps.plan.outputs.date }} || true; fi
+          # Extra posts (toernooi-start, Eredivisie-speelronde): max 2, ingepland op 12:00 en 17:00 NL via .ts (feed toont ze pas dan)
+          if [ "${{ steps.plan.outputs.mode }}" = "daily" ]; then python social/render.py extra ${{ steps.plan.outputs.date }} || true; fi
+          if [ "${{ steps.plan.outputs.mode }}" = "ronde" ]; then python social/render.py ronde ${{ steps.plan.outputs.date }} || true; fi
           find social/posts -type f -mtime +21 -delete
           git config user.name "hoelaatbegint-bot"; git config user.email "bot@hoelaatbegint.nl"
           git add social/posts

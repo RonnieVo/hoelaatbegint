@@ -180,9 +180,15 @@ def main():
     slot = now.minute < 15 and now.hour % 2 == 0          # gewone wijzigingen: hooguit elke 2 uur
     daily = now.hour == 4 and now.minute < 15              # dagelijkse verversing (vandaag-pagina)
     forced = bool(os.environ.get("FORCE_DEPLOY"))
-    deploy = forced or daily or (digest != state.get("deployed_hash") and (urgent or slot))
+    # Ingeplande Instagram-posts (.ts in social/posts): publiceren zodra hun tijd voorbij is, zodat Zapier ze oppakt
+    due = [int(f.read_text()) for f in (ROOT / "social" / "posts").glob("*.ts") if int(f.read_text()) <= now.timestamp()] \
+        if (ROOT / "social" / "posts").exists() else []
+    social = bool(due) and max(due) > state.get("social_ts", 0)
+    deploy = forced or daily or social or (digest != state.get("deployed_hash") and (urgent or slot))
     if deploy:
         state["deployed_hash"] = digest
+        if due:
+            state["social_ts"] = max(due)
     STATE.write_text(json.dumps(state))
     print(f"publiceren: {'ja' if deploy else 'nee'} (urgent={urgent}, slot={slot}, dagelijks={daily})")
     # Voor de IndexNow-stap: welke pagina's zijn gewijzigd
