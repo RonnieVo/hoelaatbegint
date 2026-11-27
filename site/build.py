@@ -49,7 +49,7 @@ NAV = [
     ("clubs", "Voetbal", [("Voetbal vandaag", "/voetbal/vandaag/"), ("Voetbal op tv", "/voetbal/op-tv/"),
                           ("Eredivisie programma", "/eredivisie/"), ("Ajax", "/ajax/"), ("Feyenoord", "/feyenoord/"), ("PSV", "/psv/")]),
     ("darts", "Darts", [("WK darts schema", "/wk-darts/"), ("Darts vandaag", "/darts/vandaag/"),
-                        ("Darts op tv", "/darts/op-tv/"), ("Players Championship Finals", "/players-championship-finals/"), ("Nederlanders op het WK", "/wk-darts/#nederlanders")]),
+                        ("Darts op tv", "/darts/op-tv/"), ("Alle darttoernooien", "/pdc-toernooien/"), ("Nederlanders op het WK", "/wk-darts/#nederlanders")]),
     ("schaatsen", "Schaatsen", [("Schaatsprogramma", "/schaatsen/"), ("Schaatsen vandaag", "/schaatsen/vandaag/"),
                                 ("Schaatsen op tv", "/schaatsen/op-tv/")]),
     ("voetbal", "Oranje", [("Programma Oranje", "/nederlands-elftal/"), ("EK 2028", "/ek-2028/"),

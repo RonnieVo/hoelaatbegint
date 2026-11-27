@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 TASKS = {
     "wk-darts": "PDC WK darts 2027 (Alexandra Palace, 11 dec 2026 – 3 jan 2027). Na de loting: alle wedstrijden met een Nederlandse speler, met sessie, dag, starttijd van de sessie en tegenstander. Bronnen: pdc.tv, viaplay.nl, dartsnieuws.com.",
+    "pdc-toernooien": "Alle andere PDC-darttoernooien die op tv komen (NIET het WK): o.a. Players Championship Finals, The Masters, Premier League Darts, UK Open, World Matchplay, World Grand Prix, European Championship, Grand Slam of Darts en World Series-events, in de komende 45 dagen. Geef per sessie de dag en starttijd van de sessie, met de Nederlanders die spelen. Bronnen: pdc.tv, viaplay.nl, dartsnieuws.com.",
     "ek-handbal-vrouwen": "EK handbal vrouwen 2026, wedstrijden van Nederland (poule D in Brno, daarna hoofdronde Katowice). Bronnen: eurohandball.com, handbal.nl, ziggo.nl.",
     "hockey": "FIH Pro League 2026-27, alle wedstrijden van de Nederlandse mannen en vrouwen met aanvangstijd. Bronnen: fih.hockey, knhb.nl.",
     "schaatsen": "Langebaanschaatsen 2026-27: wereldbekers, NK en EK, met starttijden per dag. Bronnen: isu.org, knsb.nl, schaatsen.nl, nos.nl.",
@@ -39,7 +40,7 @@ TASKS = {
 }
 
 ALLOWED_SPORTS = {"leeuwinnen", "darts", "handbal", "hockey", "schaatsen", "veldrijden", "voetbal", "f1", "clubs"}
-TASK_SPORT = {"clubs": "clubs", "wk-darts": "darts", "ek-handbal-vrouwen": "handbal", "hockey": "hockey", "schaatsen": "schaatsen",
+TASK_SPORT = {"clubs": "clubs", "wk-darts": "darts", "pdc-toernooien": "darts", "ek-handbal-vrouwen": "handbal", "hockey": "hockey", "schaatsen": "schaatsen",
               "veldrijden": "veldrijden", "nederlands-elftal": "voetbal", "oranje-leeuwinnen": "leeuwinnen"}
 
 SCHEMA = """Geef als antwoord ALLEEN één codeblok ```json ... ``` met een JSON-array, zonder uitleg of bronvermelding erbuiten.
@@ -120,7 +121,11 @@ def fetch(existing):
     today = now.strftime("%Y-%m-%d")
     out, ran = [], 0
     for slug, task in TASKS.items():
-        known = [e for e in existing if e.get("tournament") == slug and (e.get("end_date") or e.get("date") or e.get("start", ""))[:10] >= today]
+        if slug == "pdc-toernooien":  # alle darts behalve het WK (ook toernooien met een eigen pagina)
+            known = [e for e in existing if e.get("sport") == "darts" and e.get("tournament") != "wk-darts" and (e.get("end_date") or e.get("date") or e.get("start", ""))[:10] >= today]
+        else:
+            known = [e for e in existing if e.get("tournament") == slug and (e.get("end_date") or e.get("date") or e.get("start", ""))[:10] >= today]
+        known_t = {e["id"]: e.get("tournament") for e in known}
         if not due(known, now):
             continue
         ran += 1
@@ -133,7 +138,7 @@ def fetch(existing):
         for e in answer:
             if valid(e):
                 e["title"] = re.sub(r"\s*\([^)]*\)\s*$", lambda m: m.group(0) if "vrouwen" in m.group(0) else "", e["title"]).strip()
-                e["tournament"] = slug  # AI mag geen eigen paginanamen verzinnen
+                e["tournament"] = known_t.get(e["id"], slug)  # AI mag geen eigen paginanamen verzinnen
                 if e.get("sport") not in ALLOWED_SPORTS:
                     e["sport"] = TASK_SPORT[slug]
                 e["source"] = e["sources"][0]

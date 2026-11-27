@@ -1108,5 +1108,55 @@
     "/darts/op-tv/"
    ]
   ]
+ },
+ "pdc-toernooien": {
+  "sport": "darts",
+  "slug": "pdc-toernooien",
+  "name": "PDC-toernooien",
+  "h1": "Darttoernooien op tv: wanneer en hoe laat?",
+  "title": "Darts op tv: alle PDC-toernooien met tijden en zender",
+  "description": "Alle grote PDC-darttoernooien buiten het WK (Masters, Premier League, UK Open, Matchplay, Grand Prix, Grand Slam) met sessietijden in Nederlandse tijd en zender.",
+  "answer": "Hier staan de grote <strong>PDC-toernooien</strong> naast het WK, zoals de Masters, de Premier League en de World Matchplay. Per sessie zie je de aanvangstijd in Nederlandse tijd en de zender. In Nederland zijn ze meestal live op <strong>Viaplay</strong>.",
+  "facts": [
+   [
+    "Organisator",
+    "PDC (Professional Darts Corporation)"
+   ],
+   [
+    "In Nederland",
+    "meestal Viaplay"
+   ],
+   [
+    "Bijgewerkt",
+    "automatisch, minstens wekelijks"
+   ]
+  ],
+  "intro": "Het programma wordt automatisch aangevuld zodra de PDC de sessies bekendmaakt. Het WK darts heeft een eigen pagina.",
+  "faq": [
+   [
+    "Welke darttoernooien zijn er naast het WK?",
+    "Onder meer The Masters, de Premier League, de UK Open, de World Matchplay, de World Grand Prix, de European Championship, de Grand Slam of Darts en de Players Championship Finals."
+   ],
+   [
+    "Waar kijk je darts in Nederland?",
+    "De grote PDC-toernooien zijn in Nederland meestal live op Viaplay."
+   ]
+  ],
+  "sources": [
+   [
+    "PDC-kalender",
+    "https://www.pdc.tv/"
+   ]
+  ],
+  "related": [
+   [
+    "WK darts schema",
+    "/wk-darts/"
+   ],
+   [
+    "Players Championship Finals",
+    "/players-championship-finals/"
+   ]
+  ]
  }
 }
