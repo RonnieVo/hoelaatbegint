@@ -200,6 +200,10 @@ def timeline(evs, day):
             "hours": hours, "span": span, "start_iso": start_iso}
 
 
+_sf = ROOT / "data" / "f1_standings.json"
+F1_DRIVERS = json.loads(_sf.read_text(encoding="utf-8")).get("drivers", []) if _sf.exists() else []
+
+
 def jsonld_event(e):
     if not e.get("start"):
         return None
@@ -230,13 +234,12 @@ def jsonld_event(e):
         data["performer"] = data["competitor"]
     elif e.get("participants"):
         data["performer"] = [{"@type": "Person", "name": p} for p in e["participants"]]
-    if e.get("round") and e["sport"] in ("clubs", "voetbal", "leeuwinnen"):
-        data["superEvent"] = {"@type": "SportsEvent", "name": e["round"].split(",")[0]}
-    if e.get("tv"):  # tv-uitzending als BroadcastEvent (handig voor AI-zoekmachines en 'op tv'-vragen)
-        data["subEvent"] = {"@type": "BroadcastEvent", "name": f"{e['title']} live op {e['tv_detail']}", "isLiveBroadcast": True,
-                            "startDate": e["local"].isoformat(), "inLanguage": "nl",
-                            "publishedOn": {"@type": "BroadcastService", "name": e["tv_detail"], "broadcastDisplayName": e["tv"],
-                                            "areaServed": {"@type": "Country", "name": "Nederland"}}}
+    elif e["sport"] == "f1" and F1_DRIVERS:  # coureurs van dit seizoen (uit de WK-stand)
+        data["performer"] = [{"@type": "Person", "name": d["name"]} for d in F1_DRIVERS]
+    # Geen geneste superEvent/subEvent: Google ziet die als losse evenementen zonder location/startDate (kritieke fout).
+    # De tv-zender staat in de description; het toernooi in de naam van de wedstrijdpagina.
+    if e.get("round"):
+        data["description"] = desc.rstrip(".") + f" ({e['round']})."
     return data
 
 
