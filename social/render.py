@@ -155,6 +155,43 @@ def ronde(day):
     return None, None, None
 
 
+MULTI = {"darts", "schaatsen", "handbal", "f1"}  # sporten met meerdaagse toernooien/weekenden
+
+
+def toernooien(day):
+    """Extra post per toernooi op de eerste dag van een blok (bv. F1-weekend, darts-major, schaatsweekend).
+    Geeft lijst van (naam, html, caption)."""
+    evs = [e for e in load() if e["nl"] and e.get("start") and e["sport"] in MULTI]
+    out = []
+    for slug in dict.fromkeys(e["tournament"] for e in evs):
+        mine = [e for e in evs if e["tournament"] == slug]
+        block = [e for e in mine if day <= e["day"] <= day + timedelta(days=3)]
+        before = [e for e in mine if day - timedelta(days=3) <= e["day"] < day]
+        if len(block) < 2 or block[0]["day"] != day or before:
+            continue
+        t = json.loads((ROOT / "data" / "tournaments.json").read_text(encoding="utf-8")).get(slug, {"name": slug})
+        name_t = t.get("name", slug)
+        rounds = [e.get("round") for e in block]
+        use_round = block[0]["sport"] == "darts" and all(rounds) and len(set(rounds)) == len(rounds)  # darts: sessies heten naar de ronde
+        label = (lambda e: e["round"]) if use_round else (lambda e: e["title"])
+        short = [{**e, "title": label(e)} for e in block][:6]
+        uniform = rounds[0] if all(rounds) and len(set(rounds)) == 1 else None
+        kicker = " · ".join(x for x in [uniform, block[0].get("city"), block[0].get("tv")] if x)
+        if len(name_t) <= 14:
+            title, top = name_t, 400
+        else:
+            words = name_t.split()
+            cut = min(range(1, len(words)), key=lambda i: abs(len(" ".join(words[:i])) - len(" ".join(words[i:]))))
+            title, top = f"<span style='font-size:86px'>{' '.join(words[:cut])}<br>{' '.join(words[cut:])}</span>", 470
+        html = page(kicker or build.d_label(day), title, rows(short, True), list_top=top,
+                    foot_left=build.range_label(block[0]["day"], block[-1]["day"]) if block[0]["day"] != block[-1]["day"] else build.d_label(day))
+        lines = [f"{name_t}: het programma{' van het weekend' if block[-1]['day'] != day else ''}.", ""]
+        lines += [f"{e['day_label']} {e['time']} · {label(e)}" + (f" ({e['tv']})" if e.get("tv") else "") for e in block]
+        lines += ["", "Alle tijden in Nederlandse tijd. Countdown en agenda-knop via de link in bio.", "", TAGS.get(block[0]["sport"], "") + " #hoelaatbegint"]
+        out.append((f"toernooi-{slug}-{day.isoformat()}", html, "\n".join(lines)))
+    return out
+
+
 def shoot(html, path):
     from playwright.sync_api import sync_playwright
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -184,6 +221,17 @@ def main():
         (posts / f"{name}.txt").write_text(cap, encoding="utf-8")
         (posts / f"{name}.ts").write_text(str(int(datetime.now().timestamp()) + 5))
         print(f"Gemaakt: {name}")
+        return
+    if mode == "toernooien":  # extra posts, direct naar social/posts
+        posts = ROOT / "social" / "posts"
+        for i, (name, html, cap) in enumerate(toernooien(day)):
+            if (posts / f"{name}.jpg").exists():
+                continue
+            posts.mkdir(parents=True, exist_ok=True)
+            shoot(html, posts / f"{name}.jpg")
+            (posts / f"{name}.txt").write_text(cap, encoding="utf-8")
+            (posts / f"{name}.ts").write_text(str(int(datetime.now().timestamp()) + 10 + i))
+            print(f"Gemaakt: {name}")
         return
     if mode == "week":
         day = day - timedelta(days=day.weekday())
