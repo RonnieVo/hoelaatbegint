@@ -995,7 +995,8 @@
    ],
    "confirmed_by": [
     "ai"
-   ]
+   ],
+   "preview": ""
   },
   {
    "id": "fd-558820",
@@ -1035,7 +1036,13 @@
    "confirmed_by": [
     "football-data"
    ],
-   "matchday": 14
+   "matchday": 14,
+   "preview": "Koploper PSV heeft 29 punten uit 13 wedstrijden en won de laatste competitiewedstrijd met 4-1 van NEC. Go Ahead Eagles staat negende met 17 punten, na een 1-0 thuisnederlaag tegen Fortuna Sittard. PSV won de vorige ontmoeting op 10 mei 2026 met 4-1 in Deventer. In speelronde 14 staat de koploper tegenover de nummer negen.",
+   "preview_sources": [
+    "https://www.whoscored.com/matches/1982353/preview/netherlands-eredivisie-2026-2027-psv-eindhoven-go-ahead-eagles",
+    "https://www.goal.com/en/news/how-to-watch-psv-vs-go-ahead-eagles-tv-channel-live-stream-kick-off-time-and-recent-form/bltaac4fd5b84bb82cd",
+    "https://eredivisie.nl/competitie/stand/"
+   ]
   },
   {
    "id": "ere-2026-11-28-psv-go-ahead-eagles",
@@ -1059,7 +1066,13 @@
    "confirmed_by": [
     "football-data"
    ],
-   "matchday": 14
+   "matchday": 14,
+   "preview": "Koploper PSV heeft 29 punten uit 13 wedstrijden en won de laatste competitiewedstrijd met 4-1 van NEC. Go Ahead Eagles staat negende met 17 punten, na een 1-0 thuisnederlaag tegen Fortuna Sittard. PSV won de vorige ontmoeting op 10 mei 2026 met 4-1 in Deventer. In speelronde 14 staat de koploper tegenover de nummer negen.",
+   "preview_sources": [
+    "https://www.whoscored.com/matches/1982353/preview/netherlands-eredivisie-2026-2027-psv-eindhoven-go-ahead-eagles",
+    "https://www.goal.com/en/news/how-to-watch-psv-vs-go-ahead-eagles-tv-channel-live-stream-kick-off-time-and-recent-form/bltaac4fd5b84bb82cd",
+    "https://eredivisie.nl/competitie/stand/"
+   ]
   },
   {
    "sport": "f1",
@@ -1097,7 +1110,13 @@
    "confirmed_by": [
     "football-data"
    ],
-   "matchday": 14
+   "matchday": 14,
+   "preview": "Koploper PSV heeft 29 punten uit 13 wedstrijden en won de laatste competitiewedstrijd met 4-1 van NEC. Go Ahead Eagles staat negende met 17 punten, na een 1-0 thuisnederlaag tegen Fortuna Sittard. PSV won de vorige ontmoeting op 10 mei 2026 met 4-1 in Deventer. In speelronde 14 staat de koploper tegenover de nummer negen.",
+   "preview_sources": [
+    "https://www.whoscored.com/matches/1982353/preview/netherlands-eredivisie-2026-2027-psv-eindhoven-go-ahead-eagles",
+    "https://www.goal.com/en/news/how-to-watch-psv-vs-go-ahead-eagles-tv-channel-live-stream-kick-off-time-and-recent-form/bltaac4fd5b84bb82cd",
+    "https://eredivisie.nl/competitie/stand/"
+   ]
   },
   {
    "id": "fd-558827",
@@ -1117,7 +1136,12 @@
    "confirmed_by": [
     "football-data"
    ],
-   "matchday": 14
+   "matchday": 14,
+   "preview": "Ajax staat na dertien speelronden tweede met 28 punten, Feyenoord vijfde met 25. Feyenoord verloor het vorige duel met 2-3 van Excelsior, Ajax won met 3-0 van ADO Den Haag. De laatste Klassiekers eindigden in 2-0 (Ajax) en 1-1. Bij winst komt Feyenoord op gelijke hoogte met Ajax.",
+   "preview_sources": [
+    "https://www.ajaxclub.nl/nieuws/voorbeschouwing-feyenoord-ajax/",
+    "https://www.dutchnews.nl/2026/11/ajax-go-second-in-eredivisie-behind-psv-as-feyenoord-woes-deepen/"
+   ]
   },
   {
    "id": "cx-wb-2026-11-29-vrouwen",
@@ -1139,6 +1163,12 @@
    "checked_at": "2026-11-25T18:47:12Z",
    "confirmed_by": [
     "ai"
+   ],
+   "preview": "Lucinda Brand en Thibau Nys wonnen vorig jaar de Wereldbekermanche in Tábor; Sara Casasola werd bij de vrouwen tweede. Brand is wereldkampioene, Casasola versloeg haar afgelopen weekend in Lokeren en Beringen. Het parcours bij sportcomplex Komora telt grasstroken, korte klimmetjes, balken en technische bochten.",
+   "preview_sources": [
+    "https://www.ucicyclocrossworldcup.com/en/calendar/2026-2027/tabor-5",
+    "https://kopstart.nl/nieuws/voorbeschouwing-wereldbeker-ostrava-tabor-2026/",
+    "https://procyclinguk.com/world-cup-tabor-2026-women-preview-course-contenders/"
    ]
   },
   {
@@ -1161,6 +1191,12 @@
    ],
    "confirmed_by": [
     "ai"
+   ],
+   "preview": "Lucinda Brand en Thibau Nys wonnen vorig jaar de Wereldbekermanche in Tábor; Sara Casasola werd bij de vrouwen tweede. Brand is wereldkampioene, Casasola versloeg haar afgelopen weekend in Lokeren en Beringen. Het parcours bij sportcomplex Komora telt grasstroken, korte klimmetjes, balken en technische bochten.",
+   "preview_sources": [
+    "https://www.ucicyclocrossworldcup.com/en/calendar/2026-2027/tabor-5",
+    "https://kopstart.nl/nieuws/voorbeschouwing-wereldbeker-ostrava-tabor-2026/",
+    "https://procyclinguk.com/world-cup-tabor-2026-women-preview-course-contenders/"
    ]
   },
   {
@@ -1186,7 +1222,12 @@
    "confirmed_by": [
     "football-data"
    ],
-   "matchday": 14
+   "matchday": 14,
+   "preview": "Ajax staat na dertien speelronden tweede met 28 punten, Feyenoord vijfde met 25. Feyenoord verloor het vorige duel met 2-3 van Excelsior, Ajax won met 3-0 van ADO Den Haag. De laatste Klassiekers eindigden in 2-0 (Ajax) en 1-1. Bij winst komt Feyenoord op gelijke hoogte met Ajax.",
+   "preview_sources": [
+    "https://www.ajaxclub.nl/nieuws/voorbeschouwing-feyenoord-ajax/",
+    "https://www.dutchnews.nl/2026/11/ajax-go-second-in-eredivisie-behind-psv-as-feyenoord-woes-deepen/"
+   ]
   },
   {
    "id": "fd-558821",
@@ -1206,7 +1247,12 @@
    "confirmed_by": [
     "football-data"
    ],
-   "matchday": 14
+   "matchday": 14,
+   "preview": "Ajax staat na dertien speelronden tweede met 28 punten, Feyenoord vijfde met 25. Feyenoord verloor het vorige duel met 2-3 van Excelsior, Ajax won met 3-0 van ADO Den Haag. De laatste Klassiekers eindigden in 2-0 (Ajax) en 1-1. Bij winst komt Feyenoord op gelijke hoogte met Ajax.",
+   "preview_sources": [
+    "https://www.ajaxclub.nl/nieuws/voorbeschouwing-feyenoord-ajax/",
+    "https://www.dutchnews.nl/2026/11/ajax-go-second-in-eredivisie-behind-psv-as-feyenoord-woes-deepen/"
+   ]
   },
   {
    "id": "fd-558823",
@@ -1226,7 +1272,12 @@
    "confirmed_by": [
     "football-data"
    ],
-   "matchday": 14
+   "matchday": 14,
+   "preview": "Ajax staat na dertien speelronden tweede met 28 punten, Feyenoord vijfde met 25. Feyenoord verloor het vorige duel met 2-3 van Excelsior, Ajax won met 3-0 van ADO Den Haag. De laatste Klassiekers eindigden in 2-0 (Ajax) en 1-1. Bij winst komt Feyenoord op gelijke hoogte met Ajax.",
+   "preview_sources": [
+    "https://www.ajaxclub.nl/nieuws/voorbeschouwing-feyenoord-ajax/",
+    "https://www.dutchnews.nl/2026/11/ajax-go-second-in-eredivisie-behind-psv-as-feyenoord-woes-deepen/"
+   ]
   },
   {
    "sport": "f1",
@@ -1244,6 +1295,12 @@
    "checked_at": "2026-11-27T11:16:08Z",
    "confirmed_by": [
     "jolpica"
+   ],
+   "preview": "Kimi Antonelli is al wereldkampioen. Max Verstappen (Red Bull) staat tweede met 304 punten, 37 meer dan Lewis Hamilton. Het 5,419 kilometer lange Lusail International Circuit telt 16 bochten, veelal snel, en kent een maximale bandenstint van 27 ronden. Verstappen won de laatste drie edities in Qatar en heeft negen podiumplaatsen op rij.",
+   "preview_sources": [
+    "https://www.thenationalnews.com/sport/f1/2026/11/27/verstappen-looks-to-seal-second-place-ferrari-at-civil-war-f1-driver-rankings-and-qatar-gp-prediction/",
+    "https://www.mercedesamgf1.com/races/qatar-grand-prix-2026",
+    "https://khelnow.com/formula-racing/f1-qatar-gp-weekend-schedule-202611"
    ]
   },
   {
@@ -1264,7 +1321,12 @@
    "confirmed_by": [
     "football-data"
    ],
-   "matchday": 14
+   "matchday": 14,
+   "preview": "Ajax staat na dertien speelronden tweede met 28 punten, Feyenoord vijfde met 25. Feyenoord verloor het vorige duel met 2-3 van Excelsior, Ajax won met 3-0 van ADO Den Haag. De laatste Klassiekers eindigden in 2-0 (Ajax) en 1-1. Bij winst komt Feyenoord op gelijke hoogte met Ajax.",
+   "preview_sources": [
+    "https://www.ajaxclub.nl/nieuws/voorbeschouwing-feyenoord-ajax/",
+    "https://www.dutchnews.nl/2026/11/ajax-go-second-in-eredivisie-behind-psv-as-feyenoord-woes-deepen/"
+   ]
   },
   {
    "id": "wkd-loting",
