@@ -35,7 +35,7 @@ jobs:
           H=$(TZ=Europe/Amsterdam date +%H); D=$(TZ=Europe/Amsterdam date +%F); DOW=$(TZ=Europe/Amsterdam date +%u)
           MODE="${{ github.event.inputs.mode }}"
           if [ -z "$MODE" ]; then
-            if [ "$H" = "07" ] || [ "$H" = "08" ] || [ "$H" = "09" ]; then MODE=daily; else MODE=skip; fi
+            if [ "$H" = "06" ] || [ "$H" = "07" ] || [ "$H" = "08" ] || [ "$H" = "09" ]; then MODE=daily; else MODE=skip; fi
             if [ "$DOW" = "1" ] && [ "$H" != "07" ] && [ ! -f "social/posts/week-$D.jpg" ] && [ -f "social/posts/daily-$D.jpg" ]; then MODE=week; fi
           fi
           # nooit twee keer hetzelfde posten (GitHub start geplande runs soms te laat of dubbel)
