@@ -973,8 +973,7 @@
    "checked_at": "2026-11-25T18:47:12Z",
    "confirmed_by": [
     "ai"
-   ],
-   "opinion": "Een openingsmanche van de Wereldbeker in Ostrava betekent dat het veldritseizoen weer los is, en daar kijk ik als Woerdenaar altijd naar uit. Modder, hijgende rensters en een parcours dat niemand vergeeft: ik zet de koffie alvast klaar."
+   ]
   },
   {
    "id": "cx-wb-2026-11-27",
@@ -996,8 +995,7 @@
    ],
    "confirmed_by": [
     "ai"
-   ],
-   "opinion": "Eindelijk weer modder, bochten en mannen die een fiets over een trap tillen: de openingsmanche in Ostrava is voor mij het echte begin van het veldritseizoen. Ik hoop vooral op een spannende strijd, want na de eerste bocht weet niemand nog hoe het afloopt."
+   ]
   },
   {
    "id": "fd-558820",
@@ -1061,7 +1059,6 @@
    "confirmed_by": [
     "football-data"
    ],
-   "opinion": "Eredivisie met PSV tegen Go Ahead Eagles: dat is voor mij het soort avond waarop je de bank niet hoeft uit te leggen. Het staat op ESPN 1, dus ik zet de chips alvast klaar en kijk of Deventer het PSV lastig maakt.",
    "matchday": 14
   },
   {
@@ -1080,8 +1077,7 @@
    "checked_at": "2026-11-27T11:16:08Z",
    "confirmed_by": [
     "jolpica"
-   ],
-   "opinion": "Ik hou van kwalificaties op een circuit als Lusail, want daar telt elke bocht en is één foutje meteen een dure grap. Race 22 betekent dat het seizoen op zijn laatste benen loopt, dus ik kijk met koffie en zonder smoesjes."
+   ]
   },
   {
    "id": "fd-558819",
@@ -1143,8 +1139,7 @@
    "checked_at": "2026-11-25T18:47:12Z",
    "confirmed_by": [
     "ai"
-   ],
-   "opinion": "Veldrijden in Tábor, dat betekent modder, korte klimmetjes en kans op een kleine valpartij die ik met een kop koffie vanaf de bank prima kan hebben. Bij de elite vrouwen is het elke manche weer een mooi gevecht, en dat kijkt gewoon lekker weg."
+   ]
   },
   {
    "id": "cx-wb-2026-11-29",
@@ -1166,8 +1161,7 @@
    ],
    "confirmed_by": [
     "ai"
-   ],
-   "opinion": "Veldrijden in Tábor, dat betekent modder, gedoe in de bochten en niemand die zich ergens achter kan verstoppen. Ik kijk vooral uit naar de strijd bij de elite mannen, want in deze Wereldbeker zit bij mij nog net geen sleur."
+   ]
   },
   {
    "id": "ere-2026-11-29-feyenoord-ajax",
@@ -1192,7 +1186,6 @@
    "confirmed_by": [
     "football-data"
    ],
-   "opinion": "Feyenoord tegen Ajax in de Eredivisie hoef ik niemand uit te leggen: dat is gewoon het type wedstrijd waarvoor je de boodschappen eerder doet. Ik zet ESPN 1 aan, pak iets te drinken en hoop vooral op een eerlijke, felle pot.",
    "matchday": 14
   },
   {
@@ -1251,8 +1244,7 @@
    "checked_at": "2026-11-27T11:16:08Z",
    "confirmed_by": [
     "jolpica"
-   ],
-   "opinion": "Race 22 van 23 betekent dat het seizoen bijna op is, en dan wordt er in Lusail meestal nog even flink gestreden. Ik ga gewoon op de bank zitten, want na zoveel races weet je: nu wordt elke bocht nog een beetje belangrijker."
+   ]
   },
   {
    "id": "fd-558822",
@@ -1324,8 +1316,7 @@
     "ai"
    ],
    "time_note": "Aanvangstijd volgt",
-   "start": "2026-12-01T16:00:00Z",
-   "opinion": "Een play-off voor het WK 2027 is meteen topspanning, want na het heenduel in Domžale weet je al hoe zwaar die return gaat worden. Ik hoop dat de Leeuwinnen nuchter beginnen, want een uitwedstrijd in Slovenië pak je niet cadeau."
+   "start": "2026-12-01T16:00:00Z"
   },
   {
    "id": "voetbal-knvb-beker-2026-12-03-ajax-den-bosch",
@@ -4607,6 +4598,123 @@
    "status": "gepland",
    "checked_at": "2026-11-25T15:30:00Z",
    "nl": true
+  },
+  {
+   "id": "pcf-2026-1",
+   "sport": "darts",
+   "tournament": "players-championship-finals",
+   "title": "Players Championship Finals: eerste ronde (middag)",
+   "start": "2026-11-27T12:45:00Z",
+   "round": "Eerste ronde (middag)",
+   "venue": "Butlin's Minehead Resort",
+   "city": "Minehead",
+   "broadcaster": "viaplay",
+   "tv_detail": "Viaplay",
+   "status": "gepland",
+   "nl": true,
+   "source": "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+   "sources": [
+    "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+    "https://mastercaller.com/tournaments/players-championship-finals/2026"
+   ]
+  },
+  {
+   "id": "pcf-2026-2",
+   "sport": "darts",
+   "tournament": "players-championship-finals",
+   "title": "Players Championship Finals: eerste ronde (avond)",
+   "start": "2026-11-27T19:00:00Z",
+   "round": "Eerste ronde (avond)",
+   "venue": "Butlin's Minehead Resort",
+   "city": "Minehead",
+   "broadcaster": "viaplay",
+   "tv_detail": "Viaplay",
+   "status": "gepland",
+   "nl": true,
+   "source": "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+   "sources": [
+    "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+    "https://mastercaller.com/tournaments/players-championship-finals/2026"
+   ]
+  },
+  {
+   "id": "pcf-2026-3",
+   "sport": "darts",
+   "tournament": "players-championship-finals",
+   "title": "Players Championship Finals: tweede ronde",
+   "start": "2026-11-28T12:45:00Z",
+   "round": "Tweede ronde",
+   "venue": "Butlin's Minehead Resort",
+   "city": "Minehead",
+   "broadcaster": "viaplay",
+   "tv_detail": "Viaplay",
+   "status": "gepland",
+   "nl": true,
+   "source": "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+   "sources": [
+    "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+    "https://mastercaller.com/tournaments/players-championship-finals/2026"
+   ]
+  },
+  {
+   "id": "pcf-2026-4",
+   "sport": "darts",
+   "tournament": "players-championship-finals",
+   "title": "Players Championship Finals: derde ronde",
+   "start": "2026-11-28T19:00:00Z",
+   "round": "Derde ronde",
+   "venue": "Butlin's Minehead Resort",
+   "city": "Minehead",
+   "broadcaster": "viaplay",
+   "tv_detail": "Viaplay",
+   "status": "gepland",
+   "nl": true,
+   "source": "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+   "sources": [
+    "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+    "https://mastercaller.com/tournaments/players-championship-finals/2026"
+   ]
+  },
+  {
+   "id": "pcf-2026-5",
+   "sport": "darts",
+   "tournament": "players-championship-finals",
+   "title": "Players Championship Finals: kwartfinales",
+   "start": "2026-11-29T12:45:00Z",
+   "round": "Kwartfinales",
+   "venue": "Butlin's Minehead Resort",
+   "city": "Minehead",
+   "broadcaster": "viaplay",
+   "tv_detail": "Viaplay",
+   "status": "gepland",
+   "nl": true,
+   "source": "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+   "sources": [
+    "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+    "https://mastercaller.com/tournaments/players-championship-finals/2026"
+   ]
+  },
+  {
+   "id": "pcf-2026-6",
+   "sport": "darts",
+   "tournament": "players-championship-finals",
+   "title": "Players Championship Finals: halve finales en finale",
+   "start": "2026-11-29T19:00:00Z",
+   "round": "Halve finales en finale",
+   "venue": "Butlin's Minehead Resort",
+   "city": "Minehead",
+   "broadcaster": "viaplay",
+   "tv_detail": "Viaplay",
+   "status": "gepland",
+   "nl": true,
+   "source": "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+   "sources": [
+    "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342",
+    "https://mastercaller.com/tournaments/players-championship-finals/2026"
+   ],
+   "index": true,
+   "page": "players-championship-finals-finale-2026",
+   "h1": "Hoe laat is de finale van de Players Championship Finals?"
   }
  ]
 }

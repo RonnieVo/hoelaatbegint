@@ -230,3 +230,10 @@ details.more summary::after,details.more[open] summary::after{content:"";float:n
 .stand .num{text-align:right}
 .stand tr.nl td{background:#FFF1E8}.stand tr.nl td:first-child{box-shadow:inset 4px 0 0 var(--orange)}
 
+
+/* voorbeschouwing (feitelijk, met bronnen) */
+.preview{background:#fff;border:1.5px solid #E3E0D8;border-left:0;border-radius:16px;padding:18px 22px;margin:16px 0 0;box-shadow:inset 5px 0 0 var(--orange)}
+.preview-k{font:700 14px/1 var(--display);letter-spacing:2px;text-transform:uppercase;color:#C2410C;margin-bottom:8px}
+.preview p{margin:0;font-size:17px;line-height:1.6}
+.preview .preview-src{margin-top:10px;font-size:13px;color:#5E6A7A}
+.preview .preview-src a{color:#5E6A7A}

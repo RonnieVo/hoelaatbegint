@@ -49,7 +49,7 @@ NAV = [
     ("clubs", "Voetbal", [("Voetbal vandaag", "/voetbal/vandaag/"), ("Voetbal op tv", "/voetbal/op-tv/"),
                           ("Eredivisie programma", "/eredivisie/"), ("Ajax", "/ajax/"), ("Feyenoord", "/feyenoord/"), ("PSV", "/psv/")]),
     ("darts", "Darts", [("WK darts schema", "/wk-darts/"), ("Darts vandaag", "/darts/vandaag/"),
-                        ("Darts op tv", "/darts/op-tv/"), ("Nederlanders op het WK", "/wk-darts/#nederlanders")]),
+                        ("Darts op tv", "/darts/op-tv/"), ("Players Championship Finals", "/players-championship-finals/"), ("Nederlanders op het WK", "/wk-darts/#nederlanders")]),
     ("schaatsen", "Schaatsen", [("Schaatsprogramma", "/schaatsen/"), ("Schaatsen vandaag", "/schaatsen/vandaag/"),
                                 ("Schaatsen op tv", "/schaatsen/op-tv/")]),
     ("voetbal", "Oranje", [("Programma Oranje", "/nederlands-elftal/"), ("EK 2028", "/ek-2028/"),
@@ -394,10 +394,10 @@ MACROS = r"""
 </div>
 {%- endmacro %}
 {% macro opinion(e) -%}
-{% if e.opinion %}<aside class="kijk" aria-label="De kijk van {{ cfg.owner }}">
-<img class="kijk-foto" src="{{ cfg.owner_photo }}" alt="{{ cfg.owner }}" width="76" height="76" loading="lazy">
-<div class="kijk-body"><div class="kijk-naam"><span>De kijk van</span> <a href="/over/">{{ cfg.owner }}</a></div>
-<blockquote>{{ e.opinion }}</blockquote></div>
+{% if e.preview %}<aside class="preview" aria-label="Voorbeschouwing">
+<div class="preview-k">Voorbeschouwing</div>
+<p>{{ e.preview }}</p>
+<p class="preview-src">Samengesteld met AI uit: {% for u in e.preview_sources %}<a href="{{ u }}" rel="noopener nofollow" target="_blank">{{ u.split('/')[2].replace('www.', '') }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
 </aside>{% endif %}
 {%- endmacro %}
 {% macro faqblock(faq) -%}
@@ -616,7 +616,7 @@ OVER = """<p class="lead">Bij elke grote wedstrijd zoeken honderdduizenden Neder
 <h2>Welke sporten</h2>
 <p>{sport_links}</p>
 <h2>Hoe we AI gebruiken</h2>
-<p>AI helpt ons officiële bronnen te doorzoeken en schrijft de korte voorbeschouwing bij wedstrijden ("De kijk van Ronald"). Tijden, data en zenders komen altijd uit gecontroleerde bronnen, nooit uit een AI.</p>
+<p>AI helpt ons officiële bronnen te doorzoeken en vat bij grote evenementen in een korte voorbeschouwing samen wat sportmedia schrijven over favorieten, parcours of stand. Onder elke voorbeschouwing staan de bronnen. Tijden, data en zenders komen altijd uit gecontroleerde bronnen, nooit uit een AI.</p>
 <h2>Klopt er iets niet?</h2>
 <p>Mail naar <a href="mailto:{email}?subject=Correctie">{email}</a>. We passen het zo snel mogelijk aan; de pagina toont daarna de nieuwe controletijd.</p>
 <h2>Advertenties en links</h2>

@@ -35,7 +35,7 @@ jobs:
       AI_VERIFY_MODE: ${{ vars.AI_VERIFY_MODE }}
       AI_CAPTIONS: ${{ vars.AI_CAPTIONS }}
       AI_WRITE: ${{ vars.AI_WRITE }}
-      AI_OPINION: ${{ vars.AI_OPINION }}
+      AI_PREVIEW: ${{ vars.AI_PREVIEW }}
       AI_VERIFY_FORCE: ${{ github.event.inputs.ai_force == 'true' && '1' || '' }}
       FORCE_DEPLOY: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
       AF_FORCE: ${{ (github.event.inputs.ai_force == 'true' || github.event.inputs.af_force == 'true') && '1' || '' }}
@@ -60,10 +60,10 @@ jobs:
         run: |
           if [ "$(date -u +%H%M)" -ge "0600" ] && [ "$(date -u +%H%M)" -lt "0615" ]; then python pipeline/ai_write.py; fi
 
-      - name: De kijk van Ronald (dagelijks 06:00 UTC, of handmatig)
+      - name: Voorbeschouwingen met bronnen (06:00 en 15:00 UTC, of handmatig)
         if: github.event.inputs.ai_force == 'true' || github.event_name == 'schedule'
         run: |
-          if [ "${{ github.event.inputs.ai_force }}" = "true" ] || { [ "$(date -u +%H%M)" -ge "0600" ] && [ "$(date -u +%H%M)" -lt "0615" ]; }; then python pipeline/ai_opinion.py; fi
+          if [ "${{ github.event.inputs.ai_force }}" = "true" ] || { [ "$(date -u +%M)" -lt "15" ] && { [ "$(date -u +%H)" = "06" ] || [ "$(date -u +%H)" = "15" ]; }; }; then python pipeline/ai_preview.py; fi
 
       - name: Pushmeldingen (30 min vooraf)
         env:

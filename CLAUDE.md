@@ -11,7 +11,7 @@ Eigenaar: Ronald Voorbergen (GitHub RonnieVo). Hij wil dat Claude alles onderhou
 - Tijden altijd in Nederlandse tijd tonen; opslaan in UTC.
 - Bij fouten: kijk eerst naar de laatste run in GitHub Actions.
 - AI-regels (pipeline/run.py): de AI mag bij bestaande evenementen alleen tijd/locatie/status bijwerken, geen titels; een bevestigde tijd verschuift alleen bij een bron op de OFFICIAL-lijst. Les van 25-11: Ziggo had handbal NL–Tsjechië op 3/12, EHF zegt 4/12 20:30 (EHF klopt).
-- Pagina's: Oranje (mannen, /nederlands-elftal/) en Leeuwinnen (/oranje-leeuwinnen/) zijn apart, op verzoek van Ronald. "De kijk van Ronald" (pipeline/ai_opinion.py) staat aan; Ronald gaf toestemming voor zijn naam en foto (site/assets/ronald.jpg).
+- Pagina's: Oranje (mannen, /nederlands-elftal/) en Leeuwinnen (/oranje-leeuwinnen/) zijn apart, op verzoek van Ronald. "De kijk van Ronald" is op 27-11 op zijn verzoek vervangen door een feitelijke voorbeschouwing met bronnen (pipeline/ai_preview.py, velden preview/preview_sources; geen ik-vorm, geen sfeer, 1x per evenement, max 6 per run, 06 en 15 UTC). Naam en foto van Ronald alleen nog in auteursblok/Over.
 - Handmatig testen: Actions › "Data bijwerken en site publiceren" › Run workflow met ai_force of af_force = true.
 - Menu en pagina's op zoekvolume (DataForSEO, 25-11-2026; ruwe cijfers in `data/keywords.json`): F1 > clubvoetbal > darts > schaatsen > Oranje > rest onder "Meer". Menu staat in `NAV`/`MORE_NAV` in `site/build.py`.
 - /vandaag/ heeft een tv-gids-tijdlijn per zender (functie timeline() in build.py; nu-lijn en oranje "eerstvolgende" via app.js). Testen op een andere dag: BUILD_NOW=2026-11-26T16:30:00+00:00 python site/build.py.

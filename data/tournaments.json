@@ -1034,5 +1034,79 @@
     "/ek-handbal-vrouwen/"
    ]
   ]
+ },
+ "players-championship-finals": {
+  "sport": "darts",
+  "slug": "players-championship-finals",
+  "name": "Players Championship Finals",
+  "h1": "Players Championship Finals 2026: speelschema en tijden",
+  "title": "Players Championship Finals 2026: speelschema, tijden en zender",
+  "description": "De Players Championship Finals in Minehead (27–29 november 2026): alle sessies in Nederlandse tijd, de Nederlanders in het veld en waar je kijkt (Viaplay).",
+  "answer": "De <strong>Players Championship Finals</strong> zijn van <strong>vrijdag 27 tot en met zondag 29 november</strong> in Minehead. Elke dag zijn er twee sessies: <strong>13:45</strong> en <strong>20:00</strong> Nederlandse tijd. Live op <strong>Viaplay</strong>.",
+  "facts": [
+   [
+    "Wanneer",
+    "27 – 29 november 2026"
+   ],
+   [
+    "Waar",
+    "Butlin's Minehead Resort, Engeland"
+   ],
+   [
+    "Deelnemers",
+    "64 (top 64 van de Players Championship-ranking)"
+   ],
+   [
+    "Prijzengeld",
+    "£750.000, winnaar £130.000"
+   ],
+   [
+    "In Nederland",
+    "Viaplay"
+   ],
+   [
+    "Titelhouder",
+    "Luke Littler (doet niet mee)"
+   ]
+  ],
+  "intro": "Het laatste grote PDC-toernooi voor het WK. Wessel Nijman is als nummer één geplaatst, na zes Players Championship-titles dit jaar. Michael van Gerwen jaagt op zijn achtste titel. Luke Littler, de titelhouder, plaatste zich niet; Luke Humphries geldt als favoriet.",
+  "faq": [
+   [
+    "Wanneer zijn de Players Championship Finals 2026?",
+    "Van vrijdag 27 tot en met zondag 29 november 2026 in Minehead."
+   ],
+   [
+    "Hoe laat begint het darts in Minehead?",
+    "Elke dag om 13:45 (middagsessie) en 20:00 (avondsessie) Nederlandse tijd."
+   ],
+   [
+    "Waar kijk je de Players Championship Finals?",
+    "In Nederland live op Viaplay."
+   ],
+   [
+    "Wanneer is de finale?",
+    "Zondag 29 november in de avondsessie, die om 20:00 Nederlandse tijd begint (na de halve finales)."
+   ]
+  ],
+  "sources": [
+   [
+    "Loting en schema (Sporting Life)",
+    "https://www.sportinglife.com/darts/news/players-championship-finals-no-luke-littler-in-minehead-as-draw-is-made-for-final-darts-major-of-2026/235342"
+   ],
+   [
+    "Toernooi-info (MasterCaller)",
+    "https://mastercaller.com/tournaments/players-championship-finals/2026"
+   ]
+  ],
+  "related": [
+   [
+    "WK darts schema",
+    "/wk-darts/"
+   ],
+   [
+    "Darts op tv",
+    "/darts/op-tv/"
+   ]
+  ]
  }
 }
